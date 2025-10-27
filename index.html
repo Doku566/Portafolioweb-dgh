@@ -1,10 +1,12 @@
-
-        </div><!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domingo González Hernández - Portfolio</title>
+    <meta name="description" content="Portafolio de Domingo González Hernández - Software & Robotics Engineer especializado en IA, Cloud y Desarrollo Full-Stack">
+    <meta name="keywords" content="Software Engineer, Robotics, AI, Machine Learning, Full Stack Developer, Python, React, AWS">
+    <meta name="author" content="Domingo González Hernández">
+    <title>Domingo González Hernández - Software & Robotics Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Devicons CDN for programming language icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
@@ -71,11 +73,37 @@
         .float-icon:nth-child(4) { animation-delay: 1.5s; }
         .float-icon:nth-child(5) { animation-delay: 2s; }
         .float-icon:nth-child(6) { animation-delay: 2.5s; }
+
+        /* Modal animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .modal-content {
+            animation: slideInUp 0.4s ease-out;
+        }
+
+        /* Live badge pulse */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .live-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
     </style>
 </head>
 <body class="gradient-bg text-white min-h-screen">
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-blue-500/20">
+    <nav class="fixed top-0 w-full bg-slate-900/95 backdrop-blur-sm z-50 border-b border-blue-500/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-2">
@@ -129,7 +157,7 @@
         <div class="max-w-4xl text-center relative z-10">
             <div class="mb-8 inline-block">
                 <div class="w-32 h-32 bg-gradient-to-br from-blue-400 to-purple-600 rounded-full flex items-center justify-center text-5xl font-bold shadow-2xl">
-                    DGH
+                    DG
                 </div>
             </div>
             <div class="mb-4">
@@ -141,7 +169,7 @@
                 Software & Robotics Engineer
             </p>
             <p class="text-xl text-gray-300 mb-8 typewriter-subtitle">
-                AI & Cloud Developer | STEM
+                AI & Cloud Developer | VEX Robotics Champion
             </p>
             
             <!-- Programming Languages Icons -->
@@ -228,7 +256,7 @@
                         <svg class="w-12 h-12 mx-auto mb-2 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                         </svg>
-                        <p class="font-semibold">Robotica</p>
+                        <p class="font-semibold">VEX Champion</p>
                     </div>
                 </div>
             </div>
@@ -401,25 +429,263 @@
     <!-- Projects Section -->
     <section id="projects" class="min-h-screen flex items-center py-20 px-4 bg-slate-800/30">
         <div class="max-w-6xl mx-auto w-full">
-            <h2 class="text-4xl font-bold mb-12 text-center">Proyectos Técnicos</h2>
-            <div class="glassmorphism rounded-xl p-8">
-                <h3 class="text-2xl font-bold mb-3 text-blue-400">AI Voice Assistant</h3>
-                <p class="text-gray-400 mb-4">Feb 2024 – May 2024 | Proyecto Personal</p>
-                <ul class="space-y-3 text-gray-300 mb-6">
-                    <li>• Diseño y desarrollo de sistema basado en voz con APIs de Procesamiento de Lenguaje Natural y Natural TTS</li>
-                    <li>• Implementación de comunicación RESTful API usando Flask y JSON para conversión texto-voz dinámica</li>
-                    <li>• Integración de respuestas de IA en salidas de voz naturales para mejorar la interacción del usuario</li>
-                </ul>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-4 py-2 bg-blue-600 rounded-full text-sm font-semibold">Python</span>
-                    <span class="px-4 py-2 bg-blue-600 rounded-full text-sm font-semibold">Flask</span>
-                    <span class="px-4 py-2 bg-blue-600 rounded-full text-sm font-semibold">NLP</span>
-                    <span class="px-4 py-2 bg-blue-600 rounded-full text-sm font-semibold">REST APIs</span>
-                    <span class="px-4 py-2 bg-blue-600 rounded-full text-sm font-semibold">Natural TTS</span>
+            <h2 class="text-4xl font-bold mb-12 text-center">Proyectos Destacados</h2>
+            
+            <!-- Proyecto 1: Sistema de Graduación -->
+            <div class="glassmorphism rounded-xl p-8 mb-8 hover:border-blue-500/50 transition-all">
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <div class="lg:w-1/3">
+                        <div class="relative rounded-lg overflow-hidden shadow-2xl group">
+                            <img src="https://via.placeholder.com/400x300/8B0000/FFD700?text=Sistema+Graduacion" alt="Sistema de Graduación" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button onclick="openProjectModal('graduacion')" class="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all">
+                                    👁️ Ver Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+                            </svg>
+                            <h3 class="text-3xl font-bold text-blue-400">🎓 Sistema de Gestión de Graduación 2025</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            Sistema completo de gestión para ceremonias de graduación con funcionalidades avanzadas de seguimiento en tiempo real, 
+                            generación de certificados animados y administración de asistencia mediante códigos de barras.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-3 mb-4">
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Búsqueda y asignación de códigos</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Presentador con certificados animados</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>WebSocket para comunicación en tiempo real</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Generación de reportes PDF</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Registro de alumnos tardíos</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Sistema de correcciones</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm flex items-center gap-1">
+                                <i class="devicon-php-plain colored"></i>
+                                PHP
+                            </span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm flex items-center gap-1">
+                                <i class="devicon-mysql-plain colored"></i>
+                                MySQL
+                            </span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm flex items-center gap-1">
+                                <i class="devicon-javascript-plain colored"></i>
+                                JavaScript
+                            </span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">WebSocket</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Bootstrap</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button onclick="openProjectModal('graduacion')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                                Ver Demo
+                            </button>
+                            <a href="https://doku566.github.io/Gestion-de-alumnos-Graduacion/" target="_blank" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold transition-all flex items-center gap-2">
+                                <i class="devicon-github-original"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 2: SmartFinance AI -->
+            <div class="glassmorphism rounded-xl p-8 mb-8 hover:border-blue-500/50 transition-all">
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <div class="lg:w-1/3">
+                        <div class="relative rounded-lg overflow-hidden shadow-2xl group">
+                            <img src="https://via.placeholder.com/400x300/1e3a8a/60a5fa?text=SmartFinance+AI" alt="SmartFinance AI" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button onclick="openProjectModal('smartfinance')" class="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all">
+                                    👁️ Ver Demo
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/>
+                            </svg>
+                            <h3 class="text-3xl font-bold text-blue-400">💰 SmartFinance AI</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            Plataforma completa de gestión financiera personal con inteligencia artificial integrada. 
+                            Utiliza GPT-4 para análisis financiero, predicción de gastos y categorización automática de transacciones.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-3 mb-4">
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Análisis Financiero con GPT-4</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Predicción de gastos con ML</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Categorización automática con NLP</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Dashboard interactivo con Recharts</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Chat con asistente IA</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Detección de anomalías</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm flex items-center gap-1">
+                                <i class="devicon-react-original colored"></i>
+                                React 18
+                            </span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm flex items-center gap-1">
+                                <i class="devicon-typescript-plain colored"></i>
+                                TypeScript
+                            </span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm flex items-center gap-1">
+                                <i class="devicon-nodejs-plain colored"></i>
+                                Node.js
+                            </span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm flex items-center gap-1">
+                                <i class="devicon-postgresql-plain colored"></i>
+                                PostgreSQL
+                            </span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">OpenAI</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Prisma</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Docker</span>
+                        </div>
+                        <div class="flex gap-3 flex-wrap">
+                            <button onclick="openProjectModal('smartfinance')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                                </svg>
+                                Ver Demo
+                            </button>
+                            <button onclick="window.open('demo2.html', '_blank')" class="px-4 py-2 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Demo en Vivo
+                            </button>
+                            <a href="https://github.com/Doku566/smartfinance-ai" target="_blank" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold transition-all flex items-center gap-2">
+                                <i class="devicon-github-original"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Proyecto 3: AI Voice Assistant -->
+            <div class="glassmorphism rounded-xl p-8 hover:border-blue-500/50 transition-all">
+                <div class="flex flex-col lg:flex-row gap-6">
+                    <div class="lg:w-1/3">
+                        <div class="relative rounded-lg overflow-hidden shadow-2xl group">
+                            <img src="https://via.placeholder.com/400x300/4a0000/FFD700?text=AI+Voice+Assistant" alt="AI Voice Assistant" class="w-full h-64 object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                <button onclick="openProjectModal('voiceassistant')" class="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all">
+                                    👁️ Ver Detalles
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-2/3">
+                        <div class="flex items-center gap-3 mb-3">
+                            <svg class="w-8 h-8 text-purple-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z"/>
+                                <path d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/>
+                            </svg>
+                            <h3 class="text-3xl font-bold text-blue-400">🎙️ AI Voice Assistant</h3>
+                        </div>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            Asistente de voz basado en IA que utiliza Procesamiento de Lenguaje Natural y Text-to-Speech para 
+                            proporcionar interacciones naturales con conversión texto-voz dinámica.
+                        </p>
+                        <div class="grid md:grid-cols-2 gap-3 mb-4">
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Procesamiento de Lenguaje Natural</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Text-to-Speech natural</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>RESTful API con Flask</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-sm">
+                                <span class="text-green-400">✓</span>
+                                <span>Respuestas de IA personalizadas</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm flex items-center gap-1">
+                                <i class="devicon-python-plain colored"></i>
+                                Python
+                            </span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm flex items-center gap-1">
+                                <i class="devicon-flask-original"></i>
+                                Flask
+                            </span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">NLP</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">REST APIs</span>
+                            <span class="px-3 py-1 bg-slate-700 rounded-full text-sm">Natural TTS</span>
+                        </div>
+                        <div class="flex gap-3">
+                            <button onclick="openProjectModal('voiceassistant')" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Ver Detalles
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal para proyectos -->
+    <div id="projectModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4" onclick="closeProjectModal(event)">
+        <div class="bg-slate-800 rounded-2xl max-w-5xl w-full max-h-[90vh] overflow-y-auto border border-blue-500/30 modal-content" onclick="event.stopPropagation()">
+            <!-- Modal content will be injected here -->
+        </div>
+    </div>
 
     <!-- Education Section -->
     <section id="education" class="min-h-screen flex items-center py-20 px-4">
@@ -444,10 +710,19 @@
                         Implementación de comunicación líder-seguidor, visión por computadora y redes neuronales para comportamiento autónomo adaptativo.
                     </p>
                     <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">Python</span>
-                        <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">PyTorch</span>
+                        <span class="px-3 py-1 bg-slate-700 rounded-full text-xs flex items-center gap-1">
+                            <i class="devicon-python-plain colored"></i>
+                            Python
+                        </span>
+                        <span class="px-3 py-1 bg-slate-700 rounded-full text-xs flex items-center gap-1">
+                            <i class="devicon-pytorch-original colored"></i>
+                            PyTorch
+                        </span>
                         <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">ROS</span>
-                        <span class="px-3 py-1 bg-slate-700 rounded-full text-xs">OpenCV</span>
+                        <span class="px-3 py-1 bg-slate-700 rounded-full text-xs flex items-center gap-1">
+                            <i class="devicon-opencv-plain colored"></i>
+                            OpenCV
+                        </span>
                     </div>
                 </div>
 
@@ -496,28 +771,24 @@
             <h2 class="text-4xl font-bold mb-12">Contáctame</h2>
             <div class="glassmorphism rounded-xl p-8">
                 <p class="text-xl mb-8 text-gray-300">
-                   ¡No dudes en contactarme!
+                    ¿Interesado en colaborar? ¡No dudes en contactarme!
                 </p>
                 <div class="grid md:grid-cols-2 gap-6">
-                    <a href="mailto:domingoghz245@gmail.com" class="flex items-center justify-center gap-3 p-4 bg-slate-700 hover:bg-slate-600 rounded-xl transition-all">
+                    
+<a href="mailto:domingoghz245@gmail.com" class="flex items-center justify-center gap-3 p-4 bg-slate-700 hover:bg-slate-600 rounded-xl transition-all">
                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                         </svg>
                         <span>domingoghz245@gmail.com</span>
                     </a>
-                    <a href="tel:+528681201039" class="flex items-center justify-center gap-3 p-4 bg-slate-700 hover:bg-slate-600 rounded-xl transition-all">
-                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                        </svg>
-                        <span>+52 868-120-1039</span>
                     </a>
-                    <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 p-4 bg-slate-700 hover:bg-slate-600 rounded-xl transition-all">
+                    <a href="https://linkedin.com/in/domingo-gonzález-hernandez-73127a213" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 p-4 bg-slate-700 hover:bg-slate-600 rounded-xl transition-all">
                         <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                         </svg>
                         <span>LinkedIn</span>
                     </a>
-                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 p-4 bg-slate-700 hover:bg-slate-600 rounded-xl transition-all">
+                    <a href="https://github.com/Doku566" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 p-4 bg-slate-700 hover:bg-slate-600 rounded-xl transition-all">
                         <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                         </svg>
@@ -537,21 +808,28 @@
     </footer>
 
     <!-- Chatbot -->
-    <button id="chatbot-button" class="fixed bottom-6 right-6 w-16 h-16 bg-blue-600 hover:bg-blue-700 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 z-50">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+    <button id="chatbot-button" class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-br from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 rounded-full shadow-2xl flex items-center justify-center transition-all transform hover:scale-110 z-50 group">
+        <!-- Robot Icon -->
+        <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+            <circle cx="9" cy="10" r="1" fill="currentColor"/>
+            <circle cx="15" cy="10" r="1" fill="currentColor"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2V5"/>
         </svg>
     </button>
 
     <div id="chatbot" class="fixed bottom-6 right-6 w-96 h-[500px] bg-slate-800 rounded-2xl shadow-2xl flex-col z-50 border border-blue-500/30 hidden">
-        <div class="flex items-center justify-between p-4 bg-blue-600 rounded-t-2xl">
+        <div class="flex items-center justify-between p-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-t-2xl">
             <div class="flex items-center gap-3">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    <circle cx="9" cy="10" r="1" fill="currentColor"/>
+                    <circle cx="15" cy="10" r="1" fill="currentColor"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2V5"/>
                 </svg>
-                <span class="font-semibold">Asistente Virtual</span>
+                <span class="font-semibold">Asistente Virtual 🤖</span>
             </div>
-            <button id="close-chat" class="hover:bg-blue-700 p-1 rounded">
+            <button id="close-chat" class="hover:bg-blue-700 p-1 rounded transition-colors">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
@@ -595,14 +873,12 @@
                 index++;
                 setTimeout(typeWriter, 100);
             } else {
-                // Remove the cursor effect when done
                 setTimeout(() => {
                     typewriterElement.style.borderRight = 'none';
                 }, 500);
             }
         }
 
-        // Start typewriter on load
         window.addEventListener('load', () => {
             typewriterElement.textContent = '';
             setTimeout(typeWriter, 500);
@@ -616,7 +892,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // Close mobile menu when clicking a link
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -653,8 +928,8 @@
                 return 'Domingo domina Python, C++, C#, SQL, JavaScript, y frameworks como Flask. También tiene experiencia en AWS, Docker, Kubernetes, Machine Learning con PyTorch/TensorFlow, y robótica con ROS.';
             } else if (msg.includes('educación') || msg.includes('estudios') || msg.includes('universidad')) {
                 return 'Es Ingeniero en Mecatrónica por la Universidad Tecnológica de Matamoros (Oct 2024). Su proyecto final fue un sistema de navegación autónoma para robots móviles usando algoritmos Bug y visión por computadora.';
-            } else if (msg.includes('proyecto') || msg.includes('ai voice') || msg.includes('asistente')) {
-                return 'Desarrolló un AI Voice Assistant que utiliza APIs de Procesamiento de Lenguaje Natural y TTS. Implementó comunicación RESTful con Flask y JSON para convertir texto a voz con respuestas de IA naturales.';
+            } else if (msg.includes('proyecto') || msg.includes('smartfinance') || msg.includes('graduacion')) {
+                return 'Ha desarrollado 3 proyectos destacados: 1) Sistema de Gestión de Graduación con WebSocket en tiempo real, 2) SmartFinance AI con GPT-4 y Machine Learning, y 3) AI Voice Assistant con NLP y TTS.';
             } else if (msg.includes('contacto') || msg.includes('email') || msg.includes('teléfono')) {
                 return 'Puedes contactar a Domingo en: Email: domingoghz245@gmail.com | Teléfono: +52 868-120-1039 | LinkedIn y GitHub están disponibles en la sección de contacto.';
             } else if (msg.includes('certificación') || msg.includes('logros') || msg.includes('premio')) {
@@ -703,6 +978,287 @@
             }
         });
 
+        // Project Modal Functions
+        function openProjectModal(project) {
+            const modal = document.getElementById('projectModal');
+            const modalContent = modal.querySelector('.bg-slate-800');
+            
+            let content = '';
+            
+            if (project === 'graduacion') {
+                content = `
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-3xl font-bold text-blue-400">🎓 Sistema de Gestión de Graduación</h2>
+                            <button onclick="closeProjectModal()" class="text-gray-400 hover:text-white transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <img src="https://via.placeholder.com/600x400/8B0000/FFD700?text=Dashboard" alt="Dashboard" class="rounded-lg w-full">
+                            <img src="https://via.placeholder.com/600x400/660000/FFFFFF?text=Certificado" alt="Certificado" class="rounded-lg w-full">
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-yellow-400">Características Principales</h3>
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-300 mb-2">📊 Dashboard Administrativo</h4>
+                                <p class="text-sm text-gray-300">Panel completo con estadísticas en tiempo real de asistencia, códigos asignados y presentes.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-300 mb-2">🔍 Búsqueda Avanzada</h4>
+                                <p class="text-sm text-gray-300">Sistema de búsqueda por matrícula, nombre o código de barras con resultados instantáneos.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-300 mb-2">📜 Certificados Animados</h4>
+                                <p class="text-sm text-gray-300">Presentador con certificados profesionales con animaciones CSS y efectos visuales.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-300 mb-2">⚡ WebSocket Real-time</h4>
+                                <p class="text-sm text-gray-300">Comunicación en tiempo real usando WebSocket para sincronización instantánea.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-300 mb-2">📄 Generación de PDFs</h4>
+                                <p class="text-sm text-gray-300">Exportación de listas de asistencia en formato PDF con jsPDF y AutoTable.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-blue-300 mb-2">🔐 Sistema de Logs</h4>
+                                <p class="text-sm text-gray-300">Auditoría completa con registro de todas las acciones y cambios en el sistema.</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-yellow-400">Arquitectura Técnica</h3>
+                        <div class="bg-slate-700/50 p-6 rounded-lg mb-6">
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• <strong>Frontend:</strong> HTML5, CSS3, JavaScript vanilla, Bootstrap 5.3.3</li>
+                                <li>• <strong>Backend:</strong> PHP con PDO para MySQL, arquitectura RESTful</li>
+                                <li>• <strong>Base de Datos:</strong> MySQL con schema optimizado, índices</li>
+                                <li>• <strong>Real-time:</strong> WebSocket Server con Node.js y biblioteca 'ws'</li>
+                                <li>• <strong>Seguridad:</strong> Sanitización de inputs, validación server-side</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex gap-3">
+                            <a href="https://github.com/tu-usuario/sistema-graduacion" target="_blank" class="flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all text-center flex items-center justify-center gap-2">
+                                <i class="devicon-github-original"></i>
+                                Ver Código en GitHub
+                            </a>
+                            <button onclick="closeProjectModal()" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold transition-all">
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else if (project === 'smartfinance') {
+                content = `
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-3xl font-bold text-blue-400">💰 SmartFinance AI</h2>
+                            <button onclick="closeProjectModal()" class="text-gray-400 hover:text-white transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Demo en vivo -->
+                        <div class="mb-6">
+                            <div class="bg-gradient-to-r from-green-500 to-blue-500 p-1 rounded-lg mb-4">
+                                <div class="bg-slate-800 p-4 rounded-lg">
+                                    <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                                        <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                        Demo Interactivo en Vivo
+                                    </h3>
+                                    <p class="text-gray-300 text-sm">Prueba la aplicación real directamente aquí</p>
+                                </div>
+                            </div>
+                            <div class="relative rounded-lg overflow-hidden shadow-2xl border-4 border-blue-500/30">
+                                <iframe 
+                                    src="demo2.html" 
+                                    class="w-full h-[600px] bg-white"
+                                    title="SmartFinance AI Demo"
+                                    loading="lazy"
+                                ></iframe>
+                                <div class="absolute top-2 right-2 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                                    <span class="w-2 h-2 bg-white rounded-full live-pulse"></span>
+                                    LIVE
+                                </div>
+                            </div>
+                            <p class="text-sm text-gray-400 mt-2 text-center">
+                                ⚡ Demo completamente funcional con React y Recharts
+                            </p>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-green-400">Funcionalidades de IA</h3>
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-300 mb-2">🤖 GPT-4 Integration</h4>
+                                <p class="text-sm text-gray-300">Análisis financiero personalizado usando OpenAI GPT-4 para insights profundos.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-300 mb-2">📊 Machine Learning</h4>
+                                <p class="text-sm text-gray-300">Predicción de gastos futuros con regresión lineal y análisis de tendencias.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-300 mb-2">🏷️ NLP Categorization</h4>
+                                <p class="text-sm text-gray-300">Categorización automática de transacciones usando Procesamiento de Lenguaje Natural.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-300 mb-2">💬 AI Chat Assistant</h4>
+                                <p class="text-sm text-gray-300">Asistente conversacional para consultas financieras en lenguaje natural.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-300 mb-2">🔍 Anomaly Detection</h4>
+                                <p class="text-sm text-gray-300">Detección automática de gastos inusuales con algoritmos estadísticos.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-green-300 mb-2">📈 Interactive Charts</h4>
+                                <p class="text-sm text-gray-300">Visualización avanzada con Recharts: gráficos de línea, barras y torta.</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-green-400">Stack Tecnológico Full-Stack</h3>
+                        <div class="bg-slate-700/50 p-6 rounded-lg mb-6">
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <h4 class="font-bold text-blue-300 mb-2">Frontend</h4>
+                                    <ul class="space-y-1 text-sm text-gray-300">
+                                        <li>• React 18 con TypeScript</li>
+                                        <li>• Vite para build ultrarrápido</li>
+                                        <li>• Tailwind CSS para estilos</li>
+                                        <li>• Recharts para visualización</li>
+                                        <li>• React Router para navegación</li>
+                                        <li>• Axios para peticiones HTTP</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-purple-300 mb-2">Backend</h4>
+                                    <ul class="space-y-1 text-sm text-gray-300">
+                                        <li>• Node.js + Express + TypeScript</li>
+                                        <li>• Prisma ORM (Type-safe)</li>
+                                        <li>• PostgreSQL Database</li>
+                                        <li>• JWT Authentication</li>
+                                        <li>• OpenAI API Integration</li>
+                                        <li>• Bcrypt para passwords</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-green-400">Características Destacadas</h3>
+                        <div class="bg-slate-700/50 p-6 rounded-lg mb-6">
+                            <ul class="space-y-2 text-gray-300">
+                                <li>✓ <strong>Arquitectura Clean Code:</strong> Separación de responsabilidades MVC</li>
+                                <li>✓ <strong>Type-Safety:</strong> TypeScript en todo el stack</li>
+                                <li>✓ <strong>Seguridad:</strong> JWT, bcrypt, helmet.js, rate limiting</li>
+                                <li>✓ <strong>DevOps:</strong> Docker + Docker Compose para deployment</li>
+                                <li>✓ <strong>Testing:</strong> Suite completa de tests unitarios</li>
+                                <li>✓ <strong>UX/UI:</strong> Responsive, loading states, error handling elegante</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="flex gap-3 flex-wrap">
+                            <a href="https://github.com/Doku566/smartfinance-ai" target="_blank" class="flex-1 px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all text-center flex items-center justify-center gap-2">
+                                <i class="devicon-github-original"></i>
+                                Ver Código en GitHub
+                            </a>
+                            <button onclick="window.open('demo2.html', '_blank')" class="px-6 py-3 bg-green-600 hover:bg-green-700 rounded-lg font-semibold transition-all flex items-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                </svg>
+                                Abrir Demo
+                            </button>
+                            <button onclick="closeProjectModal()" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold transition-all">
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                `;
+            } else if (project === 'voiceassistant') {
+                content = `
+                    <div class="p-8">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-3xl font-bold text-blue-400">🎙️ AI Voice Assistant</h2>
+                            <button onclick="closeProjectModal()" class="text-gray-400 hover:text-white transition-colors">
+                                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <img src="https://via.placeholder.com/1200x400/4a0000/FFD700?text=AI+Voice+Assistant" alt="Voice Assistant" class="rounded-lg w-full">
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">Descripción del Proyecto</h3>
+                        <p class="text-gray-300 mb-6 leading-relaxed">
+                            Asistente de voz inteligente desarrollado con Python que utiliza tecnologías de IA avanzadas 
+                            para proporcionar interacciones naturales mediante voz. El sistema procesa lenguaje natural, 
+                            genera respuestas contextuales y las convierte en audio mediante Text-to-Speech.
+                        </p>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">Características Técnicas</h3>
+                        <div class="grid md:grid-cols-2 gap-4 mb-6">
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-purple-300 mb-2">🧠 NLP Processing</h4>
+                                <p class="text-sm text-gray-300">Procesamiento de lenguaje natural para entender consultas complejas.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-purple-300 mb-2">🔊 Text-to-Speech</h4>
+                                <p class="text-sm text-gray-300">Conversión de texto a voz natural con entonación y prosodia.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-purple-300 mb-2">🌐 RESTful API</h4>
+                                <p class="text-sm text-gray-300">API REST desarrollada con Flask para integración fácil.</p>
+                            </div>
+                            <div class="bg-slate-700/50 p-4 rounded-lg">
+                                <h4 class="font-bold text-purple-300 mb-2">📡 JSON Communication</h4>
+                                <p class="text-sm text-gray-300">Comunicación eficiente mediante formato JSON estructurado.</p>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">Tecnologías Utilizadas</h3>
+                        <div class="bg-slate-700/50 p-6 rounded-lg mb-6">
+                            <ul class="space-y-2 text-gray-300">
+                                <li>• <strong>Python:</strong> Lenguaje principal del proyecto</li>
+                                <li>• <strong>Flask:</strong> Framework web para API RESTful</li>
+                                <li>• <strong>Natural Language APIs:</strong> Procesamiento de lenguaje natural</li>
+                                <li>• <strong>TTS Engine:</strong> Motor de síntesis de voz natural</li>
+                                <li>• <strong>JSON:</strong> Formato de intercambio de datos</li>
+                            </ul>
+                        </div>
+                        
+                        <h3 class="text-2xl font-bold mb-4 text-purple-400">Periodo de Desarrollo</h3>
+                        <p class="text-gray-300 mb-6">Febrero 2024 – Mayo 2024 (Proyecto Personal)</p>
+                        
+                        <div class="flex gap-3">
+                            <button onclick="closeProjectModal()" class="flex-1 px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg font-semibold transition-all">
+                                Cerrar
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            modalContent.innerHTML = content;
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal(event) {
+            if (event && event.target !== event.currentTarget) return;
+            
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -718,7 +1274,3 @@
         });
     </script>
 </body>
-</html>
-
-
-

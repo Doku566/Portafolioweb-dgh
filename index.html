@@ -2,41 +2,38 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <!-- RECRUITER_NOTE: No heavy frameworks (React/Angular) used here. 
-         Just pure semantic HTML5 and utility classes for O(1) rendering performance. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DGH | Systems & Robotics</title>
+    <title>Domingo González | Software Engineer</title>
     <meta name="description"
-        content="Domingo González Hernández - Systems Optimization & Robotics. C++, ROS 2, High-Performance Computing.">
+        content="Domingo González Hernández - Software Engineer specializing in C++, Systems optimization, and High-Performance Computing.">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts: Inter (Primary) + JetBrains Mono (Code) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 fontFamily: {
+                    sans: ['"Inter"', 'sans-serif'],
                     mono: ['"JetBrains Mono"', 'monospace'],
-                    sans: ['"Inter"', 'sans-serif'], // Added Inter for cleaner headers if needed
                 },
                 extend: {
                     colors: {
-                        bg: '#050505', // Darker void
-                        panel: '#0f0f12', // Slightly blue-tinted dark
-                        border: '#27272a',
-                        // Vivid Palette
-                        cyan: '#06b6d4',
-                        violet: '#8b5cf6',
-                        fuchsia: '#d946ef',
-                        neon: '#00ff9d',
-                    },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                        'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #06b6d410 0deg, #8b5cf610 50%, #d946ef10 100%)',
-                        'card-grad': 'linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
-                    },
-                    animation: {
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        bg: '#050505',
+                        surface: '#121212',
+                        surfaceHighlight: '#1A1A1A',
+                        border: '#2A2A2A',
+                        primary: '#3B82F6', // Standard Professional Blue
+                        text: '#E5E5E5',
+                        muted: '#A3A3A3',
                     }
                 }
             }
@@ -45,382 +42,230 @@
     <style>
         body {
             background-color: #050505;
-            color: #d4d4d8;
-            background-image:
-                radial-gradient(circle at 50% 0%, #1e1b4b 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, #2e1065 0%, transparent 30%);
-            background-attachment: fixed;
+            color: #E5E5E5;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Glassmorphism Utilities */
-        .glass-panel {
-            background: rgba(15, 15, 18, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        /* Modern Bento Grid Utilities */
+        .bento-card {
+            background-color: #121212;
+            border: 1px solid #2A2A2A;
+            border-radius: 12px;
+            transition: all 0.2s ease-in-out;
         }
 
-        .glass-panel:hover {
-            border-color: rgba(6, 182, 212, 0.4);
-            box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+        .bento-card:hover {
+            border-color: #404040;
+            background-color: #161616;
+            transform: translateY(-2px);
         }
 
-        /* Vivid Gradients */
-        .text-gradient {
-            background: linear-gradient(to right, #06b6d4, #8b5cf6, #d946ef);
+        .gradient-text {
+            background: linear-gradient(to right, #ffffff, #a3a3a3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .border-gradient-bottom {
-            border-bottom: 1px solid;
-            border-image: linear-gradient(to right, #06b6d4, #8b5cf6) 1;
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #050505;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #06b6d4, #8b5cf6);
-            border-radius: 4px;
         }
     </style>
 </head>
 
-<body class="font-mono antialiased selection:bg-primary/20 selection:text-primary">
+<body class="selection:bg-primary/20 selection:text-white">
 
-    <!-- Telemetry Bar -->
-    <div
-        class="fixed top-0 w-full bg-bg/90 backdrop-blur border-b border-border z-50 text-xs px-6 h-10 flex items-center justify-between">
-        <div class="flex gap-6">
-            <span class="text-accent">● SYSTEM_ONLINE</span>
-            <span>MEM: 147MB</span>
-            <span>CPU: 2%</span>
-            <span>UPTIME: <span id="uptime">0s</span></span>
-        </div>
-        <div class="flex gap-4">
-            <a href="#contact"
-                class="text-white hover:text-accent transition-colors border-b border-white hover:border-accent font-bold animate-pulse">
-                [ ! CONTACT_SIGNAL ]
-            </a>
-            <a href="robotics.html"
-                class="text-primary hover:text-white transition-colors border-b border-primary/30 hover:border-white">
-                [>> SWITCH TO ROBOTICS MODULE]
-            </a>
-            <a href="https://github.com/Doku566" class="hover:text-white transition-colors">GH: @Doku566</a>
-        </div>
-    </div>
+    <!-- Minimalist Nav -->
+    <nav class="fixed top-0 w-full bg-bg/80 backdrop-blur-md border-b border-border z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="font-bold text-lg tracking-tight">DGH.</a>
 
-    <main class="max-w-6xl mx-auto pt-24 pb-20 px-6 relative z-10">
-
-        <!-- Hero Glow Overlay -->
-        <div
-            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-hero-glow opacity-60 pointer-events-none">
+            <div class="flex gap-6 text-sm font-medium text-muted">
+                <a href="#work" class="hover:text-white transition-colors">Work</a>
+                <a href="#about" class="hover:text-white transition-colors">Philosophy</a>
+                <a href="robotics.html" class="text-primary hover:text-blue-400 transition-colors">Robotics →</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </div>
         </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pt-32 pb-20">
+
+        <!-- Hero Section -->
+        <section class="mb-24">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+                Domingo González.
+            </h1>
+            <p class="text-xl md:text-2xl text-muted max-w-2xl leading-relaxed mb-8">
+                Software Engineer & Systems Architect. <br>
+                I build high-performance systems where <span class="text-white">every byte counts</span>.
+            </p>
+
+            <div class="flex gap-4">
+                <a href="#contact"
+                    class="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all">
+                    Get in Touch
+                </a>
+                <a href="#work" class="px-6 py-3 border border-border rounded-lg hover:border-white transition-all">
+                    View Work
+                </a>
+            </div>
+        </section>
 
         <!-- Engineering Philosophy -->
-        <section class="mb-32 relative">
-            <div class="mb-6">
-                <span
-                    class="text-cyan text-xs font-bold tracking-widest px-3 py-1 border border-cyan/30 rounded-full bg-cyan/5 backdrop-blur">
-                    PRINCIPAL ENGINEER CANDIDATE
-                </span>
-            </div>
-            <h1 class="text-6xl md:text-8xl font-bold mb-8 tracking-tighter leading-none">
-                <span class="text-white">Domingo</span><br>
-                <span class="text-gradient">González.</span>
-            </h1>
-
-            <div class="border-l-2 border-l-violet pl-6 py-2 mb-8 glass-panel rounded-r-xl p-6">
-                <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-neon animate-pulse"></span>
-                    Engineering Philosophy
-                </h3>
-                <p class="text-lg leading-relaxed max-w-3xl text-gray-300">
-                    I reject framework overhead. Whether it's custom memory arenas in <span
-                        class="text-cyan font-bold">C++</span> or manual Jacobians in
-                    <span class="text-fuchsia font-bold">Robotics</span>,
-                    I believe true performance comes from understanding the hardware, not abstracting it away.
-                </p>
-                <div class="mt-4 text-sm font-mono text-violet">
-                    const philosophy = "Deterministic behavior over magic.";
-                </div>
-
-                <!-- Hero CTA -->
-                <div class="mt-8">
-                    <a href="#contact"
-                        class="inline-flex items-center gap-2 px-6 py-3 bg-cyan/10 border border-cyan/50 text-cyan hover:bg-cyan/20 hover:scale-105 transition-all rounded text-sm font-bold tracking-widest backdrop-blur">
-                        <span>[ INITIATE_HOLOGRAPHIC_HANDSHAKE ]</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                        </svg>
-                    </a>
+        <section id="about" class="mb-32">
+            <h2 class="text-sm font-bold text-muted uppercase tracking-widest mb-8">Engineering Philosophy</h2>
+            <div class="bento-card p-8">
+                <blockquote class="text-xl font-medium leading-relaxed text-white mb-6">
+                    "I reject abstraction for the sake of convenience. Whether managing memory manually in C++ or
+                    optimizing control loops in robotics, I believe true performance comes from understanding the
+                    machine."
+                </blockquote>
+                <div class="flex gap-2">
+                    <span
+                        class="px-3 py-1 bg-surfaceHighlight border border-border rounded-full text-xs text-muted">Systems
+                        Programming</span>
+                    <span
+                        class="px-3 py-1 bg-surfaceHighlight border border-border rounded-full text-xs text-muted">Optimization</span>
+                    <span
+                        class="px-3 py-1 bg-surfaceHighlight border border-border rounded-full text-xs text-muted">Robotics</span>
                 </div>
             </div>
         </section>
 
-        <!-- Evidence Gallery: Software -->
-        <div class="mt-20">
-            <h3 class="text-xs font-bold text-gray-500 mb-6 tracking-[0.2em] flex items-center gap-4">
-                <span class="h-[1px] w-8 bg-gray-700"></span>
-                ARCHITECTURE & NOTEBOOKS
-                <span class="h-[1px] flex-1 bg-gray-700"></span>
-            </h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:h-32">
-                <!-- Photo 1 -->
-                <div
-                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-cyan/50 transition-all duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
-                    <img src="images/software/notebook_1.jpg" alt="Handwritten Architecture Notes"
-                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
-                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-cyan font-mono tracking-wider">
-                        > NOTEBOOK_SCAN_01
-                    </div>
-                </div>
-                <!-- Photo 2: Whiteboard -->
-                <div
-                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-violet/50 transition-all duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
-                    <img src="images/software/whiteboard_1.jpg" alt="System Design Whiteboard"
-                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
-                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-violet font-mono tracking-wider">
-                        > WHITEBOARD_DRAFT
-                    </div>
-                </div>
-                <!-- Photo 3: Terminal/Workstation -->
-                <div
-                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-fuchsia/50 transition-all duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
-                    <img src="images/software/setup_1.jpg" alt="Development Workstation"
-                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
-                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-fuchsia font-mono tracking-wider">
-                        > SYSTEM_TERMINAL
-                    </div>
-                </div>
-                <!-- Photo 4: Empty/Placeholder -->
-                <div
-                    class="group relative glass-panel border-dashed rounded-xl flex items-center justify-center text-xs text-gray-500 hover:text-cyan hover:border-cyan transition-all cursor-pointer">
-                    <span class="animate-pulse">[ UPLOAD_EVIDENCE ]</span>
-                </div>
-            </div>
-            <!-- Link to Raw Logs -->
-            <div class="mt-4 text-right">
-                <a href="evidence.html" class="text-xs text-accent hover:underline font-mono" target="_blank">
-                    [>> VIEW VERIFIED EXECUTION LOGS (TEST RESULTS)]
-                </a>
-            </div>
-        </div>
-        </section>
-
-        <!-- Technical Competency Table -->
-        <section class="mb-32 border-t border-border pt-12">
-            <h2 class="text-sm font-bold text-primary mb-8 tracking-widest uppercase">/// Core Competencies</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm border-collapse">
-                    <thead>
-                        <tr class="text-gray-500 border-b border-border">
-                            <th class="py-4 font-normal">Technology</th>
-                            <th class="py-4 font-normal">Internal Understanding Level</th>
-                            <th class="py-4 font-normal">Applied Context</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-gray-300">
-                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
-                            <td class="py-4 text-white font-bold">C++17/20</td>
-                            <td class="py-4">Deep (Manual Memory Mgmt, Pointer Arithmetic, Templates)</td>
-                            <td class="py-4 text-primary">EdgeCortex / NanoTensor</td>
-                        </tr>
-                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
-                            <td class="py-4 text-white font-bold">ROS 2</td>
-                            <td class="py-4">Advanced (Custom Nodes, Lifecycle Management, DDS tuning)</td>
-                            <td class="py-4 text-primary">OmniSLAM</td>
-                        </tr>
-                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
-                            <td class="py-4 text-white font-bold">Python Inference</td>
-                            <td class="py-4">Expert (GIL Release, Zero-Copy Buffers, C-Extensions)</td>
-                            <td class="py-4 text-primary">NexusRAG</td>
-                        </tr>
-                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
-                            <td class="py-4 text-white font-bold">Linear Algebra</td>
-                            <td class="py-4">Intermediate (Matrix Decomp, Jacobian Derivation)</td>
-                            <td class="py-4 text-primary">OmniSLAM EKF</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-
-        <!-- Documented Errors (The Scar) -->
+        <!-- Evidence Gallery (Sleek Grid) -->
         <section class="mb-32">
-            <h2 class="text-sm font-bold text-danger mb-4 tracking-widest uppercase">/// Error Log: Declassified</h2>
-            <div class="bg-gray-900/40 border border-red-900/30 p-6 rounded-lg">
-                <h3 class="text-white font-bold mb-2">Incident: Memory Leak in OmniSLAM EKF</h3>
-                <p class="text-sm text-gray-400 mb-4">
-                    <span class="text-red-400">STATUS: RESOLVED</span> | DATE: 2025-01-14 | TOOL: Valgrind
-                </p>
-                <p class="text-sm mb-4">
-                    During long-duration mapping tests, the ROS node crashed after ~45 minutes.
-                    Analysis revealed that the `PoseGraph` optimization loop was pushing new constraints to a
-                    `std::vector`
-                    without clearing the temporary residuals from the previous iteration.
-                </p>
-                <div class="bg-black p-3 rounded text-xs font-mono text-gray-500">
-                    Line 142: constraints_.push_back(new_constraint); <span class="text-red-500">// <-- LEAK: Never
-                            cleared old pointers</span><br>
-                            Fix: Implemented RAII wrapper and explicit `clear()` after optimization pass.
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-sm font-bold text-muted uppercase tracking-widest">Architecture & Process</h2>
+                <a href="evidence.html" class="text-xs text-primary hover:underline font-mono" target="_blank">View
+                    Execution Logs -></a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-48">
+                <!-- Gallery Item 1 -->
+                <div class="bento-card overflow-hidden relative group cursor-pointer">
+                    <img src="images/software/notebook_1.jpg" alt="Notebook"
+                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                    <div class="absolute bottom-0 left-0 p-3 w-full bg-gradient-to-t from-black/80 to-transparent">
+                        <span class="text-xs text-white font-mono">Notebook.scan</span>
+                    </div>
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="bento-card overflow-hidden relative group cursor-pointer">
+                    <img src="images/software/whiteboard_1.jpg" alt="Whiteboard"
+                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                    <div class="absolute bottom-0 left-0 p-3 w-full bg-gradient-to-t from-black/80 to-transparent">
+                        <span class="text-xs text-white font-mono">System_Design</span>
+                    </div>
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="bento-card overflow-hidden relative group cursor-pointer">
+                    <img src="images/software/setup_1.jpg" alt="Setup"
+                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                    <div class="absolute bottom-0 left-0 p-3 w-full bg-gradient-to-t from-black/80 to-transparent">
+                        <span class="text-xs text-white font-mono">Workstation</span>
+                    </div>
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="bento-card flex items-center justify-center border-dashed border-muted/30">
+                    <span class="text-xs text-muted">+ Add Evidence</span>
                 </div>
             </div>
         </section>
 
-        <!-- Project 4: NanoTensor (Flagship) -->
-        <section class="mb-32">
-            <h2 class="text-3xl font-bold text-header mb-8">04 / NanoTensor (Flagship)</h2>
-            <div class="bg-panel border border-border p-8 rounded-lg relative overflow-hidden">
-                <div
-                    class="absolute top-0 right-0 bg-primary/20 text-primary text-xs px-3 py-1 font-bold rounded-bl-lg">
-                    FROM SCRATCH
-                </div>
-                <div class="flex flex-col md:flex-row gap-8 mb-8">
-                    <div class="w-full">
-                        <p class="mb-6">
-                            A minimalist <strong>Transformer Inference Engine</strong> built to deconstruct LLMs.
-                            Features a manual implementation of <span class="text-white">Scaled Dot-Product
-                                Attention</span>
-                            and symmetric INT8 quantization. No PyTorch. No abstraction.
+        <!-- Selected Work (Bento Layout) -->
+        <section id="work" class="mb-32">
+            <h2 class="text-sm font-bold text-muted uppercase tracking-widest mb-8">Selected Work</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- NanoTensor (Flagship) -->
+                <div class="bento-card p-6 md:col-span-2 flex flex-col md:flex-row gap-8">
+                    <div class="flex-1">
+                        <div
+                            class="inline-block px-2 py-1 bg-surfaceHighlight rounded mb-4 text-xs font-mono text-primary">
+                            C++ 20</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">NanoTensor</h3>
+                        <p class="text-muted leading-relaxed mb-6">
+                            A from-scratch Transformer Inference Engine. Implements Scaled Dot-Product Attention and
+                            symmetric INT8 quantization without external machine learning frameworks.
                         </p>
-
-                        <div class="bg-code-bg p-4 rounded border border-gray-800 text-xs font-mono mb-6">
-                            <div class="text-gray-500 mb-2">// src/ops.cpp: The O(N^2) reality check</div>
-                            <div class="text-purple-400">void</div>
-                            <div class="text-blue-400 inline">scaled_dot_product_attention</div>(Q, K, V) {<br>
-                            &nbsp;&nbsp;<span class="text-gray-500">// 1. Scores = Q * K^T (Massive Memory
-                                Usage)</span><br>
-                            &nbsp;&nbsp;<span class="text-gray-500">// 128^2 is fine. 100k^2 crashes your
-                                laptop.</span><br>
-                            &nbsp;&nbsp;<div class="text-white inline">matmul</div>(Q, K, scores);<br>
-                            &nbsp;&nbsp;<div class="text-white inline">softmax</div>(scores);<br>
-                            &nbsp;&nbsp;<div class="text-white inline">matmul</div>(scores, V, output);<br>
-                            }
-                        </div>
-
-                        <div class="flex gap-4">
-                            <a href="https://github.com/Doku566/NanoTensor"
-                                class="text-primary hover:text-white border-b border-primary/30 hover:border-white transition-all text-sm">View
-                                Source -></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Earlier Projects (EdgeCortex etc) -->
-        <section class="mb-32">
-            <h2 class="text-3xl font-bold text-header mb-8">Projects 01-03</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                <a href="https://github.com/Doku566/EdgeCortex"
-                    class="block bg-panel p-6 rounded border border-border hover:border-primary transition-colors group">
-                    <span class="text-primary group-hover:text-white mb-2 block">01 / EdgeCortex</span>
-                    <p class="text-gray-500">Zero-Copy Inference Engine with custom MemoryArena.</p>
-                </a>
-                <a href="https://github.com/Doku566/OmniSLAM"
-                    class="block bg-panel p-6 rounded border border-border hover:border-primary transition-colors group">
-                    <span class="text-primary group-hover:text-white mb-2 block">02 / OmniSLAM</span>
-                    <p class="text-gray-500">Manual EKF & Graph-SLAM backend for ROS 2.</p>
-                </a>
-                <a href="https://github.com/Doku566/NexusRAG"
-                    class="block bg-panel p-6 rounded border border-border hover:border-primary transition-colors group">
-                    <span class="text-primary group-hover:text-white mb-2 block">03 / NexusRAG</span>
-                    <p class="text-gray-500">Async C++ Bridge for High-Throughput Retrieval.</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Contact Uplink (Recruiter Trap) -->
-        <section id="contact" class="mb-32">
-            <h2 class="text-sm font-bold text-cyan mb-8 tracking-widest uppercase flex items-center gap-2">
-                <span class="w-3 h-3 bg-cyan rounded-full animate-pulse"></span>
-                /// ESTABLISH_UPLINK
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Direct Comms -->
-                <div class="glass-panel p-8 rounded-xl border-l-4 border-l-cyan relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
-                        <svg class="w-24 h-24 text-cyan" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Direct Channel</h3>
-                    <p class="text-gray-400 mb-6 text-sm">Priority signal route open. Response time &lt; 24h.</p>
-
-                    <div
-                        class="bg-black/50 p-4 rounded border border-gray-800 flex items-center justify-between group-hover:border-cyan/50 transition-colors">
-                        <code class="text-cyan font-mono text-sm md:text-base">domingogghz245@gmail.com</code>
-                        <a href="mailto:domingogghz245@gmail.com" class="text-gray-500 hover:text-white">
-                            [SEND]
+                        <a href="https://github.com/Doku566/NanoTensor"
+                            class="text-sm font-medium text-white border-b border-white pb-0.5 hover:text-primary hover:border-primary transition-colors">
+                            View Repository
                         </a>
                     </div>
+                    <!-- Code Snippet Visual -->
+                    <div
+                        class="flex-1 bg-black rounded-lg p-4 border border-border font-mono text-xs text-gray-400 overflow-hidden">
+                        <div class="text-gray-500 mb-2">// Custom Attention Kernel</div>
+                        <div class="text-purple-400">void</div> attention(Q, K, V) {<br>
+                        &nbsp;&nbsp;<span class="text-green-500">// Zero-copy matrix multiplication</span><br>
+                        &nbsp;&nbsp;gemm(Q, K, scores); <br>
+                        &nbsp;&nbsp;softmax(scores);<br>
+                        &nbsp;&nbsp;gemm(scores, V, out);<br>
+                        }
+                    </div>
                 </div>
 
-                <!-- Network Grid -->
+                <!-- EdgeCortex -->
+                <div class="bento-card p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">EdgeCortex</h3>
+                    <p class="text-sm text-muted mb-4">
+                        Zero-copy inference engine optimized for low-latency environments. Features a custom MemoryArena
+                        for strictly deterministic allocation.
+                    </p>
+                    <a href="https://github.com/Doku566/EdgeCortex"
+                        class="text-xs text-white opacity-70 hover:opacity-100 transition-opacity">
+                        github.com/EdgeCortex ↗
+                    </a>
+                </div>
+
+                <!-- NexusRAG -->
+                <div class="bento-card p-6">
+                    <h3 class="text-xl font-bold text-white mb-2">NexusRAG</h3>
+                    <p class="text-sm text-muted mb-4">
+                        Asynchronous C++ bridge for RAG pipelines. Handles high-throughput vector retrieval without
+                        Python GIL blocking.
+                    </p>
+                    <a href="https://github.com/Doku566/NexusRAG"
+                        class="text-xs text-white opacity-70 hover:opacity-100 transition-opacity">
+                        github.com/NexusRAG ↗
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-20">
+            <h2 class="text-sm font-bold text-muted uppercase tracking-widest mb-8">Get in Touch</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Email Card -->
+                <div class="bento-card p-8">
+                    <h3 class="text-lg font-bold text-white mb-4">Direct Contact</h3>
+                    <p class="text-muted mb-6">Open for opportunities in Systems Engineering and Robotics.</p>
+                    <a href="mailto:domingogghz245@gmail.com"
+                        class="text-xl font-medium text-white hover:text-primary transition-colors break-words">
+                        domingogghz245@gmail.com
+                    </a>
+                </div>
+
+                <!-- Social Links -->
                 <div class="space-y-4">
-                    <!-- LinkedIn -->
-                    <a href="https://linkedin.com" target="_blank"
-                        class="block glass-panel p-6 rounded-xl hover:border-violet transition-all group flex items-center justify-between">
-                        <div>
-                            <span class="text-violet font-bold block mb-1">LINKEDIN_PROFILE</span>
-                            <span class="text-xs text-gray-500">Professional History & Endorsements</span>
-                        </div>
-                        <div class="bg-violet/10 p-2 rounded text-violet group-hover:bg-violet/20">
-                            ↗
-                        </div>
+                    <a href="https://linkedin.com" class="bento-card p-6 block flex items-center justify-between group">
+                        <span class="font-medium text-white">LinkedIn</span>
+                        <span class="text-muted group-hover:text-white transition-colors">↗</span>
                     </a>
-
-                    <!-- GitHub -->
-                    <a href="https://github.com/Doku566" target="_blank"
-                        class="block glass-panel p-6 rounded-xl hover:border-white transition-all group flex items-center justify-between">
-                        <div>
-                            <span class="text-white font-bold block mb-1">GITHUB_REPOSITORY</span>
-                            <span class="text-xs text-gray-500">Source Code & Contribution Graph</span>
-                        </div>
-                        <div class="bg-white/10 p-2 rounded text-white group-hover:bg-white/20">
-                            ↗
-                        </div>
+                    <a href="https://github.com/Doku566"
+                        class="bento-card p-6 block flex items-center justify-between group">
+                        <span class="font-medium text-white">GitHub</span>
+                        <span class="text-muted group-hover:text-white transition-colors">↗</span>
                     </a>
                 </div>
             </div>
         </section>
 
-        <!-- GitHub Activity (Keep existing) -->
-        <section class="mb-32">
-            <h2 class="text-sm font-bold text-primary mb-8 tracking-widest uppercase">/// Latest Transmission</h2>
-            <div id="github-feed"
-                class="space-y-4 font-mono text-sm max-w-2xl bg-panel p-6 rounded border border-border">
-                <div class="flex gap-4 items-center animate-pulse">
-                    <span class="text-green-500">>></span>
-                    <span>Accessing GitHub Mainframe...</span>
-                </div>
-            </div>
-        </section>
-
-        <footer class="text-center text-xs text-text py-12 border-t border-border mt-12">
-            <p>DESIGNED_BY: Doku566 // SYSTEM: NORMAL</p>
+        <footer class="border-t border-border pt-8 pb-12 flex justify-between items-center text-xs text-muted">
+            <p>&copy; 2026 Domingo González Hernández.</p>
+            <p>Built with Precision.</p>
         </footer>
 
     </main>
-
-    <script src="script.js"></script>
 </body>
 
 </html>

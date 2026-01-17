@@ -2,32 +2,38 @@
 <html lang="en" class="scroll-smooth">
 
 <head>
-    <!-- RECRUITER_NOTE: Optimized for minimal latency field access. -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DGH | Robotics & Automation</title>
+    <title>Domingo González | Robotics Engineer</title>
     <meta name="description"
         content="Domingo González Hernández - Robotics Engineer. ROS 2, Sensor Fusion, Real-time Control.">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
-                fontFamily: { mono: ['"JetBrains Mono"', 'monospace'], sans: ['"Inter"', 'sans-serif'] },
+                fontFamily: {
+                    sans: ['"Inter"', 'sans-serif'],
+                    mono: ['"JetBrains Mono"', 'monospace'],
+                },
                 extend: {
                     colors: {
-                        bg: '#0a0a09', // Warmer dark
-                        panel: '#121211',
-                        border: '#2a2a28',
-                        // Industrial Vivid Palette
-                        amber: '#f59e0b',
-                        orange: '#f97316',
-                        red: '#ef4444',
-                        hazard: '#eab308' // Yellow
-                    },
-                    backgroundImage: {
-                        'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #f59e0b10 0deg, #ef444410 50%, #f9731610 100%)',
+                        bg: '#050505',
+                        surface: '#121212',
+                        surfaceHighlight: '#1A1A1A',
+                        border: '#2A2A2A',
+                        primary: '#F59E0B', // Professional Amber/Orange for Robotics
+                        text: '#E5E5E5',
+                        muted: '#A3A3A3',
                     }
                 }
             }
@@ -35,327 +41,166 @@
     </script>
     <style>
         body {
-            background-color: #0a0a09;
-            color: #d4d4d8;
-            background-image:
-                repeating-linear-gradient(45deg, #18181b 0, #18181b 1px, transparent 0, transparent 50%);
-            background-size: 20px 20px;
-            background-attachment: fixed;
+            background-color: #050505;
+            color: #E5E5E5;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Glassmorphism */
-        .glass-panel {
-            background: rgba(18, 18, 17, 0.7);
-            backdrop-filter: blur(8px);
-            border: 1px solid rgba(245, 158, 11, 0.1);
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+        .bento-card {
+            background-color: #121212;
+            border: 1px solid #2A2A2A;
+            border-radius: 12px;
+            transition: all 0.2s ease-in-out;
         }
 
-        .glass-panel:hover {
-            border-color: rgba(245, 158, 11, 0.4);
-            box-shadow: 0 0 30px rgba(245, 158, 11, 0.1);
-        }
-
-        .text-gradient-hazard {
-            background: linear-gradient(to right, #f59e0b, #ef4444);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .bento-card:hover {
+            border-color: #404040;
+            background-color: #161616;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 
-<body class="font-mono antialiased selection:bg-primary/20 selection:text-primary">
+<body class="selection:bg-primary/20 selection:text-white">
 
-    <!-- Telemetry Bar -->
-    <div
-        class="fixed top-0 w-full bg-bg/90 backdrop-blur border-b border-border z-50 text-xs px-6 h-10 flex items-center justify-between">
-        <div class="flex gap-6">
-            <span class="text-primary">● ROBOTICS_MODULE_ACTIVE</span>
-            <span>BAT: 98%</span>
-            <span>LINK: 24ms</span>
-        </div>
-        <div class="flex gap-4">
-            <a href="#contact"
-                class="text-white hover:text-amber transition-colors border-b border-white hover:border-amber font-bold animate-pulse">
-                [ ! CONTACT_SIGNAL ]
-            </a>
-            <a href="index.html"
-                class="text-white hover:text-primary transition-colors border-b border-white hover:border-primary">
-                [<< RETURN TO SOFTWARE CORE] </a>
-        </div>
-    </div>
+    <!-- Minimalist Nav -->
+    <nav class="fixed top-0 w-full bg-bg/80 backdrop-blur-md border-b border-border z-50">
+        <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-bold text-lg tracking-tight hover:text-white transition-colors">DGH.</a>
 
-    <main class="max-w-5xl mx-auto pt-24 pb-20 px-6">
-
-        <!-- Hero -->
-        <section class="mb-32 relative">
-            <div class="mb-6">
-                <span
-                    class="text-amber text-xs font-bold tracking-widest px-3 py-1 border border-amber/30 rounded-full bg-amber/5 backdrop-blur animate-pulse">
-                    AUTOMATION & CONTROL SPECIALIST
-                </span>
+            <div class="flex gap-6 text-sm font-medium text-muted">
+                <a href="index.html" class="hover:text-white transition-colors">← Software Core</a>
+                <span class="text-primary cursor-default">Robotics Module</span>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
             </div>
-            <h1 class="text-6xl md:text-8xl font-bold mb-8 tracking-tighter leading-none">
-                <span class="text-white">Domingo</span><br>
-                <span class="text-gradient-hazard">González.</span>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pt-32 pb-20">
+
+        <!-- Hero Section -->
+        <section class="mb-24">
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-white">
+                Autonomous Systems.
             </h1>
+            <p class="text-xl md:text-2xl text-muted max-w-2xl leading-relaxed mb-8">
+                Building robust navigation stacks and real-time control loops where <span class="text-white">safety is
+                    calculated, not guessed</span>.
+            </p>
 
-            <div class="border-l-2 border-l-red pl-6 py-2 mb-8 glass-panel rounded-r-xl p-6">
-                <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
-                    <span class="w-2 h-2 rounded-full bg-red animate-ping"></span>
-                    Field Philosophy
-                </h3>
-                <p class="text-lg leading-relaxed max-w-3xl text-gray-300">
-                    Software crashes cost seconds; <span class="text-red font-bold">Robot crashes cost hardware</span>.
-                    I build robust navigation stacks and real-time control loops where safety margins are calculated,
-                    not guessed.
-                </p>
-                <div class="mt-4 text-sm font-mono text-amber">
-                    assert(safety_margin >= 3.0); // Physics is the ultimate edge case.
-                </div>
-
-                <!-- Hero CTA -->
-                <div class="mt-8">
-                    <a href="#contact"
-                        class="inline-flex items-center gap-2 px-6 py-3 bg-amber/10 border border-amber/50 text-amber hover:bg-amber/20 hover:scale-105 transition-all rounded text-sm font-bold tracking-widest backdrop-blur">
-                        <span>[ ESTABLISH_FIELD_COMMS ]</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Evidence Gallery: Robotics -->
-        <div class="mt-20">
-            <h3 class="text-xs font-bold text-gray-500 mb-6 tracking-[0.2em] flex items-center gap-4">
-                <span class="h-[1px] w-8 bg-gray-700"></span>
-                FIELD EVIDENCE & PROTOTYPES
-                <span class="h-[1px] flex-1 bg-gray-700"></span>
-            </h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:h-32">
-                <!-- Photo 1 -->
-                <div
-                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-amber/50 transition-all duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
-                    <img src="images/robotics/vex_bot_1.jpg" alt="VEX Competition Robot"
-                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
-                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-amber font-mono tracking-wider">
-                        > VEX_WORLDS_BOT
-                    </div>
-                </div>
-                <!-- Photo 2 -->
-                <div
-                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-orange/50 transition-all duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
-                    <img src="images/robotics/wiring_1.jpg" alt="Custom Wiring"
-                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
-                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-orange font-mono tracking-wider">
-                        > CUSTOM_PCB_ROUTING
-                    </div>
-                </div>
-                <!-- Photo 3 -->
-                <div
-                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-red/50 transition-all duration-300">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
-                    <img src="images/robotics/field_test.jpg" alt="Field Test"
-                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
-                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-red font-mono tracking-wider">
-                        > LIDAR_FIELD_TEST
-                    </div>
-                </div>
-                <!-- Photo 4 -->
-                <div
-                    class="group relative glass-panel border-dashed rounded-xl flex items-center justify-center text-xs text-gray-500 hover:text-amber hover:border-amber transition-all cursor-pointer">
-                    <span class="animate-pulse">[ UPLOAD_HARDWARE_PIC ]</span>
-                </div>
-            </div>
-            <!-- Link to Raw Logs -->
-            <div class="mt-4 text-right">
-                <a href="evidence.html" class="text-xs text-amber hover:underline font-mono" target="_blank">
-                    [>> VIEW VERIFIED EXECUTION LOGS (TEST RESULTS)]
+            <div class="flex gap-4">
+                <a href="#projects"
+                    class="px-6 py-3 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-all">
+                    View Projects
                 </a>
             </div>
-        </div>
         </section>
 
-        <!-- Robotics Competency Table -->
-        <section class="mb-32 border-t border-border pt-12">
-            <h2 class="text-sm font-bold text-primary mb-8 tracking-widest uppercase">/// Hardware & Control Stack</h2>
-            <div class="overflow-x-auto">
-                <table class="w-full text-left text-sm border-collapse">
-                    <thead>
-                        <tr class="text-gray-500 border-b border-border">
-                            <th class="py-4 font-normal">Domain</th>
-                            <th class="py-4 font-normal">Tool / Tech</th>
-                            <th class="py-4 font-normal">Proficiency Profile</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-gray-300">
-                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
-                            <td class="py-4 text-white font-bold">Control Systems</td>
-                            <td class="py-4 text-primary">LabVIEW / PID tuning</td>
-                            <td class="py-4">Design of VI architectures, Real-time DAQ, Closed-loop tuning.</td>
-                        </tr>
-                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
-                            <td class="py-4 text-white font-bold">Mechanical Design</td>
-                            <td class="py-4 text-primary">CAD (SolidWorks / Fusion 360)</td>
-                            <td class="py-4">3D Modeling for rapid prototyping, tolerance analysis.</td>
-                        </tr>
-                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
-                            <td class="py-4 text-white font-bold">Navigation</td>
-                            <td class="py-4 text-primary">ROS 2 / Slam Toolbox</td>
-                            <td class="py-4">Implementation of A*, Dijkstra, and Adaptive Monte Carlo Localization
-                                (AMCL).</td>
-                        </tr>
-                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
-                            <td class="py-4 text-white font-bold">Embedded</td>
-                            <td class="py-4 text-primary">Sensors / Microcontrollers</td>
-                            <td class="py-4">Integration of LiDAR, IMU, Encoders via I2C/SPI/UART.</td>
-                        </tr>
-                    </tbody>
-                </table>
+        <!-- Technical Competency -->
+        <section class="mb-32">
+            <h2 class="text-sm font-bold text-muted uppercase tracking-widest mb-8">Core Stack</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bento-card p-4">
+                    <div class="text-primary font-bold mb-1">ROS 2</div>
+                    <div class="text-xs text-muted">Navigation, Nodes</div>
+                </div>
+                <div class="bento-card p-4">
+                    <div class="text-primary font-bold mb-1">C++</div>
+                    <div class="text-xs text-muted">Real-time Control</div>
+                </div>
+                <div class="bento-card p-4">
+                    <div class="text-primary font-bold mb-1">SLAM</div>
+                    <div class="text-xs text-muted">EKF, Graph Opt</div>
+                </div>
+                <div class="bento-card p-4">
+                    <div class="text-primary font-bold mb-1">Design</div>
+                    <div class="text-xs text-muted">Fusion 360, PCB</div>
+                </div>
             </div>
         </section>
 
-        <!-- Project: OmniSLAM (Robotics Focus) -->
+        <!-- Field Evidence Gallery -->
         <section class="mb-32">
-            <h2 class="text-3xl font-bold text-header mb-8">01 / OmniSLAM: Autonomous Navigation</h2>
-            <div class="bg-panel border border-border p-8 rounded-lg">
-                <div class="flex flex-col gap-6">
-                    <p class="text-text">
-                        A from-scratch implementation of Graph-SLAM for Differential Drive Robots.
-                        While standard libraries exists, I re-derived the mathematics to ensure optimal state estimation
-                        under noisy sensor conditions.
+            <div class="flex items-center justify-between mb-8">
+                <h2 class="text-sm font-bold text-muted uppercase tracking-widest">Field Prototypes</h2>
+                <a href="evidence.html" class="text-xs text-primary hover:underline font-mono" target="_blank">View Test
+                    Logs -></a>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-48">
+                <!-- Gallery Item 1 -->
+                <div class="bento-card overflow-hidden relative group cursor-pointer">
+                    <img src="images/robotics/vex_bot_1.jpg" alt="VEX Bot"
+                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                </div>
+                <!-- Gallery Item 2 -->
+                <div class="bento-card overflow-hidden relative group cursor-pointer">
+                    <img src="images/robotics/wiring_1.jpg" alt="Wiring"
+                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                </div>
+                <!-- Gallery Item 3 -->
+                <div class="bento-card overflow-hidden relative group cursor-pointer">
+                    <img src="images/robotics/field_test.jpg" alt="Lidar Test"
+                        class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-all">
+                </div>
+                <!-- Gallery Item 4 -->
+                <div class="bento-card flex items-center justify-center border-dashed border-muted/30">
+                    <span class="text-xs text-muted">+ Add Hardware</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="mb-32">
+            <h2 class="text-sm font-bold text-muted uppercase tracking-widest mb-8">Key Projects</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- OmniSLAM -->
+                <div class="bento-card p-6 md:col-span-2">
+                    <div class="inline-block px-2 py-1 bg-surfaceHighlight rounded mb-4 text-xs font-mono text-primary">
+                        ROS 2</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">OmniSLAM</h3>
+                    <p class="text-muted leading-relaxed mb-6">
+                        A custom Graph-SLAM implementation for differential drive robots. Re-derived EKF mathematics for
+                        sensor fusion (LiDAR + Odometry) to ensure optimal state estimation in noisy environments.
                     </p>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="p-4 border border-border rounded bg-code-bg">
-                            <h4 class="text-primary font-bold text-sm mb-2">Sensor Fusion (EKF)</h4>
-                            <ul class="list-disc pl-4 text-xs space-y-2 text-gray-400">
-                                <li><strong>Input 1:</strong> Wheel Odometry (High freq, drift prone)</li>
-                                <li><strong>Input 2:</strong> 2D LiDAR Scan (Low freq, accurate)</li>
-                                <li><strong>Output:</strong> Drift-corrected Pose (x, y, theta)</li>
-                            </ul>
-                        </div>
-                        <div class="p-4 border border-border rounded bg-code-bg">
-                            <h4 class="text-primary font-bold text-sm mb-2">Control Logic</h4>
-                            <div class="font-mono text-xs text-green-400">
-                                Error = Target - Current<br>
-                                Cmd_Vel = (Kp * Error) + (Kd * dError/dt)
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- VEX Robotics Legacy -->
-        <section class="mb-32">
-            <h2 class="text-3xl font-bold text-header mb-8">02 / Competitive Robotics</h2>
-            <div class="bg-panel border border-border p-8 rounded-lg relative">
-                <div class="absolute top-0 right-0 bg-primary text-black text-xs px-3 py-1 font-bold rounded-bl-lg">
-                    INTERNATIONAL CHAMPION
-                </div>
-                <h3 class="text-xl font-bold text-white mb-4">VEX U Programming Skills</h3>
-                <p class="text-sm text-gray-400 mb-6">
-                    Achieved top rankings through rigorous optimization of autonomous routines.
-                    Developed stateless autonomous functions to ensure reliability during the 15-second autonomous
-                    period.
-                </p>
-                <div class="flex gap-2">
-                    <span class="px-2 py-1 bg-gray-800 text-xs text-gray-300 rounded border border-gray-700">C++
-                        PROS</span>
-                    <span class="px-2 py-1 bg-gray-800 text-xs text-gray-300 rounded border border-gray-700">Motion
-                        Profiling</span>
-                    <span class="px-2 py-1 bg-gray-800 text-xs text-gray-300 rounded border border-gray-700">Odometry
-                        Tracking</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- Language Skills -->
-        <section class="mb-32">
-            <h2 class="text-sm font-bold text-primary mb-4 tracking-widest uppercase">/// Communication Protocols</h2>
-            <div class="grid grid-cols-2 gap-4 max-w-md">
-                <div class="p-4 border border-border rounded">
-                    <div class="text-white font-bold">Spanish</div>
-                    <div class="text-xs text-gray-500">Native (Full Professional Proficiency)</div>
-                </div>
-                <div class="p-4 border border-border rounded">
-                    <div class="text-white font-bold">English</div>
-                    <div class="text-xs text-gray-500">Basic / Technical (Documentation Read/Write)</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Uplink (Robot Trap) -->
-        <section id="contact" class="mb-32">
-            <h2 class="text-sm font-bold text-amber mb-8 tracking-widest uppercase flex items-center gap-2">
-                <span class="w-3 h-3 bg-amber rounded-full animate-pulse"></span>
-                /// OPEN_FREQUENCY
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Direct Comms -->
-                <div class="glass-panel p-8 rounded-xl border-l-4 border-l-amber relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
-                        <svg class="w-24 h-24 text-amber" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold text-white mb-2">Priority Channel</h3>
-                    <p class="text-gray-400 mb-6 text-sm">Hardware inquiries & Field Ops. Standby.</p>
-
-                    <div
-                        class="bg-black/50 p-4 rounded border border-gray-800 flex items-center justify-between group-hover:border-amber/50 transition-colors">
-                        <code class="text-amber font-mono text-sm md:text-base">domingogghz245@gmail.com</code>
-                        <a href="mailto:domingogghz245@gmail.com" class="text-gray-500 hover:text-white">
-                            [TRANSMIT]
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Network Grid -->
-                <div class="space-y-4">
-                    <!-- LinkedIn -->
-                    <a href="https://linkedin.com" target="_blank"
-                        class="block glass-panel p-6 rounded-xl hover:border-orange transition-all group flex items-center justify-between">
-                        <div>
-                            <span class="text-orange font-bold block mb-1">LINKEDIN_PROFILE</span>
-                            <span class="text-xs text-gray-500">Professional Network</span>
-                        </div>
-                        <div class="bg-orange/10 p-2 rounded text-orange group-hover:bg-orange/20">
-                            ↗
-                        </div>
-                    </a>
-
-                    <!-- GitHub -->
-                    <a href="https://github.com/Doku566" target="_blank"
-                        class="block glass-panel p-6 rounded-xl hover:border-red transition-all group flex items-center justify-between">
-                        <div>
-                            <span class="text-red font-bold block mb-1">GITHUB_REPOSITORY</span>
-                            <span class="text-xs text-gray-500">Codebase Access</span>
-                        </div>
-                        <div class="bg-red/10 p-2 rounded text-red group-hover:bg-red/20">
-                            ↗
-                        </div>
+                    <a href="https://github.com/Doku566/OmniSLAM"
+                        class="text-sm font-medium text-white border-b border-white pb-0.5 hover:text-primary hover:border-primary transition-colors">
+                        View Repository
                     </a>
                 </div>
+
+                <!-- VEX U -->
+                <div class="bento-card p-6 md:col-span-2">
+                    <div class="inline-block px-2 py-1 bg-surfaceHighlight rounded mb-4 text-xs font-mono text-primary">
+                        Competition</div>
+                    <h3 class="text-2xl font-bold text-white mb-2">VEX U Robotics</h3>
+                    <p class="text-muted leading-relaxed mb-6">
+                        International competitor. Developed stateless autonomous routines achieving top rankings.
+                        Focused on motion profiling and odometry tracking for 15-second autonomous periods.
+                    </p>
+                </div>
             </div>
         </section>
 
-        <!-- Earlier Projects (EdgeCortex etc) -->
-        <!-- Wait, I need to place this before Language Skills or footer. Let's place it before footer. -->
-        <!-- Oops, I replaced "Language Skills" section in the target content?  No, the TargetContent I chose below is near the footer. -->
-        <footer class="text-center text-xs text-text py-12 border-t border-border mt-12">
-            <a href="index.html" class="text-primary hover:text-white transition-colors">SWITCH TO SOFTWARE ENGINEER
-                VIEW</a>
+        <!-- Contact Section -->
+        <section id="contact" class="mb-20">
+            <h2 class="text-sm font-bold text-muted uppercase tracking-widest mb-8">Contact Uplink</h2>
+
+            <div class="bento-card p-8 flex flex-col items-center text-center">
+                <h3 class="text-xl font-bold text-white mb-4">Ready to Deploy?</h3>
+                <p class="text-muted mb-8 max-w-md">Currently available for roles in Robotics Software Engineering and
+                    Embedded Control.</p>
+                <a href="mailto:domingogghz245@gmail.com"
+                    class="px-8 py-4 bg-primary text-black font-bold rounded-lg hover:bg-yellow-400 transition-all">
+                    Email: domingogghz245@gmail.com
+                </a>
+            </div>
+        </section>
+
+        <footer class="border-t border-border pt-8 pb-12 flex justify-between items-center text-xs text-muted">
+            <p>&copy; 2026 Domingo González Hernández.</p>
+            <a href="index.html" class="hover:text-white">Return to Software</a>
         </footer>
 
     </main>

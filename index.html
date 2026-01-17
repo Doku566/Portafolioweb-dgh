@@ -12,34 +12,31 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Fonts: JetBrains Mono for that IDE feel -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Chart.js for Benchmarks -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script>
         tailwind.config = {
             theme: {
                 fontFamily: {
                     mono: ['"JetBrains Mono"', 'monospace'],
-                    sans: ['"JetBrains Mono"', 'monospace'],
+                    sans: ['"Inter"', 'sans-serif'], // Added Inter for cleaner headers if needed
                 },
                 extend: {
                     colors: {
-                        bg: '#0a0a0a',
-                        panel: '#111111',
-                        border: '#333333',
-                        primary: '#3b82f6',
-                        accent: '#10b981',
-                        danger: '#ef4444',
-                        text: '#a1a1aa',
-                        header: '#e4e4e7',
-                        'code-bg': '#000000',
+                        bg: '#050505', // Darker void
+                        panel: '#0f0f12', // Slightly blue-tinted dark
+                        border: '#27272a',
+                        // Vivid Palette
+                        cyan: '#06b6d4',
+                        violet: '#8b5cf6',
+                        fuchsia: '#d946ef',
+                        neon: '#00ff9d',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #06b6d410 0deg, #8b5cf610 50%, #d946ef10 100%)',
+                        'card-grad': 'linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%)',
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
             }
@@ -47,26 +44,53 @@
     </script>
     <style>
         body {
-            background-color: #0a0a0a;
-            color: #a1a1aa;
+            background-color: #050505;
+            color: #d4d4d8;
+            background-image:
+                radial-gradient(circle at 50% 0%, #1e1b4b 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, #2e1065 0%, transparent 30%);
+            background-attachment: fixed;
         }
 
+        /* Glassmorphism Utilities */
+        .glass-panel {
+            background: rgba(15, 15, 18, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-panel:hover {
+            border-color: rgba(6, 182, 212, 0.4);
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+        }
+
+        /* Vivid Gradients */
+        .text-gradient {
+            background: linear-gradient(to right, #06b6d4, #8b5cf6, #d946ef);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .border-gradient-bottom {
+            border-bottom: 1px solid;
+            border-image: linear-gradient(to right, #06b6d4, #8b5cf6) 1;
+        }
+
+        /* Scrollbar */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
         }
 
         ::-webkit-scrollbar-track {
-            background: #0a0a0a;
+            background: #050505;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #333;
-            border: 2px solid #0a0a0a;
+            background: linear-gradient(to bottom, #06b6d4, #8b5cf6);
             border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #444;
         }
     </style>
 </head>
@@ -91,74 +115,94 @@
         </div>
     </div>
 
-    <main class="max-w-5xl mx-auto pt-24 pb-20 px-6">
+    <main class="max-w-6xl mx-auto pt-24 pb-20 px-6 relative z-10">
+
+        <!-- Hero Glow Overlay -->
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-hero-glow opacity-60 pointer-events-none">
+        </div>
 
         <!-- Engineering Philosophy -->
-        <section class="mb-32">
+        <section class="mb-32 relative">
             <div class="mb-6">
-                <span class="text-primary text-sm px-2 py-1 border border-primary/30 rounded bg-primary/10">Principal
-                    Engineer Candidate</span>
+                <span
+                    class="text-cyan text-xs font-bold tracking-widest px-3 py-1 border border-cyan/30 rounded-full bg-cyan/5 backdrop-blur">
+                    PRINCIPAL ENGINEER CANDIDATE
+                </span>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-header mb-8 tracking-tight">
-                Domingo<br>González Hernández.
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 tracking-tighter leading-none">
+                <span class="text-white">Domingo</span><br>
+                <span class="text-gradient">González.</span>
             </h1>
 
-            <div class="border-l-4 border-primary pl-6 py-2 mb-8">
-                <h3 class="text-lg font-bold text-white mb-2">Engineering Philosophy</h3>
-                <p class="text-lg leading-relaxed max-w-3xl text-text">
-                    I reject framework overhead. Whether it's custom memory arenas in C++ or manual Jacobians in
-                    Robotics,
-                    I believe true performance comes from understanding the hardware, not abstracting it away.
-                    <br><br>
-                    <span class="text-white italic">"Deterministic behavior over magic."</span>
-                </p>
-            </div>
-
-            <!-- Evidence Gallery: Software -->
-            <div class="mt-16">
-                <h3 class="text-sm font-bold text-gray-500 uppercase mb-6 tracking-widest">/// Architecture & Notebooks
+            <div class="border-l-2 border-l-violet pl-6 py-2 mb-8 glass-panel rounded-r-xl p-6">
+                <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-neon animate-pulse"></span>
+                    Engineering Philosophy
                 </h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:h-32">
-                    <!-- Photo 1: Notebook -->
-                    <div
-                        class="group relative bg-panel border border-border rounded overflow-hidden aspect-video md:aspect-auto hover:border-primary transition-all">
-                        <img src="images/software/notebook_1.jpg" alt="Handwritten Architecture Notes"
-                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                        <div class="absolute bottom-0 left-0 bg-black/80 text-[10px] text-white px-2 py-1 w-full">
-                            NOTEBOOK_SCAN_01.PNG
-                        </div>
-                    </div>
-                    <!-- Photo 2: Whiteboard -->
-                    <div
-                        class="group relative bg-panel border border-border rounded overflow-hidden aspect-video md:aspect-auto hover:border-primary transition-all">
-                        <img src="images/software/whiteboard_1.jpg" alt="System Design Whiteboard"
-                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                        <div class="absolute bottom-0 left-0 bg-black/80 text-[10px] text-white px-2 py-1 w-full">
-                            WHITEBOARD_DRAFT.JPG
-                        </div>
-                    </div>
-                    <!-- Photo 3: Terminal/Workstation -->
-                    <div
-                        class="group relative bg-panel border border-border rounded overflow-hidden aspect-video md:aspect-auto hover:border-primary transition-all">
-                        <img src="images/software/setup_1.jpg" alt="Development Workstation"
-                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                        <div class="absolute bottom-0 left-0 bg-black/80 text-[10px] text-white px-2 py-1 w-full">
-                            WS_TERMINAL_VIEW.JPG
-                        </div>
-                    </div>
-                    <!-- Photo 4: Empty/Placeholder -->
-                    <div
-                        class="group relative bg-panel border border-border border-dashed rounded flex items-center justify-center text-xs text-gray-600 hover:text-primary hover:border-primary transition-all cursor-pointer">
-                        <span>[UPLOAD_EVIDENCE]</span>
-                    </div>
-                </div>
-                <!-- Link to Raw Logs -->
-                <div class="mt-4 text-right">
-                    <a href="evidence.html" class="text-xs text-accent hover:underline font-mono" target="_blank">
-                        [>> VIEW VERIFIED EXECUTION LOGS (TEST RESULTS)]
-                    </a>
+                <p class="text-lg leading-relaxed max-w-3xl text-gray-300">
+                    I reject framework overhead. Whether it's custom memory arenas in <span
+                        class="text-cyan font-bold">C++</span> or manual Jacobians in
+                    <span class="text-fuchsia font-bold">Robotics</span>,
+                    I believe true performance comes from understanding the hardware, not abstracting it away.
+                </p>
+                <div class="mt-4 text-sm font-mono text-violet">
+                    const philosophy = "Deterministic behavior over magic.";
                 </div>
             </div>
+        </section>
+
+        <!-- Evidence Gallery: Software -->
+        <div class="mt-20">
+            <h3 class="text-xs font-bold text-gray-500 mb-6 tracking-[0.2em] flex items-center gap-4">
+                <span class="h-[1px] w-8 bg-gray-700"></span>
+                ARCHITECTURE & NOTEBOOKS
+                <span class="h-[1px] flex-1 bg-gray-700"></span>
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:h-32">
+                <!-- Photo 1 -->
+                <div
+                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-cyan/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
+                    <img src="images/software/notebook_1.jpg" alt="Handwritten Architecture Notes"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-cyan font-mono tracking-wider">
+                        > NOTEBOOK_SCAN_01
+                    </div>
+                </div>
+                <!-- Photo 2: Whiteboard -->
+                <div
+                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-violet/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
+                    <img src="images/software/whiteboard_1.jpg" alt="System Design Whiteboard"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-violet font-mono tracking-wider">
+                        > WHITEBOARD_DRAFT
+                    </div>
+                </div>
+                <!-- Photo 3: Terminal/Workstation -->
+                <div
+                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-fuchsia/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
+                    <img src="images/software/setup_1.jpg" alt="Development Workstation"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-fuchsia font-mono tracking-wider">
+                        > SYSTEM_TERMINAL
+                    </div>
+                </div>
+                <!-- Photo 4: Empty/Placeholder -->
+                <div
+                    class="group relative glass-panel border-dashed rounded-xl flex items-center justify-center text-xs text-gray-500 hover:text-cyan hover:border-cyan transition-all cursor-pointer">
+                    <span class="animate-pulse">[ UPLOAD_EVIDENCE ]</span>
+                </div>
+            </div>
+            <!-- Link to Raw Logs -->
+            <div class="mt-4 text-right">
+                <a href="evidence.html" class="text-xs text-accent hover:underline font-mono" target="_blank">
+                    [>> VIEW VERIFIED EXECUTION LOGS (TEST RESULTS)]
+                </a>
+            </div>
+        </div>
         </section>
 
         <!-- Technical Competency Table -->

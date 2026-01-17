@@ -9,19 +9,25 @@
     <meta name="description"
         content="Domingo González Hernández - Robotics Engineer. ROS 2, Sensor Fusion, Real-time Control.">
 
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap"
-        rel="stylesheet">
-
     <script>
         tailwind.config = {
             theme: {
-                fontFamily: { mono: ['"JetBrains Mono"', 'monospace'], sans: ['"JetBrains Mono"', 'monospace'] },
+                fontFamily: { mono: ['"JetBrains Mono"', 'monospace'], sans: ['"Inter"', 'sans-serif'] },
                 extend: {
                     colors: {
-                        bg: '#0a0a0a', panel: '#111111', border: '#333333',
-                        primary: '#f59e0b', // Amber/Orange for "Hardware/Field" feel
-                        accent: '#10b981', danger: '#ef4444', text: '#a1a1aa', header: '#e4e4e7'
+                        bg: '#0a0a09', // Warmer dark
+                        panel: '#121211',
+                        border: '#2a2a28',
+                        // Industrial Vivid Palette
+                        amber: '#f59e0b',
+                        orange: '#f97316',
+                        red: '#ef4444',
+                        hazard: '#eab308' // Yellow
+                    },
+                    backgroundImage: {
+                        'hero-glow': 'conic-gradient(from 180deg at 50% 50%, #f59e0b10 0deg, #ef444410 50%, #f9731610 100%)',
                     }
                 }
             }
@@ -29,22 +35,32 @@
     </script>
     <style>
         body {
-            background-color: #0a0a0a;
-            color: #a1a1aa;
+            background-color: #0a0a09;
+            color: #d4d4d8;
+            background-image:
+                repeating-linear-gradient(45deg, #18181b 0, #18181b 1px, transparent 0, transparent 50%);
+            background-size: 20px 20px;
+            background-attachment: fixed;
         }
 
-        ::-webkit-scrollbar {
-            width: 10px;
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(18, 18, 17, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(245, 158, 11, 0.1);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
         }
 
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
+        .glass-panel:hover {
+            border-color: rgba(245, 158, 11, 0.4);
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.1);
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border: 2px solid #0a0a0a;
-            border-radius: 4px;
+        .text-gradient-hazard {
+            background: linear-gradient(to right, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     </style>
 </head>
@@ -69,71 +85,85 @@
     <main class="max-w-5xl mx-auto pt-24 pb-20 px-6">
 
         <!-- Hero -->
-        <section class="mb-32">
+        <section class="mb-32 relative">
             <div class="mb-6">
-                <span class="text-primary text-sm px-2 py-1 border border-primary/30 rounded bg-primary/10">Automation &
-                    Control Specialist</span>
+                <span
+                    class="text-amber text-xs font-bold tracking-widest px-3 py-1 border border-amber/30 rounded-full bg-amber/5 backdrop-blur animate-pulse">
+                    AUTOMATION & CONTROL SPECIALIST
+                </span>
             </div>
-            <h1 class="text-5xl md:text-7xl font-bold text-header mb-8 tracking-tight">
-                Domingo<br>González Hernández.
+            <h1 class="text-6xl md:text-8xl font-bold mb-8 tracking-tighter leading-none">
+                <span class="text-white">Domingo</span><br>
+                <span class="text-gradient-hazard">González.</span>
             </h1>
 
-            <div class="border-l-4 border-primary pl-6 py-2 mb-8">
-                <h3 class="text-lg font-bold text-white mb-2">Field Philosophy</h3>
-                <p class="text-lg leading-relaxed max-w-3xl text-text">
-                    Software crashes cost seconds; Robot crashes cost hardware.
+            <div class="border-l-2 border-l-red pl-6 py-2 mb-8 glass-panel rounded-r-xl p-6">
+                <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-red animate-ping"></span>
+                    Field Philosophy
+                </h3>
+                <p class="text-lg leading-relaxed max-w-3xl text-gray-300">
+                    Software crashes cost seconds; <span class="text-red font-bold">Robot crashes cost hardware</span>.
                     I build robust navigation stacks and real-time control loops where safety margins are calculated,
                     not guessed.
-                    <br><br>
-                    <span class="text-white italic">"Physics is the ultimate edge case."</span>
                 </p>
+                <div class="mt-4 text-sm font-mono text-amber">
+                    assert(safety_margin >= 3.0); // Physics is the ultimate edge case.
+                </div>
             </div>
+        </section>
 
-            <!-- Evidence Gallery: Robotics -->
-            <div class="mt-16">
-                <h3 class="text-sm font-bold text-gray-500 uppercase mb-6 tracking-widest">/// Field Evidence &
-                    Prototypes</h3>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:h-32">
-                    <!-- Photo 1: VEX Robot -->
-                    <div
-                        class="group relative bg-panel border border-border rounded overflow-hidden aspect-video md:aspect-auto hover:border-primary transition-all">
-                        <img src="images/robotics/vex_bot_1.jpg" alt="VEX Competition Robot"
-                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                        <div class="absolute bottom-0 left-0 bg-black/80 text-[10px] text-white px-2 py-1 w-full">
-                            VEX_WORLDS_BOT.JPG
-                        </div>
-                    </div>
-                    <!-- Photo 2: Wiring/PCB -->
-                    <div
-                        class="group relative bg-panel border border-border rounded overflow-hidden aspect-video md:aspect-auto hover:border-primary transition-all">
-                        <img src="images/robotics/wiring_1.jpg" alt="Custom PCB Wiring"
-                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                        <div class="absolute bottom-0 left-0 bg-black/80 text-[10px] text-white px-2 py-1 w-full">
-                            CUSTOM_PCB_ROUTING.JPG
-                        </div>
-                    </div>
-                    <!-- Photo 3: Field Test -->
-                    <div
-                        class="group relative bg-panel border border-border rounded overflow-hidden aspect-video md:aspect-auto hover:border-primary transition-all">
-                        <img src="images/robotics/field_test.jpg" alt="Field Testing LiDAR"
-                            class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity grayscale hover:grayscale-0">
-                        <div class="absolute bottom-0 left-0 bg-black/80 text-[10px] text-white px-2 py-1 w-full">
-                            LIDAR_FIELD_TEST_03.PNG
-                        </div>
-                    </div>
-                    <!-- Photo 4: Upload -->
-                    <div
-                        class="group relative bg-panel border border-border border-dashed rounded flex items-center justify-center text-xs text-gray-600 hover:text-primary hover:border-primary transition-all cursor-pointer">
-                        <span>[UPLOAD_HARDWARE_PIC]</span>
+        <!-- Evidence Gallery: Robotics -->
+        <div class="mt-20">
+            <h3 class="text-xs font-bold text-gray-500 mb-6 tracking-[0.2em] flex items-center gap-4">
+                <span class="h-[1px] w-8 bg-gray-700"></span>
+                FIELD EVIDENCE & PROTOTYPES
+                <span class="h-[1px] flex-1 bg-gray-700"></span>
+            </h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:h-32">
+                <!-- Photo 1 -->
+                <div
+                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-amber/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
+                    <img src="images/robotics/vex_bot_1.jpg" alt="VEX Competition Robot"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-amber font-mono tracking-wider">
+                        > VEX_WORLDS_BOT
                     </div>
                 </div>
-                <!-- Link to Raw Logs -->
-                <div class="mt-4 text-right">
-                    <a href="evidence.html" class="text-xs text-accent hover:underline font-mono" target="_blank">
-                        [>> VIEW VERIFIED EXECUTION LOGS (TEST RESULTS)]
-                    </a>
+                <!-- Photo 2 -->
+                <div
+                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-orange/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
+                    <img src="images/robotics/wiring_1.jpg" alt="Custom Wiring"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-orange font-mono tracking-wider">
+                        > CUSTOM_PCB_ROUTING
+                    </div>
+                </div>
+                <!-- Photo 3 -->
+                <div
+                    class="group relative glass-panel rounded-xl overflow-hidden aspect-video md:aspect-auto hover:border-red/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent z-10"></div>
+                    <img src="images/robotics/field_test.jpg" alt="Field Test"
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">
+                    <div class="absolute bottom-2 left-3 z-20 text-[10px] text-red font-mono tracking-wider">
+                        > LIDAR_FIELD_TEST
+                    </div>
+                </div>
+                <!-- Photo 4 -->
+                <div
+                    class="group relative glass-panel border-dashed rounded-xl flex items-center justify-center text-xs text-gray-500 hover:text-amber hover:border-amber transition-all cursor-pointer">
+                    <span class="animate-pulse">[ UPLOAD_HARDWARE_PIC ]</span>
                 </div>
             </div>
+            <!-- Link to Raw Logs -->
+            <div class="mt-4 text-right">
+                <a href="evidence.html" class="text-xs text-amber hover:underline font-mono" target="_blank">
+                    [>> VIEW VERIFIED EXECUTION LOGS (TEST RESULTS)]
+                </a>
+            </div>
+        </div>
         </section>
 
         <!-- Robotics Competency Table -->

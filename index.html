@@ -107,6 +107,10 @@
             <span>UPTIME: <span id="uptime">0s</span></span>
         </div>
         <div class="flex gap-4">
+            <a href="#contact"
+                class="text-white hover:text-accent transition-colors border-b border-white hover:border-accent font-bold animate-pulse">
+                [ ! CONTACT_SIGNAL ]
+            </a>
             <a href="robotics.html"
                 class="text-primary hover:text-white transition-colors border-b border-primary/30 hover:border-white">
                 [>> SWITCH TO ROBOTICS MODULE]
@@ -148,6 +152,19 @@
                 </p>
                 <div class="mt-4 text-sm font-mono text-violet">
                     const philosophy = "Deterministic behavior over magic.";
+                </div>
+
+                <!-- Hero CTA -->
+                <div class="mt-8">
+                    <a href="#contact"
+                        class="inline-flex items-center gap-2 px-6 py-3 bg-cyan/10 border border-cyan/50 text-cyan hover:bg-cyan/20 hover:scale-105 transition-all rounded text-sm font-bold tracking-widest backdrop-blur">
+                        <span>[ INITIATE_HOLOGRAPHIC_HANDSHAKE ]</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </section>
@@ -328,7 +345,64 @@
             </div>
         </section>
 
-        <!-- GitHub Activity -->
+        <!-- Contact Uplink (Recruiter Trap) -->
+        <section id="contact" class="mb-32">
+            <h2 class="text-sm font-bold text-cyan mb-8 tracking-widest uppercase flex items-center gap-2">
+                <span class="w-3 h-3 bg-cyan rounded-full animate-pulse"></span>
+                /// ESTABLISH_UPLINK
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Direct Comms -->
+                <div class="glass-panel p-8 rounded-xl border-l-4 border-l-cyan relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-30 transition-opacity">
+                        <svg class="w-24 h-24 text-cyan" fill="currentColor" viewBox="0 0 24 24">
+                            <path
+                                d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Direct Channel</h3>
+                    <p class="text-gray-400 mb-6 text-sm">Priority signal route open. Response time &lt; 24h.</p>
+
+                    <div
+                        class="bg-black/50 p-4 rounded border border-gray-800 flex items-center justify-between group-hover:border-cyan/50 transition-colors">
+                        <code class="text-cyan font-mono text-sm md:text-base">domingogghz245@gmail.com</code>
+                        <a href="mailto:domingogghz245@gmail.com" class="text-gray-500 hover:text-white">
+                            [SEND]
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Network Grid -->
+                <div class="space-y-4">
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com" target="_blank"
+                        class="block glass-panel p-6 rounded-xl hover:border-violet transition-all group flex items-center justify-between">
+                        <div>
+                            <span class="text-violet font-bold block mb-1">LINKEDIN_PROFILE</span>
+                            <span class="text-xs text-gray-500">Professional History & Endorsements</span>
+                        </div>
+                        <div class="bg-violet/10 p-2 rounded text-violet group-hover:bg-violet/20">
+                            ↗
+                        </div>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/Doku566" target="_blank"
+                        class="block glass-panel p-6 rounded-xl hover:border-white transition-all group flex items-center justify-between">
+                        <div>
+                            <span class="text-white font-bold block mb-1">GITHUB_REPOSITORY</span>
+                            <span class="text-xs text-gray-500">Source Code & Contribution Graph</span>
+                        </div>
+                        <div class="bg-white/10 p-2 rounded text-white group-hover:bg-white/20">
+                            ↗
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Activity (Keep existing) -->
         <section class="mb-32">
             <h2 class="text-sm font-bold text-primary mb-8 tracking-widest uppercase">/// Latest Transmission</h2>
             <div id="github-feed"

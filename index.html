@@ -260,12 +260,20 @@
             </div>
         </section>
 
-        <footer class="border-t border-border pt-8 pb-12 flex justify-between items-center text-xs text-muted">
-            <p>&copy; 2026 Domingo González Hernández.</p>
-            <p>Built with Precision.</p>
+        <footer
+            class="border-t border-border pt-8 pb-12 flex flex-col md:flex-row justify-between items-center text-xs text-muted">
+            <p>&copy; <span id="year"></span> Domingo González Hernández.</p>
+            <p class="font-mono text-gray-600">SYSTEM_STATUS: <span class="text-green-500">OPERATIONAL</span> <span
+                    id="last-check" class="ml-2 opacity-50"></span></p>
         </footer>
 
     </main>
+
+    <script>
+        // Automatic Maintenance Script
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('last-check').textContent = '| LAST_CHECK: ' + new Date().toISOString().split('T')[0];
+    </script>
 </body>
 
 </html>

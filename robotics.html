@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <!-- RECRUITER_NOTE: Optimized for minimal latency field access. -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGH | Robotics & Automation</title>
+    <meta name="description"
+        content="Domingo González Hernández - Robotics Engineer. ROS 2, Sensor Fusion, Real-time Control.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                fontFamily: { mono: ['"JetBrains Mono"', 'monospace'], sans: ['"JetBrains Mono"', 'monospace'] },
+                extend: {
+                    colors: {
+                        bg: '#0a0a0a', panel: '#111111', border: '#333333',
+                        primary: '#f59e0b', // Amber/Orange for "Hardware/Field" feel
+                        accent: '#10b981', danger: '#ef4444', text: '#a1a1aa', header: '#e4e4e7'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #a1a1aa;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border: 2px solid #0a0a0a;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body class="font-mono antialiased selection:bg-primary/20 selection:text-primary">
+
+    <!-- Telemetry Bar -->
+    <div
+        class="fixed top-0 w-full bg-bg/90 backdrop-blur border-b border-border z-50 text-xs px-6 h-10 flex items-center justify-between">
+        <div class="flex gap-6">
+            <span class="text-primary">● ROBOTICS_MODULE_ACTIVE</span>
+            <span>BAT: 98%</span>
+            <span>LINK: 24ms</span>
+        </div>
+        <div class="flex gap-4">
+            <a href="index.html"
+                class="text-white hover:text-primary transition-colors border-b border-white hover:border-primary">
+                [<< RETURN TO SOFTWARE CORE] </a>
+        </div>
+    </div>
+
+    <main class="max-w-5xl mx-auto pt-24 pb-20 px-6">
+
+        <!-- Hero -->
+        <section class="mb-32">
+            <div class="mb-6">
+                <span class="text-primary text-sm px-2 py-1 border border-primary/30 rounded bg-primary/10">Automation &
+                    Control Specialist</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-header mb-8 tracking-tight">
+                Domingo<br>González Hernández.
+            </h1>
+
+            <div class="border-l-4 border-primary pl-6 py-2 mb-8">
+                <h3 class="text-lg font-bold text-white mb-2">Field Philosophy</h3>
+                <p class="text-lg leading-relaxed max-w-3xl text-text">
+                    Software crashes cost seconds; Robot crashes cost hardware.
+                    I build robust navigation stacks and real-time control loops where safety margins are calculated,
+                    not guessed.
+                    <br><br>
+                    <span class="text-white italic">"Physics is the ultimate edge case."</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- Robotics Competency Table -->
+        <section class="mb-32 border-t border-border pt-12">
+            <h2 class="text-sm font-bold text-primary mb-8 tracking-widest uppercase">/// Hardware & Control Stack</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm border-collapse">
+                    <thead>
+                        <tr class="text-gray-500 border-b border-border">
+                            <th class="py-4 font-normal">Domain</th>
+                            <th class="py-4 font-normal">Tool / Tech</th>
+                            <th class="py-4 font-normal">Proficiency Profile</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
+                            <td class="py-4 text-white font-bold">Control Systems</td>
+                            <td class="py-4 text-primary">LabVIEW / PID tuning</td>
+                            <td class="py-4">Design of VI architectures, Real-time DAQ, Closed-loop tuning.</td>
+                        </tr>
+                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
+                            <td class="py-4 text-white font-bold">Mechanical Design</td>
+                            <td class="py-4 text-primary">CAD (SolidWorks / Fusion 360)</td>
+                            <td class="py-4">3D Modeling for rapid prototyping, tolerance analysis.</td>
+                        </tr>
+                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
+                            <td class="py-4 text-white font-bold">Navigation</td>
+                            <td class="py-4 text-primary">ROS 2 / Slam Toolbox</td>
+                            <td class="py-4">Implementation of A*, Dijkstra, and Adaptive Monte Carlo Localization
+                                (AMCL).</td>
+                        </tr>
+                        <tr class="border-b border-gray-900 hover:bg-panel transition-colors">
+                            <td class="py-4 text-white font-bold">Embedded</td>
+                            <td class="py-4 text-primary">Sensors / Microcontrollers</td>
+                            <td class="py-4">Integration of LiDAR, IMU, Encoders via I2C/SPI/UART.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Project: OmniSLAM (Robotics Focus) -->
+        <section class="mb-32">
+            <h2 class="text-3xl font-bold text-header mb-8">01 / OmniSLAM: Autonomous Navigation</h2>
+            <div class="bg-panel border border-border p-8 rounded-lg">
+                <div class="flex flex-col gap-6">
+                    <p class="text-text">
+                        A from-scratch implementation of Graph-SLAM for Differential Drive Robots.
+                        While standard libraries exists, I re-derived the mathematics to ensure optimal state estimation
+                        under noisy sensor conditions.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 border border-border rounded bg-code-bg">
+                            <h4 class="text-primary font-bold text-sm mb-2">Sensor Fusion (EKF)</h4>
+                            <ul class="list-disc pl-4 text-xs space-y-2 text-gray-400">
+                                <li><strong>Input 1:</strong> Wheel Odometry (High freq, drift prone)</li>
+                                <li><strong>Input 2:</strong> 2D LiDAR Scan (Low freq, accurate)</li>
+                                <li><strong>Output:</strong> Drift-corrected Pose (x, y, theta)</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 border border-border rounded bg-code-bg">
+                            <h4 class="text-primary font-bold text-sm mb-2">Control Logic</h4>
+                            <div class="font-mono text-xs text-green-400">
+                                Error = Target - Current<br>
+                                Cmd_Vel = (Kp * Error) + (Kd * dError/dt)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VEX Robotics Legacy -->
+        <section class="mb-32">
+            <h2 class="text-3xl font-bold text-header mb-8">02 / Competitive Robotics</h2>
+            <div class="bg-panel border border-border p-8 rounded-lg relative">
+                <div class="absolute top-0 right-0 bg-primary text-black text-xs px-3 py-1 font-bold rounded-bl-lg">
+                    INTERNATIONAL CHAMPION
+                </div>
+                <h3 class="text-xl font-bold text-white mb-4">VEX U Programming Skills</h3>
+                <p class="text-sm text-gray-400 mb-6">
+                    Achieved top rankings through rigorous optimization of autonomous routines.
+                    Developed stateless autonomous functions to ensure reliability during the 15-second autonomous
+                    period.
+                </p>
+                <div class="flex gap-2">
+                    <span class="px-2 py-1 bg-gray-800 text-xs text-gray-300 rounded border border-gray-700">C++
+                        PROS</span>
+                    <span class="px-2 py-1 bg-gray-800 text-xs text-gray-300 rounded border border-gray-700">Motion
+                        Profiling</span>
+                    <span class="px-2 py-1 bg-gray-800 text-xs text-gray-300 rounded border border-gray-700">Odometry
+                        Tracking</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Language Skills -->
+        <section class="mb-32">
+            <h2 class="text-sm font-bold text-primary mb-4 tracking-widest uppercase">/// Communication Protocols</h2>
+            <div class="grid grid-cols-2 gap-4 max-w-md">
+                <div class="p-4 border border-border rounded">
+                    <div class="text-white font-bold">Spanish</div>
+                    <div class="text-xs text-gray-500">Native (Full Professional Proficiency)</div>
+                </div>
+                <div class="p-4 border border-border rounded">
+                    <div class="text-white font-bold">English</div>
+                    <div class="text-xs text-gray-500">Basic / Technical (Documentation Read/Write)</div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-xs text-text py-12 border-t border-border mt-12">
+            <a href="index.html" class="text-primary hover:text-white transition-colors">SWITCH TO SOFTWARE ENGINEER
+                VIEW</a>
+        </footer>
+
+    </main>
+</body>
+
+</html>

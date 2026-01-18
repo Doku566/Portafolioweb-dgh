@@ -239,10 +239,18 @@
                 <div class="bento-card p-8">
                     <h3 class="text-lg font-bold text-white mb-4">Direct Contact</h3>
                     <p class="text-muted mb-6">Open for opportunities in Systems Engineering and Robotics.</p>
-                    <a href="mailto:domingogghz245@gmail.com"
-                        class="text-xl font-medium text-white hover:text-primary transition-colors break-words">
-                        domingogghz245@gmail.com
-                    </a>
+                    <div class="group relative inline-block">
+                        <a href="mailto:domingogghz245@gmail.com" id="email-link"
+                            class="text-xl font-medium text-white hover:text-primary transition-colors break-words">
+                            domingogghz245@gmail.com
+                        </a>
+                        <button onclick="copyToClipboard()"
+                            class="ml-2 text-xs border border-border px-2 py-1 rounded text-muted hover:text-white hover:border-white transition-all">
+                            [Copy]
+                        </button>
+                        <span id="copy-feedback"
+                            class="absolute -top-6 left-1/2 -translate-x-1/2 text-primary text-xs font-bold opacity-0 transition-opacity">Copied!</span>
+                    </div>
                 </div>
 
                 <!-- Social Links -->
@@ -273,6 +281,15 @@
         // Automatic Maintenance Script
         document.getElementById('year').textContent = new Date().getFullYear();
         document.getElementById('last-check').textContent = '| LAST_CHECK: ' + new Date().toISOString().split('T')[0];
+
+        function copyToClipboard() {
+            const email = "domingogghz245@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const feedback = document.getElementById('copy-feedback');
+                feedback.classList.remove('opacity-0');
+                setTimeout(() => feedback.classList.add('opacity-0'), 2000);
+            });
+        }
     </script>
 </body>
 

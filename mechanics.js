@@ -1,33 +1,30 @@
 /**
- * mechanics.js - Orchestrated Motion & UX Reveal
+ * mechanics.js - High-Impact Orchestration & Energy Motion
  */
 
-class EliteMechanics {
+class VibrantMechanics {
     constructor() {
         this.sections = document.querySelectorAll('section');
-        this.grid = document.querySelector('.grid-plane');
+        this.grid = document.querySelector('.energy-grid');
         this.init();
     }
 
     init() {
-        this.setupRevealSystem();
-        this.setupNeuralMotion();
-        console.log("Elite Systems: Functional");
+        this.setupVibrantReveals();
+        this.setupEnergyMotion();
+        console.log("Vibrant Core: Operational");
     }
 
-    setupRevealSystem() {
+    setupVibrantReveals() {
         const options = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            threshold: 0.12,
+            rootMargin: '0px 0px -50px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    // We don't unobserve so users can re-experience the reveal if scrolling back
-                    // Actually, for elite professional feel, usually one-time reveal is better
-                    // observer.unobserve(entry.target);
+                    entry.target.classList.add('is-active');
                 }
             });
         }, options);
@@ -35,18 +32,19 @@ class EliteMechanics {
         this.sections.forEach(section => observer.observe(section));
     }
 
-    setupNeuralMotion() {
+    setupEnergyMotion() {
         if (!this.grid) return;
 
         window.addEventListener('mousemove', (e) => {
-            const x = (e.clientX - window.innerWidth / 2) * 0.005;
-            const y = (e.clientY - window.innerHeight / 2) * 0.005;
+            const x = (e.clientX - window.innerWidth / 2) * 0.015;
+            const y = (e.clientY - window.innerHeight / 2) * 0.015;
 
-            this.grid.style.transform = `perspective(1000px) rotateX(45deg) translate(${x}px, ${y}px)`;
+            // Influence the energy grid perspective sutilly
+            this.grid.style.transform = `perspective(600px) rotateX(55deg) translate(${x}px, ${y}px)`;
         });
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new EliteMechanics();
+    new VibrantMechanics();
 });

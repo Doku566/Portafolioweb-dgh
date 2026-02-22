@@ -1,21 +1,21 @@
 /**
- * terminal.js - elite Aether Assistant
- * Persistent Bubble UX v3.0
+ * terminal.js - Vibrant Aether Assistant
+ * High-Impact UX v3.5
  */
 
-class EliteAssistant {
+class VibrantAssistant {
     constructor() {
-        this.trigger = document.getElementById('elite-trigger');
-        this.window = document.getElementById('elite-window');
-        this.input = document.getElementById('elite-input');
-        this.output = document.getElementById('elite-output');
+        this.trigger = document.getElementById('vibrant-trigger');
+        this.window = document.getElementById('vibrant-window');
+        this.input = document.getElementById('vibrant-input');
+        this.output = document.getElementById('vibrant-output');
 
         this.responses = {
-            'help': 'Comandos de enlace disponibles: info, proyectos, habilidades, contacto, clear',
-            'info': 'Sistema: Aether Elite v3.0. Desarrollador principal: Domingo González (Ing. Software/Robótica).',
-            'proyectos': 'Foco actual: AetherVoice. Nodo activo en el sector 0x01 del portafolio.',
-            'habilidades': 'Matriz de competencias cargada: IA Profunda, C++ de baja latencia y Sistemas de Control Robótico.',
-            'contacto': 'Puerta de enlace activa: GitHub (@Doku566).',
+            'help': 'Comandos de núcleo vivos: info, proyectos, habilidades, contacto, clear',
+            'info': 'Sistema: Aether Vibrant v3.5. Desarrollador: Domingo González (Software & Robotics Engineer).',
+            'proyectos': 'Echa un vistazo a AetherVoice arriba. Es un nodo de visión/voz por WebGPU de alto rendimiento.',
+            'habilidades': 'Matriz cargada: IA (Transformers), C++ (Low Latency), Robótica de Control.',
+            'contacto': 'Puerta de enlace abierta: GitHub (@Doku566).',
             'clear': 'DATA_FLUSH'
         };
 
@@ -26,8 +26,8 @@ class EliteAssistant {
         if (!this.trigger) return;
 
         this.trigger.addEventListener('click', () => {
-            this.window.classList.toggle('is-active');
-            if (this.window.classList.contains('is-active')) {
+            this.window.classList.toggle('is-open');
+            if (this.window.classList.contains('is-open')) {
                 this.input.focus();
             }
         });
@@ -39,10 +39,10 @@ class EliteAssistant {
             }
         });
 
-        // Professional delayed greeting
+        // Vibrant greeting
         setTimeout(() => {
-            this.addMessage('System', 'Enlace Aether establecido. Bienvenido al núcleo de ingeniería de Domingo González.');
-        }, 1500);
+            this.addMessage('System', 'Vibrant Core Establecido. ¿Qué protocolos iniciamos hoy?');
+        }, 1000);
     }
 
     handleInput(cmd) {
@@ -53,38 +53,31 @@ class EliteAssistant {
             return;
         }
 
-        const response = this.responses[cmd] || `Advertencia: Protocolo "${cmd}" no reconocido. Intente "help".`;
-        setTimeout(() => this.addMessage('Aether', response), 300);
+        const response = this.responses[cmd] || `Alerta: Protocolo "${cmd}" no reconocido por el núcleo. Intente "help".`;
+        setTimeout(() => this.addMessage('Aether', response), 250);
     }
 
     addMessage(sender, text) {
-        const line = document.createElement('div');
-        line.style.marginBottom = '1.5rem';
-        line.style.opacity = '0';
-        line.style.transform = 'translateY(10px)';
-        line.style.transition = '0.3s ease out';
+        const msg = document.createElement('div');
+        msg.style.marginBottom = '1.8rem';
+        msg.style.padding = '1rem';
+        msg.style.borderRadius = '12px';
+        msg.style.background = sender === 'User' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 242, 255, 0.08)';
+        msg.style.borderLeft = sender === 'Aether' ? '4px solid #00f2ff' : 'none';
+        msg.style.boxShadow = sender === 'Aether' ? '0 0 15px rgba(0, 242, 255, 0.1)' : 'none';
 
-        const labelColor = sender === 'Aether' ? '#818cf8' : '#64748b';
-
-        line.innerHTML = `
-            <div style="font-family: 'JetBrains Mono'; font-size: 0.6rem; color: ${labelColor}; margin-bottom: 0.5rem; letter-spacing: 0.1em">
+        msg.innerHTML = `
+            <div style="font-family: 'JetBrains Mono'; font-size: 0.65rem; color: ${sender === 'Aether' ? '#00f2ff' : '#ff8c00'}; margin-bottom: 0.6rem; letter-spacing: 0.1em">
                 [${sender.toUpperCase()}]
             </div>
-            <div style="font-weight: 300; line-height: 1.4">${text}</div>
+            <div style="font-weight: 300; line-height: 1.5; color: #ffffff">${text}</div>
         `;
 
-        this.output.appendChild(line);
-
-        // Trigger animation
-        requestAnimationFrame(() => {
-            line.style.opacity = '1';
-            line.style.transform = 'translateY(0)';
-        });
-
+        this.output.appendChild(msg);
         this.output.scrollTop = this.output.scrollHeight;
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new EliteAssistant();
+    new VibrantAssistant();
 });

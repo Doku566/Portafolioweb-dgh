@@ -1,0 +1,144 @@
+/* 
+   AetherVoice - Bespoke Styling
+   Hand-crafted by Domingo González
+*/
+
+:root {
+    --bg-color: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: #999999;
+    --accent-color: #8b5cf6;
+    --border-color: #262626;
+    --container-width: 1100px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Outfit', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Header */
+.site-header {
+    padding: 2.5rem 0;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--accent-color);
+}
+
+.main-nav .nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-left: 2rem;
+    transition: color 0.3s ease;
+}
+
+.main-nav .nav-link:hover {
+    color: var(--text-primary);
+}
+
+/* Hero Section */
+.hero {
+    padding: 4rem 0 8rem;
+}
+
+.hero-text {
+    max-width: 700px;
+    margin-bottom: 5rem;
+}
+
+.tagline {
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    letter-spacing: -0.03em;
+}
+
+.description {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Showcase */
+.showcase {
+    background: #151515;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5);
+}
+
+.main-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+figcaption {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    text-align: center;
+    font-family: monospace;
+}
+
+/* Footer Section */
+.footer-note {
+    padding: 4rem 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.footer-note p {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .hero {
+        padding: 2rem 0 4rem;
+    }
+}

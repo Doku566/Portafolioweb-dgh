@@ -4,21 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AetherVoice | Domingo González</title>
+    <title>Aether / Engineering Portfolio</title>
     <link rel="stylesheet" href="bespoke.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
 
+    <!-- Robotic HUD Layer -->
+    <div class="hud-layer">
+        <div class="hud-grid"></div>
+        <div class="hud-scan"></div>
+        <div class="hud-telemetry top-left">
+            <span class="hud-label">SISTEMA</span>
+            <span class="hud-value stat-online">ESTABLE</span>
+        </div>
+        <div class="hud-telemetry top-right">
+            <span class="hud-label">TELEMETRÍA</span>
+            <span class="hud-coords">LOC: [0.00, 0.00]</span>
+        </div>
+        <div class="hud-telemetry bottom-left">
+            <div class="hud-stat">CPU: <span class="status-value" data-base="12">12%</span></div>
+            <div class="hud-stat">MEM: <span class="status-value" data-base="42">42%</span></div>
+        </div>
+    </div>
+
     <header class="site-header">
         <div class="container">
-            <h1 class="logo">AetherVoice</h1>
+            <h1 class="logo">Aether / Core</h1>
             <nav class="main-nav">
-                <a href="https://github.com/Doku566/AetherVoice" class="nav-link">GitHub</a>
-                <a href="https://doku566.github.io/AetherVoice/web/index.html" class="nav-link">Demo</a>
+                <a href="https://github.com/Doku566/AetherVoice" class="nav-link">Transmisión</a>
+                <a href="https://doku566.github.io/AetherVoice/web/index.html" class="nav-link">Simulación</a>
             </nav>
         </div>
     </header>
@@ -27,18 +47,22 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-text">
-                    <p class="tagline">Inteligencia Artificial Local</p>
-                    <h2 class="title">Interacción Humana a Nivel de Sistema</h2>
+                    <p class="tagline">Ingeniería de Software & Robótica</p>
+                    <h2 class="title">Sistemas Neurales y Arquitectura Local</h2>
                     <p class="description">
-                        Un experimento con WebGPU para proporcionar visión, voz e inteligencia local sin latencia.
-                        AetherVoice es la intersección entre el hardware de alto rendimiento y el procesamiento
-                        neuronal.
+                        Especializado en la intersección del procesamiento de alto rendimiento y la robótica
+                        inteligente.
+                        AetherVoice es la manifestación de visión, voz e inteligencia operando a nivel de silicio.
                     </p>
                 </div>
 
                 <figure class="showcase">
+                    <div class="showcase-header">
+                        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                        <span class="file-name">aethervoice_core_v1.0.proc</span>
+                    </div>
                     <img src="images/aethervoice_ui.png" alt="AetherVoice Interface" class="main-image">
-                    <figcaption>Interfaz principal y motor de visualización reactiva.</figcaption>
+                    <figcaption>// VISUALIZACIÓN DE NODO ACTIVO</figcaption>
                 </figure>
             </div>
         </section>
@@ -46,40 +70,40 @@
         <section class="skills">
             <div class="container">
                 <header class="section-header">
-                    <h3 class="section-title">Conocimientos Técnicos</h3>
+                    <h3 class="section-title">Matriz de Habilidades</h3>
                 </header>
 
                 <div class="skills-grid">
                     <div class="skill-category">
-                        <h4>Inteligencia Artificial</h4>
+                        <h4>Frontera de IA</h4>
                         <ul>
-                            <li>WebGPU & Local LLMs</li>
-                            <li>Inferencia de Transformers</li>
-                            <li>Síntesis de Voz Neural</li>
-                            <li>Cuantización INT8</li>
-                            <li>Arquitecturas RAG</li>
+                            <li>WebGPU / Local Infe-Net</li>
+                            <li>Motor de Transformers</li>
+                            <li>Síntesis de Voz Neuronal</li>
+                            <li>Optimización de Tensores</li>
+                            <li>Despliegue RAG</li>
                         </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h4>Sistemas y Optimización</h4>
+                        <h4>Sistemas Críticos</h4>
                         <ul>
-                            <li>C++ Moderno (20/23)</li>
-                            <li>Gestión de Memoria Manual</li>
-                            <li>Sistemas de Baja Latencia</li>
-                            <li>Arquitecturas Zero-copy</li>
-                            <li>Optimización de Kernels</li>
+                            <li>C++ 23 / Rust Fundamentals</li>
+                            <li>Baja Latencia / Tiempo Real</li>
+                            <li>Interacción con Hardware</li>
+                            <li>Motores de Renderizado</li>
+                            <li>Gestión de Recursos</li>
                         </ul>
                     </div>
 
                     <div class="skill-category">
-                        <h4>Robótica y Hardware</h4>
+                        <h4>Robótica Robusta</h4>
                         <ul>
-                            <li>Sistemas Embebidos</li>
-                            <li>Lógica de Control en Tiempo Real</li>
-                            <li>Integración Sensorial</li>
-                            <li>Control de Motores y Actuadores</li>
-                            <li>Sistemas Deterministas</li>
+                            <li>Control PID / Kalman</li>
+                            <li>Visión por Computadora</li>
+                            <li>Lógica de Decisión</li>
+                            <li>Protocolos de Transmisión</li>
+                            <li>Sistemas Autónomos</li>
                         </ul>
                     </div>
                 </div>
@@ -88,10 +112,28 @@
 
         <section class="footer-note">
             <div class="container">
-                <p>Desarrollado por Domingo González Hernández &copy; 2026</p>
+                <p>NÚCLEO DOMINGO GONZÁLEZ // &copy; 2026</p>
             </div>
         </section>
     </main>
+
+    <!-- Terminal Chatbot UI -->
+    <aside class="terminal-bot">
+        <div class="terminal-header">
+            <span>AETHER_ASSISTANT.EXE</span>
+        </div>
+        <div id="terminal-interface" class="terminal-body">
+            <div id="terminal-output" class="terminal-output"></div>
+            <div class="terminal-input-row">
+                <span class="prompt">></span>
+                <input type="text" id="terminal-input" placeholder="Comando..." spellcheck="false" autocomplete="off">
+            </div>
+        </div>
+    </aside>
+
+    <!-- Core Mechanics -->
+    <script src="mechanics.js"></script>
+    <script src="terminal.js"></script>
 
 </body>
 

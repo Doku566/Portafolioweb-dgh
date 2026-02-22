@@ -1,41 +1,49 @@
 /**
- * mechanics.js - Robotic HUD & System Telemetry
- * Hand-crafted for Domingo González
+ * mechanics.js - Dynamic Interactivity & Reveal System
  */
 
-class RoboticHUD {
+class DynamicMechanics {
     constructor() {
-        this.statusIndicators = document.querySelectorAll('.status-value');
-        this.coordinates = document.querySelector('.hud-coords');
+        this.sections = document.querySelectorAll('section');
         this.init();
     }
 
     init() {
-        this.animateStats();
-        this.updateCoordinates();
-        console.log("HUD Mechanics: Online");
+        this.setupIntersectionObserver();
+        this.setupParallax();
+        console.log("Dynamic Mechanics: Engaged");
     }
 
-    animateStats() {
-        setInterval(() => {
-            this.statusIndicators.forEach(indicator => {
-                const base = parseInt(indicator.getAttribute('data-base')) || 50;
-                const variance = Math.floor(Math.random() * 5) - 2;
-                indicator.textContent = `${base + variance}%`;
+    setupIntersectionObserver() {
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
             });
-        }, 2000);
+        }, observerOptions);
+
+        this.sections.forEach(section => observer.observe(section));
     }
 
-    updateCoordinates() {
-        if (!this.coordinates) return;
+    setupParallax() {
+        const grid = document.querySelector('.quantum-grid');
         window.addEventListener('mousemove', (e) => {
-            const x = ((e.clientX / window.innerWidth) * 100).toFixed(2);
-            const y = ((e.clientY / window.innerHeight) * 100).toFixed(2);
-            this.coordinates.textContent = `LOC: [${x}, ${y}]`;
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+
+            if (grid) {
+                grid.style.transform = `perspective(500px) rotateX(60deg) translate(${moveX}px, ${moveY}px)`;
+            }
         });
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new RoboticHUD();
+    new DynamicMechanics();
 });

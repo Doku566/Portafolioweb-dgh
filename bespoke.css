@@ -101,7 +101,7 @@ body {
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 1rem;
-    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.5);
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5);
 }
 
 .main-image {
@@ -132,12 +132,66 @@ figcaption {
     letter-spacing: 0.05em;
 }
 
+/* Skills Section */
+.skills {
+    padding: 8rem 0;
+    background-color: #0a0a0a;
+}
+
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.skill-category h4 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.skill-category ul {
+    list-style: none;
+}
+
+.skill-category li {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+    font-weight: 300;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.skill-category li:hover {
+    color: var(--text-primary);
+    transform: translateX(5px);
+}
+
 /* Mobile Adjustments */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
     .title {
         font-size: 2.5rem;
     }
-    
+
     .hero {
         padding: 2rem 0 4rem;
     }

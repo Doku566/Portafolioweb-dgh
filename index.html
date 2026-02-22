@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domingo González // Robotics & Software Engineer</title>
+    <title>Domingo González // Software & Robotics Engineer</title>
     <link rel="stylesheet" href="bespoke.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,79 +15,90 @@
 
 <body>
 
-    <!-- Dynamic Environment -->
-    <div class="quantum-bg">
-        <div class="quantum-grid"></div>
+    <!-- Neural Background Layer -->
+    <div class="neural-environment">
+        <div class="grid-plane"></div>
     </div>
 
-    <header class="site-header">
-        <div class="container">
-            <div class="logo">DG // CORE v2.0</div>
-            <nav class="main-nav">
-                <a href="#projects">Transmisión</a>
-                <a href="#skills">Matriz</a>
+    <!-- Navigation -->
+    <nav class="site-nav">
+        <div class="nav-container">
+            <div class="logo-wrap">DG // CORE v2.0</div>
+            <div class="nav-links">
+                <a href="#focus">Transmisión</a>
+                <a href="#matrix">Matriz</a>
                 <a href="https://github.com/Doku566" target="_blank">Codex</a>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero visible">
-            <div class="container">
-                <div class="hero-content">
-                    <p class="tagline">SYSTEMS / ROBOTICS / AI</p>
-                    <h1 class="main-title">Estructurando el Futuro Digital.</h1>
-                    <p class="description">
-                        Ingeniero de Software especializado en robótica avanzada y sistemas neuronales locales.
-                        Donde el hardware encuentra su conciencia.
-                    </p>
-                </div>
+    <main>
+        <!-- Pure Vision Hero -->
+        <section class="hero-block">
+            <div class="hero-inner">
+                <span class="hero-label">SYSTEMS / ROBOTICS / AI</span>
+                <h1 class="hero-h1">Construyendo el <br>Núcleo de la Realidad.</h1>
+                <p class="hero-p">
+                    Ingeniería de Software de alta fidelidad. Especializado en sistemas neuronales de baja latencia y
+                    robótica inteligente.
+                </p>
             </div>
         </section>
 
-        <!-- Project Spotlight -->
-        <section id="projects" class="project-spotlight">
+        <!-- Project Spotlight: AetherVoice -->
+        <section id="focus" class="spotlight">
             <div class="container">
-                <div class="showcase-v2">
-                    <div class="showcase-header">
-                        <span class="file-name">PRJ_AETHERVOICE_01.EXE</span>
-                    </div>
-                    <img src="images/aethervoice_ui.png" alt="AetherVoice UI" class="main-img-v2">
-                    <div class="project-info">
-                        <h2>AetherVoice</h2>
-                        <p>Interfaz de procesamiento neural con WebGPU. Voz y visión local sin latencia.</p>
+                <div class="section-head">
+                    <span class="section-num">0x01</span>
+                    <h2 class="section-title">Nodo AetherVoice</h2>
+                </div>
+
+                <div class="glass-showcase">
+                    <img src="images/aethervoice_ui.png" alt="AetherVoice Interface" class="main-asset">
+                    <div class="asset-overlay">
+                        <h3 class="asset-title">Sinfonía Neuronal Local</h3>
+                        <p class="asset-p">
+                            Inferencia de voz y visión mediante WebGPU. Un experimento de procesamiento local
+                            determinista y sin latencia.
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Technical Matrix -->
-        <section id="skills" class="skills-section">
+        <section id="matrix" class="matrix-section">
             <div class="container">
-                <div class="skills-matrix">
-                    <div class="skill-node">
-                        <div class="node-header">0x01 / AI CORE</div>
-                        <ul class="node-list">
-                            <li>Local Transformers</li>
+                <div class="section-head">
+                    <span class="section-num">0x02</span>
+                    <h2 class="section-title">Matriz de Habilidades</h2>
+                </div>
+
+                <div class="skills-grid-v3">
+                    <div class="skill-card-v3">
+                        <div class="card-label">AI_CORE.SYS</div>
+                        <ul class="card-ul">
+                            <li>Transformers Locales</li>
                             <li>WebGPU Compute</li>
-                            <li>Neural Synthesis</li>
+                            <li>Síntesis Neuronal</li>
                         </ul>
                     </div>
-                    <div class="skill-node">
-                        <div class="node-header">0x02 / SYSTEMS</div>
-                        <ul class="node-list">
-                            <li>C++ 23 / Optimization</li>
-                            <li>Low-Latency Arch</li>
-                            <li>Critical Kernels</li>
+
+                    <div class="skill-card-v3">
+                        <div class="card-label">SYS_ENGINE.CPP</div>
+                        <ul class="card-ul">
+                            <li>C++ 23 / Rust</li>
+                            <li>Baja Latencia</li>
+                            <li>Kernels Críticos</li>
                         </ul>
                     </div>
-                    <div class="skill-node">
-                        <div class="node-header">0x03 / ROBOTICS</div>
-                        <ul class="node-list">
-                            <li>Real-Time Control</li>
+
+                    <div class="skill-card-v3">
+                        <div class="card-label">ROBOTICS_LOGIC.IO</div>
+                        <ul class="card-ul">
+                            <li>Control PID / RT</li>
                             <li>Computer Vision</li>
-                            <li>Sensory Fusion</li>
+                            <li>Fusión Sensorial</li>
                         </ul>
                     </div>
                 </div>
@@ -95,28 +106,34 @@
         </section>
     </main>
 
-    <!-- Chat Widget -->
-    <div class="chat-widget">
-        <div id="chat-trigger" class="chat-bubble">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <!-- Professional Chat Overlay (Persistent) -->
+    <div class="widget-anchor">
+        <div id="elite-trigger" class="bubble-trigger">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
             </svg>
         </div>
 
-        <div id="chat-window" class="chat-window">
-            <div class="chat-header">
-                <div class="logo">Aether Assistant</div>
+        <div id="elite-window" class="bubble-window">
+            <div class="window-head">AETHER_ASSISTANT_ELITE.EXE</div>
+            <div id="elite-output" class="window-body">
+                <!-- Data Stream -->
             </div>
-            <div id="chat-output" class="chat-body">
-                <!-- Messages populate here -->
-            </div>
-            <div class="chat-input-row">
-                <input type="text" id="chat-input" placeholder="Escribe un comando (ej. info)...">
+            <div class="window-input-row">
+                <input type="text" id="elite-input" placeholder="Comando del sistema (ej. help)..." spellcheck="false"
+                    autocomplete="off">
             </div>
         </div>
     </div>
 
-    <!-- Core Mechanics -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            DOMINGO GONZÁLEZ // NÚCLEO ACTIVO // &copy; 2026
+        </div>
+    </footer>
+
+    <!-- Core Systems -->
     <script src="mechanics.js"></script>
     <script src="terminal.js"></script>
 

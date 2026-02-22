@@ -1,49 +1,52 @@
 /**
- * mechanics.js - Dynamic Interactivity & Reveal System
+ * mechanics.js - Orchestrated Motion & UX Reveal
  */
 
-class DynamicMechanics {
+class EliteMechanics {
     constructor() {
         this.sections = document.querySelectorAll('section');
+        this.grid = document.querySelector('.grid-plane');
         this.init();
     }
 
     init() {
-        this.setupIntersectionObserver();
-        this.setupParallax();
-        console.log("Dynamic Mechanics: Engaged");
+        this.setupRevealSystem();
+        this.setupNeuralMotion();
+        console.log("Elite Systems: Functional");
     }
 
-    setupIntersectionObserver() {
-        const observerOptions = {
-            threshold: 0.15
+    setupRevealSystem() {
+        const options = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('is-visible');
+                    // We don't unobserve so users can re-experience the reveal if scrolling back
+                    // Actually, for elite professional feel, usually one-time reveal is better
+                    // observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, options);
 
         this.sections.forEach(section => observer.observe(section));
     }
 
-    setupParallax() {
-        const grid = document.querySelector('.quantum-grid');
-        window.addEventListener('mousemove', (e) => {
-            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+    setupNeuralMotion() {
+        if (!this.grid) return;
 
-            if (grid) {
-                grid.style.transform = `perspective(500px) rotateX(60deg) translate(${moveX}px, ${moveY}px)`;
-            }
+        window.addEventListener('mousemove', (e) => {
+            const x = (e.clientX - window.innerWidth / 2) * 0.005;
+            const y = (e.clientY - window.innerHeight / 2) * 0.005;
+
+            this.grid.style.transform = `perspective(1000px) rotateX(45deg) translate(${x}px, ${y}px)`;
         });
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new DynamicMechanics();
+    new EliteMechanics();
 });

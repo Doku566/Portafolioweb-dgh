@@ -1,22 +1,22 @@
 /**
- * terminal.js - Aether Assistant Chat Bubble
- * Pure JS Implementation v2.0
+ * terminal.js - elite Aether Assistant
+ * Persistent Bubble UX v3.0
  */
 
-class AetherAssistant {
+class EliteAssistant {
     constructor() {
-        this.trigger = document.getElementById('chat-trigger');
-        this.window = document.getElementById('chat-window');
-        this.input = document.getElementById('chat-input');
-        this.output = document.getElementById('chat-output');
+        this.trigger = document.getElementById('elite-trigger');
+        this.window = document.getElementById('elite-window');
+        this.input = document.getElementById('elite-input');
+        this.output = document.getElementById('elite-output');
 
         this.responses = {
-            'help': 'Comandos: info, proyectos, habilidades, contacto, clear',
-            'info': 'Sistema: Aether Assistant v2.0. Desarrollador: Domingo González, Ing. de Software y Robótica.',
-            'proyectos': 'Explora AetherVoice arriba. Es un nodo de visión/voz por WebGPU.',
-            'habilidades': 'Especialidades: IA (Transfomers/Compute), C++ 23, Control de Robótica.',
-            'contacto': 'Conectado: GitHub (@Doku566).',
-            'clear': 'CLEARING'
+            'help': 'Comandos de enlace disponibles: info, proyectos, habilidades, contacto, clear',
+            'info': 'Sistema: Aether Elite v3.0. Desarrollador principal: Domingo González (Ing. Software/Robótica).',
+            'proyectos': 'Foco actual: AetherVoice. Nodo activo en el sector 0x01 del portafolio.',
+            'habilidades': 'Matriz de competencias cargada: IA Profunda, C++ de baja latencia y Sistemas de Control Robótico.',
+            'contacto': 'Puerta de enlace activa: GitHub (@Doku566).',
+            'clear': 'DATA_FLUSH'
         };
 
         this.init();
@@ -26,8 +26,8 @@ class AetherAssistant {
         if (!this.trigger) return;
 
         this.trigger.addEventListener('click', () => {
-            this.window.classList.toggle('active');
-            if (this.window.classList.contains('active')) {
+            this.window.classList.toggle('is-active');
+            if (this.window.classList.contains('is-active')) {
                 this.input.focus();
             }
         });
@@ -39,7 +39,10 @@ class AetherAssistant {
             }
         });
 
-        this.addMessage('System', 'Aether Online. ¿En qué puedo ayudarte?');
+        // Professional delayed greeting
+        setTimeout(() => {
+            this.addMessage('System', 'Enlace Aether establecido. Bienvenido al núcleo de ingeniería de Domingo González.');
+        }, 1500);
     }
 
     handleInput(cmd) {
@@ -50,28 +53,38 @@ class AetherAssistant {
             return;
         }
 
-        const response = this.responses[cmd] || `Error: Comando de sistema "${cmd}" inválido. Escribe "help".`;
-        setTimeout(() => this.addMessage('Aether', response), 400);
+        const response = this.responses[cmd] || `Advertencia: Protocolo "${cmd}" no reconocido. Intente "help".`;
+        setTimeout(() => this.addMessage('Aether', response), 300);
     }
 
     addMessage(sender, text) {
-        const msg = document.createElement('div');
-        msg.style.marginBottom = '1rem';
-        msg.style.padding = '0.8rem';
-        msg.style.borderRadius = '8px';
-        msg.style.background = sender === 'User' ? 'rgba(255,255,255,0.05)' : 'rgba(99, 102, 241, 0.1)';
-        msg.style.borderLeft = sender === 'Aether' ? '3px solid #6366f1' : 'none';
+        const line = document.createElement('div');
+        line.style.marginBottom = '1.5rem';
+        line.style.opacity = '0';
+        line.style.transform = 'translateY(10px)';
+        line.style.transition = '0.3s ease out';
 
-        msg.innerHTML = `
-            <div style="font-size:0.6rem; text-transform:uppercase; color: #808080; margin-bottom: 0.3rem">${sender}</div>
-            <div style="font-family: 'Outfit', sans-serif">${text}</div>
+        const labelColor = sender === 'Aether' ? '#818cf8' : '#64748b';
+
+        line.innerHTML = `
+            <div style="font-family: 'JetBrains Mono'; font-size: 0.6rem; color: ${labelColor}; margin-bottom: 0.5rem; letter-spacing: 0.1em">
+                [${sender.toUpperCase()}]
+            </div>
+            <div style="font-weight: 300; line-height: 1.4">${text}</div>
         `;
 
-        this.output.appendChild(msg);
+        this.output.appendChild(line);
+
+        // Trigger animation
+        requestAnimationFrame(() => {
+            line.style.opacity = '1';
+            line.style.transform = 'translateY(0)';
+        });
+
         this.output.scrollTop = this.output.scrollHeight;
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    new AetherAssistant();
+    new EliteAssistant();
 });

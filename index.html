@@ -147,6 +147,24 @@
                         </div>
                     </div>
 
+                    <!-- NexusSupport (IA-SOPORTE) -->
+                    <div
+                        class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
+                        <div class="aspect-video bg-neutral-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=800"
+                                alt="Support AI"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block font-bold">IT_Automation_Cloud</span>
+                            <h3 class="text-2xl font-bold mb-4">NexusSupport</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Automatización de soporte técnico
+                                institucional mediante **Microsoft Graph API**. Gestión de tickets y restablecimiento de
+                                contraseñas impulsado por LLMs (Groq + FastAPI).</p>
+                        </div>
+                    </div>
+
                     <!-- EdgeCortex -->
                     <div
                         class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
@@ -333,7 +351,8 @@
                 <!-- System Greeting -->
                 <div class="bg-white/5 p-4 rounded-xl rounded-tl-none max-w-[85%] leading-relaxed">
                     Hola, soy el asistente de Domingo. 😊 <br>¿Quieres saber sobre su <strong>Logro Mundial en
-                        VEX</strong>, su experiencia en <strong>AWS</strong> o el proyecto <strong>AetherVoice</strong>?
+                        VEX</strong>, su experiencia en <strong>AWS</strong> o proyectos de automatización como
+                    <strong>NexusSupport</strong>?
                 </div>
             </div>
             <!-- Quick Replies -->
@@ -341,6 +360,9 @@
                 <button onclick="sendReply('Premio Mundial VEX')"
                     class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">VEX
                     Global Award</button>
+                <button onclick="sendReply('NexusSupport')"
+                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">IA
+                    Soporte TI</button>
                 <button onclick="sendReply('AetherVoice')"
                     class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">AetherVoice</button>
                 <button onclick="sendReply('C++ & Robotics')"
@@ -413,6 +435,8 @@
                 let response = "";
                 if (text.includes('VEX')) {
                     response = "¡Increíble! Domingo ganó el 2do Lugar Mundial en Programación VEX, liderando el desarrollo de algoritmos de navegación por 3 años.";
+                } else if (text.includes('NexusSupport')) {
+                    response = "NexusSupport automatiza el soporte de TI: gestiona tickets y restablece contraseñas usando Microsoft Graph API y Groq (FastAPI).";
                 } else if (text.includes('AetherVoice')) {
                     response = "AetherVoice es su proyecto de punta en Audio IA, implementando síntesis de voz natural con redes neuronales de baja latencia.";
                 } else if (text.includes('C++')) {

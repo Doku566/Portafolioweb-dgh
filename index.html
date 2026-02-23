@@ -53,6 +53,8 @@
             background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
+            transition: transform 0.1s ease-out;
+            will-change: transform;
         }
 
         .scanline {
@@ -318,36 +320,47 @@
                         Stack</h2>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 reveal">
-                    <div
-                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
-                        <i class="fa-solid fa-code text-4xl group-hover:text-deep-bg"></i>
-                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">C++23</span>
+                <div class="flex flex-wrap gap-8 justify-center items-center">
+                    <div class="group flex flex-col items-center">
+                        <i class="fa-brands fa-cpp text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                            title="Mastery: C++23 / Embedded"></i>
+                        <span
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">C++
+                            Proficient</span>
                     </div>
-                    <div
-                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
-                        <i class="fa-brands fa-python text-4xl group-hover:text-deep-bg"></i>
-                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">Python</span>
+                    <div class="group flex flex-col items-center">
+                        <i class="fa-brands fa-python text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                            title="Mastery: AI / Automation"></i>
+                        <span
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">Python
+                            Senior</span>
                     </div>
-                    <div
-                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
-                        <i class="fa-brands fa-aws text-4xl group-hover:text-deep-bg"></i>
-                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">AWS</span>
+                    <div class="group flex flex-col items-center">
+                        <i class="fa-brands fa-aws text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                            title="Expertise: Infrastructure for 4,500+ users"></i>
+                        <span
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">AWS
+                            Expert</span>
                     </div>
-                    <div
-                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
-                        <i class="fa-brands fa-linux text-4xl group-hover:text-deep-bg"></i>
-                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">Linux</span>
+                    <div class="group flex flex-col items-center">
+                        <i class="fa-brands fa-linux text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                            title="Env: Kernel / DevOps"></i>
+                        <span
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">Linux
+                            Native</span>
                     </div>
-                    <div
-                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
-                        <i class="fa-solid fa-robot text-4xl group-hover:text-deep-bg"></i>
-                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">VEX/SLAM</span>
+                    <div class="group flex flex-col items-center">
+                        <i class="fa-solid fa-robot text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                            title="Field: Mobile Robots / Navigation SLAM"></i>
+                        <span
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">Robotics
+                            Lead</span>
                     </div>
-                    <div
-                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
-                        <i class="fa-solid fa-shield-halved text-4xl group-hover:text-deep-bg"></i>
-                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">Cybersec</span>
+                    <div class="group flex flex-col items-center">
+                        <i class="fa-solid fa-shield-halved text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                            title="Domain: Security Architecture"></i>
+                        <span
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">Cybersecurity</span>
                     </div>
                 </div>
             </div>
@@ -473,16 +486,28 @@
     </div>
 
     <footer class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="font-mono text-[9px] text-white/20 uppercase tracking-[0.5em] text-center md:text-left">
-                Domingo González // Engineering & Robotics &copy; 2026
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h4 class="text-xl font-bold mb-2">Domingo González</h4>
+                <p class="text-slate-400 text-sm">Ingeniería que conecta mundos.</p>
             </div>
-            <div class="flex space-x-10 text-[10px] font-mono uppercase text-white/40 tracking-widest">
-                <a href="#" class="hover:text-accent-orange">LinkedIn</a>
-                <a href="https://github.com/Doku566" target="_blank" class="hover:text-accent-orange">GitHub</a>
-                <a href="#" class="hover:text-accent-orange">Email</a>
+            <div class="flex gap-6 items-center">
+                <button onclick="copyEmail(this)"
+                    class="bg-white/5 border border-white/10 px-6 py-3 rounded-full text-sm font-mono hover:bg-accent-orange hover:text-deep-bg hover:border-accent-orange transition-all flex items-center gap-2">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Contact_Me</span>
+                </button>
+                <div class="flex gap-4 text-xl">
+                    <a href="https://github.com/Doku566" class="hover:text-accent-orange transition-colors"><i
+                            class="fa-brands fa-github"></i></a>
+                    <a href="#" class="hover:text-accent-orange transition-colors"><i
+                            class="fa-brands fa-linkedin"></i></a>
+                </div>
             </div>
         </div>
+        <div id="toast"
+            class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-accent-orange text-deep-bg text-xs font-bold px-4 py-2 rounded-full opacity-0 pointer-events-none transition-all">
+            EMAIL_COPIED</div>
     </footer>
 
     <script>
@@ -552,6 +577,28 @@
                 messagesArea.appendChild(botDiv);
                 messagesArea.scrollTop = messagesArea.scrollHeight;
             }, 600);
+        }
+
+        // Interactive Grid
+        const grid = document.querySelector('.grid-layers');
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth - 0.5) * 20;
+            const y = (e.clientY / window.innerHeight - 0.5) * 20;
+            grid.style.transform = `translate(${x}px, ${y}px)`;
+        });
+
+        // Copy Email
+        function copyEmail(btn) {
+            const email = "tu-email@ejemplo.com"; // User should update or I keep generic
+            navigator.clipboard.writeText(email).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('opacity-0');
+                toast.classList.add('opacity-100', '-translate-y-4');
+                setTimeout(() => {
+                    toast.classList.remove('opacity-100', '-translate-y-4');
+                    toast.classList.add('opacity-0');
+                }, 2000);
+            });
         }
     </script>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domingo González // Systems & Edge AI Engineer</title>
+    <title>Domingo González // Systems & Mechatronics Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,45 +46,56 @@
         ::-webkit-scrollbar-thumb {
             background: #f97316;
         }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
-<body class="font-sans antialiased text-tech-gray">
+<body class="font-sans antialiased text-tech-gray overflow-x-hidden">
 
     <!-- Header / Nav -->
     <header class="fixed top-0 w-full z-50 bg-base-dark/95 border-b border-white/5 backdrop-blur-sm">
         <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="font-mono text-[11px] font-bold tracking-tighter uppercase">
-                <span class="text-industrial-orange">INTERNAL</span> // SYSTEMS_v5.0
+                <span class="text-industrial-orange">DG // CORE</span> // SYSTEMS_v5.1
             </div>
             <nav class="hidden md:flex items-center space-x-12">
                 <a href="#hero"
-                    class="text-[10px] font-mono uppercase tracking-widest hover:text-industrial-orange transition-colors">Root</a>
+                    class="text-[10px] font-mono uppercase tracking-widest hover:text-industrial-orange transition-colors">Start</a>
                 <a href="#forge"
                     class="text-[10px] font-mono uppercase tracking-widest hover:text-industrial-orange transition-colors">The
                     Forge</a>
+                <a href="#matrix"
+                    class="text-[10px] font-mono uppercase tracking-widest hover:text-industrial-orange transition-colors">Matrix</a>
                 <a href="#experience"
-                    class="text-[10px] font-mono uppercase tracking-widest hover:text-industrial-orange transition-colors">Exp</a>
-                <a href="https://github.com/Doku566" target="_blank"
-                    class="text-[10px] font-mono uppercase tracking-widest text-industrial-orange">Codex</a>
+                    class="text-[10px] font-mono uppercase tracking-widest hover:text-industrial-orange transition-colors">Experience</a>
             </nav>
         </div>
     </header>
 
     <main class="pt-20">
         <!-- Hero Section -->
-        <section id="hero" class="min-h-[80vh] flex flex-col justify-center px-6">
+        <section id="hero" class="min-h-[85vh] flex flex-col justify-center px-6 reveal">
             <div class="max-w-4xl mx-auto">
                 <span
-                    class="font-mono text-industrial-orange text-xs mb-4 block font-bold uppercase tracking-[0.2em] animate-pulse">Initializing
-                    System...</span>
+                    class="font-mono text-industrial-orange text-xs mb-4 block font-bold uppercase tracking-[0.2em]">Ingeniero
+                    Mecatrónico // Systems Engineer</span>
                 <h1 class="text-4xl md:text-7xl font-semibold tracking-tighter leading-none mb-6">
                     Ingeniería en Sistemas <br>
                     Embebidos e IA Local.
                 </h1>
-                <p class="text-lg md:text-xl text-slate-400 font-light mb-12 max-w-2xl">
-                    Especializado en despliegue de modelos neuronales en hardware restringido y robótica avanzada.
-                    Puenteando la brecha entre el silicio y la inteligencia autónoma.
+                <p class="text-lg md:text-xl text-slate-400 font-light mb-12 max-w-2xl leading-relaxed">
+                    Especializado en el despliegue de modelos neuronales en hardware restringido y robótica avanzada.
+                    Puenteando la brecha entre la lógica autónoma y la ejecución física en el Edge.
                 </p>
 
                 <!-- System Stats Bar -->
@@ -94,8 +105,8 @@
                         <span class="text-xl font-mono text-industrial-orange">99.9%</span>
                     </div>
                     <div class="px-6 border-y md:border-y-0 md:border-x border-white/10 flex flex-col">
-                        <span class="text-[10px] font-mono text-slate-500 uppercase">AWS_Infrastructure</span>
-                        <span class="text-xl font-mono text-industrial-orange">Managed</span>
+                        <span class="text-[10px] font-mono text-slate-500 uppercase">Network_Nodes</span>
+                        <span class="text-xl font-mono text-industrial-orange">4,500+ Active</span>
                     </div>
                     <div class="px-6 flex flex-col">
                         <span class="text-[10px] font-mono text-slate-500 uppercase">Llama-3_Edge</span>
@@ -108,58 +119,79 @@
         <!-- The Forge (Projects) -->
         <section id="forge" class="py-32 px-6">
             <div class="max-w-6xl mx-auto">
-                <div class="flex items-center space-x-4 mb-20">
+                <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-[1px] w-12 bg-industrial-orange"></div>
-                    <h2 class="text-[10px] font-mono font-bold tracking-[0.4em] uppercase">The Forge // Repositories
-                    </h2>
+                    <h2 class="text-[10px] font-mono font-bold tracking-[0.4em] uppercase">The Forge // Technical
+                        Repositories</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1px bg-white/5 border border-white/5">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5 reveal">
                     <!-- EdgeCortex -->
                     <div class="bg-base-dark p-10 group hover:bg-white/[0.02] transition-colors">
-                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_01</span>
-                        <h3 class="text-2xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
+                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_01 //
+                            AI_INFERENCE</span>
+                        <h3 class="text-3xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
                             EdgeCortex</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed min-h-[80px]">Motor de inferencia local
-                            diseñado para ejecutar redes neuronales complejas en hardware embebido de bajos recursos.
-                        </p>
-                        <div class="mt-8 flex gap-4 font-mono text-[9px] text-white/40">
-                            <span class="px-2 py-1 border border-white/10 italic">#CUDA</span>
-                            <span class="px-2 py-1 border border-white/10 italic">#C++20</span>
-                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed min-h-[60px]">Implementación de motores de
+                            inferencia IA optimizados para ejecución local directa en hardware embebido mediante CUDA y
+                            C++.</p>
+                        <ul class="mt-8 space-y-2 font-mono text-[10px] text-white/40">
+                            <li>> ARCH: Quantized Transformers</li>
+                            <li>> STACK: C++, CUDA, TensorRT</li>
+                        </ul>
                     </div>
 
                     <!-- OmniSLAM -->
                     <div
-                        class="bg-base-dark p-10 group hover:bg-white/[0.02] transition-colors border-y md:border-y-0 md:border-x border-white/5">
-                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_02</span>
-                        <h3 class="text-2xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
+                        class="bg-base-dark p-10 group hover:bg-white/[0.02] transition-colors border-t md:border-t-0 md:border-l border-white/5">
+                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_02 //
+                            ROBOTICS</span>
+                        <h3 class="text-3xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
                             OmniSLAM</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed min-h-[80px]">Sistema de navegación autónoma y
-                            mapeo simultáneo en tiempo real de alta precisión para plataformas robóticas.</p>
-                        <div class="mt-8 flex gap-4 font-mono text-[9px] text-white/40">
-                            <span class="px-2 py-1 border border-white/10 italic">#ROS2</span>
-                            <span class="px-2 py-1 border border-white/10 italic">#Lidar</span>
-                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed min-h-[60px]">Sistema de mapeo y localización
+                            simultánea (SLAM) para robótica móvil, optimizado para sensores inerciales y LIDAR.</p>
+                        <ul class="mt-8 space-y-2 font-mono text-[10px] text-white/40">
+                            <li>> ENGINE: ROS2 / Gazebo</li>
+                            <li>> HARDWARE: VEX V5 / Dobot</li>
+                        </ul>
                     </div>
 
                     <!-- NexusRAG -->
-                    <div class="bg-base-dark p-10 group hover:bg-white/[0.02] transition-colors">
-                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_03</span>
-                        <h3 class="text-2xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
+                    <div
+                        class="bg-base-dark p-10 group hover:bg-white/[0.02] transition-colors border-t border-white/5">
+                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_03 //
+                            RAG_ARCH</span>
+                        <h3 class="text-3xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
                             NexusRAG</h3>
-                        <p class="text-sm text-slate-400 leading-relaxed min-h-[80px]">Arquitectura de recuperación de
-                            información optimizada para latencias ultra-bajas en entornos corporativos.</p>
-                        <div class="mt-8 flex gap-4 font-mono text-[9px] text-white/40">
-                            <span class="px-2 py-1 border border-white/10 italic">#Python</span>
-                            <span class="px-2 py-1 border border-white/10 italic">#LLMs</span>
-                        </div>
+                        <p class="text-sm text-slate-400 leading-relaxed min-h-[60px]">Arquitectura de generación
+                            aumentada por recuperación optimizada para eficiencia extrema en memoria y latencia mínima.
+                        </p>
+                        <ul class="mt-8 space-y-2 font-mono text-[10px] text-white/40">
+                            <li>> FEATURE: Vector Search Local</li>
+                            <li>> STACK: Python, PyTorch, FAISS</li>
+                        </ul>
+                    </div>
+
+                    <!-- NanoTensor -->
+                    <div
+                        class="bg-base-dark p-10 group hover:bg-white/[0.02] transition-colors border-t border-l border-white/5">
+                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_04 //
+                            DEEP_LEARNING</span>
+                        <h3 class="text-3xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
+                            NanoTensor</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed min-h-[60px]">Framework minimalista de tensores
+                            para aprendizaje profundo desarrollado desde cero en C++ para entender los kernels críticos.
+                        </p>
+                        <ul class="mt-8 space-y-2 font-mono text-[10px] text-white/40">
+                            <li>> CORE: Autograd / Matrix Ops</li>
+                            <li>> STACK: C++23 / STL Only</li>
+                        </ul>
                     </div>
                 </div>
 
                 <!-- System Logs Visual Component -->
                 <div
-                    class="mt-16 bg-code-surface border border-white/10 p-6 rounded-sm shadow-2xl relative overflow-hidden group">
+                    class="mt-16 bg-code-surface border border-white/10 p-6 rounded-sm shadow-2xl relative overflow-hidden reveal">
                     <div class="absolute top-0 left-0 w-1 h-full bg-industrial-orange"></div>
                     <div class="flex items-center justify-between mb-4 border-b border-white/5 pb-2">
                         <span
@@ -171,95 +203,160 @@
                         </div>
                     </div>
                     <div class="font-mono text-[11px] space-y-1.5 h-32 overflow-hidden" id="log-container">
-                        <div class="text-green-500/70">> [STYS] Kernel initialized... OK</div>
-                        <div class="text-green-500/70">> [NODE] EdgeCortex active on CUDA device 0</div>
-                        <div class="text-green-500/70">> [INFR] Monitoring 4,500+ active sessions</div>
-                        <div class="text-green-500">> [AWS] S3 sync status: PERSISTENT</div>
+                        <div class="text-green-500/70">> [STYS] Engineering core initialized... OK</div>
+                        <div class="text-green-500/70">> [NODE] Mechatronics degree verified: Oct 2024</div>
+                        <div class="text-green-500/70">> [INFR] AWS Infrastructure supporting 4,500+ users</div>
+                        <div class="text-green-500">> [ROB] Robotics node (VEX/Dobot) sync... ACTIVE</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hard Skills Matrix -->
+        <section id="matrix" class="py-32 px-6 bg-white/[0.01]">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center space-x-4 mb-20 reveal">
+                    <div class="h-[1px] w-12 bg-industrial-orange"></div>
+                    <h2 class="text-[10px] font-mono font-bold tracking-[0.4em] uppercase">Critical Matrix // Hard
+                        Skills</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 reveal">
+                    <div class="p-8 border border-white/5 bg-base-dark">
+                        <h4 class="font-mono text-[10px] text-industrial-orange uppercase mb-4 tracking-tighter">
+                            Lenguajes</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>C++23</span> <span class="text-white/20">PRO</span>
+                            </li>
+                            <li class="flex justify-between"><span>Python</span> <span
+                                    class="text-white/20">ELITE</span></li>
+                            <li class="flex justify-between"><span>Luau</span> <span class="text-white/20">CORE</span>
+                            </li>
+                            <li class="flex justify-between"><span>C</span> <span class="text-white/20">BASE</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-8 border border-white/5 bg-base-dark">
+                        <h4 class="font-mono text-[10px] text-industrial-orange uppercase mb-4 tracking-tighter">
+                            Hardware</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>VEX V5/U</span> <span
+                                    class="text-white/20">ACTIVE</span></li>
+                            <li class="flex justify-between"><span>Dobot Atom</span> <span
+                                    class="text-white/20">SYNCED</span></li>
+                            <li class="flex justify-between"><span>IMU Fusion</span> <span
+                                    class="text-white/20">CALIB</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-8 border border-white/5 bg-base-dark">
+                        <h4 class="font-mono text-[10px] text-industrial-orange uppercase mb-4 tracking-tighter">
+                            Cloud/SRE</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>AWS Arch</span> <span
+                                    class="text-white/20">ADMIN</span></li>
+                            <li class="flex justify-between"><span>Linux OS</span> <span
+                                    class="text-white/20">ROOT</span></li>
+                            <li class="flex justify-between"><span>Cibersec</span> <span
+                                    class="text-white/20">HARDENED</span></li>
+                        </ul>
+                    </div>
+                    <div class="p-8 border border-white/5 bg-base-dark">
+                        <h4 class="font-mono text-[10px] text-industrial-orange uppercase mb-4 tracking-tighter">
+                            Algorithms</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between"><span>DSA Advanced</span> <span
+                                    class="text-white/20">CORE</span></li>
+                            <li class="flex justify-between"><span>SLAM Optics</span> <span
+                                    class="text-white/20">LOGIC</span></li>
+                            <li class="flex justify-between"><span>Git Flow</span> <span
+                                    class="text-white/20">CI/CD</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Experience Section -->
-        <section id="experience" class="py-32 px-6 bg-white/[0.01] border-y border-white/5">
+        <section id="experience" class="py-32 px-6 border-t border-white/5">
             <div class="max-w-4xl mx-auto">
-                <div class="flex items-center space-x-4 mb-16">
+                <div class="flex items-center space-x-4 mb-16 reveal">
                     <div class="h-[1px] w-12 bg-industrial-orange"></div>
-                    <h2 class="text-[10px] font-mono font-bold tracking-[0.4em] uppercase">Core Experience // Background
-                    </h2>
+                    <h2 class="text-[10px] font-mono font-bold tracking-[0.4em] uppercase">Career Trajectory // Core
+                        Background</h2>
                 </div>
 
-                <div class="relative pl-12 border-l border-white/5 py-8">
-                    <div
-                        class="absolute -left-[5px] top-10 w-2 h-2 rounded-full bg-industrial-orange shadow-[0_0_10px_#f97316]">
+                <div class="relative pl-12 border-l border-white/5 py-8 reveal">
+                    <div class="absolute -left-[5px] top-10 w-2 h-2 rounded-full bg-industrial-orange"></div>
+
+                    <div class="mb-12">
+                        <span
+                            class="text-[10px] font-mono text-industrial-orange mb-2 block uppercase font-bold tracking-widest">Active
+                            Status // Universidad Tecnológica de Matamoros</span>
+                        <h3 class="text-3xl font-semibold mb-4">Systems Engineer</h3>
+                        <p class="text-lg text-slate-400 leading-relaxed font-light mb-6">
+                            Liderando la gestión de infraestructura AWS y ciberseguridad para una red institucional de
+                            <span class="text-white border-b border-industrial-orange/40">4,500+ usuarios</span>.
+                            Resolución de incidentes críticos y mitigación de compromisos de cuentas activas.
+                        </p>
+                        <div class="mt-4 flex flex-wrap gap-4 font-mono text-[10px] text-white/30 uppercase">
+                            <span>#AWS_Console</span>
+                            <span>#PenTesting</span>
+                            <span>#SRE_Logic</span>
+                        </div>
                     </div>
-                    <span
-                        class="text-[10px] font-mono text-industrial-orange mb-2 block uppercase font-bold tracking-widest">Active
-                        Status // Systems Engineer</span>
-                    <h3 class="text-3xl font-semibold mb-6">Infraestructura AWS & Ciberseguridad</h3>
-                    <p class="text-lg text-slate-400 leading-relaxed font-light mb-8">
-                        Liderando la gestión técnica y seguridad de infraestructuras críticas en la nube. Responsable de
-                        garantizar el uptime y la integridad de datos para una base de usuarios superior a los <span
-                            class="text-white border-b border-industrial-orange/50 px-1 font-normal">4,500
-                            integrantes</span>. Implementación de protocolos de defensa activa y orquestación de
-                        servicios administrados.
-                    </p>
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div class="p-4 border border-white/5 bg-base-dark text-center">
-                            <span
-                                class="text-[9px] font-mono block text-white/30 mb-1 uppercase tracking-tighter">Scale</span>
-                            <span class="font-mono text-sm text-industrial-orange">4.5K+ Users</span>
-                        </div>
-                        <div class="p-4 border border-white/5 bg-base-dark text-center">
-                            <span
-                                class="text-[9px] font-mono block text-white/30 mb-1 uppercase tracking-tighter">Cloud</span>
-                            <span class="font-mono text-sm text-industrial-orange">AWS Arch</span>
-                        </div>
-                        <div class="p-4 border border-white/5 bg-base-dark text-center">
-                            <span
-                                class="text-[9px] font-mono block text-white/30 mb-1 uppercase tracking-tighter">Sec</span>
-                            <span class="font-mono text-sm text-industrial-orange">Pentesting</span>
-                        </div>
-                        <div class="p-4 border border-white/5 bg-base-dark text-center">
-                            <span
-                                class="text-[9px] font-mono block text-white/30 mb-1 uppercase tracking-tighter">DevOps</span>
-                            <span class="font-mono text-sm text-industrial-orange">CI/CD Pipeline</span>
-                        </div>
+
+                    <div class="mb-12">
+                        <span
+                            class="text-[10px] font-mono text-industrial-orange mb-2 block uppercase font-bold tracking-widest">Robotics
+                            Lead // Education Systems</span>
+                        <h3 class="text-3xl font-semibold mb-4">Programación de Sistemas Complejos</h3>
+                        <p class="text-lg text-slate-400 leading-relaxed font-light">
+                            Implementación de lógica robótica para equipos Dobot (Atom/Nova) en entornos educativos de
+                            alto rendimiento. Desarrollo de algoritmos de control determinista y fusión sensorial.
+                        </p>
+                    </div>
+
+                    <div>
+                        <span
+                            class="text-[10px] font-mono text-industrial-orange mb-2 block uppercase font-bold tracking-widest">Academic
+                            Milestone // Ingeniero Mecatrónico</span>
+                        <h3 class="text-3xl font-semibold mb-2">Titulado Octubre 2024</h3>
+                        <p class="text-sm text-slate-500 font-mono">Expertise: Sistemas Embebidos, Control & IA.</p>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-20 px-6">
+    <footer class="py-20 px-6 border-t border-white/5">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
             <div class="flex flex-col text-center md:text-left">
                 <span class="font-mono text-[9px] text-white/20 uppercase tracking-[0.5em] mb-2 font-bold">Domingo
                     González // Systems Engineer</span>
-                <span class="text-xs text-white/10 font-mono tracking-tighter">SHA256: 789DFF2A... CORE_ACTIVE</span>
+                <span class="text-xs text-white/10 font-mono tracking-tighter">LOC: Matamoros, MX // SHARD:
+                    ACTIVE</span>
             </div>
-            <div class="flex space-x-10">
-                <a href="#"
-                    class="text-[10px] font-mono uppercase text-white/30 hover:text-industrial-orange transition-colors">LinkedIn</a>
+            <div class="flex space-x-12">
                 <a href="https://github.com/Doku566" target="_blank"
                     class="text-[10px] font-mono uppercase text-white/30 hover:text-industrial-orange transition-colors">GitHub</a>
-                <a href="mailto:contact@domain.com"
-                    class="text-[10px] font-mono uppercase text-white/30 hover:text-industrial-orange transition-colors">Email</a>
+                <a href="#"
+                    class="text-[10px] font-mono uppercase text-white/30 hover:text-industrial-orange transition-colors">LinkedIn</a>
+                <a href="mailto:contact@domain.mx"
+                    class="text-[10px] font-mono uppercase text-white/30 hover:text-industrial-orange transition-colors">Protocol_Email</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Log Feed Animation
+        // Log Feed Animation (Grounded in Real Data)
         const logData = [
-            "[OK] System calibration sequence complete",
-            "[AI] Loading EdgeCortex v12... 100%",
-            "[SYS] Memory optimized for local inference",
-            "[SEC] 4.5k user firewall... STABLE",
-            "[NET] AWS CloudFront link: OPERATIONAL",
-            "[INF] Inference latency: ~85ms",
-            "[BOT] Robotics node heartbeat sync: ACTIVE",
-            "[DB] NexusRAG indexing documents..."
+            "[SYSTEM] Engineering core established: Mechatronics Degree 2024",
+            "[HARDWARE] Robotics node (Dobot Atom) heartbeat: ACTIVE",
+            "[NETWORK] AWS Infrastructure: 4,500+ users monitoring",
+            "[AI] Loading EdgeCortex inference kernel...",
+            "[SEC] Mitigation protocols active for institutional domain",
+            "[SYSTEM] SLAM logic recalibrated on LIDAR sensor fusion",
+            "[INF] NexusRAG Reranker cycle completed",
+            "[VEX] Robotics V5 Competition Profile... READY"
         ];
 
         const logContainer = document.getElementById('log-container');
@@ -267,16 +364,29 @@
 
         setInterval(() => {
             const div = document.createElement('div');
-            div.className = "text-green-500/70 animate-pulse";
+            div.className = "text-green-500/70 opacity-0 transform translate-y-2 transition-all duration-500";
             div.innerText = `> ${logData[index]}`;
             logContainer.appendChild(div);
+
+            setTimeout(() => {
+                div.classList.remove('opacity-0', 'translate-y-2');
+            }, 10);
 
             if (logContainer.children.length > 5) {
                 logContainer.removeChild(logContainer.firstChild);
             }
 
             index = (index + 1) % logData.length;
-        }, 2500);
+        }, 2800);
+
+        // Simple Reveal Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(s => observer.observe(s));
     </script>
 </body>
 

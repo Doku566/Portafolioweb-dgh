@@ -1,133 +1,411 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domingo González // Vibrant Robotic Core</title>
-    <link rel="stylesheet" href="bespoke.css">
+    <title>Domingo González // Systems & Robotics Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'tech-dark': '#0d0f14',
+                        'tech-surface': '#161a22',
+                        'tech-orange': '#FF4F00', // International Orange
+                        'tech-cyan': '#00F2FF',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0d0f14;
+            color: #f1f5f9;
+        }
+
+        .grid-pattern {
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+    </style>
 </head>
 
-<body>
+<body class="font-sans antialiased overflow-x-hidden">
 
-    <!-- Vibrant Environment -->
-    <div class="vibrant-bg">
-        <div class="energy-grid"></div>
-        <div class="laser-beam"></div>
-    </div>
+    <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
 
-    <!-- Navigation -->
-    <nav class="elite-nav">
-        <div class="nav-wrap">
-            <div class="logo-vibrant">DG // VIBRANT_CORE v3.5</div>
-            <div class="nav-links">
-                <a href="#focus">Transmisión</a>
-                <a href="#matrix">Matriz</a>
-                <a href="https://github.com/Doku566" target="_blank">Codex</a>
+    <!-- Persistent Header -->
+    <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-tech-dark/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-xs font-mono tracking-widest text-tech-orange font-bold uppercase">
+                CORE_ENGINE_v4.0
+            </div>
+            <nav class="hidden md:flex space-x-10">
+                <a href="#hero"
+                    class="text-[10px] font-mono uppercase tracking-tighter hover:text-tech-orange transition-colors">Start</a>
+                <a href="#matrix"
+                    class="text-[10px] font-mono uppercase tracking-tighter hover:text-tech-orange transition-colors">Matrix</a>
+                <a href="#repo"
+                    class="text-[10px] font-mono uppercase tracking-tighter hover:text-tech-orange transition-colors">Repo</a>
+                <a href="#metrics"
+                    class="text-[10px] font-mono uppercase tracking-tighter hover:text-tech-orange transition-colors">Metrics</a>
+            </nav>
+            <div class="text-[10px] font-mono text-white/40">
+                STATUS: <span class="text-green-500">OPERATIONAL</span>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main>
-        <!-- High-Impact Hero -->
-        <section class="vibrant-hero is-active">
-            <div class="hero-content-v">
-                <span class="hero-tag">// INGENIERÍA DE SOFTWARE & ROBÓTICA //</span>
-                <h1 class="hero-title-v">Sistemas de <br>Energía Digital.</h1>
-                <p class="hero-p-v">
-                    Construyendo la arquitectura del mañana a través de la inteligencia artificial y sistemas autónomos
-                    de alto rendimiento.
-                </p>
-            </div>
-        </section>
-
-        <!-- Dynamic Spotlight -->
-        <section id="focus" class="vibrant-spotlight">
-            <div class="container">
-                <div class="neon-showcase">
-                    <div class="showcase-header">
-                        <span class="file-name">PRJ_AETHERVOICE_V3.PROC</span>
-                    </div>
-                    <img src="images/aethervoice_ui.png" alt="AetherVoice Interface" class="neon-asset">
-                    <div class="neon-info">
-                        <h3>AetherVoice</h3>
-                        <p class="hero-p-v" style="font-size: 1.2rem; margin: 0;">
-                            Procesamiento de visión y voz local. WebGPU-Powered. Una explosión de inteligencia
-                            artificial sin latencia.
-                        </p>
+    <main class="relative z-10 pt-16">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-[85vh] flex flex-col justify-center px-6">
+            <div class="max-w-7xl mx-auto w-full">
+                <span class="font-mono text-tech-orange text-xs tracking-[0.4em] mb-4 block uppercase font-bold">Systems
+                    / Robotics / Edge-AI</span>
+                <h1 class="text-5xl md:text-8xl font-semibold tracking-tighter leading-[0.9] mb-8">
+                    Engineering Neural <br>
+                    Systems for Local <br>
+                    Hardware.
+                </h1>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <p class="text-lg md:text-xl text-slate-400 max-w-2xl font-light leading-relaxed">
+                        Mechatronics Engineer specialized in the deployment of complex AI models to edge environments.
+                        Expert in bridging the gap between high-level autonomous logic and physical execution.
+                    </p>
+                    <div
+                        class="flex flex-wrap gap-4 font-mono text-[10px] uppercase border border-white/10 p-4 bg-tech-surface">
+                        <span class="text-white/60">Stack:</span>
+                        <span class="text-tech-orange">C++</span>
+                        <span class="text-tech-orange">Python</span>
+                        <span class="text-tech-orange">CUDA</span>
+                        <span class="text-tech-orange">ROS2</span>
+                        <span class="text-tech-orange">PyTorch</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Matrix -->
-        <section id="matrix" class="matrix-section">
-            <div class="container">
-                <div class="vibrant-matrix">
-                    <div class="matrix-node">
-                        <div class="node-label-v">SYS.AI.01</div>
-                        <ul class="node-list-v">
-                            <li>Transformers Locales</li>
-                            <li>WebGPU Compute</li>
-                            <li>Síntesis Neuronal</li>
+        <!-- Tech Stack Matrix -->
+        <section id="matrix" class="py-24 px-6 border-t border-white/5 bg-tech-surface/30">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center gap-4 mb-16">
+                    <span class="w-12 h-px bg-tech-orange"></span>
+                    <h2 class="font-mono text-xs uppercase tracking-[0.3em] font-bold">Tech Stack Matrix</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
+                    <!-- Low Level -->
+                    <div class="bg-tech-dark p-10 group hover:bg-tech-surface transition-colors">
+                        <span class="font-mono text-[10px] text-tech-orange mb-6 block">01 // LOW_LEVEL</span>
+                        <h3 class="text-2xl font-semibold mb-6">Software Base</h3>
+                        <ul class="space-y-3 font-mono text-xs text-slate-400">
+                            <li class="flex justify-between"><span>C / C++ (20/23)</span> <span
+                                    class="text-white/20">ELITE</span></li>
+                            <li class="flex justify-between"><span>Memory Mgmt</span> <span
+                                    class="text-white/20">MANUAL</span></li>
+                            <li class="flex justify-between"><span>Real-Time OS</span> <span
+                                    class="text-white/20">DETERMINISTIC</span></li>
+                            <li class="flex justify-between"><span>Assembly fundamentals</span> <span
+                                    class="text-white/20">LOW_LATENCY</span></li>
                         </ul>
                     </div>
 
-                    <div class="matrix-node">
-                        <div class="node-label-v">SYS.CPP.02</div>
-                        <ul class="node-list-v">
-                            <li>C++ 23 / Low Latency</li>
-                            <li>Optimización Extrema</li>
-                            <li>Kernels de Alto Nivel</li>
+                    <!-- AI/ML -->
+                    <div
+                        class="bg-tech-dark p-10 group hover:bg-tech-surface transition-colors border-x border-white/5">
+                        <span class="font-mono text-[10px] text-tech-orange mb-6 block">02 // INTELLIGENCE</span>
+                        <h3 class="text-2xl font-semibold mb-6">Neural Engines</h3>
+                        <ul class="space-y-3 font-mono text-xs text-slate-400">
+                            <li class="flex justify-between"><span>Llama / Transformers</span> <span
+                                    class="text-white/20">LOCAL</span></li>
+                            <li class="flex justify-between"><span>CUDA / TensorRT</span> <span
+                                    class="text-white/20">OPTIMIZED</span></li>
+                            <li class="flex justify-between"><span>Computer Vision</span> <span
+                                    class="text-white/20">CV2/YOLO</span></li>
+                            <li class="flex justify-between"><span>Edge Inference</span> <span
+                                    class="text-white/20">ONNX</span></li>
                         </ul>
                     </div>
 
-                    <div class="matrix-node">
-                        <div class="node-label-v">ROB.DEV.03</div>
-                        <ul class="node-list-v">
-                            <li>Control PID Avanzado</li>
-                            <li>Visión por Computadora</li>
-                            <li>Fusión Sensorial</li>
+                    <!-- Hardware -->
+                    <div class="bg-tech-dark p-10 group hover:bg-tech-surface transition-colors">
+                        <span class="font-mono text-[10px] text-tech-orange mb-6 block">03 // PHYSICAL</span>
+                        <h3 class="text-2xl font-semibold mb-6">Hardware Interface</h3>
+                        <ul class="space-y-3 font-mono text-xs text-slate-400">
+                            <li class="flex justify-between"><span>ROS2 / Gazebo</span> <span
+                                    class="text-white/20">SIM_PRO</span></li>
+                            <li class="flex justify-between"><span>Dobot / Industrial</span> <span
+                                    class="text-white/20">CONTROL</span></li>
+                            <li class="flex justify-between"><span>Sensory Fusion</span> <span
+                                    class="text-white/20">LIDAR/IMU</span></li>
+                            <li class="flex justify-between"><span>VEX Robotics</span> <span
+                                    class="text-white/20">COMPETITION</span></li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Repository -->
+        <section id="repo" class="py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center gap-4 mb-16">
+                    <span class="w-12 h-px bg-tech-orange"></span>
+                    <h2 class="font-mono text-xs uppercase tracking-[0.3em] font-bold">The Repository</h2>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- AetherVoice Project -->
+                    <div class="border border-white/5 bg-tech-surface/20 group">
+                        <div class="h-64 bg-tech-surface overflow-hidden border-b border-white/5">
+                            <img src="images/aethervoice_ui.png" alt="AetherVoice"
+                                class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                        <div class="p-8">
+                            <div class="flex justify-between items-start mb-6">
+                                <h3 class="text-3xl font-semibold tracking-tight">AetherVoice Core</h3>
+                                <span
+                                    class="font-mono text-[10px] px-2 py-1 bg-tech-orange text-white uppercase font-bold">Active_Node</span>
+                            </div>
+
+                            <div class="space-y-6 text-sm">
+                                <div>
+                                    <span class="font-mono text-tech-orange text-[10px] uppercase block mb-1">01_The
+                                        Challenge</span>
+                                    <p class="text-slate-400 leading-relaxed">Latency in cloud-based LLM speech
+                                        synthesis prevents fluid human-robot interaction in disconnected environments.
+                                    </p>
+                                </div>
+                                <div>
+                                    <span
+                                        class="font-mono text-tech-orange text-[10px] uppercase block mb-1">02_Technical
+                                        Implementation</span>
+                                    <p class="text-slate-400 leading-relaxed">Deployment of a quantized
+                                        transformer-based TTS engine on local WebGPU kernels with a low-latency C++
+                                        bridge.</p>
+                                </div>
+                                <div class="p-4 bg-tech-dark/50 border-l-2 border-tech-orange">
+                                    <span
+                                        class="font-mono text-tech-orange text-[10px] uppercase block mb-1">03_Measurable
+                                        Result</span>
+                                    <p class="text-white font-mono text-xs">Latencia de inferencia: < 120ms.
+                                            Funcionamiento 100% Offline.</p>
+                                </div>
+                            </div>
+
+                            <a href="https://github.com/Doku566/AetherVoice" target="_blank"
+                                class="mt-8 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-tech-orange hover:text-white transition-colors">
+                                [Source_Code]
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Future Project placeholder -->
+                    <div
+                        class="border border-white/5 bg-tech-surface/20 border-dashed flex items-center justify-center min-h-[500px]">
+                        <div class="text-center">
+                            <div class="font-mono text-[10px] text-white/20 uppercase tracking-widest mb-4">
+                                Awaiting_Data_Input</div>
+                            <div class="w-12 h-1 bg-white/5 mx-auto"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Live Metrics Section -->
+        <section id="metrics" class="py-24 px-6 bg-tech-surface/40 border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center gap-4 mb-16">
+                    <span class="w-12 h-px bg-tech-orange"></span>
+                    <h2 class="font-mono text-xs uppercase tracking-[0.3em] font-bold">Live System Metrics</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <div class="border border-white/5 bg-tech-dark p-6">
+                        <span class="text-[10px] font-mono text-white/40 block mb-2 uppercase">Uptime_Global</span>
+                        <div class="text-2xl font-mono text-tech-orange">99.98%</div>
+                    </div>
+                    <div class="border border-white/5 bg-tech-dark p-6">
+                        <span class="text-[10px] font-mono text-white/40 block mb-2 uppercase">Avg_Inference</span>
+                        <div class="text-2xl font-mono text-tech-orange" id="metric-latency">48ms</div>
+                    </div>
+                    <div class="border border-white/5 bg-tech-dark p-6">
+                        <span class="text-[10px] font-mono text-white/40 block mb-2 uppercase">Edge_Nodes</span>
+                        <div class="text-2xl font-mono text-tech-orange">14 Active</div>
+                    </div>
+                    <div class="border border-white/5 bg-tech-dark p-6">
+                        <span class="text-[10px] font-mono text-white/40 block mb-2 uppercase">Mem_Load</span>
+                        <div class="text-2xl font-mono text-tech-orange" id="metric-mem">2.4 GB</div>
+                    </div>
+                </div>
+
+                <div
+                    class="mt-12 p-8 border border-white/5 bg-tech-dark font-mono text-[10px] text-white/30 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-tech-orange animate-pulse"></div>
+                    <div id="system-log" class="space-y-1">
+                        <div>[SYSTEM] Initializing telemetry stream... OK</div>
+                        <div>[HARDWARE] ROS2 Node established... SYNCED</div>
+                        <div>[AI_CORE] Quantization kernels loaded... ACTIVE</div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Vibrant Chat Widget (Persistent) -->
-    <div class="vibrant-anchor">
-        <div id="vibrant-trigger" class="vibrant-trigger">
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    <!-- Professional Chat Bubble -->
+    <div class="fixed bottom-8 right-8 z-[100]">
+        <button id="chat-toggle"
+            class="w-14 h-14 bg-tech-orange text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all">
+            <svg id="chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg>
-        </div>
+            <svg id="close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+        </button>
 
-        <div id="vibrant-window" class="vibrant-window">
-            <div class="vibrant-head">
-                <div class="status-dot"></div>
-                <span>AETHER_VIBRANT_CORE.EXE</span>
+        <div id="chat-window"
+            class="hidden absolute bottom-20 right-0 w-[350px] max-w-[calc(100vw-40px)] bg-tech-surface border border-white/10 shadow-2xl overflow-hidden flex flex-col transition-all duration-300 transform scale-95 opacity-0 origin-bottom-right">
+            <div class="bg-tech-dark p-4 border-b border-white/10 flex justify-between items-center">
+                <span
+                    class="font-mono text-[10px] font-bold tracking-widest text-tech-orange uppercase">Aether_Assistant_Terminal</span>
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
             </div>
-            <div id="vibrant-output" class="vibrant-body">
-                <!-- Data Stream -->
+            <div id="chat-messages" class="h-80 overflow-y-auto p-4 font-mono text-[11px] space-y-4 text-slate-300">
+                <div class="text-tech-orange">[SYSTEM] Ready for operational queries. Type 'help' to start.</div>
             </div>
-            <div class="vibrant-input-row">
-                <input type="text" id="vibrant-input" placeholder=">> Comando de sistema..." spellcheck="false"
-                    autocomplete="off">
+            <div class="p-4 bg-tech-dark/50 border-t border-white/10 flex gap-2">
+                <span class="font-mono text-tech-orange font-bold">></span>
+                <input type="text" id="chat-input"
+                    class="bg-transparent border-none outline-none text-[11px] font-mono w-full text-white"
+                    placeholder="Enter_command..." autocomplete="off">
             </div>
         </div>
     </div>
 
-    <!-- Core Mechanics -->
-    <script src="mechanics.js"></script>
-    <script src="terminal.js"></script>
+    <footer class="py-12 border-t border-white/5 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-[10px] font-mono text-white/20 uppercase tracking-[0.4em]">
+                Domingo González // Engineering Core &copy; 2026
+            </div>
+            <div class="flex gap-8">
+                <a href="https://github.com/Doku566" target="_blank"
+                    class="text-[10px] font-mono uppercase text-white/40 hover:text-tech-orange">GitHub</a>
+                <a href="#" class="text-[10px] font-mono uppercase text-white/40 hover:text-tech-orange">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
 
+    <script>
+        // Metric Simulation
+        setInterval(() => {
+            const latency = Math.floor(40 + Math.random() * 15);
+            const mem = (2.2 + Math.random() * 0.4).toFixed(1);
+            document.getElementById('metric-latency').innerText = `${latency}ms`;
+            document.getElementById('metric-mem').innerText = `${mem} GB`;
+
+            // Random logs
+            const logs = [
+                `[INFO] Packet received from Edge_Node_${Math.floor(Math.random() * 20)}`,
+                `[AI] Inference cycle completed: ${latency}ms`,
+                `[SYSTEM] Memory cleanup: 0.1s`,
+                `[HARDWARE] Motor response recalibrated`
+            ];
+            const logDiv = document.getElementById('system-log');
+            const newLog = document.createElement('div');
+            newLog.innerText = `> ${logs[Math.floor(Math.random() * logs.length)]}`;
+            logDiv.appendChild(newLog);
+            if (logDiv.children.length > 3) logDiv.removeChild(logDiv.firstChild);
+        }, 3000);
+
+        // Chatbot Logic
+        const chatToggle = document.getElementById('chat-toggle');
+        const chatWindow = document.getElementById('chat-window');
+        const chatInput = document.getElementById('chat-input');
+        const chatMessages = document.getElementById('chat-messages');
+        const chatIcon = document.getElementById('chat-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        chatToggle.onclick = () => {
+            const isOpen = !chatWindow.classList.contains('hidden');
+            if (isOpen) {
+                chatWindow.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => chatWindow.classList.add('hidden'), 300);
+                chatIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            } else {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => chatWindow.classList.remove('scale-95', 'opacity-0'), 10);
+                chatIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                chatInput.focus();
+            }
+        };
+
+        const addMessage = (text, type = 'system') => {
+            const div = document.createElement('div');
+            const prefix = type === 'user' ? '[USER] ' : '[AETHER] ';
+            const colorClass = type === 'user' ? 'text-white' : 'text-tech-cyan';
+            div.className = colorClass;
+            div.innerText = `${prefix}${text}`;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        };
+
+        chatInput.onkeypress = (e) => {
+            if (e.key === 'Enter' && chatInput.value) {
+                const cmd = chatInput.value.toLowerCase().trim();
+                addMessage(cmd, 'user');
+                chatInput.value = '';
+
+                setTimeout(() => {
+                    const responses = {
+                        'help': 'Available commands: info, repo, skills, contact, clear',
+                        'info': 'Systems & Robotics Engineer. Deep Learning @ Edge specialist.',
+                        'repo': 'Source nodes located at: github.com/Doku566',
+                        'skills': 'Primary Architecture: C++, Python, CUDA, ROS2, PyTorch.',
+                        'contact': 'Protocol: email, linkedin, github.',
+                        'clear': 'CLEARING'
+                    };
+
+                    if (cmd === 'clear') {
+                        chatMessages.innerHTML = '';
+                    } else {
+                        addMessage(responses[cmd] || `Command not found: "${cmd}". Type 'help' for protocols.`);
+                    }
+                }, 400);
+            }
+        };
+
+        // Scroll reveal simulation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(s => observer.observe(s));
+    </script>
 </body>
 
 </html>

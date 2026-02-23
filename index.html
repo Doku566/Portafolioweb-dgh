@@ -102,6 +102,87 @@
             transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
         }
 
+        /* Timeline Line */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, rgba(249, 115, 22, 0.3), rgba(249, 115, 22, 0.3), transparent);
+        }
+
+        @media (min-width: 768px) {
+            .timeline-line {
+                left: 50%;
+            }
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background: #F97316;
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .pulse-dot::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border: 1px solid #F97316;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(2.5);
+                opacity: 0;
+            }
+        }
+
+        /* Chat Typing Indicator */
+        .typing {
+            display: flex;
+            gap: 4px;
+            padding-top: 4px;
+        }
+
+        .typing span {
+            width: 4px;
+            height: 4px;
+            background: rgba(249, 115, 22, 0.5);
+            border-radius: 50%;
+            animation: typing 1s infinite alternate;
+        }
+
+        .typing span:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .typing span:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes typing {
+            from {
+                opacity: 0.3;
+                transform: translateY(0);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(-4px);
+            }
+        }
+
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -375,53 +456,89 @@
                         Mastered</h2>
                 </div>
 
-                <div class="space-y-20 reveal">
-                    <!-- UT Matamoros -->
-                    <div class="relative pl-8 border-l border-accent-orange/30">
-                        <div class="absolute -left-[5px] top-2 w-2 h-2 bg-accent-orange rounded-full"></div>
-                        <span class="font-mono text-[10px] text-accent-orange uppercase mb-2 block font-bold">Actual //
-                            UT Matamoros</span>
-                        <h3 class="text-3xl font-bold mb-4">Systems Engineer Expert</h3>
-                        <p class="text-slate-400 leading-relaxed text-lg font-light">
-                            Administración de infraestructura de nube (AWS) para <span
-                                class="text-white font-normal">4,500+ usuarios</span>. Especialista en mitigación de
-                            brechas de seguridad y resolución de incidentes críticos en tiempo de ejecución.
-                        </p>
-                    </div>
-
-                    <!-- VEX Robotics (New) -->
-                    <div class="relative pl-8 border-l border-white/10">
-                        <div
-                            class="absolute -left-[5px] top-2 w-2 h-2 bg-accent-orange shadow-[0_0_10px_#f97316] rounded-full">
+                <!-- Professional Trajectory -->
+                <div class="relative">
+                    <div class="timeline-line hidden md:block"></div>
+                    <div class="space-y-16">
+                        <!-- Entry 1 -->
+                        <div class="relative flex flex-col md:flex-row items-center gap-8 reveal">
+                            <div
+                                class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10 w-12 h-12 bg-deep-bg border border-accent-orange/30 rounded-full items-center justify-center">
+                                <div class="pulse-dot"></div>
+                            </div>
+                            <div class="md:w-1/2 md:text-right">
+                                <span
+                                    class="font-mono text-xs text-accent-orange font-bold uppercase tracking-widest">2023
+                                    — Presente</span>
+                                <h4 class="text-xl font-bold mt-2 text-white italic">Lead Software Engineer //
+                                    Industrial Systems</h4>
+                            </div>
+                            <div class="md:w-1/2 bg-card-bg/50 border border-white/5 p-6 rounded-lg">
+                                <p class="text-sm text-slate-400">Dirección técnica en la gestión de infraestructura
+                                    **AWS** para una red de **4,500 usuarios**. Implementación de protocolos de
+                                    ciberseguridad industrial y optimización de flujos de trabajo en la nube.</p>
+                            </div>
                         </div>
-                        <div class="flex justify-between items-start">
-                            <span
-                                class="font-mono text-[10px] text-accent-orange uppercase mb-2 block font-bold tracking-widest">3
-                                Años // Robotics Programing Lead</span>
-                            <span class="font-mono text-[10px] bg-accent-orange text-deep-bg px-2 font-bold">Silver
-                                Medal // Global</span>
-                        </div>
-                        <h3 class="text-3xl font-bold mb-4 text-white">VEX Robotics Professional</h3>
-                        <p class="text-slate-400 leading-relaxed text-lg font-light">
-                            Programador principal de robots móviles competitivos. Desarrollo de algoritmos de navegación
-                            autónoma y control determinista. <span
-                                class="text-white font-normal underline decoration-accent-orange">Ganador del 2do lugar
-                                mundial en programación a nivel global</span>, compitiendo contra las mentes más
-                            brillantes de la robótica educativa.
-                        </p>
-                    </div>
 
-                    <!-- Mecatrónica -->
-                    <div class="relative pl-8 border-l border-white/10">
-                        <div class="absolute -left-[5px] top-2 w-2 h-2 bg-white/20 rounded-full"></div>
-                        <span
-                            class="font-mono text-[10px] text-white/30 uppercase mb-2 block font-bold tracking-tighter">Educación
-                            // Oct 2024</span>
-                        <h3 class="text-3xl font-bold mb-4 text-white/80">Ingeniero Mecatrónico Titulado</h3>
-                        <p class="text-slate-400 leading-relaxed text-lg font-light">
-                            Especialización en sistemas de control avanzado, integración de sensores e inteligencia
-                            artificial aplicada al hardware.
-                        </p>
+                        <!-- Entry 2 -->
+                        <div class="relative flex flex-col md:flex-row-reverse items-center gap-8 reveal">
+                            <div
+                                class="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10 w-12 h-12 bg-deep-bg border border-accent-orange/30 rounded-full items-center justify-center">
+                                <div class="pulse-dot"></div>
+                            </div>
+                            <div class="md:w-1/2 md:text-left">
+                                <span
+                                    class="font-mono text-xs text-accent-orange font-bold uppercase tracking-widest">2020
+                                    — 2023</span>
+                                <h4 class="text-xl font-bold mt-2 text-white italic">Robotics Programmer Lead // VEX
+                                    Robotics</h4>
+                            </div>
+                            <div class="md:w-1/2 bg-card-bg/50 border border-white/5 p-6 rounded-lg">
+                                <p class="text-sm text-slate-400 leading-relaxed">Ganador del **2do Lugar Mundial en
+                                    Programación**. Desarrollo de algoritmos de navegación autónoma y control PID para
+                                    robots móviles de alta competencia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Journal Section -->
+        <section id="journal" class="py-32 px-6 border-t border-white/5 bg-deep-bg">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center space-x-4 mb-20 reveal">
+                    <div class="h-px w-12 bg-accent-orange"></div>
+                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Journal // Insights</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-8 border border-white/5 bg-card-bg/30 hover:bg-card-bg transition-colors reveal">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-mono text-[9px] text-white/30 uppercase tracking-widest">Log_001 // Aug
+                                2025</span>
+                            <span class="text-[9px] bg-white/5 px-2 py-0.5 text-accent-orange">~4 min read</span>
+                        </div>
+                        <h4 class="font-bold mb-4">Arquitectando NexusSupport: Azure & IA</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-6">Un análisis profundo de la integración de
+                            Microsoft Graph con modelos LLM para automatización operativa.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[8px] font-mono text-white/20">#CloudGov</span>
+                            <span class="text-[8px] font-mono text-white/20">#LLMOps</span>
+                        </div>
+                    </div>
+                    <div class="p-8 border border-white/5 bg-card-bg/30 hover:bg-card-bg transition-colors reveal">
+                        <div class="flex justify-between items-start mb-6">
+                            <span class="font-mono text-[9px] text-white/30 uppercase tracking-widest">Log_002 // June
+                                2025</span>
+                            <span class="text-[9px] bg-white/5 px-2 py-0.5 text-accent-orange">~6 min read</span>
+                        </div>
+                        <h4 class="font-bold mb-4">Navegación Robótica: Del Código al Mundial</h4>
+                        <p class="text-xs text-slate-500 leading-relaxed mb-6">Lecciones aprendidas optimizando
+                            algoritmos de control en tiempo real para competencia global.</p>
+                        <div class="flex gap-2">
+                            <span class="text-[8px] font-mono text-white/20">#Robotics</span>
+                            <span class="text-[8px] font-mono text-white/20">#RealTime</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -573,9 +690,26 @@
                     response = "Domingo es Ingeniero Mecatrónico especializado en automatización y despliegue de infraestructura en la nube.";
                 }
 
-                botDiv.innerText = response;
-                messagesArea.appendChild(botDiv);
+                const bubble = document.createElement('div');
+                bubble.className = 'flex flex-col items-start';
+                bubble.innerHTML = `
+                    <div class="bg-white/5 p-4 rounded-xl rounded-tl-none max-w-[85%] text-xs border border-white/5 shadow-inner leading-relaxed">
+                        <div class="typing">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                `;
+                messagesArea.appendChild(bubble);
                 messagesArea.scrollTop = messagesArea.scrollHeight;
+
+                setTimeout(() => {
+                    bubble.innerHTML = `
+                        <div class="bg-white/10 p-4 rounded-xl rounded-tl-none max-w-[85%] text-xs border border-white/10 shadow-lg leading-relaxed">
+                            ${response}
+                        </div>
+                    `;
+                    messagesArea.scrollTop = messagesArea.scrollHeight;
+                }, 1000);
             }, 600);
         }
 

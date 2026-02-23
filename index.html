@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domingo González // Senior Mechatronics & Software Engineer</title>
+    <title>Domingo González // Mechatronics Engineer & VEX Global Runner-Up</title>
     <!-- Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -54,8 +54,9 @@
             transform: translateY(0);
         }
 
-        .chat-shadow {
-            shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+        .award-glow {
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
+            border-color: rgba(249, 115, 22, 0.4);
         }
     </style>
 </head>
@@ -91,7 +92,7 @@
             <div class="max-w-5xl mx-auto w-full">
                 <span
                     class="font-mono text-accent-orange text-xs mb-6 block font-bold tracking-[0.5em] uppercase">Status:
-                    Elite_Engineering_Active</span>
+                    Global_VEX_Silver_Award // Elite_Active</span>
                 <h1 class="text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
                     Soy Domingo González, <br>
                     <span class="text-white">Ingeniero Mecatrónico <br> y de Software.</span>
@@ -99,8 +100,8 @@
                 <div class="flex flex-col md:flex-row md:items-end justify-between gap-10">
                     <p class="text-xl md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed">
                         Gestionando infraestructura <span class="text-white border-b border-accent-orange/50">AWS para
-                            4,500+ usuarios</span> en la UT Matamoros. Especializado en C++, Robótica avanzada e IA
-                        local.
+                            4,500+ usuarios</span> en la UT Matamoros. Especializado en C++, Robótica avanzada y 2do
+                        lugar mundial en programación VEX.
                     </p>
                     <div class="flex gap-4">
                         <a href="#projects"
@@ -123,7 +124,33 @@
                         The Forge</h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
+
+                    <!-- AetherVoice (New) -->
+                    <div
+                        class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50 lg:col-span-2">
+                        <div class="md:flex h-full">
+                            <div class="md:w-1/2 aspect-video bg-neutral-900 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=1200"
+                                    alt="Vox/Audio AI"
+                                    class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                            </div>
+                            <div class="md:w-1/2 p-10 flex flex-col justify-center">
+                                <span
+                                    class="font-mono text-[9px] text-accent-orange uppercase mb-2 block font-bold">Audio_IA_Voice</span>
+                                <h3 class="text-4xl font-bold mb-4">AetherVoice</h3>
+                                <p class="text-slate-400 leading-relaxed mb-6">Motor de síntesis de voz y procesamiento
+                                    de audio avanzado. Implementación de redes neuronales para la generación de voz
+                                    natural con latencia mínima.</p>
+                                <div class="flex gap-4 font-mono text-[10px] text-white/30 italic">
+                                    <span>#PyTorch</span>
+                                    <span>#AudioGen</span>
+                                    <span>#DSP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- EdgeCortex -->
                     <div
                         class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
@@ -134,28 +161,31 @@
                         </div>
                         <div class="p-8">
                             <span
-                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block">AI_Infrastructure</span>
+                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block font-bold">AI_Infrastructure</span>
                             <h3 class="text-2xl font-bold mb-4">EdgeCortex</h3>
                             <p class="text-sm text-slate-400 leading-relaxed">Implementación de motores de inferencia IA
-                                para ejecución local directa en hardware embebido, optimizando el consumo de recursos
-                                críticos.</p>
+                                para ejecución local directa en hardware embebido, optimizando recursos críticos.</p>
                         </div>
                     </div>
 
                     <!-- OmniSLAM -->
                     <div
-                        class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
+                        class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50 shadow-lg award-glow">
                         <div class="aspect-video bg-neutral-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800"
                                 alt="Robotics"
                                 class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
                         </div>
                         <div class="p-8">
-                            <span
-                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block">Robotics_Nav</span>
+                            <div class="flex justify-between items-start mb-2">
+                                <span
+                                    class="font-mono text-[9px] text-accent-orange uppercase block font-bold">Robotics_Nav
+                                    // VEX_CORE</span>
+                                <i class="fa-solid fa-trophy text-accent-orange"></i>
+                            </div>
                             <h3 class="text-2xl font-bold mb-4">OmniSLAM</h3>
                             <p class="text-sm text-slate-400 leading-relaxed">Sistema de localización y mapeo simultáneo
-                                para robótica móvil, enfocado en navegación autónoma en entornos dinámicos complejos.
+                                para robótica móvil, heredero de algoritmos ganadores en competencias mundiales de VEX.
                             </p>
                         </div>
                     </div>
@@ -170,7 +200,7 @@
                         </div>
                         <div class="p-8">
                             <span
-                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block">Architecture_RAG</span>
+                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block font-bold">Architecture_RAG</span>
                             <h3 class="text-2xl font-bold mb-4">NexusRAG</h3>
                             <p class="text-sm text-slate-400 leading-relaxed">Arquitectura de generación aumentada por
                                 recuperación (RAG) optimizada para eficiencia extrema en el uso de memoria RAM.</p>
@@ -193,7 +223,7 @@
                     <div
                         class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
                         <i class="fa-solid fa-code text-4xl group-hover:text-deep-bg"></i>
-                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">C++</span>
+                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">C++23</span>
                     </div>
                     <div
                         class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
@@ -213,14 +243,12 @@
                     <div
                         class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
                         <i class="fa-solid fa-robot text-4xl group-hover:text-deep-bg"></i>
-                        <span
-                            class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">VEX/Dobot</span>
+                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">VEX/SLAM</span>
                     </div>
                     <div
                         class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
                         <i class="fa-solid fa-shield-halved text-4xl group-hover:text-deep-bg"></i>
-                        <span
-                            class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">Sec_Incidents</span>
+                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">Cybersec</span>
                     </div>
                 </div>
             </div>
@@ -231,31 +259,56 @@
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-accent-orange"></div>
-                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Experiencia & Educación //
-                        Core</h2>
+                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Experiencia & Hitos //
+                        Mastered</h2>
                 </div>
 
                 <div class="space-y-20 reveal">
+                    <!-- UT Matamoros -->
                     <div class="relative pl-8 border-l border-accent-orange/30">
                         <div class="absolute -left-[5px] top-2 w-2 h-2 bg-accent-orange rounded-full"></div>
                         <span class="font-mono text-[10px] text-accent-orange uppercase mb-2 block font-bold">Actual //
                             UT Matamoros</span>
                         <h3 class="text-3xl font-bold mb-4">Systems Engineer Expert</h3>
                         <p class="text-slate-400 leading-relaxed text-lg font-light">
-                            Liderando la administración de infraestructura de nube (AWS) y seguridad para más de <span
-                                class="text-white font-normal">4,500 usuarios corporativos e institucionales</span>.
-                            Especialista en mitigación de brechas de seguridad y optimización de recursos compartidos.
+                            Administración de infraestructura de nube (AWS) para <span
+                                class="text-white font-normal">4,500+ usuarios</span>. Especialista en mitigación de
+                            brechas de seguridad y resolución de incidentes críticos en tiempo de ejecución.
                         </p>
                     </div>
 
+                    <!-- VEX Robotics (New) -->
+                    <div class="relative pl-8 border-l border-white/10">
+                        <div
+                            class="absolute -left-[5px] top-2 w-2 h-2 bg-accent-orange shadow-[0_0_10px_#f97316] rounded-full">
+                        </div>
+                        <div class="flex justify-between items-start">
+                            <span
+                                class="font-mono text-[10px] text-accent-orange uppercase mb-2 block font-bold tracking-widest">3
+                                Años // Robotics Programing Lead</span>
+                            <span class="font-mono text-[10px] bg-accent-orange text-deep-bg px-2 font-bold">Silver
+                                Medal // Global</span>
+                        </div>
+                        <h3 class="text-3xl font-bold mb-4 text-white">VEX Robotics Professional</h3>
+                        <p class="text-slate-400 leading-relaxed text-lg font-light">
+                            Programador principal de robots móviles competitivos. Desarrollo de algoritmos de navegación
+                            autónoma y control determinista. <span
+                                class="text-white font-normal underline decoration-accent-orange">Ganador del 2do lugar
+                                mundial en programación a nivel global</span>, compitiendo contra las mentes más
+                            brillantes de la robótica educativa.
+                        </p>
+                    </div>
+
+                    <!-- Mecatrónica -->
                     <div class="relative pl-8 border-l border-white/10">
                         <div class="absolute -left-[5px] top-2 w-2 h-2 bg-white/20 rounded-full"></div>
-                        <span class="font-mono text-[10px] text-white/30 uppercase mb-2 block font-bold">Academia //
-                            Título Oct 2024</span>
-                        <h3 class="text-3xl font-bold mb-4 text-white/80">Ingeniero Mecatrónico</h3>
+                        <span
+                            class="font-mono text-[10px] text-white/30 uppercase mb-2 block font-bold tracking-tighter">Educación
+                            // Oct 2024</span>
+                        <h3 class="text-3xl font-bold mb-4 text-white/80">Ingeniero Mecatrónico Titulado</h3>
                         <p class="text-slate-400 leading-relaxed text-lg font-light">
-                            Formación integral en diseño de sistemas electromecánicos, control avanzado y automatización
-                            industrial, con un enfoque core en la integración de software y hardware.
+                            Especialización en sistemas de control avanzado, integración de sensores e inteligencia
+                            artificial aplicada al hardware.
                         </p>
                     </div>
                 </div>
@@ -282,21 +335,21 @@
             <!-- Messages Area -->
             <div id="messages" class="h-96 overflow-y-auto p-6 space-y-4 font-sans text-xs">
                 <!-- System Greeting -->
-                <div class="bg-white/5 p-4 rounded-xl rounded-tl-none max-w-[85%]">
-                    Hola, soy el asistente de Domingo. 😊 <br>¿Quieres saber sobre su experiencia en
-                    <strong>AWS</strong> o sus proyectos en <strong>C++</strong>?
+                <div class="bg-white/5 p-4 rounded-xl rounded-tl-none max-w-[85%] leading-relaxed">
+                    Hola, soy el asistente de Domingo. 😊 <br>¿Quieres saber sobre su <strong>Logro Mundial en
+                        VEX</strong>, su experiencia en <strong>AWS</strong> o el proyecto <strong>AetherVoice</strong>?
                 </div>
             </div>
             <!-- Quick Replies -->
             <div class="p-4 border-t border-white/5 flex flex-wrap gap-2">
-                <button onclick="sendReply('Experiencia AWS')"
-                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">AWS
-                    Exp</button>
-                <button onclick="sendReply('Proyectos C++')"
-                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">C++
-                    Projects</button>
-                <button onclick="sendReply('Mecatrónica')"
-                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">Education</button>
+                <button onclick="sendReply('Premio Mundial VEX')"
+                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">VEX
+                    Global Award</button>
+                <button onclick="sendReply('AetherVoice')"
+                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">AetherVoice</button>
+                <button onclick="sendReply('C++ & Robotics')"
+                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">Dev
+                    Stack</button>
             </div>
         </div>
 
@@ -310,7 +363,7 @@
     <footer class="py-20 px-6 border-t border-white/5">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
             <div class="font-mono text-[9px] text-white/20 uppercase tracking-[0.5em] text-center md:text-left">
-                Domingo González // Engineering & Software &copy; 2026
+                Domingo González // Engineering & Robotics &copy; 2026
             </div>
             <div class="flex space-x-10 text-[10px] font-mono uppercase text-white/40 tracking-widest">
                 <a href="#" class="hover:text-accent-orange">LinkedIn</a>
@@ -359,15 +412,17 @@
             // Bot Response Simulation
             setTimeout(() => {
                 const botDiv = document.createElement('div');
-                botDiv.className = "bg-white/5 p-4 rounded-xl rounded-tl-none max-w-[85%] text-slate-300";
+                botDiv.className = "bg-white/5 p-4 rounded-xl rounded-tl-none max-w-[85%] text-slate-300 leading-relaxed";
 
                 let response = "";
-                if (text.includes('AWS')) {
-                    response = "Domingo gestiona servicios AWS para +4,500 usuarios, especializado en seguridad y escalabilidad de red institucional.";
+                if (text.includes('VEX')) {
+                    response = "¡Increíble! Domingo ganó el 2do Lugar Mundial en Programación VEX, liderando el desarrollo de algoritmos de navegación por 3 años.";
+                } else if (text.includes('AetherVoice')) {
+                    response = "AetherVoice es su proyecto de punta en Audio IA, implementando síntesis de voz natural con redes neuronales de baja latencia.";
                 } else if (text.includes('C++')) {
-                    response = "En C++, desarrolla motores de inferencia (EdgeCortex) y sistemas de navegación robótica (OmniSLAM).";
+                    response = "Su stack es robusto: C++23, Python y AWS. Combina IA con navegación robótica avanzada (SLAM).";
                 } else {
-                    response = "Domingo es Ingeniero Mecatrónico titulado (Oct 2024), con fuerte base en hardware y software industrial.";
+                    response = "Domingo es Ingeniero Mecatrónico especializado en automatización y despliegue de infraestructura en la nube.";
                 }
 
                 botDiv.innerText = response;

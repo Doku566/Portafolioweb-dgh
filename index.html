@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domingo González // Systems & Robotics Engineer</title>
+    <title>Domingo González // Systems & Edge AI Engineer</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,10 +16,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'tech-dark': '#0d0f14',
-                        'tech-surface': '#161a22',
-                        'tech-orange': '#FF4F00', // International Orange
-                        'tech-cyan': '#00F2FF',
+                        'base-dark': '#0a0a0a',
+                        'industrial-orange': '#f97316',
+                        'tech-gray': '#e5e5e5',
+                        'code-surface': '#121212',
                     },
                     fontFamily: {
                         'sans': ['Inter', 'sans-serif'],
@@ -31,380 +31,252 @@
     </script>
     <style>
         body {
-            background-color: #0d0f14;
-            color: #f1f5f9;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
         }
 
-        .grid-pattern {
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-            background-size: 40px 40px;
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #f97316;
         }
     </style>
 </head>
 
-<body class="font-sans antialiased overflow-x-hidden">
+<body class="font-sans antialiased text-tech-gray">
 
-    <div class="fixed inset-0 grid-pattern pointer-events-none z-0"></div>
-
-    <!-- Persistent Header -->
-    <header class="fixed top-0 w-full z-50 border-b border-white/5 bg-tech-dark/80 backdrop-blur-md">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="text-xs font-mono tracking-widest text-tech-orange font-bold uppercase">
-                CORE_ENGINE_v4.0
+    <!-- Header / Nav -->
+    <header class="fixed top-0 w-full z-50 bg-base-dark/95 border-b border-white/5 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-mono text-[11px] font-bold tracking-tighter uppercase">
+                <span class="text-industrial-orange">INTERNAL</span> // SYSTEMS_v5.0
             </div>
-            <nav class="hidden md:flex space-x-10">
+            <nav class="hidden md:flex items-center space-x-12">
                 <a href="#hero"
-                    class="text-[10px] font-mono uppercase tracking-tighter hover:text-tech-orange transition-colors">Start</a>
-                <a href="#matrix"
-                    class="text-[10px] font-mono uppercase tracking-tighter hover:text-tech-orange transition-colors">Matrix</a>
-                <a href="#repo"
-                    class="text-[10px] font-mono uppercase tracking-tighter hover:text-tech-orange transition-colors">Repo</a>
-                <a href="#metrics"
-                    class="text-[10px] font-mono uppercase tracking-tighter hover:text-tech-orange transition-colors">Metrics</a>
+                    class="text-[10px] font-mono uppercase tracking-widest hover:text-industrial-orange transition-colors">Root</a>
+                <a href="#forge"
+                    class="text-[10px] font-mono uppercase tracking-widest hover:text-industrial-orange transition-colors">The
+                    Forge</a>
+                <a href="#experience"
+                    class="text-[10px] font-mono uppercase tracking-widest hover:text-industrial-orange transition-colors">Exp</a>
+                <a href="https://github.com/Doku566" target="_blank"
+                    class="text-[10px] font-mono uppercase tracking-widest text-industrial-orange">Codex</a>
             </nav>
-            <div class="text-[10px] font-mono text-white/40">
-                STATUS: <span class="text-green-500">OPERATIONAL</span>
-            </div>
         </div>
     </header>
 
-    <main class="relative z-10 pt-16">
+    <main class="pt-20">
         <!-- Hero Section -->
-        <section id="hero" class="min-h-[85vh] flex flex-col justify-center px-6">
-            <div class="max-w-7xl mx-auto w-full">
-                <span class="font-mono text-tech-orange text-xs tracking-[0.4em] mb-4 block uppercase font-bold">Systems
-                    / Robotics / Edge-AI</span>
-                <h1 class="text-5xl md:text-8xl font-semibold tracking-tighter leading-[0.9] mb-8">
-                    Engineering Neural <br>
-                    Systems for Local <br>
-                    Hardware.
+        <section id="hero" class="min-h-[80vh] flex flex-col justify-center px-6">
+            <div class="max-w-4xl mx-auto">
+                <span
+                    class="font-mono text-industrial-orange text-xs mb-4 block font-bold uppercase tracking-[0.2em] animate-pulse">Initializing
+                    System...</span>
+                <h1 class="text-4xl md:text-7xl font-semibold tracking-tighter leading-none mb-6">
+                    Ingeniería en Sistemas <br>
+                    Embebidos e IA Local.
                 </h1>
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                    <p class="text-lg md:text-xl text-slate-400 max-w-2xl font-light leading-relaxed">
-                        Mechatronics Engineer specialized in the deployment of complex AI models to edge environments.
-                        Expert in bridging the gap between high-level autonomous logic and physical execution.
-                    </p>
-                    <div
-                        class="flex flex-wrap gap-4 font-mono text-[10px] uppercase border border-white/10 p-4 bg-tech-surface">
-                        <span class="text-white/60">Stack:</span>
-                        <span class="text-tech-orange">C++</span>
-                        <span class="text-tech-orange">Python</span>
-                        <span class="text-tech-orange">CUDA</span>
-                        <span class="text-tech-orange">ROS2</span>
-                        <span class="text-tech-orange">PyTorch</span>
+                <p class="text-lg md:text-xl text-slate-400 font-light mb-12 max-w-2xl">
+                    Especializado en despliegue de modelos neuronales en hardware restringido y robótica avanzada.
+                    Puenteando la brecha entre el silicio y la inteligencia autónoma.
+                </p>
+
+                <!-- System Stats Bar -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 py-6 border-y border-white/10 bg-white/[0.02]">
+                    <div class="px-6 flex flex-col">
+                        <span class="text-[10px] font-mono text-slate-500 uppercase">System_Uptime</span>
+                        <span class="text-xl font-mono text-industrial-orange">99.9%</span>
+                    </div>
+                    <div class="px-6 border-y md:border-y-0 md:border-x border-white/10 flex flex-col">
+                        <span class="text-[10px] font-mono text-slate-500 uppercase">AWS_Infrastructure</span>
+                        <span class="text-xl font-mono text-industrial-orange">Managed</span>
+                    </div>
+                    <div class="px-6 flex flex-col">
+                        <span class="text-[10px] font-mono text-slate-500 uppercase">Llama-3_Edge</span>
+                        <span class="text-xl font-mono text-industrial-orange">Optimized</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Tech Stack Matrix -->
-        <section id="matrix" class="py-24 px-6 border-t border-white/5 bg-tech-surface/30">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex items-center gap-4 mb-16">
-                    <span class="w-12 h-px bg-tech-orange"></span>
-                    <h2 class="font-mono text-xs uppercase tracking-[0.3em] font-bold">Tech Stack Matrix</h2>
+        <!-- The Forge (Projects) -->
+        <section id="forge" class="py-32 px-6">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex items-center space-x-4 mb-20">
+                    <div class="h-[1px] w-12 bg-industrial-orange"></div>
+                    <h2 class="text-[10px] font-mono font-bold tracking-[0.4em] uppercase">The Forge // Repositories
+                    </h2>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
-                    <!-- Low Level -->
-                    <div class="bg-tech-dark p-10 group hover:bg-tech-surface transition-colors">
-                        <span class="font-mono text-[10px] text-tech-orange mb-6 block">01 // LOW_LEVEL</span>
-                        <h3 class="text-2xl font-semibold mb-6">Software Base</h3>
-                        <ul class="space-y-3 font-mono text-xs text-slate-400">
-                            <li class="flex justify-between"><span>C / C++ (20/23)</span> <span
-                                    class="text-white/20">ELITE</span></li>
-                            <li class="flex justify-between"><span>Memory Mgmt</span> <span
-                                    class="text-white/20">MANUAL</span></li>
-                            <li class="flex justify-between"><span>Real-Time OS</span> <span
-                                    class="text-white/20">DETERMINISTIC</span></li>
-                            <li class="flex justify-between"><span>Assembly fundamentals</span> <span
-                                    class="text-white/20">LOW_LATENCY</span></li>
-                        </ul>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1px bg-white/5 border border-white/5">
+                    <!-- EdgeCortex -->
+                    <div class="bg-base-dark p-10 group hover:bg-white/[0.02] transition-colors">
+                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_01</span>
+                        <h3 class="text-2xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
+                            EdgeCortex</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed min-h-[80px]">Motor de inferencia local
+                            diseñado para ejecutar redes neuronales complejas en hardware embebido de bajos recursos.
+                        </p>
+                        <div class="mt-8 flex gap-4 font-mono text-[9px] text-white/40">
+                            <span class="px-2 py-1 border border-white/10 italic">#CUDA</span>
+                            <span class="px-2 py-1 border border-white/10 italic">#C++20</span>
+                        </div>
                     </div>
 
-                    <!-- AI/ML -->
+                    <!-- OmniSLAM -->
                     <div
-                        class="bg-tech-dark p-10 group hover:bg-tech-surface transition-colors border-x border-white/5">
-                        <span class="font-mono text-[10px] text-tech-orange mb-6 block">02 // INTELLIGENCE</span>
-                        <h3 class="text-2xl font-semibold mb-6">Neural Engines</h3>
-                        <ul class="space-y-3 font-mono text-xs text-slate-400">
-                            <li class="flex justify-between"><span>Llama / Transformers</span> <span
-                                    class="text-white/20">LOCAL</span></li>
-                            <li class="flex justify-between"><span>CUDA / TensorRT</span> <span
-                                    class="text-white/20">OPTIMIZED</span></li>
-                            <li class="flex justify-between"><span>Computer Vision</span> <span
-                                    class="text-white/20">CV2/YOLO</span></li>
-                            <li class="flex justify-between"><span>Edge Inference</span> <span
-                                    class="text-white/20">ONNX</span></li>
-                        </ul>
-                    </div>
-
-                    <!-- Hardware -->
-                    <div class="bg-tech-dark p-10 group hover:bg-tech-surface transition-colors">
-                        <span class="font-mono text-[10px] text-tech-orange mb-6 block">03 // PHYSICAL</span>
-                        <h3 class="text-2xl font-semibold mb-6">Hardware Interface</h3>
-                        <ul class="space-y-3 font-mono text-xs text-slate-400">
-                            <li class="flex justify-between"><span>ROS2 / Gazebo</span> <span
-                                    class="text-white/20">SIM_PRO</span></li>
-                            <li class="flex justify-between"><span>Dobot / Industrial</span> <span
-                                    class="text-white/20">CONTROL</span></li>
-                            <li class="flex justify-between"><span>Sensory Fusion</span> <span
-                                    class="text-white/20">LIDAR/IMU</span></li>
-                            <li class="flex justify-between"><span>VEX Robotics</span> <span
-                                    class="text-white/20">COMPETITION</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- The Repository -->
-        <section id="repo" class="py-24 px-6">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex items-center gap-4 mb-16">
-                    <span class="w-12 h-px bg-tech-orange"></span>
-                    <h2 class="font-mono text-xs uppercase tracking-[0.3em] font-bold">The Repository</h2>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- AetherVoice Project -->
-                    <div class="border border-white/5 bg-tech-surface/20 group">
-                        <div class="h-64 bg-tech-surface overflow-hidden border-b border-white/5">
-                            <img src="images/aethervoice_ui.png" alt="AetherVoice"
-                                class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity duration-700">
-                        </div>
-                        <div class="p-8">
-                            <div class="flex justify-between items-start mb-6">
-                                <h3 class="text-3xl font-semibold tracking-tight">AetherVoice Core</h3>
-                                <span
-                                    class="font-mono text-[10px] px-2 py-1 bg-tech-orange text-white uppercase font-bold">Active_Node</span>
-                            </div>
-
-                            <div class="space-y-6 text-sm">
-                                <div>
-                                    <span class="font-mono text-tech-orange text-[10px] uppercase block mb-1">01_The
-                                        Challenge</span>
-                                    <p class="text-slate-400 leading-relaxed">Latency in cloud-based LLM speech
-                                        synthesis prevents fluid human-robot interaction in disconnected environments.
-                                    </p>
-                                </div>
-                                <div>
-                                    <span
-                                        class="font-mono text-tech-orange text-[10px] uppercase block mb-1">02_Technical
-                                        Implementation</span>
-                                    <p class="text-slate-400 leading-relaxed">Deployment of a quantized
-                                        transformer-based TTS engine on local WebGPU kernels with a low-latency C++
-                                        bridge.</p>
-                                </div>
-                                <div class="p-4 bg-tech-dark/50 border-l-2 border-tech-orange">
-                                    <span
-                                        class="font-mono text-tech-orange text-[10px] uppercase block mb-1">03_Measurable
-                                        Result</span>
-                                    <p class="text-white font-mono text-xs">Latencia de inferencia: < 120ms.
-                                            Funcionamiento 100% Offline.</p>
-                                </div>
-                            </div>
-
-                            <a href="https://github.com/Doku566/AetherVoice" target="_blank"
-                                class="mt-8 inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-widest text-tech-orange hover:text-white transition-colors">
-                                [Source_Code]
-                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg>
-                            </a>
+                        class="bg-base-dark p-10 group hover:bg-white/[0.02] transition-colors border-y md:border-y-0 md:border-x border-white/5">
+                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_02</span>
+                        <h3 class="text-2xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
+                            OmniSLAM</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed min-h-[80px]">Sistema de navegación autónoma y
+                            mapeo simultáneo en tiempo real de alta precisión para plataformas robóticas.</p>
+                        <div class="mt-8 flex gap-4 font-mono text-[9px] text-white/40">
+                            <span class="px-2 py-1 border border-white/10 italic">#ROS2</span>
+                            <span class="px-2 py-1 border border-white/10 italic">#Lidar</span>
                         </div>
                     </div>
 
-                    <!-- Future Project placeholder -->
-                    <div
-                        class="border border-white/5 bg-tech-surface/20 border-dashed flex items-center justify-center min-h-[500px]">
-                        <div class="text-center">
-                            <div class="font-mono text-[10px] text-white/20 uppercase tracking-widest mb-4">
-                                Awaiting_Data_Input</div>
-                            <div class="w-12 h-1 bg-white/5 mx-auto"></div>
+                    <!-- NexusRAG -->
+                    <div class="bg-base-dark p-10 group hover:bg-white/[0.02] transition-colors">
+                        <span class="font-mono text-[9px] text-industrial-orange mb-4 block font-bold">NODE_03</span>
+                        <h3 class="text-2xl font-semibold mb-6 group-hover:text-industrial-orange transition-colors">
+                            NexusRAG</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed min-h-[80px]">Arquitectura de recuperación de
+                            información optimizada para latencias ultra-bajas en entornos corporativos.</p>
+                        <div class="mt-8 flex gap-4 font-mono text-[9px] text-white/40">
+                            <span class="px-2 py-1 border border-white/10 italic">#Python</span>
+                            <span class="px-2 py-1 border border-white/10 italic">#LLMs</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <!-- Live Metrics Section -->
-        <section id="metrics" class="py-24 px-6 bg-tech-surface/40 border-t border-white/5">
-            <div class="max-w-7xl mx-auto">
-                <div class="flex items-center gap-4 mb-16">
-                    <span class="w-12 h-px bg-tech-orange"></span>
-                    <h2 class="font-mono text-xs uppercase tracking-[0.3em] font-bold">Live System Metrics</h2>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="border border-white/5 bg-tech-dark p-6">
-                        <span class="text-[10px] font-mono text-white/40 block mb-2 uppercase">Uptime_Global</span>
-                        <div class="text-2xl font-mono text-tech-orange">99.98%</div>
-                    </div>
-                    <div class="border border-white/5 bg-tech-dark p-6">
-                        <span class="text-[10px] font-mono text-white/40 block mb-2 uppercase">Avg_Inference</span>
-                        <div class="text-2xl font-mono text-tech-orange" id="metric-latency">48ms</div>
-                    </div>
-                    <div class="border border-white/5 bg-tech-dark p-6">
-                        <span class="text-[10px] font-mono text-white/40 block mb-2 uppercase">Edge_Nodes</span>
-                        <div class="text-2xl font-mono text-tech-orange">14 Active</div>
-                    </div>
-                    <div class="border border-white/5 bg-tech-dark p-6">
-                        <span class="text-[10px] font-mono text-white/40 block mb-2 uppercase">Mem_Load</span>
-                        <div class="text-2xl font-mono text-tech-orange" id="metric-mem">2.4 GB</div>
-                    </div>
-                </div>
-
+                <!-- System Logs Visual Component -->
                 <div
-                    class="mt-12 p-8 border border-white/5 bg-tech-dark font-mono text-[10px] text-white/30 overflow-hidden relative">
-                    <div class="absolute top-0 left-0 w-1 h-full bg-tech-orange animate-pulse"></div>
-                    <div id="system-log" class="space-y-1">
-                        <div>[SYSTEM] Initializing telemetry stream... OK</div>
-                        <div>[HARDWARE] ROS2 Node established... SYNCED</div>
-                        <div>[AI_CORE] Quantization kernels loaded... ACTIVE</div>
+                    class="mt-16 bg-code-surface border border-white/10 p-6 rounded-sm shadow-2xl relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-1 h-full bg-industrial-orange"></div>
+                    <div class="flex items-center justify-between mb-4 border-b border-white/5 pb-2">
+                        <span
+                            class="text-[9px] font-mono text-industrial-orange font-bold uppercase">System_Telemetry_Feed</span>
+                        <div class="flex space-x-1">
+                            <div class="w-1.5 h-1.5 rounded-full bg-red-500/30"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-yellow-500/30"></div>
+                            <div class="w-1.5 h-1.5 rounded-full bg-green-500/80 animate-pulse"></div>
+                        </div>
+                    </div>
+                    <div class="font-mono text-[11px] space-y-1.5 h-32 overflow-hidden" id="log-container">
+                        <div class="text-green-500/70">> [STYS] Kernel initialized... OK</div>
+                        <div class="text-green-500/70">> [NODE] EdgeCortex active on CUDA device 0</div>
+                        <div class="text-green-500/70">> [INFR] Monitoring 4,500+ active sessions</div>
+                        <div class="text-green-500">> [AWS] S3 sync status: PERSISTENT</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-32 px-6 bg-white/[0.01] border-y border-white/5">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center space-x-4 mb-16">
+                    <div class="h-[1px] w-12 bg-industrial-orange"></div>
+                    <h2 class="text-[10px] font-mono font-bold tracking-[0.4em] uppercase">Core Experience // Background
+                    </h2>
+                </div>
+
+                <div class="relative pl-12 border-l border-white/5 py-8">
+                    <div
+                        class="absolute -left-[5px] top-10 w-2 h-2 rounded-full bg-industrial-orange shadow-[0_0_10px_#f97316]">
+                    </div>
+                    <span
+                        class="text-[10px] font-mono text-industrial-orange mb-2 block uppercase font-bold tracking-widest">Active
+                        Status // Systems Engineer</span>
+                    <h3 class="text-3xl font-semibold mb-6">Infraestructura AWS & Ciberseguridad</h3>
+                    <p class="text-lg text-slate-400 leading-relaxed font-light mb-8">
+                        Liderando la gestión técnica y seguridad de infraestructuras críticas en la nube. Responsable de
+                        garantizar el uptime y la integridad de datos para una base de usuarios superior a los <span
+                            class="text-white border-b border-industrial-orange/50 px-1 font-normal">4,500
+                            integrantes</span>. Implementación de protocolos de defensa activa y orquestación de
+                        servicios administrados.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <div class="p-4 border border-white/5 bg-base-dark text-center">
+                            <span
+                                class="text-[9px] font-mono block text-white/30 mb-1 uppercase tracking-tighter">Scale</span>
+                            <span class="font-mono text-sm text-industrial-orange">4.5K+ Users</span>
+                        </div>
+                        <div class="p-4 border border-white/5 bg-base-dark text-center">
+                            <span
+                                class="text-[9px] font-mono block text-white/30 mb-1 uppercase tracking-tighter">Cloud</span>
+                            <span class="font-mono text-sm text-industrial-orange">AWS Arch</span>
+                        </div>
+                        <div class="p-4 border border-white/5 bg-base-dark text-center">
+                            <span
+                                class="text-[9px] font-mono block text-white/30 mb-1 uppercase tracking-tighter">Sec</span>
+                            <span class="font-mono text-sm text-industrial-orange">Pentesting</span>
+                        </div>
+                        <div class="p-4 border border-white/5 bg-base-dark text-center">
+                            <span
+                                class="text-[9px] font-mono block text-white/30 mb-1 uppercase tracking-tighter">DevOps</span>
+                            <span class="font-mono text-sm text-industrial-orange">CI/CD Pipeline</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Professional Chat Bubble -->
-    <div class="fixed bottom-8 right-8 z-[100]">
-        <button id="chat-toggle"
-            class="w-14 h-14 bg-tech-orange text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all">
-            <svg id="chat-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-            </svg>
-            <svg id="close-icon" class="hidden" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2">
-                <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-        </button>
-
-        <div id="chat-window"
-            class="hidden absolute bottom-20 right-0 w-[350px] max-w-[calc(100vw-40px)] bg-tech-surface border border-white/10 shadow-2xl overflow-hidden flex flex-col transition-all duration-300 transform scale-95 opacity-0 origin-bottom-right">
-            <div class="bg-tech-dark p-4 border-b border-white/10 flex justify-between items-center">
-                <span
-                    class="font-mono text-[10px] font-bold tracking-widest text-tech-orange uppercase">Aether_Assistant_Terminal</span>
-                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+    <footer class="py-20 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="flex flex-col text-center md:text-left">
+                <span class="font-mono text-[9px] text-white/20 uppercase tracking-[0.5em] mb-2 font-bold">Domingo
+                    González // Systems Engineer</span>
+                <span class="text-xs text-white/10 font-mono tracking-tighter">SHA256: 789DFF2A... CORE_ACTIVE</span>
             </div>
-            <div id="chat-messages" class="h-80 overflow-y-auto p-4 font-mono text-[11px] space-y-4 text-slate-300">
-                <div class="text-tech-orange">[SYSTEM] Ready for operational queries. Type 'help' to start.</div>
-            </div>
-            <div class="p-4 bg-tech-dark/50 border-t border-white/10 flex gap-2">
-                <span class="font-mono text-tech-orange font-bold">></span>
-                <input type="text" id="chat-input"
-                    class="bg-transparent border-none outline-none text-[11px] font-mono w-full text-white"
-                    placeholder="Enter_command..." autocomplete="off">
-            </div>
-        </div>
-    </div>
-
-    <footer class="py-12 border-t border-white/5 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-[10px] font-mono text-white/20 uppercase tracking-[0.4em]">
-                Domingo González // Engineering Core &copy; 2026
-            </div>
-            <div class="flex gap-8">
+            <div class="flex space-x-10">
+                <a href="#"
+                    class="text-[10px] font-mono uppercase text-white/30 hover:text-industrial-orange transition-colors">LinkedIn</a>
                 <a href="https://github.com/Doku566" target="_blank"
-                    class="text-[10px] font-mono uppercase text-white/40 hover:text-tech-orange">GitHub</a>
-                <a href="#" class="text-[10px] font-mono uppercase text-white/40 hover:text-tech-orange">LinkedIn</a>
+                    class="text-[10px] font-mono uppercase text-white/30 hover:text-industrial-orange transition-colors">GitHub</a>
+                <a href="mailto:contact@domain.com"
+                    class="text-[10px] font-mono uppercase text-white/30 hover:text-industrial-orange transition-colors">Email</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Metric Simulation
+        // Log Feed Animation
+        const logData = [
+            "[OK] System calibration sequence complete",
+            "[AI] Loading EdgeCortex v12... 100%",
+            "[SYS] Memory optimized for local inference",
+            "[SEC] 4.5k user firewall... STABLE",
+            "[NET] AWS CloudFront link: OPERATIONAL",
+            "[INF] Inference latency: ~85ms",
+            "[BOT] Robotics node heartbeat sync: ACTIVE",
+            "[DB] NexusRAG indexing documents..."
+        ];
+
+        const logContainer = document.getElementById('log-container');
+        let index = 0;
+
         setInterval(() => {
-            const latency = Math.floor(40 + Math.random() * 15);
-            const mem = (2.2 + Math.random() * 0.4).toFixed(1);
-            document.getElementById('metric-latency').innerText = `${latency}ms`;
-            document.getElementById('metric-mem').innerText = `${mem} GB`;
-
-            // Random logs
-            const logs = [
-                `[INFO] Packet received from Edge_Node_${Math.floor(Math.random() * 20)}`,
-                `[AI] Inference cycle completed: ${latency}ms`,
-                `[SYSTEM] Memory cleanup: 0.1s`,
-                `[HARDWARE] Motor response recalibrated`
-            ];
-            const logDiv = document.getElementById('system-log');
-            const newLog = document.createElement('div');
-            newLog.innerText = `> ${logs[Math.floor(Math.random() * logs.length)]}`;
-            logDiv.appendChild(newLog);
-            if (logDiv.children.length > 3) logDiv.removeChild(logDiv.firstChild);
-        }, 3000);
-
-        // Chatbot Logic
-        const chatToggle = document.getElementById('chat-toggle');
-        const chatWindow = document.getElementById('chat-window');
-        const chatInput = document.getElementById('chat-input');
-        const chatMessages = document.getElementById('chat-messages');
-        const chatIcon = document.getElementById('chat-icon');
-        const closeIcon = document.getElementById('close-icon');
-
-        chatToggle.onclick = () => {
-            const isOpen = !chatWindow.classList.contains('hidden');
-            if (isOpen) {
-                chatWindow.classList.add('scale-95', 'opacity-0');
-                setTimeout(() => chatWindow.classList.add('hidden'), 300);
-                chatIcon.classList.remove('hidden');
-                closeIcon.classList.add('hidden');
-            } else {
-                chatWindow.classList.remove('hidden');
-                setTimeout(() => chatWindow.classList.remove('scale-95', 'opacity-0'), 10);
-                chatIcon.classList.add('hidden');
-                closeIcon.classList.remove('hidden');
-                chatInput.focus();
-            }
-        };
-
-        const addMessage = (text, type = 'system') => {
             const div = document.createElement('div');
-            const prefix = type === 'user' ? '[USER] ' : '[AETHER] ';
-            const colorClass = type === 'user' ? 'text-white' : 'text-tech-cyan';
-            div.className = colorClass;
-            div.innerText = `${prefix}${text}`;
-            chatMessages.appendChild(div);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
-        };
+            div.className = "text-green-500/70 animate-pulse";
+            div.innerText = `> ${logData[index]}`;
+            logContainer.appendChild(div);
 
-        chatInput.onkeypress = (e) => {
-            if (e.key === 'Enter' && chatInput.value) {
-                const cmd = chatInput.value.toLowerCase().trim();
-                addMessage(cmd, 'user');
-                chatInput.value = '';
-
-                setTimeout(() => {
-                    const responses = {
-                        'help': 'Available commands: info, repo, skills, contact, clear',
-                        'info': 'Systems & Robotics Engineer. Deep Learning @ Edge specialist.',
-                        'repo': 'Source nodes located at: github.com/Doku566',
-                        'skills': 'Primary Architecture: C++, Python, CUDA, ROS2, PyTorch.',
-                        'contact': 'Protocol: email, linkedin, github.',
-                        'clear': 'CLEARING'
-                    };
-
-                    if (cmd === 'clear') {
-                        chatMessages.innerHTML = '';
-                    } else {
-                        addMessage(responses[cmd] || `Command not found: "${cmd}". Type 'help' for protocols.`);
-                    }
-                }, 400);
+            if (logContainer.children.length > 5) {
+                logContainer.removeChild(logContainer.firstChild);
             }
-        };
 
-        // Scroll reveal simulation
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('section').forEach(s => observer.observe(s));
+            index = (index + 1) % logData.length;
+        }, 2500);
     </script>
 </body>
 

@@ -266,11 +266,11 @@
                             class="text-white font-normal underline decoration-accent-orange/50 underline-offset-4">Amazon
                             Web Services</span> para 4,500 usuarios e inteligencia artificial local para robótica móvil.
                     </p>
-                    <a href="#"
+                    <button onclick="exportCV(this)"
                         class="px-8 py-4 bg-white/5 border border-white/10 text-white font-mono text-[10px] uppercase tracking-[0.3em] hover:bg-accent-orange hover:text-deep-bg hover:border-accent-orange transition-all flex items-center gap-4 group">
                         <span>Export_CV_Schema.json</span>
                         <i class="fa-solid fa-download group-hover:translate-y-1 transition-transform"></i>
-                    </a>
+                    </button>
                 </div>
 
                 <!-- Mission Control Terminal -->
@@ -728,8 +728,8 @@
             </div>
         </div>
         <div id="toast"
-            class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-accent-orange text-deep-bg text-xs font-bold px-4 py-2 rounded-full opacity-0 pointer-events-none transition-all">
-            EMAIL_COPIED</div>
+            class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-accent-orange text-deep-bg text-[10px] font-bold px-6 py-3 rounded-full opacity-0 pointer-events-none transition-all z-[1000] border border-white/20 shadow-2xl">
+            NOT_DEFINED</div>
     </footer>
 
     <script>
@@ -830,14 +830,23 @@
         function copyEmail(btn) {
             const email = "tu-email@ejemplo.com";
             navigator.clipboard.writeText(email).then(() => {
-                const toast = document.getElementById('toast');
-                toast.classList.remove('opacity-0');
-                toast.classList.add('opacity-100', '-translate-y-4');
-                setTimeout(() => {
-                    toast.classList.remove('opacity-100', '-translate-y-4');
-                    toast.classList.add('opacity-0');
-                }, 2000);
+                showToast("EMAIL_COPIED_TO_CLIPBOARD");
             });
+        }
+
+        function exportCV(btn) {
+            showToast("PREPARING_SCHEMA_EXPORT... [READY_LINK_NEEDED]");
+        }
+
+        function showToast(text) {
+            const toast = document.getElementById('toast');
+            toast.innerText = text;
+            toast.classList.remove('opacity-0');
+            toast.classList.add('opacity-100', '-translate-y-4');
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', '-translate-y-4');
+                toast.classList.add('opacity-0');
+            }, 2000);
         }
 
         const projectsData = {

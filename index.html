@@ -206,15 +206,22 @@
             text-shadow: 0 0 5px rgba(249, 115, 22, 0.3);
         }
 
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 5px;
         }
 
-        .award-glow {
-            box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
-            border-color: rgba(249, 115, 22, 0.4);
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #F9731633;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F97316;
         }
     </style>
 </head>
@@ -377,44 +384,65 @@
                         class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
                         <div class="scanline"></div>
                         <div class="aspect-video bg-neutral-900 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
-                                alt="Hardware Code" loading="lazy"
+                            <img src="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?auto=format&fit=crop&q=80&w=800"
+                                alt="Local AI" loading="lazy"
                                 class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
                         </div>
                         <div class="p-8">
                             <span
-                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block font-bold">AI_Infrastructure</span>
+                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block font-bold">Local_Inference_HW</span>
                             <h3 class="text-2xl font-bold mb-4">EdgeCortex</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed mb-6">Implementación de motores de
-                                inferencia IA para ejecución local directa en hardware embebido, optimizando recursos
-                                críticos.</p>
-                            <div class="flex items-center space-x-4 font-mono text-[8px] text-accent-orange/80">
-                                <span class="px-2 py-0.5 border border-accent-orange/20">CUDA-Optimized</span>
-                                <span class="px-2 py-0.5 border border-accent-orange/20">4-Bit Quant</span>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-6">Pipeline de inferencia local para
+                                robots móviles. Optimización de modelos LLM para hardware limitado sin dependencia de
+                                nube.</p>
+                            <div
+                                class="grid grid-cols-2 gap-4 font-mono text-[8px] uppercase tracking-tighter text-white/40 mb-8">
+                                <div class="border-l border-accent-orange/30 pl-3">
+                                    <span class="block">Runtime: ONNX/TensorRT</span>
+                                </div>
+                                <div class="border-l border-accent-orange/30 pl-3">
+                                    <span class="block">Lat: < 120ms local</span>
+                                </div>
                             </div>
+                            <button onclick="openProject('edgecortex')"
+                                class="group/btn flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/40 hover:text-accent-orange transition-colors">
+                                <span>Explorer_Deep_Dive</span>
+                                <i
+                                    class="fa-solid fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+                            </button>
                         </div>
                     </div>
 
                     <!-- OmniSLAM -->
                     <div
-                        class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50 shadow-lg award-glow">
+                        class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
                         <div class="scanline"></div>
                         <div class="aspect-video bg-neutral-900 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800"
-                                alt="Robotics" loading="lazy"
+                            <img src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&q=80&w=800"
+                                alt="SLAM System" loading="lazy"
                                 class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
                         </div>
                         <div class="p-8">
-                            <div class="flex justify-between items-start mb-2">
-                                <span
-                                    class="font-mono text-[9px] text-accent-orange uppercase block font-bold">Robotics_Nav
-                                    // VEX_CORE</span>
-                                <i class="fa-solid fa-trophy text-accent-orange"></i>
-                            </div>
+                            <span
+                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block font-bold">Visual_Odometry_DSP</span>
                             <h3 class="text-2xl font-bold mb-4">OmniSLAM</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">Sistema de localización y mapeo simultáneo
-                                para robótica móvil, heredero de algoritmos ganadores en competencias mundiales de VEX.
-                            </p>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-6">Motor de mapeo y localización
+                                simultánea para entornos industriales dinámicos con fusión de sensores LiDAR/IMU.</p>
+                            <div
+                                class="grid grid-cols-2 gap-4 font-mono text-[8px] uppercase tracking-tighter text-white/40 mb-8">
+                                <div class="border-l border-accent-orange/30 pl-3">
+                                    <span class="block">Stack: C++23/OpenCV</span>
+                                </div>
+                                <div class="border-l border-accent-orange/30 pl-3">
+                                    <span class="block">Precision: < 2cm</span>
+                                </div>
+                            </div>
+                            <button onclick="openProject('omnislam')"
+                                class="group/btn flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/40 hover:text-accent-orange transition-colors">
+                                <span>Explorer_Deep_Dive</span>
+                                <i
+                                    class="fa-solid fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+                            </button>
                         </div>
                     </div>
 
@@ -423,16 +451,31 @@
                         class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
                         <div class="scanline"></div>
                         <div class="aspect-video bg-neutral-900 overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
-                                alt="Software Archive" loading="lazy"
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+                                alt="RAG System" loading="lazy"
                                 class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
                         </div>
                         <div class="p-8">
                             <span
-                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block font-bold">Architecture_RAG</span>
+                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block font-bold">Vector_Knowledge_Graph</span>
                             <h3 class="text-2xl font-bold mb-4">NexusRAG</h3>
-                            <p class="text-sm text-slate-400 leading-relaxed">Arquitectura de generación aumentada por
-                                recuperación (RAG) optimizada para eficiencia extrema en el uso de memoria RAM.</p>
+                            <p class="text-sm text-slate-400 leading-relaxed mb-6">Sistema de recuperación de
+                                información aumentada para manuales técnicos y procedimentales de grado industrial.</p>
+                            <div
+                                class="grid grid-cols-2 gap-4 font-mono text-[8px] uppercase tracking-tighter text-white/40 mb-8">
+                                <div class="border-l border-accent-orange/30 pl-3">
+                                    <span class="block">DB: Pinecone/Redis</span>
+                                </div>
+                                <div class="border-l border-accent-orange/30 pl-3">
+                                    <span class="block">Context: 1M+ Tokens</span>
+                                </div>
+                            </div>
+                            <button onclick="openProject('nexusrag')"
+                                class="group/btn flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/40 hover:text-accent-orange transition-colors">
+                                <span>Explorer_Deep_Dive</span>
+                                <i
+                                    class="fa-solid fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -815,6 +858,33 @@
                 challenge: 'Crear un puente seguro y escalable entre la base de datos de usuarios de Azure y un LLM abierto preservando la seguridad de los tokens.',
                 solution: 'Middleware desarrollado en FastAPI orquestando Microsoft Graph API con validación OAuth2 estricta, utilizando Groq para inferencia ultrarrápida.',
                 stack: 'FastAPI / Microsoft Graph / Azure AD / Groq'
+            },
+            'edgecortex': {
+                title: 'EdgeCortex Neural Engine',
+                tag: 'EDGE_WORKER_BETA',
+                description: 'Un acelerador de inferencia local para robots móviles que elimina la latencia de la nube.',
+                problem: 'Los robots en entornos industriales sin conexión estable sufren de retrasos críticos al procesar comandos de voz o visión vía API externa.',
+                challenge: 'Comprimir modelos de lenguaje y visión sin perder precisión para ejecutarse en SoCs de bajo consumo.',
+                solution: 'Pipeline optimizado en ONNX y TensorRT con cuantización INT8 dinámica adaptada a la arquitectura del hardware local.',
+                stack: 'ONNX / TensorRT / CUDA / Python'
+            },
+            'omnislam': {
+                title: 'OmniSLAM Navigation Core',
+                tag: 'SLAM_RT_STABLE',
+                description: 'Sistema de localización y mapeo simultáneo de alta precisión para transporte autónomo.',
+                problem: 'Los entornos industriales dinámicos confunden a los sistemas LiDAR tradicionales, causando desvíos peligrosos o pausas por falta de referencia.',
+                challenge: 'Fusionar datos de visión estéreo e IMU en tiempo real bajo condiciones de iluminación variable y polvo industrial.',
+                solution: 'Algoritmo de odometría visual basado en filtros de Kalman extendidos (EKF) desarrollado en C++23 con integración de sensores redundantes.',
+                stack: 'C++23 / OpenCV / LiDAR SDK / ROS2'
+            },
+            'nexusrag': {
+                title: 'NexusRAG Intelligence Hub',
+                tag: 'KNOWLEDGE_GRID_A1',
+                description: 'Arquitectura de recuperación para manuales técnicos y procedimentales de grado industrial.',
+                problem: 'Los ingenieros de planta tardan demasiado tiempo buscando especificaciones exactas en manuales de miles de páginas durante incidentes.',
+                challenge: 'Mantener la precisión de los datos recuperados ante consultas técnicas muy específicas y terminología densa.',
+                solution: 'Implementación de un sistema RAG (Retrieval-Augmented Generation) con bases de datos vectoriales Pinecone y procesos de re-ranking avanzados.',
+                stack: 'Pinecone / LangChain / OpenAI / Python'
             }
         };
 
@@ -887,6 +957,20 @@
 
         setInterval(addLog, 3000);
         addLog(); // Initial run
+
+        // Magnetic Buttons
+        const magneticBtns = document.querySelectorAll('.group');
+        magneticBtns.forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = `translate(0px, 0px)`;
+            });
+        });
     </script>
 </body>
 

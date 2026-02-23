@@ -201,6 +201,11 @@
             background-size: 20px 20px;
         }
 
+        .terminal-text {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            text-shadow: 0 0 5px rgba(249, 115, 22, 0.3);
+        }
+
 
         .reveal.visible {
             opacity: 1;
@@ -247,19 +252,30 @@
                     Soy Domingo González, <br>
                     <span class="text-white">Ingeniero Mecatrónico <br> y de Software.</span>
                 </h1>
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-10">
-                    <p class="text-xl md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed">
-                        Gestionando infraestructura <span class="text-white border-b border-accent-orange/50">AWS para
-                            4,500+ usuarios</span> en la UT Matamoros. Especializado en C++, Robótica avanzada y 2do
-                        lugar mundial en programación VEX.
+
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-8 mb-16">
+                    <p class="text-slate-400 text-lg md:text-xl max-w-2xl leading-relaxed font-light">
+                        Especializado en el diseño de arquitecturas escalables, <span
+                            class="text-white font-normal underline decoration-accent-orange/50 underline-offset-4">Amazon
+                            Web Services</span> para 4,500 usuarios e inteligencia artificial local para robótica móvil.
                     </p>
-                    <div class="flex gap-4">
-                        <a href="#projects"
-                            class="px-8 py-4 bg-accent-orange text-deep-bg font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform">Ver
-                            Proyectos</a>
-                        <a href="#exp"
-                            class="px-8 py-4 border border-white/10 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition-colors">Mi
-                            Trayectoria</a>
+                    <a href="#"
+                        class="px-8 py-4 bg-white/5 border border-white/10 text-white font-mono text-[10px] uppercase tracking-[0.3em] hover:bg-accent-orange hover:text-deep-bg hover:border-accent-orange transition-all flex items-center gap-4 group">
+                        <span>Export_CV_Schema.json</span>
+                        <i class="fa-solid fa-download group-hover:translate-y-1 transition-transform"></i>
+                    </a>
+                </div>
+
+                <!-- Mission Control Terminal -->
+                <div class="bg-black/40 border border-white/5 rounded p-4 max-w-md backdrop-blur-sm hidden lg:block">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-2 h-2 rounded-full bg-accent-orange animate-pulse"></div>
+                        <span class="font-mono text-[8px] text-white/40 uppercase tracking-widest">System_Diagnostics //
+                            Live_Feed</span>
+                    </div>
+                    <div id="terminal-log"
+                        class="font-mono text-[9px] text-accent-orange/60 space-y-1 h-12 overflow-hidden terminal-text">
+                        <!-- Simulated logs will inject here -->
                     </div>
                 </div>
             </div>
@@ -844,6 +860,33 @@
             const modal = document.getElementById('project-modal');
             if (event.target == modal) closeProject();
         }
+
+        // Terminal Diagnostics Simulation
+        const logs = [
+            "[OK] AWS_CORE_SERVICES: ACTIVE (4,500/4,500)",
+            "[OK] SLAM_CALIBRATION: 99.4% STABLE",
+            "[OK] AETHER_VOICE_BUFFER: SYNCED",
+            "[OK] NEXUS_SUPPORT_LATENCY: 42ms",
+            "[OK] AZURE_GRAPH_HANDSHAKE: ENCRYPTED",
+            "[OK] CUDA_MEMORY_ALLOCATION: OPTIMAL",
+            "[OK] LOCAL_INFERENCE_ENGINE: READY",
+            "[OK] VEX_NAV_ALGORITHM: DETERMINISTIC"
+        ];
+        const logContainer = document.getElementById('terminal-log');
+        let logIndex = 0;
+
+        function addLog() {
+            const line = document.createElement('div');
+            line.innerText = logs[logIndex];
+            logContainer.appendChild(line);
+            if (logContainer.children.length > 4) {
+                logContainer.removeChild(logContainer.firstChild);
+            }
+            logIndex = (logIndex + 1) % logs.length;
+        }
+
+        setInterval(addLog, 3000);
+        addLog(); // Initial run
     </script>
 </body>
 

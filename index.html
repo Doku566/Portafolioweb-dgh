@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domingo González // Senior Systems & Robotics Engineer</title>
-    <!-- Performance: Minimal external deps. Tailwind CDN for rapid prototyping/single-file delivery -->
+    <title>Domingo González // Senior Mechatronics & Software Engineer</title>
+    <!-- Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -17,10 +18,10 @@
             theme: {
                 extend: {
                     colors: {
-                        'base-dark': '#0d0f12',
+                        'deep-bg': '#050505',
                         'accent-orange': '#f97316',
-                        'tech-gray': '#e2e8f0',
-                        'code-bg': '#161b22',
+                        'tech-gray': '#d1d5db',
+                        'card-bg': '#0d0d0d',
                     },
                     fontFamily: {
                         'sans': ['Inter', 'sans-serif'],
@@ -32,310 +33,348 @@
     </script>
     <style>
         body {
-            background-color: #0d0f12;
-            color: #e2e8f0;
+            background-color: #050505;
+            color: #d1d5db;
         }
 
-        .case-study-border {
-            border-left: 1px solid rgba(249, 115, 22, 0.2);
+        .grid-layers {
+            background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
 
-        .matrix-cell {
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-out;
         }
 
-        /* Performance Optimization: Avoid layout shifts */
-        section {
-            min-height: 20vh;
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .chat-shadow {
+            shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
         }
     </style>
 </head>
 
-<body class="font-sans antialiased text-tech-gray">
+<body class="font-sans antialiased overflow-x-hidden">
 
-    <!-- Minimal Functional Nav -->
-    <header class="fixed top-0 w-full z-50 bg-base-dark/80 backdrop-blur-lg border-b border-white/5">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="font-mono text-[10px] tracking-widest font-bold">
-                <span class="text-accent-orange">DOMINGO.GZ</span> // ENGINEERING_REP_v5.2
+    <!-- Technical Grid Overlay -->
+    <div class="fixed inset-0 grid-layers pointer-events-none z-0"></div>
+
+    <!-- Sticky Header -->
+    <header class="fixed top-0 w-full z-50 bg-deep-bg/80 border-b border-white/5 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div
+                class="font-mono text-[10px] tracking-widest font-bold uppercase transition-all hover:text-accent-orange">
+                DG // TECHNOLOGY_CORE
             </div>
-            <nav class="hidden md:flex space-x-8">
+            <nav class="hidden md:flex items-center space-x-12">
+                <a href="#hero"
+                    class="text-[10px] font-mono uppercase tracking-[0.2em] hover:text-accent-orange transition-colors">Inicio</a>
                 <a href="#projects"
-                    class="text-[10px] font-mono uppercase tracking-widest hover:text-accent-orange transition-colors">Case
-                    Studies</a>
-                <a href="#matrix"
-                    class="text-[10px] font-mono uppercase tracking-widest hover:text-accent-orange transition-colors">Capability</a>
-                <a href="#journal"
-                    class="text-[10px] font-mono uppercase tracking-widest hover:text-accent-orange transition-colors">Journal</a>
-                <a href="https://github.com/Doku566" target="_blank"
-                    class="text-[10px] font-mono uppercase tracking-widest text-accent-orange transition-opacity hover:opacity-70">[GitHub]</a>
+                    class="text-[10px] font-mono uppercase tracking-[0.2em] hover:text-accent-orange transition-colors">Proyectos</a>
+                <a href="#skills"
+                    class="text-[10px] font-mono uppercase tracking-[0.2em] hover:text-accent-orange transition-colors">Stack</a>
+                <a href="#exp"
+                    class="text-[10px] font-mono uppercase tracking-[0.2em] hover:text-accent-orange transition-colors">Experiencia</a>
             </nav>
         </div>
     </header>
 
-    <main class="pt-24 pb-20">
-        <!-- Rationale Hero -->
-        <section id="hero" class="max-w-6xl mx-auto px-6 py-20">
-            <div class="max-w-3xl">
-                <h1 class="text-5xl md:text-7xl font-semibold tracking-tighter leading-[1.1] mb-8">
-                    Ingeniería de Sistemas <br>
-                    Embebidos e IA Local.
+    <main class="relative z-10">
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex flex-col justify-center px-6 reveal">
+            <div class="max-w-5xl mx-auto w-full">
+                <span
+                    class="font-mono text-accent-orange text-xs mb-6 block font-bold tracking-[0.5em] uppercase">Status:
+                    Elite_Engineering_Active</span>
+                <h1 class="text-5xl md:text-8xl font-bold tracking-tighter leading-none mb-8">
+                    Soy Domingo González, <br>
+                    <span class="text-white">Ingeniero Mecatrónico <br> y de Software.</span>
                 </h1>
-                <p class="text-lg md:text-xl text-slate-400 font-light leading-relaxed mb-10">
-                    Mecatrónico especializado en el despliegue de modelos neuronales en hardware restringido. Mi enfoque
-                    no es solo el código, sino la optimización de latencia, consumo de memoria y fiabilidad en sistemas
-                    de tiempo real.
-                </p>
-                <!-- Immediate Metrics (Engineering Proof) -->
-                <div class="flex flex-wrap gap-12 font-mono">
-                    <div>
-                        <span class="text-[10px] text-slate-500 uppercase block mb-1">Scale</span>
-                        <span class="text-sm">4.5K+ Active Users</span>
-                    </div>
-                    <div>
-                        <span class="text-[10px] text-slate-500 uppercase block mb-1">Core Tech</span>
-                        <span class="text-sm">C++, CUDA, ROS2</span>
-                    </div>
-                    <div>
-                        <span class="text-[10px] text-slate-500 uppercase block mb-1">Status</span>
-                        <span class="text-sm text-green-500 flex items-center gap-2">
-                            <span class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
-                            Active Deployment
-                        </span>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-10">
+                    <p class="text-xl md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed">
+                        Gestionando infraestructura <span class="text-white border-b border-accent-orange/50">AWS para
+                            4,500+ usuarios</span> en la UT Matamoros. Especializado en C++, Robótica avanzada e IA
+                        local.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#projects"
+                            class="px-8 py-4 bg-accent-orange text-deep-bg font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform">Ver
+                            Proyectos</a>
+                        <a href="#exp"
+                            class="px-8 py-4 border border-white/10 text-white font-bold text-xs uppercase tracking-widest hover:bg-white/5 transition-colors">Mi
+                            Trayectoria</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- The Case Studies (Problem -> Challenge -> Solution) -->
-        <section id="projects" class="max-w-6xl mx-auto px-6 py-24 border-t border-white/5">
-            <h2 class="font-mono text-[10px] text-accent-orange uppercase tracking-[0.4em] mb-20 font-bold">01 // Case
-                Studies / Technical Rationale</h2>
+        <!-- Project Gallery -->
+        <section id="projects" class="py-32 px-6 bg-white/[0.01]">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center space-x-4 mb-20 reveal">
+                    <div class="h-px w-12 bg-accent-orange"></div>
+                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Portafolio de Proyectos //
+                        The Forge</h2>
+                </div>
 
-            <div class="space-y-32">
-                <!-- Case Study: EdgeCortex -->
-                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <div class="lg:col-span-5">
-                        <span class="font-mono text-[9px] text-white/30 uppercase mb-4 block">Deployment Node:
-                            #01</span>
-                        <h3 class="text-3xl font-semibold mb-6">EdgeCortex: Optimización de Inferencia Local</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                            Un motor de inferencia diseñado para correr LLMs y redes neuronales en hardware con recursos
-                            limitados sin depender de la nube.
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+                    <!-- EdgeCortex -->
+                    <div
+                        class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
+                        <div class="aspect-video bg-neutral-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
+                                alt="Hardware Code"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block">AI_Infrastructure</span>
+                            <h3 class="text-2xl font-bold mb-4">EdgeCortex</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Implementación de motores de inferencia IA
+                                para ejecución local directa en hardware embebido, optimizando el consumo de recursos
+                                críticos.</p>
+                        </div>
+                    </div>
+
+                    <!-- OmniSLAM -->
+                    <div
+                        class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
+                        <div class="aspect-video bg-neutral-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800"
+                                alt="Robotics"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block">Robotics_Nav</span>
+                            <h3 class="text-2xl font-bold mb-4">OmniSLAM</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Sistema de localización y mapeo simultáneo
+                                para robótica móvil, enfocado en navegación autónoma en entornos dinámicos complejos.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- NexusRAG -->
+                    <div
+                        class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
+                        <div class="aspect-video bg-neutral-900 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&q=80&w=800"
+                                alt="Software Archive"
+                                class="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="font-mono text-[9px] text-accent-orange uppercase mb-2 block">Architecture_RAG</span>
+                            <h3 class="text-2xl font-bold mb-4">NexusRAG</h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">Arquitectura de generación aumentada por
+                                recuperación (RAG) optimizada para eficiencia extrema en el uso de memoria RAM.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Matrix -->
+        <section id="skills" class="py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex items-center space-x-4 mb-20 reveal">
+                    <div class="h-px w-12 bg-accent-orange"></div>
+                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Matriz de Habilidades //
+                        Stack</h2>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 reveal">
+                    <div
+                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
+                        <i class="fa-solid fa-code text-4xl group-hover:text-deep-bg"></i>
+                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">C++</span>
+                    </div>
+                    <div
+                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
+                        <i class="fa-brands fa-python text-4xl group-hover:text-deep-bg"></i>
+                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">Python</span>
+                    </div>
+                    <div
+                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
+                        <i class="fa-brands fa-aws text-4xl group-hover:text-deep-bg"></i>
+                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">AWS</span>
+                    </div>
+                    <div
+                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
+                        <i class="fa-brands fa-linux text-4xl group-hover:text-deep-bg"></i>
+                        <span class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">Linux</span>
+                    </div>
+                    <div
+                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
+                        <i class="fa-solid fa-robot text-4xl group-hover:text-deep-bg"></i>
+                        <span
+                            class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">VEX/Dobot</span>
+                    </div>
+                    <div
+                        class="bg-card-bg border border-white/5 p-8 flex flex-col items-center justify-center space-y-4 hover:bg-accent-orange group transition-colors">
+                        <i class="fa-solid fa-shield-halved text-4xl group-hover:text-deep-bg"></i>
+                        <span
+                            class="font-mono text-[10px] font-bold uppercase group-hover:text-deep-bg">Sec_Incidents</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="exp" class="py-32 px-6 border-t border-white/5 bg-deep-bg">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center space-x-4 mb-20 reveal">
+                    <div class="h-px w-12 bg-accent-orange"></div>
+                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Experiencia & Educación //
+                        Core</h2>
+                </div>
+
+                <div class="space-y-20 reveal">
+                    <div class="relative pl-8 border-l border-accent-orange/30">
+                        <div class="absolute -left-[5px] top-2 w-2 h-2 bg-accent-orange rounded-full"></div>
+                        <span class="font-mono text-[10px] text-accent-orange uppercase mb-2 block font-bold">Actual //
+                            UT Matamoros</span>
+                        <h3 class="text-3xl font-bold mb-4">Systems Engineer Expert</h3>
+                        <p class="text-slate-400 leading-relaxed text-lg font-light">
+                            Liderando la administración de infraestructura de nube (AWS) y seguridad para más de <span
+                                class="text-white font-normal">4,500 usuarios corporativos e institucionales</span>.
+                            Especialista en mitigación de brechas de seguridad y optimización de recursos compartidos.
                         </p>
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Doku566/EdgeCortex" target="_blank"
-                                class="px-4 py-2 bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-widest hover:border-accent-orange transition-colors">
-                                [Source Code]
-                            </a>
-                            <a href="https://github.com/Doku566/EdgeCortex/blob/main/src/inference_engine.cpp"
-                                target="_blank"
-                                class="px-4 py-2 border border-white/5 text-[10px] font-mono uppercase tracking-widest hover:text-accent-orange transition-colors">
-                                View Core Logic
-                            </a>
-                        </div>
                     </div>
-                    <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
-                        <div class="bg-base-dark p-8">
-                            <h4 class="font-mono text-[10px] text-accent-orange uppercase mb-4 tracking-tighter">The
-                                Problem</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light">La alta latencia y dependencia
-                                de redes impide aplicaciones de IA críticas en campo o dispositivos embebidos.</p>
-                        </div>
-                        <div class="bg-base-dark p-8">
-                            <h4 class="font-mono text-[10px] text-accent-orange uppercase mb-4 tracking-tighter">The
-                                Challenge</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light">Manejar la cuantización de
-                                modelos pesados para que quepan en memorias VRAM de < 4GB sin sacrificar precisión.</p>
-                        </div>
-                        <div class="bg-base-dark p-8 md:col-span-2">
-                            <h4 class="font-mono text-[10px] text-accent-orange uppercase mb-4 tracking-tighter">The
-                                Solution (Rationale)</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light mb-4">Implementación de kernels
-                                personalizados en **CUDA** para procesamiento paralelo masivo y uso de técnicas de
-                                **cuantización de 4 bits**. El resultado fue una reducción del consumo de memoria en un
-                                55% y una latencia media de < 120ms en local.</p>
-                                    <span class="font-mono text-[9px] text-accent-orange">Metric: Inference Latency
-                                        reduced by 4x.</span>
-                        </div>
-                    </div>
-                </article>
 
-                <!-- Case Study: OmniSLAM -->
-                <article class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <div class="lg:col-span-5">
-                        <span class="font-mono text-[9px] text-white/30 uppercase mb-4 block">Deployment Node:
-                            #02</span>
-                        <h3 class="text-3xl font-semibold mb-6">OmniSLAM: Navegación Robótica Autónoma</h3>
-                        <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                            Sistema de mapeo y localización en tiempo real para plataformas robóticas móviles utilizando
-                            fusión sensorial avanzada.
+                    <div class="relative pl-8 border-l border-white/10">
+                        <div class="absolute -left-[5px] top-2 w-2 h-2 bg-white/20 rounded-full"></div>
+                        <span class="font-mono text-[10px] text-white/30 uppercase mb-2 block font-bold">Academia //
+                            Título Oct 2024</span>
+                        <h3 class="text-3xl font-bold mb-4 text-white/80">Ingeniero Mecatrónico</h3>
+                        <p class="text-slate-400 leading-relaxed text-lg font-light">
+                            Formación integral en diseño de sistemas electromecánicos, control avanzado y automatización
+                            industrial, con un enfoque core en la integración de software y hardware.
                         </p>
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Doku566/OmniSLAM" target="_blank"
-                                class="px-4 py-2 bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-widest hover:border-accent-orange transition-colors">
-                                [Source Code]
-                            </a>
-                        </div>
                     </div>
-                    <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
-                        <div class="bg-base-dark p-8">
-                            <h4 class="font-mono text-[10px] text-accent-orange uppercase mb-4 tracking-tighter">The
-                                Problem</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light">La deriva de sensores (drift) y
-                                el ruido en sensores inerciales causan desorientación en robots móviles en ambientes no
-                                estructurados.</p>
-                        </div>
-                        <div class="bg-base-dark p-8">
-                            <h4 class="font-mono text-[10px] text-accent-orange uppercase mb-4 tracking-tighter">The
-                                Challenge</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light">Sincronizar flujos de datos
-                                asíncronos de LIDAR e IMU para mantener un mapa consistente en tiempo real bajo
-                                limitaciones de CPU.</p>
-                        </div>
-                        <div class="bg-base-dark p-8 md:col-span-2">
-                            <h4 class="font-mono text-[10px] text-accent-orange uppercase mb-4 tracking-tighter">The
-                                Solution</h4>
-                            <p class="text-xs text-slate-400 leading-relaxed font-light mb-4">Implementamos una
-                                arquitectura distribuida bajo **ROS2** para paralelizar la lectura de sensores.
-                                Utilizamos un **Filtro de Kalman Extendido (EKF)** para la fusión sensorial, logrando
-                                una precisión de posicionamiento con margen de error de < 1.5% en recorridos de
-                                    100m.</p>
-                                    <span class="font-mono text-[9px] text-accent-orange">Performance: 30Hz Real-time
-                                        mapping loop achieved.</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <!-- Mastery Matrix (Tiered Capability) -->
-        <section id="matrix" class="max-w-6xl mx-auto px-6 py-24 border-t border-white/5 bg-white/[0.01]">
-            <h2 class="font-mono text-[10px] text-accent-orange uppercase tracking-[0.4em] mb-16 font-bold">02 //
-                Capability Mastery Matrix</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/5 border border-white/5">
-                <!-- Tier 1: Core Eng -->
-                <div class="bg-base-dark p-10">
-                    <span class="font-mono text-[9px] text-accent-orange uppercase mb-6 block font-bold">L0 //
-                        CORE_ENGINEERING</span>
-                    <h4 class="text-xl font-semibold mb-6">Sistemas Críticos</h4>
-                    <ul class="space-y-4 font-mono text-[10px] text-slate-400">
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">C++ 20/23 (Modern
-                                STL)</span> <span class="px-2 py-0.5 border border-white/10">Expert</span></li>
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">Data Structures &
-                                Algs</span> <span class="px-2 py-0.5 border border-white/10">Senior</span></li>
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">Memory Mgmt
-                                (Manual)</span> <span class="px-2 py-0.5 border border-white/10">Expert</span></li>
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">Multithreading /
-                                Concurrency</span> <span class="px-2 py-0.5 border border-white/10">Proficient</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Tier 2: AI Systems -->
-                <div class="bg-base-dark p-10 md:border-x border-white/5">
-                    <span class="font-mono text-[9px] text-accent-orange uppercase mb-6 block font-bold">L1 //
-                        AI_SYNERGY</span>
-                    <h4 class="text-xl font-semibold mb-6">Inteligencia Autónoma</h4>
-                    <ul class="space-y-4 font-mono text-[10px] text-slate-400">
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">Vector DBs
-                                (FAISS/RAG)</span> <span class="px-2 py-0.5 border border-white/10">Senior</span></li>
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">PyTorch /
-                                TensorRT</span> <span class="px-2 py-0.5 border border-white/10">Senior</span></li>
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">Computer Vision
-                                (YOLO/CV2)</span> <span class="px-2 py-0.5 border border-white/10">Proficient</span>
-                        </li>
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">Model
-                                Quantization</span> <span class="px-2 py-0.5 border border-white/10">Expert</span></li>
-                    </ul>
-                </div>
-                <!-- Tier 3: Infrastructure -->
-                <div class="bg-base-dark p-10">
-                    <span class="font-mono text-[9px] text-accent-orange uppercase mb-6 block font-bold">L2 //
-                        INFRA_MANAGEMENT</span>
-                    <h4 class="text-xl font-semibold mb-6">Infraestructura</h4>
-                    <ul class="space-y-4 font-mono text-[10px] text-slate-400">
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">AWS
-                                Architecture</span> <span class="px-2 py-0.5 border border-white/10">Managed</span></li>
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">Cybersecurity
-                                Mitigation</span> <span class="px-2 py-0.5 border border-white/10">Active</span></li>
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">Linux Kernel /
-                                Bash</span> <span class="px-2 py-0.5 border border-white/10">Native</span></li>
-                        <li class="flex justify-between items-center"><span class="text-tech-gray">ROS2
-                                Orquestation</span> <span class="px-2 py-0.5 border border-white/10">Advanced</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="mt-8 p-6 border border-white/5 bg-code-bg font-mono text-[10px] leading-relaxed">
-                <span class="text-accent-orange font-bold uppercase block mb-2">// Engineering Philosophy</span>
-                No solo se trata de "hacerlo funcionar". Mi prioridad es la eficiencia algorítmica y la mantenibilidad
-                bajo principios **SOLID**. El hardware dicta los límites, mi ingeniería dicta el rendimiento.
-            </div>
-        </section>
-
-        <!-- Engineering Journal (Communication proof) -->
-        <section id="journal" class="max-w-6xl mx-auto px-6 py-24 border-t border-white/5">
-            <h2 class="font-mono text-[10px] text-accent-orange uppercase tracking-[0.4em] mb-16 font-bold">03 //
-                Engineering Journal</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="group border-b border-white/5 pb-8">
-                    <span class="font-mono text-[9px] text-white/30 uppercase block mb-4">Log_Entry: #256</span>
-                    <h4 class="text-2xl font-semibold mb-4 group-hover:text-accent-orange transition-colors">Optimizando
-                        la búsqueda vectorial usando Árboles KD.</h4>
-                    <p class="text-sm text-slate-400 font-light leading-relaxed mb-6">Explicando por qué la búsqueda
-                        exhaustiva fallaba sistemáticamente en mis nodos de visión y cómo la indexación espacial salvó
-                        la latencia.</p>
-                    <a href="#" class="font-mono text-[10px] uppercase text-accent-orange tracking-widest">[Read Deep
-                        Dive]</a>
-                </div>
-                <div class="group border-b border-white/5 pb-8">
-                    <span class="font-mono text-[9px] text-white/30 uppercase block mb-4">Log_Entry: #257</span>
-                    <h4 class="text-2xl font-semibold mb-4 group-hover:text-accent-orange transition-colors">Control
-                        determinista en robots competitivos: PID vs MPC.</h4>
-                    <p class="text-sm text-slate-400 font-light leading-relaxed mb-6">Análisis de la estabilidad de
-                        control en plataformas robóticas de alta velocidad (VEX V5) bajo condiciones de fricción
-                        variable.</p>
-                    <a href="#" class="font-mono text-[10px] uppercase text-accent-orange tracking-widest">[Read Deep
-                        Dive]</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="py-20 px-6 border-t border-white/5">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="text-[10px] font-mono tracking-widest text-white/20 uppercase">
-                Domingo González // Engineering Core &copy; 2026
+    <!-- Chatbot Bubble UI -->
+    <div class="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
+        <!-- Chat Window -->
+        <div id="chat-window"
+            class="hidden w-80 md:w-96 bg-card-bg border border-white/10 rounded-2xl shadow-2xl overflow-hidden mb-4 transition-all transform scale-95 opacity-0 origin-bottom-right">
+            <div class="bg-accent-orange p-4 flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-8 h-8 rounded-full bg-deep-bg flex items-center justify-center">
+                        <i class="fa-solid fa-robot text-accent-orange text-xs"></i>
+                    </div>
+                    <span class="text-deep-bg font-bold text-xs uppercase tracking-widest font-mono">Assistent_AI</span>
+                </div>
+                <button id="close-chat" class="text-deep-bg hover:scale-110 transition-transform">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
             </div>
-            <div class="flex gap-10 font-mono text-[10px] uppercase tracking-widest">
-                <a href="#" class="text-white/40 hover:text-accent-orange transition-colors">LinkedIn</a>
-                <a href="#" class="text-white/40 hover:text-accent-orange transition-colors">Systems_Log</a>
-                <a href="mailto:contact@domain.mx"
-                    class="text-white/40 hover:text-accent-orange transition-colors">Contact_Protocol</a>
+            <!-- Messages Area -->
+            <div id="messages" class="h-96 overflow-y-auto p-6 space-y-4 font-sans text-xs">
+                <!-- System Greeting -->
+                <div class="bg-white/5 p-4 rounded-xl rounded-tl-none max-w-[85%]">
+                    Hola, soy el asistente de Domingo. 😊 <br>¿Quieres saber sobre su experiencia en
+                    <strong>AWS</strong> o sus proyectos en <strong>C++</strong>?
+                </div>
+            </div>
+            <!-- Quick Replies -->
+            <div class="p-4 border-t border-white/5 flex flex-wrap gap-2">
+                <button onclick="sendReply('Experiencia AWS')"
+                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">AWS
+                    Exp</button>
+                <button onclick="sendReply('Proyectos C++')"
+                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">C++
+                    Projects</button>
+                <button onclick="sendReply('Mecatrónica')"
+                    class="px-3 py-1.5 border border-accent-orange/30 text-accent-orange text-[10px] uppercase font-bold hover:bg-accent-orange hover:text-deep-bg transition-all">Education</button>
+            </div>
+        </div>
+
+        <!-- Chat Trigger -->
+        <button id="chat-trigger"
+            class="w-16 h-16 bg-accent-orange text-deep-bg rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all">
+            <i class="fa-solid fa-comment-dots text-2xl"></i>
+        </button>
+    </div>
+
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="font-mono text-[9px] text-white/20 uppercase tracking-[0.5em] text-center md:text-left">
+                Domingo González // Engineering & Software &copy; 2026
+            </div>
+            <div class="flex space-x-10 text-[10px] font-mono uppercase text-white/40 tracking-widest">
+                <a href="#" class="hover:text-accent-orange">LinkedIn</a>
+                <a href="https://github.com/Doku566" target="_blank" class="hover:text-accent-orange">GitHub</a>
+                <a href="#" class="hover:text-accent-orange">Email</a>
             </div>
         </div>
     </footer>
 
-    <!-- Performance Audit Trace -->
     <script>
-        console.log("Systems Core: Operational. [DG_ENGINE_REP_v5.2]");
-        // Reveal Section Observer for smooth narrative experience
+        // Reveal Logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
         }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(s => observer.observe(s));
 
-        document.querySelectorAll('section').forEach(s => {
-            s.style.opacity = '0';
-            s.style.transform = 'translateY(20px)';
-            s.style.transition = 'all 1s cubic-bezier(0.19, 1, 0.22, 1)';
-            observer.observe(s);
+        // Chatbot Logic
+        const chatTrigger = document.getElementById('chat-trigger');
+        const chatWindow = document.getElementById('chat-window');
+        const closeChat = document.getElementById('close-chat');
+        const messagesArea = document.getElementById('messages');
+
+        chatTrigger.addEventListener('click', () => {
+            chatWindow.classList.toggle('hidden');
+            setTimeout(() => {
+                chatWindow.classList.toggle('scale-95');
+                chatWindow.classList.toggle('opacity-0');
+            }, 10);
         });
+
+        closeChat.addEventListener('click', () => {
+            chatWindow.classList.toggle('scale-95');
+            chatWindow.classList.toggle('opacity-0');
+            setTimeout(() => chatWindow.classList.toggle('hidden'), 300);
+        });
+
+        function sendReply(text) {
+            // User Message
+            const userDiv = document.createElement('div');
+            userDiv.className = "ml-auto bg-accent-orange text-deep-bg p-4 rounded-xl rounded-tr-none max-w-[85%] font-bold";
+            userDiv.innerText = text;
+            messagesArea.appendChild(userDiv);
+
+            // Bot Response Simulation
+            setTimeout(() => {
+                const botDiv = document.createElement('div');
+                botDiv.className = "bg-white/5 p-4 rounded-xl rounded-tl-none max-w-[85%] text-slate-300";
+
+                let response = "";
+                if (text.includes('AWS')) {
+                    response = "Domingo gestiona servicios AWS para +4,500 usuarios, especializado en seguridad y escalabilidad de red institucional.";
+                } else if (text.includes('C++')) {
+                    response = "En C++, desarrolla motores de inferencia (EdgeCortex) y sistemas de navegación robótica (OmniSLAM).";
+                } else {
+                    response = "Domingo es Ingeniero Mecatrónico titulado (Oct 2024), con fuerte base en hardware y software industrial.";
+                }
+
+                botDiv.innerText = response;
+                messagesArea.appendChild(botDiv);
+                messagesArea.scrollTop = messagesArea.scrollHeight;
+            }, 600);
+        }
     </script>
 </body>
 

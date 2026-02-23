@@ -182,6 +182,25 @@
             }
         }
 
+        /* Modal Styles */
+        #project-modal {
+            display: none;
+            backdrop-filter: blur(20px);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        #project-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .blueprint-pattern {
+            background-image:
+                radial-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
 
         .reveal.visible {
             opacity: 1;
@@ -292,6 +311,12 @@
                                             < 80ms In-system</span>
                                     </div>
                                 </div>
+                                <button onclick="openProject('aethervoice')"
+                                    class="mt-8 group/btn flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/40 hover:text-accent-orange transition-colors">
+                                    <span>Explorer_Deep_Dive</span>
+                                    <i
+                                        class="fa-solid fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -314,7 +339,7 @@
                                 contraseñas impulsado por LLMs (Groq + FastAPI).</p>
                             <!-- Tech Specs Grid -->
                             <div
-                                class="grid grid-cols-2 gap-4 font-mono text-[8px] uppercase tracking-tighter text-white/40">
+                                class="grid grid-cols-2 gap-4 font-mono text-[8px] uppercase tracking-tighter text-white/40 mb-8">
                                 <div class="border-l border-accent-orange/30 pl-3">
                                     <span class="block">Auth: AzureAD/MSAL</span>
                                 </div>
@@ -322,6 +347,12 @@
                                     <span class="block">Engine: FastAPI/Python</span>
                                 </div>
                             </div>
+                            <button onclick="openProject('nexussupport')"
+                                class="group/btn flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-white/40 hover:text-accent-orange transition-colors">
+                                <span>Explorer_Deep_Dive</span>
+                                <i
+                                    class="fa-solid fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
+                            </button>
                         </div>
                     </div>
 
@@ -545,6 +576,21 @@
         </section>
     </main>
 
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 z-[100] p-6 items-center justify-center bg-black/80">
+        <div
+            class="bg-deep-bg border border-white/10 w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl relative shadow-2xl flex flex-col">
+            <button onclick="closeProject()"
+                class="absolute top-6 right-6 text-white/40 hover:text-white transition-colors z-20">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+            </button>
+            <div class="flex-1 overflow-y-auto p-12 lg:p-20 blueprint-pattern">
+                <div id="modal-content" class="space-y-12">
+                    <!-- Data injected here -->
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Chatbot Bubble UI -->
     <div class="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
         <!-- Chat Window -->
@@ -723,7 +769,7 @@
 
         // Copy Email
         function copyEmail(btn) {
-            const email = "tu-email@ejemplo.com"; // User should update or I keep generic
+            const email = "tu-email@ejemplo.com";
             navigator.clipboard.writeText(email).then(() => {
                 const toast = document.getElementById('toast');
                 toast.classList.remove('opacity-0');
@@ -733,6 +779,70 @@
                     toast.classList.add('opacity-0');
                 }, 2000);
             });
+        }
+
+        const projectsData = {
+            'aethervoice': {
+                title: 'AetherVoice System Architecture',
+                tag: 'AETHER_V6_CORE',
+                description: 'Un motor de procesamiento de audio profundo diseñado para síntesis de voz natural y respuesta de baja latencia.',
+                problem: 'La síntesis de voz tradicional para hardware embebido carece de naturalidad o requiere potencia computacional masiva, impidiendo su uso en robots autónomos compactos.',
+                challenge: 'Optimizar un transformer de audio masivo para que funcione bajo una latencia estricta de 80ms sin sacrificar los matices fonéticos.',
+                solution: 'Implementación de un modelo de cuantización híbrido y un pipeline de inferencia optimizado en C++/TensorRT con técnicas de post-processing DSP avanzadas.',
+                stack: 'PyTorch / TensorRT / DSP / Python'
+            },
+            'nexussupport': {
+                title: 'NexusSupport Cloud Orchestrator',
+                tag: 'SUPPORT_AI_HUB',
+                description: 'Sistema administrativo institucional que conecta Azure AD con motores de inferencia IA para soporte automatizado.',
+                problem: 'Los departamentos de TI universitarios pierden el 40% de su tiempo en tareas repetitivas como el restablecimiento de contraseñas y orientación básica.',
+                challenge: 'Crear un puente seguro y escalable entre la base de datos de usuarios de Azure y un LLM abierto preservando la seguridad de los tokens.',
+                solution: 'Middleware desarrollado en FastAPI orquestando Microsoft Graph API con validación OAuth2 estricta, utilizando Groq para inferencia ultrarrápida.',
+                stack: 'FastAPI / Microsoft Graph / Azure AD / Groq'
+            }
+        };
+
+        function openProject(id) {
+            const data = projectsData[id];
+            const container = document.getElementById('modal-content');
+            container.innerHTML = `
+            <div class="reveal visible">
+                <span class="font-mono text-[10px] text-accent-orange uppercase tracking-[0.5em] font-bold mb-4 block">${data.tag}</span>
+                <h2 class="text-4xl lg:text-5xl font-bold mb-8">${data.title}</h2>
+                <p class="text-slate-400 text-lg leading-relaxed mb-12">${data.description}</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-12">
+                    <div>
+                        <h5 class="font-mono text-[9px] text-accent-orange uppercase mb-4 tracking-widest font-bold">01. Problema</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">${data.problem}</p>
+                    </div>
+                    <div>
+                        <h5 class="font-mono text-[9px] text-accent-orange uppercase mb-4 tracking-widest font-bold">02. El Desafío</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">${data.challenge}</p>
+                    </div>
+                    <div>
+                        <h5 class="font-mono text-[9px] text-accent-orange uppercase mb-4 tracking-widest font-bold">03. Solución Técnica</h5>
+                        <p class="text-xs text-slate-500 leading-relaxed">${data.solution}</p>
+                    </div>
+                </div>
+
+                <div class="mt-20 flex gap-4 font-mono text-[9px] text-white/20">
+                    <span>${data.stack}</span>
+                </div>
+            </div>
+        `;
+            document.getElementById('project-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProject() {
+            document.getElementById('project-modal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function (event) {
+            const modal = document.getElementById('project-modal');
+            if (event.target == modal) closeProject();
         }
     </script>
 </body>

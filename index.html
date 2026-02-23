@@ -4,7 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Domingo González // Mechatronics Engineer & VEX Global Runner-Up</title>
+    <title>Domingo González // Senior Mechatronics & Software Engineer</title>
+
+    <!-- SEO & OpenGraph -->
+    <meta name="description"
+        content="Portafolio de Domingo González, Ingeniero Mecatrónico y Senior Software Engineer. Especializado en AWS, Robótica competitiva (VEX) e IA local.">
+    <meta name="keywords" content="Mecatrónica, Software Engineer, AWS, VEX Robotics, AI, C++, Python, Matamoros">
+    <meta property="og:title" content="Domingo González // Senior Engineering Portfolio">
+    <meta property="og:description"
+        content="Explora el trabajo de Domingo González en sistemas embebidos, robótica y automatización de IA.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Doku566/Portafolioweb-dgh">
+    <meta name="twitter:card" content="summary_large_image">
+
     <!-- Assets -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -41,6 +53,34 @@
             background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
+        }
+
+        .scanline {
+            width: 100%;
+            height: 2px;
+            background: rgba(249, 115, 22, 0.3);
+            position: absolute;
+            top: -10px;
+            left: 0;
+            z-index: 20;
+            pointer-events: none;
+            box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+            display: none;
+        }
+
+        .group:hover .scanline {
+            display: block;
+            animation: scan 2s linear infinite;
+        }
+
+        @keyframes scan {
+            0% {
+                top: 0%;
+            }
+
+            100% {
+                top: 100%;
+            }
         }
 
         .reveal {
@@ -124,11 +164,13 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
 
                     <!-- AetherVoice (New) -->
+                    <!-- AetherVoice -->
                     <div
                         class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50 lg:col-span-2">
+                        <div class="scanline"></div>
                         <div class="md:flex h-full">
                             <div class="md:w-1/2 aspect-video bg-neutral-900 overflow-hidden">
-                                <img src="images/aethervoice_ui.png" alt="AetherVoice UI"
+                                <img src="images/aethervoice_ui.png" alt="AetherVoice UI" loading="lazy"
                                     class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700">
                             </div>
                             <div class="md:w-1/2 p-10 flex flex-col justify-center">
@@ -372,9 +414,12 @@
         </div>
 
         <!-- Chat Trigger -->
-        <button id="chat-trigger"
-            class="w-16 h-16 bg-accent-orange text-deep-bg rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all">
-            <i class="fa-solid fa-robot text-2xl"></i>
+        <button id="chat-trigger" aria-label="Abrir asistente de IA"
+            class="w-16 h-16 bg-accent-orange text-deep-bg rounded-full flex items-center justify-center shadow-xl hover:scale-110 active:scale-95 transition-all group relative">
+            <div
+                class="absolute inset-0 rounded-full bg-accent-orange blur-md opacity-20 group-hover:opacity-40 transition-opacity">
+            </div>
+            <i class="fa-solid fa-robot text-2xl relative z-10"></i>
         </button>
     </div>
 

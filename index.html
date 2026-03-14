@@ -211,16 +211,22 @@
                 <span class="text-gray-900">Domingo González</span>
             </div>
             <nav class="hidden md:flex items-center space-x-10">
-                <a href="#hero"
+                <a href="#hero" data-i18n="nav.home"
                     class="font-sans text-sm font-medium text-gray-600 hover:text-[#4285f4] transition-colors">Inicio</a>
-                <a href="#projects"
+                <a href="#projects" data-i18n="nav.projects"
                     class="font-sans text-sm font-medium text-gray-600 hover:text-[#ea4335] transition-colors">Proyectos</a>
-                <a href="#skills"
+                <a href="#skills" data-i18n="nav.stack"
                     class="font-sans text-sm font-medium text-gray-600 hover:text-[#fbbc05] transition-colors">Stack</a>
-                <a href="#exp"
+                <a href="#exp" data-i18n="nav.exp"
                     class="font-sans text-sm font-medium text-gray-600 hover:text-[#34a853] transition-colors">Experiencia</a>
-                <a href="#contact"
+                <a href="#contact" data-i18n="nav.contact"
                     class="font-sans text-sm font-semibold text-white bg-[#4285f4] px-4 py-2 rounded-full hover:bg-blue-600 transition-all">Contacto</a>
+                <!-- Language Toggle -->
+                <button id="lang-toggle" onclick="toggleLang()"
+                    class="flex items-center gap-1.5 text-xs font-bold border border-gray-200 px-3 py-1.5 rounded-full hover:border-[#4285f4] hover:text-[#4285f4] transition-all text-gray-500">
+                    <i class="fa-solid fa-language"></i>
+                    <span id="lang-label">EN</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -231,43 +237,46 @@
             <div class="max-w-5xl mx-auto w-full">
 
                 <!-- Availability Badge -->
-                <div class="flex items-center gap-2 mb-8 reveal">
+                <div class="flex flex-wrap items-center gap-3 mb-8 reveal">
                     <span class="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-xs font-bold px-4 py-2 rounded-full">
                         <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse inline-block"></span>
-                        Abierto a Oportunidades &mdash; 2026
+                        <span data-i18n="hero.badge">Abierto a Oportunidades &mdash; 2026</span>
                     </span>
-                    <span class="text-gray-400 text-xs font-medium">Matamoros, México &middot; Remoto / Relocalizable</span>
+                    <span class="text-gray-400 text-xs font-medium">H. Matamoros, Tamaulipas &middot; <a href="tel:+528681201039" class="hover:text-[#4285f4] transition-colors">+52 868-120-1039</a></span>
                 </div>
 
                 <!-- Main Headline -->
-                <h1 class="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-none mb-6 text-gray-900 reveal">
-                    Sistemas Reales.<br>
-                    <span class="text-[#4285f4]">Reconocimiento Global.</span>
+                <h1 class="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-none mb-4 text-gray-900 reveal">
+                    <span data-i18n="hero.h1a">Ingeniero de</span><br>
+                    <span class="text-[#4285f4]" data-i18n="hero.h1b">Software & Robótica.</span>
                 </h1>
 
+                <!-- Subtitle -->
+                <p class="font-sans text-gray-500 text-base font-medium mb-4 reveal" data-i18n="hero.subtitle">Software & Robotics Engineer | AI & Cloud Developer</p>
+
                 <!-- Tagline -->
-                <p class="font-sans text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 reveal">
-                    Ingeniero Senior en <strong class="text-gray-900">AWS, C++23 y Robótica Autónoma</strong>.
-                    Arquitecto de infraestructuras cloud de producción para <strong class="text-gray-900">+4,500 usuarios</strong> e integrador de
-                    sistemas de IA local para hardware embebido.
+                <p class="font-sans text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 reveal" data-i18n="hero.tagline">
+                    Experiencia en diseño de algoritmos, integración de APIs e infraestructura cloud (<strong class="text-gray-900">AWS</strong>).
+                    Desarrollador en <strong class="text-gray-900">Python, C++</strong> y sistemas robóticos (<strong class="text-gray-900">ROS, RViz</strong>).
+                    Campeón de programación en <strong class="text-gray-900">VEX Robotics</strong> 2022, 2023 y 2024.
                 </p>
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-wrap gap-4 mb-16 reveal">
                     <button onclick="exportCV(this)"
                         class="px-6 py-3 bg-[#4285f4] text-white font-sans font-semibold text-sm rounded-full shadow-md hover:shadow-lg hover:bg-blue-600 transition-all flex items-center gap-3 group">
-                        <span>Descargar CV</span>
+                        <span data-i18n="hero.cv">Descargar CV</span>
                         <i class="fa-solid fa-download group-hover:translate-y-1 transition-transform"></i>
                     </button>
                     <a href="#projects"
                         class="px-6 py-3 bg-white border border-gray-200 text-gray-700 font-sans font-semibold text-sm rounded-full hover:border-[#4285f4] hover:text-[#4285f4] transition-all flex items-center gap-3">
-                        <span>Ver Proyectos</span>
+                        <span data-i18n="hero.projects">Ver Proyectos</span>
                         <i class="fa-solid fa-arrow-down"></i>
                     </a>
                     <a href="#contact"
                         class="px-6 py-3 bg-white border border-gray-200 text-gray-700 font-sans font-semibold text-sm rounded-full hover:border-[#34a853] hover:text-[#34a853] transition-all flex items-center gap-3">
                         <i class="fa-regular fa-envelope"></i>
-                        <span>Contactar</span>
+                        <span data-i18n="hero.contact">Contactar</span>
                     </a>
                 </div>
 
@@ -275,19 +284,19 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
                     <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                         <div class="text-3xl font-bold text-[#4285f4] mb-1">4,500+</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Usuarios en AWS</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.users">Usuarios Soportados</div>
                     </div>
                     <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
-                        <div class="text-3xl font-bold text-[#ea4335] mb-1">#2</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Lugar Mundial VEX</div>
+                        <div class="text-3xl font-bold text-[#ea4335] mb-1">#1</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.vex">VEX Champion MX/USA</div>
                     </div>
                     <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
-                        <div class="text-3xl font-bold text-[#fbbc05] mb-1">6+</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Sistemas en Producción</div>
+                        <div class="text-3xl font-bold text-[#fbbc05] mb-1">3×</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.wins">Campeonatos VEX</div>
                     </div>
                     <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
-                        <div class="text-3xl font-bold text-[#34a853] mb-1">3+</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide">Años de Experiencia</div>
+                        <div class="text-3xl font-bold text-[#34a853] mb-1">1+</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.years">Año Exp. Profesional</div>
                     </div>
                 </div>
 
@@ -482,31 +491,31 @@
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#34a853] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-brands fa-linux text-4xl mb-3 text-gray-500 group-hover:text-[#34a853] group-hover:scale-110 transition-transform"></i>
                         <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#34a853] transition-colors">Linux</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium">5 años · Kernel/DevOps</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.linux">DevOps / Ubuntu</span>
                     </div>
-                    <!-- Robotics -->
+                    <!-- Robotics ROS -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-solid fa-robot text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">Robotics</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium">SLAM · VEX · PID</span>
+                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">ROS / RViz</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.ros">VEX · Navegación Autónoma</span>
                     </div>
-                    <!-- Cybersecurity -->
+                    <!-- OpenCV / ML -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#ea4335] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-solid fa-shield-halved text-4xl mb-3 text-gray-500 group-hover:text-[#ea4335] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#ea4335] transition-colors">Cybersecurity</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium">Azure AD · ISO 27001</span>
+                        <i class="fa-solid fa-eye text-4xl mb-3 text-gray-500 group-hover:text-[#ea4335] group-hover:scale-110 transition-transform"></i>
+                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#ea4335] transition-colors">OpenCV / ML</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cv">PyTorch · TensorFlow</span>
                     </div>
-                    <!-- FastAPI -->
+                    <!-- Flask / APIs -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#34a853] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-solid fa-bolt text-4xl mb-3 text-gray-500 group-hover:text-[#34a853] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#34a853] transition-colors">FastAPI</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium">REST / async Python</span>
+                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#34a853] transition-colors">Flask / APIs</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.flask">REST · JSON · FastAPI</span>
                     </div>
-                    <!-- SLAM / OpenCV -->
+                    <!-- Cloud / Docker -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-solid fa-map-location-dot text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">SLAM</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium">LiDAR · OpenCV · IMU</span>
+                        <i class="fa-solid fa-cloud text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
+                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">Cloud / DevOps</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cloud">AWS · Docker · CI/CD</span>
                     </div>
                 </div>
             </div>
@@ -520,16 +529,16 @@
                     <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full">Experiencia Profesional</h2>
                 </div>
 
-                <!-- VEX World Award Banner -->
+                <!-- VEX Championship Banner -->
                 <div class="mb-16 reveal">
                     <div class="bg-gradient-to-r from-[#ea4335]/5 via-[#fbbc05]/5 to-[#34a853]/5 border border-[#fbbc05]/40 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
                         <div class="w-16 h-16 rounded-full bg-[#fbbc05] flex items-center justify-center flex-shrink-0">
                             <i class="fa-solid fa-trophy text-white text-2xl"></i>
                         </div>
                         <div>
-                            <div class="text-xs text-[#fbbc05] font-bold uppercase tracking-widest mb-1">Reconocimiento Mundial · 2022</div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-1">2º Lugar Mundial &mdash; VEX Robotics World Championship</h4>
-                            <p class="text-sm text-gray-600">Categoría <strong>Programación Autónoma</strong>. Competencia internacional con equipos de más de 40 países. Algoritmos de navegación y control PID propios.</p>
+                            <div class="text-xs text-[#fbbc05] font-bold uppercase tracking-widest mb-1" data-i18n="vex.label">Campeón de Programación · VEX U México &amp; USA</div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-1" data-i18n="vex.title">Programming Champion &mdash; VEX Robotics 2022, 2023 &amp; 2024</h4>
+                            <p class="text-sm text-gray-600" data-i18n="vex.desc">Primer lugar en categoría de <strong>Programación Autónoma</strong> en competencias VEX U México y USA durante tres años consecutivos.</p>
                         </div>
                     </div>
                 </div>
@@ -546,17 +555,17 @@
                             </div>
                             <div class="md:w-1/2 md:text-right pt-2">
                                 <span
-                                    class="font-sans text-xs text-[#4285f4] font-bold uppercase tracking-widest">2023
-                                    &mdash; Presente</span>
-                                <h4 class="text-xl font-bold mt-2 text-gray-900">Lead Software Engineer</h4>
-                                <p class="text-sm text-gray-500 mt-1 font-medium">Sistemas Industriales · Matamoros, MX</p>
+                                    class="font-sans text-xs text-[#4285f4] font-bold uppercase tracking-widest">Feb 2024
+                                    &mdash; <span data-i18n="exp.present">Presente</span></span>
+                                <h4 class="text-xl font-bold mt-2 text-gray-900" data-i18n="exp1.title">Systems Engineer</h4>
+                                <p class="text-sm text-gray-500 mt-1 font-medium">Universidad Tecnológica de Matamoros &middot; Matamoros, MX</p>
                             </div>
                             <div class="md:w-1/2 bg-[#f8f9fa] border border-gray-200 p-6 rounded-2xl shadow-sm">
                                 <ul class="text-sm text-gray-600 space-y-2">
-                                    <li class="flex gap-2"><span class="text-[#4285f4] font-bold mt-0.5">•</span>Arquitectura y administración de infraestructura <strong>AWS</strong> para <strong>+4,500 usuarios activos</strong> en producción.</li>
-                                    <li class="flex gap-2"><span class="text-[#34a853] font-bold mt-0.5">•</span>Reducción del tiempo de respuesta de incidentes en un <strong>60%</strong> mediante automatización con Python y Lambda.</li>
-                                    <li class="flex gap-2"><span class="text-[#ea4335] font-bold mt-0.5">•</span>Implementación de protocolos de ciberseguridad industrial: cumplimiento ISO 27001 y gestión de identidad con Azure AD.</li>
-                                    <li class="flex gap-2"><span class="text-[#fbbc05] font-bold mt-0.5">•</span>Liderazgo de equipo técnico de 3 ingenieros en proyectos de migración cloud.</li>
+                                    <li class="flex gap-2"><span class="text-[#4285f4] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b1">Soporte técnico de software y hardware a más de <strong>4,500 usuarios</strong> con sistema impulsado por IA, mejorando la eficiencia IT en un <strong>25%</strong>.</span></li>
+                                    <li class="flex gap-2"><span class="text-[#34a853] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b2">Despliegue y mantenimiento de servidores cloud en <strong>AWS</strong>, mejorando disponibilidad y escalabilidad.</span></li>
+                                    <li class="flex gap-2"><span class="text-[#ea4335] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b3">Gestión y optimización de bases de datos relacionales con <strong>SQL</strong>, garantizando integridad y rendimiento.</span></li>
+                                    <li class="flex gap-2"><span class="text-[#fbbc05] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b4">Desarrollo de herramientas web internas con <strong>HTML, CSS y JavaScript</strong> para automatizar flujos administrativos.</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -626,6 +635,91 @@
                 </div>
             </div>
         </section>
+
+        <!-- Education Section -->
+        <section id="education" class="py-24 px-6 border-t border-gray-200 bg-[#f8f9fa]">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center space-x-4 mb-12 reveal">
+                    <div class="h-px w-12 bg-[#34a853]"></div>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#34a853] bg-green-50 px-4 py-2 rounded-full" data-i18n="edu.title">Formación Académica</h2>
+                </div>
+                <div class="bg-white border border-gray-200 rounded-2xl p-8 reveal">
+                    <div class="flex flex-col md:flex-row gap-6 items-start">
+                        <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-graduation-cap text-[#34a853] text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <span class="text-xs text-[#34a853] font-bold uppercase tracking-widest" data-i18n="edu.date">Oct 2024 &mdash; Egresado</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1 mb-1" data-i18n="edu.degree">Ingeniería en Mecatrónica</h3>
+                            <p class="text-sm text-gray-500 font-medium mb-4">Universidad Tecnológica de Matamoros &middot; H. Matamoros, Tamaulipas</p>
+                            <div class="bg-[#f8f9fa] border border-gray-100 rounded-xl p-4">
+                                <div class="text-xs text-gray-400 font-bold uppercase tracking-wide mb-2" data-i18n="edu.project">Proyecto Final</div>
+                                <p class="text-sm text-gray-600 leading-relaxed" data-i18n="edu.projectDesc">Sistema de navegación autónoma para robots móviles usando algoritmos Bug y grillas de ocupación. Sistema maestro-esclavo con visión computacional y redes neuronales para comportamiento adaptativo en entornos estáticos y dinámicos.</p>
+                                <div class="flex flex-wrap gap-2 mt-3">
+                                    <span class="px-2 py-1 bg-green-50 text-[#34a853] text-[10px] font-bold rounded-full">Python</span>
+                                    <span class="px-2 py-1 bg-blue-50 text-[#4285f4] text-[10px] font-bold rounded-full">ROS / RViz</span>
+                                    <span class="px-2 py-1 bg-red-50 text-[#ea4335] text-[10px] font-bold rounded-full">PyTorch / TensorFlow</span>
+                                    <span class="px-2 py-1 bg-yellow-50 text-[#fbbc05] text-[10px] font-bold rounded-full">OpenCV / MATLAB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certs" class="py-24 px-6 border-t border-gray-200 bg-white">
+            <div class="max-w-4xl mx-auto">
+                <div class="flex items-center space-x-4 mb-12 reveal">
+                    <div class="h-px w-12 bg-[#ea4335]"></div>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#ea4335] bg-red-50 px-4 py-2 rounded-full" data-i18n="certs.title">Certificados &amp; Logros</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 reveal">
+                    <!-- VEX -->
+                    <div class="flex items-center gap-4 bg-[#fffbeb] border border-[#fbbc05]/40 rounded-2xl p-5">
+                        <div class="w-10 h-10 rounded-full bg-[#fbbc05] flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-trophy text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-sm text-gray-900" data-i18n="cert.vex">Campeón de Programación VEX U</div>
+                            <div class="text-xs text-gray-500">México &amp; USA &middot; 2022, 2023, 2024</div>
+                        </div>
+                    </div>
+                    <!-- C# Microsoft -->
+                    <div class="flex items-center gap-4 bg-[#eff6ff] border border-[#4285f4]/20 rounded-2xl p-5">
+                        <div class="w-10 h-10 rounded-full bg-[#4285f4] flex items-center justify-center flex-shrink-0">
+                            <i class="fa-brands fa-microsoft text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-sm text-gray-900">Certificate C# with Microsoft</div>
+                            <div class="text-xs text-gray-500">Microsoft &middot; Fundamentals</div>
+                        </div>
+                    </div>
+                    <!-- Python Udemy -->
+                    <div class="flex items-center gap-4 bg-[#f0fdf4] border border-[#34a853]/20 rounded-2xl p-5">
+                        <div class="w-10 h-10 rounded-full bg-[#34a853] flex items-center justify-center flex-shrink-0">
+                            <i class="fa-brands fa-python text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-sm text-gray-900">Certificate Python</div>
+                            <div class="text-xs text-gray-500">Udemy &middot; Python Development</div>
+                        </div>
+                    </div>
+                    <!-- C Udemy -->
+                    <div class="flex items-center gap-4 bg-[#fef2f2] border border-[#ea4335]/20 rounded-2xl p-5">
+                        <div class="w-10 h-10 rounded-full bg-[#ea4335] flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-c text-white text-sm"></i>
+                        </div>
+                        <div>
+                            <div class="font-bold text-sm text-gray-900">Certificate C Programming</div>
+                            <div class="text-xs text-gray-500">Udemy &middot; C Language</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Project Modal -->
@@ -728,12 +822,19 @@
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 rounded-full bg-[#4285f4] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">DG</div>
                         <div>
-                            <div class="font-bold text-gray-900">Domingo González</div>
-                            <div class="text-xs text-gray-500">Senior Software &amp; Mechatronics Engineer</div>
+                            <div class="font-bold text-gray-900">Domingo González Hernández</div>
+                            <div class="text-xs text-gray-500">Software &amp; Robotics Engineer | AI &amp; Cloud Developer</div>
                         </div>
                     </div>
                     <div class="space-y-3 pt-2 border-t border-gray-200">
-                        <a href="mailto:tu-email@gmail.com"
+                        <a href="tel:+528681201039"
+                            class="flex items-center gap-3 text-sm text-gray-700 hover:text-[#34a853] transition-colors group">
+                            <span class="w-8 h-8 rounded-full bg-green-50 flex items-center justify-center text-[#34a853] group-hover:bg-[#34a853] group-hover:text-white transition-all">
+                                <i class="fa-solid fa-phone text-xs"></i>
+                            </span>
+                            <span class="font-medium">+52 868-120-1039</span>
+                        </a>
+                        <a href="mailto:Domingoghz245@gmail.com"
                             class="flex items-center gap-3 text-sm text-gray-700 hover:text-[#4285f4] transition-colors group">
                             <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#4285f4] group-hover:bg-[#4285f4] group-hover:text-white transition-all">
                                 <i class="fa-regular fa-envelope text-xs"></i>
@@ -973,6 +1074,77 @@
                 btn.style.transform = `translate(0px, 0px)`;
             });
         });
+
+        // ── Bilingual Toggle ─────────────────────────────────────────
+        const translations = {
+            es: {
+                'nav.home': 'Inicio', 'nav.projects': 'Proyectos', 'nav.stack': 'Stack',
+                'nav.exp': 'Experiencia', 'nav.contact': 'Contacto',
+                'hero.badge': 'Abierto a Oportunidades — 2026',
+                'hero.h1a': 'Ingeniero de', 'hero.h1b': 'Software & Robótica.',
+                'hero.subtitle': 'Software & Robotics Engineer | AI & Cloud Developer',
+                'hero.tagline': 'Experiencia en diseño de algoritmos, integración de APIs e infraestructura cloud (AWS). Desarrollador en Python, C++ y sistemas robóticos (ROS, RViz). Campeón de programación en VEX Robotics 2022, 2023 y 2024.',
+                'hero.cv': 'Descargar CV', 'hero.projects': 'Ver Proyectos', 'hero.contact': 'Contactar',
+                'stats.users': 'Usuarios Soportados', 'stats.vex': 'VEX Champion MX/USA',
+                'stats.wins': 'Campeonatos VEX', 'stats.years': 'Año Exp. Profesional',
+                'skill.linux': 'DevOps / Ubuntu', 'skill.ros': 'VEX · Navegación Autónoma',
+                'skill.cv': 'PyTorch · TensorFlow', 'skill.flask': 'REST · JSON · FastAPI',
+                'skill.cloud': 'AWS · Docker · CI/CD',
+                'vex.label': 'Campeón de Programación · VEX U México & USA',
+                'vex.title': 'Programming Champion — VEX Robotics 2022, 2023 & 2024',
+                'vex.desc': 'Primer lugar en categoría de Programación Autónoma en competencias VEX U México y USA durante tres años consecutivos.',
+                'exp.present': 'Presente', 'exp1.title': 'Systems Engineer',
+                'exp1.b1': 'Soporte técnico de software y hardware a más de 4,500 usuarios con sistema impulsado por IA, mejorando la eficiencia IT en un 25%.',
+                'exp1.b2': 'Despliegue y mantenimiento de servidores cloud en AWS, mejorando disponibilidad y escalabilidad.',
+                'exp1.b3': 'Gestión y optimización de bases de datos relacionales con SQL, garantizando integridad y rendimiento.',
+                'exp1.b4': 'Desarrollo de herramientas web internas con HTML, CSS y JavaScript para automatizar flujos administrativos.',
+                'edu.title': 'Formación Académica', 'edu.date': 'Oct 2024 — Egresado',
+                'edu.degree': 'Ingeniería en Mecatrónica',
+                'edu.project': 'Proyecto Final',
+                'edu.projectDesc': 'Sistema de navegación autónoma para robots móviles usando algoritmos Bug y grillas de ocupación. Sistema maestro-esclavo con visión computacional y redes neuronales para comportamiento adaptativo en entornos estáticos y dinámicos.',
+                'certs.title': 'Certificados & Logros', 'cert.vex': 'Campeón de Programación VEX U',
+            },
+            en: {
+                'nav.home': 'Home', 'nav.projects': 'Projects', 'nav.stack': 'Stack',
+                'nav.exp': 'Experience', 'nav.contact': 'Contact',
+                'hero.badge': 'Open to Opportunities — 2026',
+                'hero.h1a': 'Software &', 'hero.h1b': 'Robotics Engineer.',
+                'hero.subtitle': 'Software & Robotics Engineer | AI & Cloud Developer',
+                'hero.tagline': 'Experience in algorithm design, API integration and cloud infrastructure (AWS). Developer in Python, C++ and robotic systems (ROS, RViz). Programming Champion at VEX Robotics 2022, 2023 and 2024.',
+                'hero.cv': 'Download CV', 'hero.projects': 'View Projects', 'hero.contact': 'Contact Me',
+                'stats.users': 'Users Supported', 'stats.vex': 'VEX Champion MX/USA',
+                'stats.wins': 'VEX Championships', 'stats.years': 'Year Prof. Experience',
+                'skill.linux': 'DevOps / Ubuntu', 'skill.ros': 'VEX · Autonomous Navigation',
+                'skill.cv': 'PyTorch · TensorFlow', 'skill.flask': 'REST · JSON · FastAPI',
+                'skill.cloud': 'AWS · Docker · CI/CD',
+                'vex.label': 'Programming Champion · VEX U Mexico & USA',
+                'vex.title': 'Programming Champion — VEX Robotics 2022, 2023 & 2024',
+                'vex.desc': 'First place in Autonomous Programming category at VEX U Mexico and USA competitions for three consecutive years.',
+                'exp.present': 'Present', 'exp1.title': 'Systems Engineer',
+                'exp1.b1': 'Software and hardware technical support to over 4,500 users with an AI-powered system, improving IT efficiency by 25%.',
+                'exp1.b2': 'Deployed and maintained AWS cloud servers, enhancing uptime and scalability.',
+                'exp1.b3': 'Managed and optimized relational databases using SQL, ensuring data integrity and performance.',
+                'exp1.b4': 'Developed internal web tools with HTML, CSS and JavaScript to streamline administrative workflows.',
+                'edu.title': 'Education', 'edu.date': 'Oct 2024 — Graduate',
+                'edu.degree': 'Bachelor of Mechatronics Engineering',
+                'edu.project': 'Final Project',
+                'edu.projectDesc': 'Autonomous navigation system for mobile robots using Bug algorithms and occupancy grids. Master-slave robot system with computer vision and neural networks for adaptive behavior in static and dynamic environments.',
+                'certs.title': 'Certifications & Achievements', 'cert.vex': 'VEX U Programming Champion',
+            }
+        };
+
+        let currentLang = 'es';
+
+        function toggleLang() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.getElementById('lang-label').textContent = currentLang === 'es' ? 'EN' : 'ES';
+            const t = translations[currentLang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) el.innerHTML = t[key];
+            });
+            document.documentElement.lang = currentLang;
+        }
     </script>
 </body>
 

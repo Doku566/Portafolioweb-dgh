@@ -30,10 +30,13 @@
             theme: {
                 extend: {
                     colors: {
-                        'deep-bg': '#050505',
-                        'accent-orange': '#f97316',
-                        'tech-gray': '#d1d5db',
-                        'card-bg': '#0d0d0d',
+                        'deep-bg': '#202124',
+                        'accent-orange': '#8ab4f8',
+                        'tech-gray': '#9aa0a6',
+                        'card-bg': '#303134',
+                        'google-red': '#ea4335',
+                        'google-yellow': '#fbbc05',
+                        'google-green': '#34a853'
                     },
                     fontFamily: {
                         'sans': ['Inter', 'sans-serif'],
@@ -45,34 +48,16 @@
     </script>
     <style>
         body {
-            background-color: #050505;
+            background-color: #202124;
             color: #d1d5db;
         }
 
         .grid-layers {
-            background-image: linear-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(138, 180, 248, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(138, 180, 248, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
             transition: transform 0.1s ease-out;
             will-change: transform;
-        }
-
-        .scanline {
-            width: 100%;
-            height: 2px;
-            background: rgba(249, 115, 22, 0.3);
-            position: absolute;
-            top: -10px;
-            left: 0;
-            z-index: 20;
-            pointer-events: none;
-            box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
-            display: none;
-        }
-
-        .group:hover .scanline {
-            display: block;
-            animation: scan 2s linear infinite;
         }
 
         @keyframes scan {
@@ -109,7 +94,7 @@
             top: 0;
             bottom: 0;
             width: 1px;
-            background: linear-gradient(to bottom, transparent, rgba(249, 115, 22, 0.3), rgba(249, 115, 22, 0.3), transparent);
+            background: linear-gradient(to bottom, transparent, rgba(138, 180, 248, 0.3), rgba(138, 180, 248, 0.3), transparent);
         }
 
         @media (min-width: 768px) {
@@ -121,7 +106,7 @@
         .pulse-dot {
             width: 8px;
             height: 8px;
-            background: #F97316;
+            background: #8ab4f8;
             border-radius: 50%;
             position: relative;
         }
@@ -130,7 +115,7 @@
             content: '';
             position: absolute;
             inset: -4px;
-            border: 1px solid #F97316;
+            border: 1px solid #8ab4f8;
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
@@ -157,7 +142,7 @@
         .typing span {
             width: 4px;
             height: 4px;
-            background: rgba(249, 115, 22, 0.5);
+            background: rgba(138, 180, 248, 0.5);
             border-radius: 50%;
             animation: typing 1s infinite alternate;
         }
@@ -197,13 +182,8 @@
 
         .blueprint-pattern {
             background-image:
-                radial-gradient(rgba(249, 115, 22, 0.05) 1px, transparent 1px);
+                radial-gradient(rgba(138, 180, 248, 0.05) 1px, transparent 1px);
             background-size: 20px 20px;
-        }
-
-        .terminal-text {
-            font-family: 'JetBrains Mono', 'Courier New', monospace;
-            text-shadow: 0 0 5px rgba(249, 115, 22, 0.3);
         }
 
         /* Custom Scrollbar */
@@ -212,16 +192,16 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #050505;
+            background: #202124;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #F9731633;
+            background: rgba(138, 180, 248, 0.3);
             border-radius: 10px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #F97316;
+            background: #8ab4f8;
         }
 
         .reveal.visible {
@@ -230,8 +210,8 @@
         }
 
         .award-glow {
-            box-shadow: 0 0 20px rgba(249, 115, 22, 0.2);
-            border-color: rgba(249, 115, 22, 0.4);
+            box-shadow: 0 0 20px rgba(138, 180, 248, 0.2);
+            border-color: rgba(138, 180, 248, 0.4);
         }
     </style>
 </head>
@@ -282,18 +262,6 @@
                         <i class="fa-solid fa-download group-hover:translate-y-1 transition-transform"></i>
                     </button>
                 </div>
-
-                <!-- Mission Control Terminal -->
-                <div class="bg-black/40 border border-white/5 rounded p-4 max-w-md backdrop-blur-sm hidden lg:block">
-                    <div class="flex items-center gap-2 mb-3">
-                        <div class="w-2 h-2 rounded-full bg-accent-orange animate-pulse"></div>
-                        <span class="font-mono text-[8px] text-white/40 uppercase tracking-widest">System_Diagnostics //
-                            Live_Feed</span>
-                    </div>
-                    <div id="terminal-log"
-                        class="font-mono text-[9px] text-accent-orange/60 space-y-1 h-12 overflow-hidden terminal-text">
-                        <!-- Simulated logs will inject here -->
-                    </div>
                 </div>
             </div>
         </section>
@@ -303,8 +271,7 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-accent-orange"></div>
-                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Portafolio de Proyectos //
-                        The Forge</h2>
+                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Proyectos Destacados</h2>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
@@ -313,7 +280,6 @@
                     <!-- AetherVoice -->
                     <div
                         class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50 lg:col-span-2">
-                        <div class="scanline"></div>
                         <div class="md:flex h-full">
                             <div class="md:w-1/2 aspect-video bg-neutral-900 overflow-hidden">
                                 <img src="images/aethervoice_ui.png" alt="AetherVoice UI" loading="lazy"
@@ -357,7 +323,6 @@
                     <!-- NexusSupport (IA-SOPORTE) -->
                     <div
                         class="group relative bg-card-bg border border-white/5 overflow-hidden transition-all hover:border-accent-orange/50">
-                        <div class="scanline"></div>
                         <div class="aspect-video bg-neutral-900 overflow-hidden">
                             <img src="https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=800"
                                 alt="Support AI" loading="lazy"
@@ -398,8 +363,7 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-accent-orange"></div>
-                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Matriz de Habilidades //
-                        Stack</h2>
+                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Habilidades Técnicas</h2>
                 </div>
 
                 <div class="flex flex-wrap gap-8 justify-center items-center">
@@ -411,24 +375,24 @@
                             Proficient</span>
                     </div>
                     <div class="group flex flex-col items-center">
-                        <i class="fa-brands fa-python text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                        <i class="fa-brands fa-python text-4xl mb-2 group-hover:text-google-yellow transition-colors"
                             title="Mastery: AI / Automation"></i>
                         <span
-                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">Python
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-google-yellow transition-colors">Python
                             Senior</span>
                     </div>
                     <div class="group flex flex-col items-center">
-                        <i class="fa-brands fa-aws text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                        <i class="fa-brands fa-aws text-4xl mb-2 group-hover:text-google-red transition-colors"
                             title="Expertise: Infrastructure for 4,500+ users"></i>
                         <span
-                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">AWS
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-google-red transition-colors">AWS
                             Expert</span>
                     </div>
                     <div class="group flex flex-col items-center">
-                        <i class="fa-brands fa-linux text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                        <i class="fa-brands fa-linux text-4xl mb-2 group-hover:text-google-green transition-colors"
                             title="Env: Kernel / DevOps"></i>
                         <span
-                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">Linux
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-google-green transition-colors">Linux
                             Native</span>
                     </div>
                     <div class="group flex flex-col items-center">
@@ -439,10 +403,10 @@
                             Lead</span>
                     </div>
                     <div class="group flex flex-col items-center">
-                        <i class="fa-solid fa-shield-halved text-4xl mb-2 group-hover:text-accent-orange transition-colors"
+                        <i class="fa-solid fa-shield-halved text-4xl mb-2 group-hover:text-google-red transition-colors"
                             title="Domain: Security Architecture"></i>
                         <span
-                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-accent-orange transition-colors">Cybersecurity</span>
+                            class="text-[10px] font-mono text-white/20 uppercase tracking-widest group-hover:text-google-red transition-colors">Cybersecurity</span>
                     </div>
                 </div>
             </div>
@@ -453,8 +417,7 @@
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-accent-orange"></div>
-                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Experiencia & Hitos //
-                        Mastered</h2>
+                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Experiencia Profesional</h2>
                 </div>
 
                 <!-- Professional Trajectory -->
@@ -510,7 +473,7 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-accent-orange"></div>
-                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Journal // Insights</h2>
+                    <h2 class="font-mono text-[10px] uppercase tracking-[0.5em] font-bold">Artículos y Notas</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="p-8 border border-white/5 bg-card-bg/30 hover:bg-card-bg transition-colors reveal">
@@ -571,7 +534,7 @@
                     <div class="w-8 h-8 rounded-full bg-deep-bg flex items-center justify-center">
                         <i class="fa-solid fa-robot text-accent-orange text-xs"></i>
                     </div>
-                    <span class="text-deep-bg font-bold text-xs uppercase tracking-widest font-mono">Assistent_AI</span>
+                    <span class="text-deep-bg font-bold text-xs uppercase tracking-widest font-mono">Asistente Virtual</span>
                 </div>
                 <button id="close-chat" class="text-deep-bg hover:scale-110 transition-transform">
                     <i class="fa-solid fa-xmark"></i>
@@ -581,8 +544,8 @@
             <div id="messages" class="h-96 overflow-y-auto p-6 space-y-4 font-sans text-xs">
                 <!-- System Greeting -->
                 <div class="bg-white/5 p-4 rounded-xl rounded-tl-none max-w-[85%] leading-relaxed">
-                    Hola, soy el asistente de Domingo. 😊 <br>¿Quieres saber sobre su <strong>Logro Mundial en
-                        VEX</strong>, su experiencia en <strong>AWS</strong> o proyectos de automatización como
+                    ¡Hola! Soy el asistente virtual. 😊 <br>¿Quieres saber sobre su <strong>Logro Mundial en
+                        VEX</strong>, su experiencia en <strong>AWS</strong> o proyectos como
                     <strong>IA-SOPORTE-MICROSOFT</strong>?
                 </div>
             </div>
@@ -823,33 +786,6 @@
             const modal = document.getElementById('project-modal');
             if (event.target == modal) closeProject();
         }
-
-        // Terminal Diagnostics Simulation
-        const logs = [
-            "[OK] AWS_CORE_SERVICES: ACTIVE (4,500/4,500)",
-            "[OK] SLAM_CALIBRATION: 99.4% STABLE",
-            "[OK] AETHER_VOICE_BUFFER: SYNCED",
-            "[OK] IA_SOPORTE_LATENCY: 42ms",
-            "[OK] AZURE_GRAPH_HANDSHAKE: ENCRYPTED",
-            "[OK] CUDA_MEMORY_ALLOCATION: OPTIMAL",
-            "[OK] LOCAL_INFERENCE_ENGINE: READY",
-            "[OK] VEX_NAV_ALGORITHM: DETERMINISTIC"
-        ];
-        const logContainer = document.getElementById('terminal-log');
-        let logIndex = 0;
-
-        function addLog() {
-            const line = document.createElement('div');
-            line.innerText = logs[logIndex];
-            logContainer.appendChild(line);
-            if (logContainer.children.length > 4) {
-                logContainer.removeChild(logContainer.firstChild);
-            }
-            logIndex = (logIndex + 1) % logs.length;
-        }
-
-        setInterval(addLog, 3000);
-        addLog(); // Initial run
 
         // Magnetic Buttons
         const magneticBtns = document.querySelectorAll('.group');

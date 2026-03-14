@@ -201,16 +201,12 @@
     <header class="fixed top-0 w-full z-50 bg-white/90 border-b border-gray-200 backdrop-blur-md shadow-sm">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <div class="font-sans text-2xl font-bold tracking-tight select-none flex items-center gap-3">
-                <!-- Colorful Tech Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8">
-                    <!-- Blue Circle -->
-                    <circle cx="6" cy="18" r="4" fill="#4285F4"/>
-                    <!-- Red Square -->
-                    <rect x="2" y="2" width="8" height="8" rx="2" fill="#EA4335"/>
-                    <!-- Yellow Triangle -->
-                    <path d="M18 2 L22 10 L14 10 Z" fill="#FBBC05" rx="1"/>
-                    <!-- Green half circle -->
-                    <path d="M14 22 A4 4 0 0 0 22 22 Z" fill="#34A853"/>
+                <!-- Material 3 Four-dot Icon (Google colors) -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" class="w-8 h-8" aria-hidden="true">
+                    <rect x="0" y="0" width="12" height="12" rx="3" fill="#EA4335"/>
+                    <rect x="16" y="0" width="12" height="12" rx="3" fill="#FBBC05"/>
+                    <rect x="0" y="16" width="12" height="12" rx="3" fill="#34A853"/>
+                    <rect x="16" y="16" width="12" height="12" rx="3" fill="#4285F4"/>
                 </svg>
                 <span class="text-gray-900">Domingo González</span>
             </div>
@@ -256,14 +252,11 @@
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-[#4285f4]"></div>
                     <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full">Proyectos Destacados</h2>
-                </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 reveal">
-
-                    <!-- AetherVoice (New) -->
                     <!-- AetherVoice -->
                     <div
-                        class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl lg:col-span-2">
+                        class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl md:col-span-2">
                         <div class="md:flex h-full">
                             <div class="md:w-1/2 aspect-video bg-gray-100 overflow-hidden">
                                 <img src="images/aethervoice_ui.png" alt="AetherVoice UI" loading="lazy"
@@ -271,40 +264,40 @@
                             </div>
                             <div class="md:w-1/2 p-10 flex flex-col justify-center">
                                 <span
-                                    class="font-sans text-xs text-[#4285f4] uppercase font-bold tracking-widest mb-2 block">Audio_Processing</span>
+                                    class="font-sans text-xs text-[#4285f4] uppercase font-bold tracking-widest mb-2 block">LLM_Local / JavaScript</span>
                                 <h3 class="text-4xl font-bold mb-4 text-gray-900">AetherVoice</h3>
-                                <p class="text-gray-600 leading-relaxed mb-6 font-sans">Motor de síntesis de voz y procesamiento
-                                    de audio avanzado. Implementación de redes neuronales para la generación de voz
-                                    natural con latencia mínima.</p>
-                                <div class="flex gap-4 font-sans text-xs text-gray-500 font-medium">
-                                    <span>#PyTorch</span>
-                                    <span>#AudioGen</span>
-                                    <span>#DSP</span>
+                                <p class="text-gray-600 leading-relaxed mb-4 font-sans">LLM funcional de manera local. Provee información en tiempo real, videos, imágenes e interacción multimodal. Construido con JavaScript nativo sin dependencias de nube.</p>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#LLM-Local</span>
+                                    <span class="px-3 py-1 bg-red-50 text-[#ea4335] text-xs font-semibold rounded-full">#Multimodal</span>
+                                    <span class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#RealTime</span>
                                 </div>
-                                <!-- Tech Specs Table -->
                                 <div
-                                    class="mt-8 pt-6 border-t border-gray-200 grid grid-cols-2 gap-4 font-sans text-xs uppercase tracking-wide">
+                                    class="pt-6 border-t border-gray-200 grid grid-cols-2 gap-4 font-sans text-xs uppercase tracking-wide mb-6">
                                     <div>
                                         <span class="text-gray-400 block mb-1">Architecture</span>
                                         <span class="text-[#4285f4] font-semibold">Transformer-TTS</span>
                                     </div>
                                     <div>
                                         <span class="text-gray-400 block mb-1">Latency</span>
-                                        <span class="text-[#4285f4] font-semibold">
-                                            < 80ms In-system</span>
+                                        <span class="text-[#4285f4] font-semibold">&lt; 80ms In-system</span>
                                     </div>
                                 </div>
-                                <button onclick="openProject('aethervoice')"
-                                    class="mt-8 w-fit group/btn flex items-center gap-2 font-sans font-semibold text-sm tracking-wide text-[#4285f4] bg-blue-50 px-5 py-2.5 rounded-full hover:bg-blue-100 transition-colors">
-                                    <span>Ver Detalles</span>
-                                    <i
-                                        class="fa-solid fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
-                                </button>
+                                <div class="flex gap-3">
+                                    <button onclick="openProject('aethervoice')"
+                                        class="group/btn flex items-center gap-2 font-sans font-semibold text-sm text-[#4285f4] bg-blue-50 px-5 py-2.5 rounded-full hover:bg-[#4285f4] hover:text-white transition-all">
+                                        <span>Ver Detalles</span><i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                                    </button>
+                                    <a href="https://github.com/Doku566/AetherVoice" target="_blank"
+                                        class="flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
+                                        <i class="fa-brands fa-github"></i><span>GitHub</span>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- NexusSupport (IA-SOPORTE) -->
+                    <!-- IA-SOPORTE-MICROSOFT -->
                     <div
                         class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl">
                         <div class="aspect-video bg-gray-100 overflow-hidden">
@@ -314,29 +307,77 @@
                         </div>
                         <div class="p-8">
                             <span
-                                class="font-sans text-xs text-[#4285f4] uppercase font-bold tracking-widest mb-2 block">Cloud_Infrastructure</span>
-                            <h3 class="text-2xl font-bold mb-4 text-gray-900">IA-SOPORTE-MICROSOFT</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-6">Automatización de soporte técnico
-                                institucional mediante <strong>Microsoft Graph API</strong>. Gestión de tickets y restablecimiento de
-                                contraseñas impulsado por LLMs (Groq + FastAPI).</p>
-                            <!-- Tech Specs Grid -->
-                            <div
-                                class="grid grid-cols-2 gap-4 font-sans text-xs tracking-wide text-gray-500 mb-8">
-                                <div class="border-l-2 border-[#4285f4]/30 pl-3">
-                                    <span class="block">Auth: AzureAD/MSAL</span>
-                                </div>
-                                <div class="border-l-2 border-[#4285f4]/30 pl-3">
-                                    <span class="block">Engine: FastAPI</span>
-                                </div>
+                                class="font-sans text-xs text-[#ea4335] uppercase font-bold tracking-widest mb-2 block">Cloud_Infrastructure / Python</span>
+                            <h3 class="text-2xl font-bold mb-3 text-gray-900">IA-SOPORTE-MICROSOFT</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Automatización de soporte técnico institucional via <strong>Microsoft Graph API</strong>. Gestión autónoma de tickets y contraseñas con LLMs (Groq + FastAPI).</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-red-50 text-[#ea4335] text-xs font-semibold rounded-full">#FastAPI</span>
+                                <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#AzureAD</span>
+                                <span class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#Groq-LLM</span>
                             </div>
-                            <button onclick="openProject('iasoporte')"
-                                class="w-fit group/btn flex items-center gap-2 font-sans font-semibold text-sm tracking-wide text-[#4285f4] bg-blue-50 px-5 py-2.5 rounded-full hover:bg-blue-100 transition-colors">
-                                <span>Ver Detalles</span>
-                                <i
-                                    class="fa-solid fa-arrow-right group-hover/btn:translate-x-2 transition-transform"></i>
-                            </button>
+                            <div class="flex gap-3">
+                                <button onclick="openProject('iasoporte')"
+                                    class="group/btn flex items-center gap-2 font-sans font-semibold text-sm text-[#4285f4] bg-blue-50 px-5 py-2.5 rounded-full hover:bg-[#4285f4] hover:text-white transition-all">
+                                    <span>Ver Detalles</span><i class="fa-solid fa-arrow-right group-hover/btn:translate-x-1 transition-transform"></i>
+                                </button>
+                                <a href="https://github.com/Doku566/IA-SOPORTE-MICROSOFT" target="_blank"
+                                    class="flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
+                                    <i class="fa-brands fa-github"></i><span>GitHub</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- OmniSLAM -->
+                    <div
+                        class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl">
+                        <div class="aspect-video bg-gray-100 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?auto=format&fit=crop&q=80&w=800"
+                                alt="OmniSLAM Robotics" loading="lazy"
+                                class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="font-sans text-xs text-[#34a853] uppercase font-bold tracking-widest mb-2 block">Robotics_SLAM / C++</span>
+                            <h3 class="text-2xl font-bold mb-3 text-gray-900">OmniSLAM</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Motor de mapeo y localización simultánea (SLAM) para entornos industriales dinámicos. Fusión de sensores LiDAR/IMU con C++23.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-green-50 text-[#34a853] text-xs font-semibold rounded-full">#C++23</span>
+                                <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#LiDAR</span>
+                                <span class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#OpenCV</span>
+                            </div>
+                            <a href="https://github.com/Doku566/OmniSLAM" target="_blank"
+                                class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
+                                <i class="fa-brands fa-github"></i><span>Ver en GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Motor de Anomalias -->
+                    <div
+                        class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl">
+                        <div class="aspect-video bg-gray-100 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+                                alt="Motor Anomalias" loading="lazy"
+                                class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700">
+                        </div>
+                        <div class="p-8">
+                            <span
+                                class="font-sans text-xs text-[#fbbc05] uppercase font-bold tracking-widest mb-2 block">Telemetria / Python · WebSocket</span>
+                            <h3 class="text-2xl font-bold mb-3 text-gray-900">Motor de Anomalías Telemétricas</h3>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-4">Engine de detección de anomalías en tiempo real vía WebSocket. Arquitectura de producción con SQLAlchemy, alertas automáticas y visualización de telemetría.</p>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#WebSocket</span>
+                                <span class="px-3 py-1 bg-green-50 text-[#34a853] text-xs font-semibold rounded-full">#SQLite</span>
+                                <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#RealTime</span>
+                            </div>
+                            <a href="https://github.com/Doku566/Motor-de-Anomalias-Telemetrica-" target="_blank"
+                                class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
+                                <i class="fa-brands fa-github"></i><span>Ver en GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -466,7 +507,7 @@
                                 2025</span>
                             <span class="text-[10px] font-sans font-semibold bg-gray-100 px-3 py-1 rounded-full text-[#4285f4]">~4 min read</span>
                         </div>
-                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors">Arquitectando NexusSupport: Azure & IA</h4>
+                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors">Arquitectando IA-SOPORTE-MICROSOFT: Azure & LLMs</h4>
                         <p class="text-sm text-gray-600 leading-relaxed mb-6">Un análisis profundo de la integración de
                             Microsoft Graph con modelos LLM para automatización operativa.</p>
                         <div class="flex gap-2">

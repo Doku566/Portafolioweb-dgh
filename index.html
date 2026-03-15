@@ -310,6 +310,53 @@
             align-items: flex-start;
         }
 
+        /* Bot Intro Popup */
+        #bot-intro {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            background: white;
+            border-radius: 18px 18px 4px 18px;
+            padding: 14px 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+            border: 1px solid #e8eaed;
+            width: 240px;
+            opacity: 0;
+            transform: translateY(12px) scale(0.95);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            pointer-events: none;
+            z-index: 200;
+        }
+        #bot-intro.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+        #bot-intro .intro-avatar {
+            width: 26px;
+            height: 26px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            padding: 3px;
+            border: 1px solid #f2f2f7;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .intro-dot {
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #34a853;
+            animation: intro-pulse 1.8s ease-in-out infinite;
+        }
+        @keyframes intro-pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.85); }
+        }
+
         #messages::-webkit-scrollbar { width: 4px; }
         #messages::-webkit-scrollbar-thumb { background: #dadce0; border-radius: 10px; }
         #messages::-webkit-scrollbar-track { background: transparent; }
@@ -927,6 +974,29 @@
             </div>
         </div>
 
+        <!-- Bot Intro Popup -->
+        <div id="bot-intro" role="status" aria-live="polite">
+            <div class="flex items-center gap-2 mb-2">
+                <div class="intro-avatar">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="#4285F4" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 6C12 6 14 8 18 8" stroke="#EA4335" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 18C12 18 10 16 6 16" stroke="#34A853" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="12" cy="12" r="3" fill="#FBBC04"/>
+                    </svg>
+                </div>
+                <div>
+                    <p class="text-[12px] font-black text-gray-800 leading-tight">Soporte Digital</p>
+                    <div class="flex items-center gap-1 mt-0.5">
+                        <span class="intro-dot"></span>
+                        <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wide">Asistente IA</span>
+                    </div>
+                </div>
+            </div>
+            <p class="text-[13px] text-gray-600 leading-relaxed">&#128075; Hola, soy el asistente de Domingo. &iquest;Tienes alguna pregunta sobre su experiencia?</p>
+            <button onclick="dismissIntro()" class="absolute top-2.5 right-3 text-gray-300 hover:text-gray-500 text-xs font-bold transition-colors" aria-label="Cerrar">&times;</button>
+        </div>
+
         <!-- Chat Trigger -->
         <button id="chat-trigger" aria-label="Abrir consultas"
             class="w-16 h-16 flex items-center justify-center group shadow-xl p-3.5">
@@ -1050,7 +1120,26 @@
             }
         });
 
+        // Bot Intro Popup
+        const botIntro = document.getElementById('bot-intro');
+        let introDismissed = false;
+
+        function dismissIntro() {
+            botIntro.classList.remove('visible');
+            introDismissed = true;
+        }
+
+        // Show intro after 2 seconds
+        setTimeout(() => {
+            if (!introDismissed) {
+                botIntro.classList.add('visible');
+                // Auto-dismiss after 7 seconds
+                setTimeout(() => dismissIntro(), 7000);
+            }
+        }, 2000);
+
         chatTrigger.addEventListener('click', () => {
+            dismissIntro();
             chatWindow.classList.toggle('hidden');
             setTimeout(() => {
                 chatWindow.classList.toggle('scale-95');

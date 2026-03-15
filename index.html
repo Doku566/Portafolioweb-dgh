@@ -357,6 +357,70 @@
             50% { opacity: 0.6; transform: scale(0.85); }
         }
 
+        /* Rich Chat Components */
+        .chat-card {
+            background: #ffffff;
+            border: 1px solid #e8eaed;
+            border-radius: 16px;
+            padding: 12px;
+            margin-top: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+        }
+        .chat-card-img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+        }
+        .chat-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            font-size: 10px;
+            font-weight: 700;
+            border-radius: 6px;
+            margin-right: 4px;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+        }
+        .tag-blue { background: #e8f0fe; color: #1967d2; }
+        .tag-red { background: #fce8e6; color: #c5221f; }
+        .tag-green { background: #e6f4ea; color: #137333; }
+        .tag-yellow { background: #fef7e0; color: #ea8600; }
+        
+        .chat-stat-row {
+            display: flex;
+            gap: 8px;
+            margin: 8px 0;
+        }
+        .chat-stat-mini {
+            flex: 1;
+            padding: 6px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .chat-nav-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            padding: 10px;
+            background: #4285f4;
+            color: white;
+            font-weight: 700;
+            font-size: 12px;
+            border-radius: 12px;
+            margin-top: 10px;
+            transition: all 0.2s;
+        }
+        .chat-nav-btn:hover {
+            background: #1967d2;
+            transform: translateY(-1px);
+        }
+
         #messages::-webkit-scrollbar { width: 4px; }
         #messages::-webkit-scrollbar-thumb { background: #dadce0; border-radius: 10px; }
         #messages::-webkit-scrollbar-track { background: transparent; }
@@ -966,11 +1030,13 @@
                 </div>
             </div>
             <!-- Quick Actions -->
-            <div class="p-6 border-t border-gray-50 bg-white/95 backdrop-blur-sm flex flex-wrap gap-3">
-                <button onclick="sendReply('Logros en Rob\u00f3tica')" class="chat-chip">Rob&oacute;tica</button>
-                <button onclick="sendReply('Soporte Microsoft')" class="chat-chip">Microsoft IT</button>
-                <button onclick="sendReply('Experiencia AWS')" class="chat-chip">AWS Cloud</button>
-                <button onclick="sendReply('Idiomas')" class="chat-chip">Idiomas</button>
+            <div class="p-6 border-t border-gray-50 bg-white/95 backdrop-blur-sm flex flex-wrap gap-3" id="quick-replies">
+                <button onclick="sendReply('¿Quién eres?')" class="chat-chip text-[11px] px-3 py-1.5">👤 ¿Quién eres?</button>
+                <button onclick="sendReply('AetherVoice')" class="chat-chip text-[11px] px-3 py-1.5">🧠 AetherVoice</button>
+                <button onclick="sendReply('IA Microsoft')" class="chat-chip text-[11px] px-3 py-1.5">💻 Microsoft IT</button>
+                <button onclick="sendReply('Robótica')" class="chat-chip text-[11px] px-3 py-1.5">🤖 VEX Robotics</button>
+                <button onclick="sendReply('AWS')" class="chat-chip text-[11px] px-3 py-1.5">☁️ AWS & Cloud</button>
+                <button onclick="sendReply('Contacto')" class="chat-chip text-[11px] px-3 py-1.5">📧 Contacto</button>
             </div>
         </div>
 
@@ -1153,35 +1219,138 @@
             setTimeout(() => chatWindow.classList.toggle('hidden'), 300);
         });
 
+        function navigateTo(id) {
+            closeChat.click();
+            setTimeout(() => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }, 300);
+        }
+
         function sendReply(text) {
             // User Message
             const userDiv = document.createElement('div');
-            userDiv.className = "ml-auto chat-bubble-user max-w-[85%] shadow-sm block"; // Added block for proper spacing
+            userDiv.className = "ml-auto chat-bubble-user max-w-[85%] shadow-sm block translate-y-2 opacity-0 transition-all duration-300";
             userDiv.innerText = text;
             messagesArea.appendChild(userDiv);
+            
+            // Animation for user bubble
+            setTimeout(() => {
+                userDiv.classList.remove('translate-y-2', 'opacity-0');
+            }, 10);
+            
             messagesArea.scrollTop = messagesArea.scrollHeight;
 
-            // Bot Response Simulation
+            // Bot Response
             setTimeout(() => {
                 const wrapper = document.createElement('div');
                 wrapper.className = "bot-message-wrapper";
                 
-                let response = "";
-                if (text.includes('Rob\u00f3tica')) {
-                    response = "Excelente. Domingo gan\u00f3 el <strong>2do Lugar Mundial</strong> en Programaci\u00f3n VEX U. Ha liderado equipos competitivos por 3 a\u00f1os, optimizando algoritmos de control en tiempo real.";
+                let responseHtml = "";
+                let cardHtml = "";
+                
+                if (text.includes('¿Quién eres?')) {
+                    responseHtml = "Soy el asistente digital de <strong>Domingo González</strong>. Él es un Ingeniero en Mecatrónica apasionado por la IA, la robótica y la automatización cloud.";
+                    cardHtml = `
+                        <div class="chat-card">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 font-bold">DG</div>
+                                <div>
+                                    <p class="text-xs font-bold text-gray-900">Domingo González</p>
+                                    <p class="text-[10px] text-gray-500">Systems & Robotics Engineer</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1 mb-3">
+                                <span class="chat-tag tag-blue">Python</span>
+                                <span class="chat-tag tag-red">C++</span>
+                                <span class="chat-tag tag-green">AI/ML</span>
+                                <span class="chat-tag tag-yellow">AWS</span>
+                            </div>
+                            <button onclick="navigateTo('hero')" class="chat-nav-btn">
+                                <i class="fa-solid fa-user"></i> Ver Perfil Completo
+                            </button>
+                        </div>
+                    `;
+                } else if (text.includes('AetherVoice')) {
+                    responseHtml = "<strong>AetherVoice</strong> es mi proyecto más avanzado: un asistente de IA que procesa LLMs localmente para privacidad total.";
+                    cardHtml = `
+                        <div class="chat-card">
+                            <div class="w-full h-24 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 mb-3 flex items-center justify-center">
+                                <i class="fa-solid fa-brain text-white text-3xl"></i>
+                            </div>
+                            <span class="chat-tag tag-blue">LLM Local</span>
+                            <span class="chat-tag tag-yellow">JavaScript</span>
+                            <button onclick="navigateTo('projects')" class="chat-nav-btn">
+                                <i class="fa-solid fa-eye"></i> Ver Detalles Técnicos
+                            </button>
+                        </div>
+                    `;
                 } else if (text.includes('IA Microsoft')) {
-                    response = "El proyecto <strong>IA-SOPORTE-MICROSOFT</strong> automatiza el soporte IT para 4,500+ alumnos. Integra Microsoft Graph API con modelos de lenguaje para resolver problemas de identidad y seguridad 24/7.";
+                    responseHtml = "He automatizado el soporte IT para 4,500+ usuarios en la UTM mediante integración con Graph API.";
+                    cardHtml = `
+                        <div class="chat-card">
+                            <div class="chat-stat-row">
+                                <div class="chat-stat-mini"><p class="text-xs font-bold text-blue-600">4.5K</p><p class="text-[8px] text-gray-400">Usuarios</p></div>
+                                <div class="chat-stat-mini"><p class="text-xs font-bold text-green-600">2-3m</p><p class="text-[8px] text-gray-400">Respuesta</p></div>
+                            </div>
+                            <button onclick="navigateTo('projects')" class="chat-nav-btn">
+                                <i class="fa-brands fa-microsoft"></i> Ver Implementación
+                            </button>
+                        </div>
+                    `;
+                } else if (text.includes('Robótica')) {
+                    responseHtml = "Domingo es <strong>3 veces Campeón de Programación</strong> VEX U en México y USA, con un 2do lugar mundial.";
+                    cardHtml = `
+                        <div class="chat-card">
+                            <div class="flex items-center gap-2 mb-2">
+                                <i class="fa-solid fa-medal text-yellow-500"></i>
+                                <span class="text-[10px] font-bold text-gray-600 uppercase">2º Lugar World Championship</span>
+                            </div>
+                            <span class="chat-tag tag-red">Control PID</span>
+                            <span class="chat-tag tag-blue">Odometría</span>
+                            <button onclick="navigateTo('exp')" class="chat-nav-btn">
+                                <i class="fa-solid fa-robot"></i> Trayectoria Robótica
+                            </button>
+                        </div>
+                    `;
                 } else if (text.includes('AWS')) {
-                    response = "En AWS, Domingo gestiona el <strong>Sistema EDI</strong>, enfoc\u00e1ndose en la resiliencia de datos y protocolos de recuperaci\u00f3n de desastres para mantener la continuidad operativa.";
-                } else if (text.includes('Idiomas')) {
-                    response = "Domingo posee un nivel de <strong>Ingl\u00e9s B\u00e1sico-T\u00e9cnico</strong> enfocado en documentaci\u00f3n y entornos de software, con el compromiso de mejora continua diaria.";
+                    responseHtml = "Gestión de infraestructura crítica, Sistema EDI y recuperación de desastres en entornos Cloud.";
+                    cardHtml = `
+                        <div class="chat-card">
+                            <span class="chat-tag tag-yellow">AWS / Cloud</span>
+                            <span class="chat-tag tag-blue">Terraform</span>
+                            <button onclick="navigateTo('stack')" class="chat-nav-btn">
+                                <i class="fa-brands fa-aws"></i> Stack Tecnológico
+                            </button>
+                        </div>
+                    `;
+                } else if (text.includes('Contacto')) {
+                    responseHtml = "¡Hablemos! Puedes contactar a Domingo directamente por estos medios:";
+                    cardHtml = `
+                        <div class="chat-card">
+                            <div class="space-y-2">
+                                <a href="https://www.linkedin.com/in/domingo-gonz%C3%A1lez-hernandez-73127a213/" target="_blank" class="flex items-center gap-2 p-2 bg-blue-50 rounded-lg group">
+                                    <i class="fa-brands fa-linkedin text-blue-600"></i>
+                                    <span class="text-xs font-bold text-blue-600">LinkedIn</span>
+                                </a>
+                                <a href="mailto:Domingoghz245@gmail.com" class="flex items-center gap-2 p-2 bg-gray-50 rounded-lg group">
+                                    <i class="fa-regular fa-envelope text-gray-600"></i>
+                                    <span class="text-xs font-bold text-gray-600 text-ellipsis overflow-hidden">Email</span>
+                                </a>
+                            </div>
+                            <button onclick="navigateTo('contact')" class="chat-nav-btn">
+                                <i class="fa-solid fa-paper-plane"></i> Formulario de Contacto
+                            </button>
+                        </div>
+                    `;
                 } else {
-                    response = "\u00bfTe gustar\u00eda saber m\u00e1s sobre sus proyectos de Machine Learning o su trayectoria como Software Engineer?";
+                    responseHtml = "Disculpa, no entendí eso. ¿Te gustaría saber sobre mis logros en robótica, mis proyectos de IA o cómo contactarme?";
                 }
 
                 wrapper.innerHTML = `
                     <div class="bot-avatar">
-                        <!-- Master Assistant SVG (Reply) -->
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                             <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="#4285F4" stroke-width="2" stroke-linecap="round"/>
                             <path d="M12 6C12 6 14 8 18 8" stroke="#EA4335" stroke-width="2" stroke-linecap="round"/>
@@ -1189,8 +1358,8 @@
                             <circle cx="12" cy="12" r="3" fill="#FBBC04"/>
                         </svg>
                     </div>
-                    <div class="flex flex-col gap-2">
-                        <div class="chat-bubble-bot">
+                    <div class="flex flex-col gap-2 w-full">
+                        <div class="chat-bubble-bot w-full">
                             <div class="typing">
                                 <span></span><span></span><span></span>
                             </div>
@@ -1205,13 +1374,14 @@
                     const bubble = wrapper.querySelector('.chat-bubble-bot');
                     bubble.innerHTML = `
                         <div class="flex items-center gap-2 mb-2">
-                            <span class="w-2 h-2 rounded-full bg-blue-500 opacity-50"></span>
-                            <p class="font-black text-[11px] text-gray-400 uppercase tracking-widest">Sistema de Consultas</p>
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500 opacity-50"></span>
+                            <p class="font-black text-[10px] text-gray-400 uppercase tracking-widest">Soporte Digital</p>
                         </div>
-                        <span class="font-medium text-gray-800">${response}</span>
+                        <div class="text-[13px] leading-relaxed text-gray-800">${responseHtml}</div>
+                        ${cardHtml}
                     `;
                     messagesArea.scrollTop = messagesArea.scrollHeight;
-                }, 1000);
+                }, 1200);
             }, 600);
         }
 

@@ -168,10 +168,28 @@
         }
 
         @media (max-width: 768px) {
-            #chat-trigger { width: 56px !important; height: 56px !important; bottom: 1rem; right: 1rem; }
-            #chat-window { width: calc(100% - 2rem); bottom: 5rem; right: 1rem; }
-            #back-to-top { bottom: 5rem; right: 1rem; }
-            section { padding-top: 4rem; padding-bottom: 4rem; }
+            #chat-trigger {
+                width: 56px !important;
+                height: 56px !important;
+                bottom: 1rem;
+                right: 1rem;
+            }
+
+            #chat-window {
+                width: calc(100% - 2rem);
+                bottom: 5rem;
+                right: 1rem;
+            }
+
+            #back-to-top {
+                bottom: 5rem;
+                right: 1rem;
+            }
+
+            section {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
         }
 
         ::-webkit-scrollbar-track {
@@ -201,7 +219,7 @@
         #chat-window {
             border-radius: 20px;
             box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(0,0,0,0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             background: #ffffff;
             overflow: hidden;
             font-family: 'Inter', -apple-system, blinkmacsystemfont, sans-serif;
@@ -238,7 +256,7 @@
             font-size: 14px;
             line-height: 1.6;
             margin-right: 12%;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
             border: 1px solid #e8eaed;
         }
 
@@ -278,7 +296,7 @@
             font-weight: 600;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
         }
 
         .chat-chip:hover {
@@ -301,7 +319,7 @@
             border-radius: 10px;
             background: white;
             padding: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -323,7 +341,7 @@
             background: white;
             border-radius: 18px 18px 4px 18px;
             padding: 14px 18px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.12), 0 2px 8px rgba(0,0,0,0.06);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.06);
             border: 1px solid #e8eaed;
             width: 240px;
             opacity: 0;
@@ -332,11 +350,13 @@
             pointer-events: none;
             z-index: 200;
         }
+
         #bot-intro.visible {
             opacity: 1;
             transform: translateY(0) scale(1);
             pointer-events: all;
         }
+
         #bot-intro .intro-avatar {
             width: 26px;
             height: 26px;
@@ -349,6 +369,7 @@
             justify-content: center;
             flex-shrink: 0;
         }
+
         .intro-dot {
             display: inline-block;
             width: 7px;
@@ -357,9 +378,19 @@
             background: #34a853;
             animation: intro-pulse 1.8s ease-in-out infinite;
         }
+
         @keyframes intro-pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(0.85); }
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.6;
+                transform: scale(0.85);
+            }
         }
 
         /* Rich Chat Components */
@@ -369,8 +400,9 @@
             border-radius: 16px;
             padding: 12px;
             margin-top: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
         }
+
         .chat-card-img {
             width: 100%;
             height: 100px;
@@ -379,6 +411,7 @@
             margin-bottom: 10px;
             background: #f8f9fa;
         }
+
         .chat-tag {
             display: inline-block;
             padding: 2px 8px;
@@ -389,16 +422,33 @@
             margin-bottom: 4px;
             text-transform: uppercase;
         }
-        .tag-blue { background: #e8f0fe; color: #1967d2; }
-        .tag-red { background: #fce8e6; color: #c5221f; }
-        .tag-green { background: #e6f4ea; color: #137333; }
-        .tag-yellow { background: #fef7e0; color: #ea8600; }
-        
+
+        .tag-blue {
+            background: #e8f0fe;
+            color: #1967d2;
+        }
+
+        .tag-red {
+            background: #fce8e6;
+            color: #c5221f;
+        }
+
+        .tag-green {
+            background: #e6f4ea;
+            color: #137333;
+        }
+
+        .tag-yellow {
+            background: #fef7e0;
+            color: #ea8600;
+        }
+
         .chat-stat-row {
             display: flex;
             gap: 8px;
             margin: 8px 0;
         }
+
         .chat-stat-mini {
             flex: 1;
             padding: 6px;
@@ -406,6 +456,7 @@
             border-radius: 8px;
             text-align: center;
         }
+
         .chat-nav-btn {
             display: flex;
             align-items: center;
@@ -421,14 +472,24 @@
             margin-top: 10px;
             transition: all 0.2s;
         }
+
         .chat-nav-btn:hover {
             background: #1967d2;
             transform: translateY(-1px);
         }
 
-        #messages::-webkit-scrollbar { width: 4px; }
-        #messages::-webkit-scrollbar-thumb { background: #dadce0; border-radius: 10px; }
-        #messages::-webkit-scrollbar-track { background: transparent; }
+        #messages::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        #messages::-webkit-scrollbar-thumb {
+            background: #dadce0;
+            border-radius: 10px;
+        }
+
+        #messages::-webkit-scrollbar-track {
+            background: transparent;
+        }
     </style>
 </head>
 
@@ -443,10 +504,10 @@
             <div class="font-sans text-2xl font-bold tracking-tight select-none flex items-center gap-3">
                 <!-- Material 3 Four-dot Icon (Google colors) -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" class="w-8 h-8" aria-hidden="true">
-                    <rect x="0" y="0" width="12" height="12" rx="3" fill="#EA4335"/>
-                    <rect x="16" y="0" width="12" height="12" rx="3" fill="#FBBC05"/>
-                    <rect x="0" y="16" width="12" height="12" rx="3" fill="#34A853"/>
-                    <rect x="16" y="16" width="12" height="12" rx="3" fill="#4285F4"/>
+                    <rect x="0" y="0" width="12" height="12" rx="3" fill="#EA4335" />
+                    <rect x="16" y="0" width="12" height="12" rx="3" fill="#FBBC05" />
+                    <rect x="0" y="16" width="12" height="12" rx="3" fill="#34A853" />
+                    <rect x="16" y="16" width="12" height="12" rx="3" fill="#4285F4" />
                 </svg>
                 <span class="text-gray-900">Domingo González</span>
             </div>
@@ -478,7 +539,8 @@
 
                 <!-- Availability Badge -->
                 <div class="flex flex-wrap items-center gap-3 mb-8 reveal">
-                    <span class="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-xs font-bold px-4 py-2 rounded-full">
+                    <span
+                        class="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-xs font-bold px-4 py-2 rounded-full">
                         <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse inline-block"></span>
                         <span data-i18n="hero.badge">Abierto a Oportunidades &mdash; 2026</span>
                     </span>
@@ -486,18 +548,23 @@
                 </div>
 
                 <!-- Main Headline -->
-                <h1 class="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-none mb-4 text-gray-900 reveal">
+                <h1
+                    class="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-none mb-4 text-gray-900 reveal">
                     <span data-i18n="hero.h1a">Software</span><br>
                     <span class="text-[#4285f4]" data-i18n="hero.h1b">Engineer.</span>
                 </h1>
 
                 <!-- Subtitle -->
-                <p class="font-sans text-gray-500 text-base font-medium mb-4 reveal" data-i18n="hero.subtitle">Software Engineer | AI & Automation Specialist</p>
+                <p class="font-sans text-gray-500 text-base font-medium mb-4 reveal" data-i18n="hero.subtitle">Software
+                    Engineer | AI & Automation Specialist</p>
 
                 <!-- Tagline -->
-                <p class="font-sans text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 reveal" data-i18n="hero.tagline">
-                    Developer focused on scalable solutions, API integration and intelligent automation with <strong class="text-gray-900">Python and C#</strong>. 
-                    Experience managing cloud infrastructure and autonomous robotic systems (<strong class="text-gray-900">VEX Robotics</strong>).
+                <p class="font-sans text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 reveal"
+                    data-i18n="hero.tagline">
+                    Developer focused on scalable solutions, API integration and intelligent automation with <strong
+                        class="text-gray-900">Python and C++</strong>.
+                    Experience managing cloud infrastructure and autonomous robotic systems (<strong
+                        class="text-gray-900">VEX Robotics</strong>).
                 </p>
 
                 <!-- CTA Buttons -->
@@ -521,21 +588,29 @@
 
                 <!-- Impact Stats Bar -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
-                    <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                         <div class="text-3xl font-bold text-[#4285f4] mb-1">4,500+</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.users">Users Supported</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide"
+                            data-i18n="stats.users">Users Supported</div>
                     </div>
-                    <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                         <div class="text-3xl font-bold text-[#ea4335] mb-1">#1</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.vex">VEX Champion MX/USA</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.vex">
+                            VEX Champion MX/USA</div>
                     </div>
-                    <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                         <div class="text-3xl font-bold text-[#fbbc05] mb-1">3×</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.wins">VEX Championships</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.wins">
+                            VEX Championships</div>
                     </div>
-                    <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
+                    <div
+                        class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                         <div class="text-3xl font-bold text-[#34a853] mb-1">2-3min</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.botresponse">AI Bot Mass Response</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide"
+                            data-i18n="stats.botresponse">AI Bot Mass Response</div>
                     </div>
                 </div>
 
@@ -547,122 +622,173 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-[#4285f4]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="projects.title">Featured Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 reveal">                    <!-- AetherVoice -->
-                    <div class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl md:col-span-2">
-                        <div class="md:flex h-full">
-                            <div class="md:w-1/2 aspect-video bg-gray-100 overflow-hidden">
-                                <img src="images/aethervoice_ui.png" alt="AetherVoice UI" loading="lazy"
-                                    class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
-                            </div>
-                            <div class="md:w-1/2 p-10 flex flex-col justify-center">
-                                <div class="flex items-center gap-2 mb-3">
-                                    <span class="font-sans text-xs text-[#4285f4] uppercase font-bold tracking-widest" data-i18n="proj1.level">LLM Local / JavaScript</span>
-                                    <span class="text-[10px] font-bold bg-blue-50 text-[#4285f4] px-2 py-0.5 rounded-full border border-blue-100"><i class="fa-solid fa-wrench text-[8px] mr-1"></i><span data-i18n="proj1.badge">En Desarrollo Activo</span></span>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full"
+                        data-i18n="projects.title">Featured Projects</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 reveal"> <!-- AetherVoice -->
+                        <div
+                            class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl md:col-span-2">
+                            <div class="md:flex h-full">
+                                <div class="md:w-1/2 aspect-video bg-gray-100 overflow-hidden">
+                                    <img src="images/aethervoice_ui.png" alt="AetherVoice UI" loading="lazy"
+                                        class="w-full h-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-700">
                                 </div>
-                                <h3 class="text-4xl font-bold mb-4 text-gray-900" data-i18n="proj1.title">AetherVoice</h3>
-                                <p class="text-gray-600 leading-relaxed mb-3 font-sans" data-i18n="proj1.desc">Local AI Assistant prioritizing <strong>data sovereignty</strong>. I reduced inference time on modest hardware by optimizing the token buffer directly in C# and JS, enabling fluid responses without cloud dependencies.</p>
-                                <div class="flex items-center gap-2 mb-4 bg-blue-50 border border-blue-200 px-4 py-2 rounded-xl">
-                                    <i class="fa-solid fa-microchip text-[#4285f4] text-xs"></i>
-                                    <span class="text-xs font-bold text-[#4285f4]" data-i18n="proj1.info">Local Inference &middot; Batch Tracking &middot; Zero network latency</span>
+                                <div class="md:w-1/2 p-10 flex flex-col justify-center">
+                                    <div class="flex items-center gap-2 mb-3">
+                                        <span
+                                            class="font-sans text-xs text-[#4285f4] uppercase font-bold tracking-widest"
+                                            data-i18n="proj1.level">LLM Local / JavaScript</span>
+                                        <span
+                                            class="text-[10px] font-bold bg-blue-50 text-[#4285f4] px-2 py-0.5 rounded-full border border-blue-100"><i
+                                                class="fa-solid fa-wrench text-[8px] mr-1"></i><span
+                                                data-i18n="proj1.badge">En Desarrollo Activo</span></span>
+                                    </div>
+                                    <h3 class="text-4xl font-bold mb-4 text-gray-900" data-i18n="proj1.title">
+                                        AetherVoice</h3>
+                                    <p class="text-gray-600 leading-relaxed mb-3 font-sans" data-i18n="proj1.desc">Local
+                                        AI Assistant prioritizing <strong>data sovereignty</strong>. I reduced inference
+                                        time on modest hardware by optimizing the token buffer directly in C# and JS,
+                                        enabling fluid responses without cloud dependencies.</p>
+                                    <div
+                                        class="flex items-center gap-2 mb-4 bg-blue-50 border border-blue-200 px-4 py-2 rounded-xl">
+                                        <i class="fa-solid fa-microchip text-[#4285f4] text-xs"></i>
+                                        <span class="text-xs font-bold text-[#4285f4]" data-i18n="proj1.info">Local
+                                            Inference &middot; Batch Tracking &middot; Zero network latency</span>
+                                    </div>
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span
+                                            class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#LLM-Local</span>
+                                        <span
+                                            class="px-3 py-1 bg-red-50 text-[#ea4335] text-xs font-semibold rounded-full">#Offline-AI</span>
+                                        <span
+                                            class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#JavaScript</span>
+                                        <span
+                                            class="px-3 py-1 bg-green-50 text-[#34a853] text-xs font-semibold rounded-full">#Multimodal</span>
+                                    </div>
+                                    <div class="flex gap-3">
+                                        <a href="https://github.com/Doku566/AetherVoice" target="_blank"
+                                            class="flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
+                                            <i class="fa-brands fa-github"></i><span
+                                                data-i18n="proj1.github">GitHub</span>
+                                        </a>
+                                        <button onclick="openProject('aethervoice')"
+                                            class="flex items-center gap-2 font-sans font-semibold text-sm text-white bg-gray-900 px-5 py-2.5 rounded-full hover:bg-[#4285f4] transition-all shadow-lg">
+                                            <i class="fa-solid fa-plus text-[10px]"></i><span
+                                                data-i18n="proj.details">View Details</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- IA-SOPORTE-MICROSOFT -->
+                        <div
+                            class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl">
+                            <div class="aspect-video bg-gray-100 overflow-hidden">
+                                <img src="images/microsoft_support.png" alt="Support AI Microsoft" loading="lazy"
+                                    class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700">
+                            </div>
+                            <div class="p-8">
+                                <span
+                                    class="font-sans text-xs text-[#ea4335] uppercase font-bold tracking-widest mb-2 block"
+                                    data-i18n="proj2.level">Python / Microsoft Graph API</span>
+                                <h3 class="text-2xl font-bold mb-3 text-gray-900" data-i18n="proj2.title">
+                                    IA-SOPORTE-MICROSOFT</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed mb-3" data-i18n="proj2.desc">Critical
+                                    automation system for UTM. I orchestrated <strong>Microsoft Graph API</strong>
+                                    integration with secure authentication to handle 100+ daily request peaks,
+                                    automating 80% of password resets.</p>
+                                <div
+                                    class="flex items-center gap-2 mb-4 bg-green-50 border border-green-200 px-4 py-2 rounded-xl">
+                                    <i class="fa-solid fa-server text-[#34a853] text-xs"></i>
+                                    <span class="text-xs font-bold text-[#34a853]" data-i18n="proj2.info">Serverless
+                                        Architecture &middot; High Load Handling &middot; SLA < 3m</span>
                                 </div>
                                 <div class="flex flex-wrap gap-2 mb-6">
-                                    <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#LLM-Local</span>
-                                    <span class="px-3 py-1 bg-red-50 text-[#ea4335] text-xs font-semibold rounded-full">#Offline-AI</span>
-                                    <span class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#JavaScript</span>
-                                    <span class="px-3 py-1 bg-green-50 text-[#34a853] text-xs font-semibold rounded-full">#Multimodal</span>
+                                    <span
+                                        class="px-3 py-1 bg-red-50 text-[#ea4335] text-xs font-semibold rounded-full">#Microsoft-Graph</span>
+                                    <span
+                                        class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#Entra-ID</span>
+                                    <span
+                                        class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#Python</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-50 text-[#34a853] text-xs font-semibold rounded-full">#24/7</span>
                                 </div>
                                 <div class="flex gap-3">
-                                    <a href="https://github.com/Doku566/AetherVoice" target="_blank"
-                                        class="flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
-                                        <i class="fa-brands fa-github"></i><span data-i18n="proj1.github">GitHub</span>
+                                    <a href="https://github.com/Doku566/IA-SOPORTE-MICROSOFT" target="_blank"
+                                        class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
+                                        <i class="fa-brands fa-github"></i><span data-i18n="proj2.github">View on
+                                            GitHub</span>
                                     </a>
-                                    <button onclick="openProject('aethervoice')"
-                                        class="flex items-center gap-2 font-sans font-semibold text-sm text-white bg-gray-900 px-5 py-2.5 rounded-full hover:bg-[#4285f4] transition-all shadow-lg">
-                                        <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">View Details</span>
+                                    <button onclick="openProject('iasoporte')"
+                                        class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-white bg-gray-900 px-5 py-2.5 rounded-full hover:bg-[#ea4335] transition-all shadow-lg">
+                                        <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">View
+                                            Details</span>
                                     </button>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- IA-SOPORTE-MICROSOFT -->
-                    <div class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl">
-                        <div class="aspect-video bg-gray-100 overflow-hidden">
-                            <img src="images/microsoft_support.png"
-                                alt="Support AI Microsoft" loading="lazy"
-                                class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700">
-                        </div>
-                        <div class="p-8">
-                            <span class="font-sans text-xs text-[#ea4335] uppercase font-bold tracking-widest mb-2 block" data-i18n="proj2.level">Python / Microsoft Graph API</span>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900" data-i18n="proj2.title">IA-SOPORTE-MICROSOFT</h3>
-                             <p class="text-sm text-gray-600 leading-relaxed mb-3" data-i18n="proj2.desc">Critical automation system for UTM. I orchestrated <strong>Microsoft Graph API</strong> integration with secure authentication to handle 100+ daily request peaks, automating 80% of password resets.</p>
-                             <div class="flex items-center gap-2 mb-4 bg-green-50 border border-green-200 px-4 py-2 rounded-xl">
-                                 <i class="fa-solid fa-server text-[#34a853] text-xs"></i>
-                                 <span class="text-xs font-bold text-[#34a853]" data-i18n="proj2.info">Serverless Architecture &middot; High Load Handling &middot; SLA < 3m</span>
-                             </div>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-3 py-1 bg-red-50 text-[#ea4335] text-xs font-semibold rounded-full">#Microsoft-Graph</span>
-                                <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#Entra-ID</span>
-                                <span class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#Python</span>
-                                <span class="px-3 py-1 bg-green-50 text-[#34a853] text-xs font-semibold rounded-full">#24/7</span>
+                        <!-- VEX Robotics TMAT -->
+                        <div
+                            class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl">
+                            <div class="aspect-video bg-gray-100 overflow-hidden">
+                                <img src="images/vex_world_official.jpg" alt="VEX World Champions Official"
+                                    loading="lazy"
+                                    class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700">
                             </div>
-                            <div class="flex gap-3">
-                                <a href="https://github.com/Doku566/IA-SOPORTE-MICROSOFT" target="_blank"
-                                    class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
-                                    <i class="fa-brands fa-github"></i><span data-i18n="proj2.github">View on GitHub</span>
-                                </a>
-                                <button onclick="openProject('iasoporte')"
-                                    class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-white bg-gray-900 px-5 py-2.5 rounded-full hover:bg-[#ea4335] transition-all shadow-lg">
-                                    <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">View Details</span>
-                                </button>
+                            <div class="p-8">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="font-sans text-xs text-[#fbbc05] uppercase font-bold tracking-widest"
+                                        data-i18n="proj3.level">C++ / VEX Robotics API</span>
+                                    <span
+                                        class="text-[10px] font-bold bg-yellow-50 text-[#fbbc05] px-2 py-0.5 rounded-full border border-yellow-100"><i
+                                            class="fa-solid fa-trophy text-[8px] mr-1"></i><span
+                                            data-i18n="proj3.badge">Camp. Mundial</span></span>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-3 text-gray-900" data-i18n="proj3.title">Embedded
+                                    Systems & Multi-Robot Control</h3>
+                                <p class="text-sm text-gray-600 leading-relaxed mb-3" data-i18n="proj3.desc">Full
+                                    programming in <strong>C++</strong>: motors, sensors (GPS, vision, ultrasonic) and
+                                    high-performance autonomous routines for TMAT systems.</p>
+                                <div
+                                    class="flex items-center gap-2 mb-4 bg-yellow-50 border border-yellow-200 px-4 py-2 rounded-xl">
+                                    <i class="fa-solid fa-trophy text-[#fbbc05] text-xs"></i>
+                                    <span class="text-xs font-bold text-[#fbbc05]" data-i18n="proj3.info">2&deg; Lugar
+                                        Mundial en Programming Skills &mdash; VEX World Championship (REC
+                                        Foundation)</span>
+                                </div>
+                                <div class="flex flex-wrap gap-2 mb-6">
+                                    <span
+                                        class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#C++</span>
+                                    <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full"
+                                        data-i18n="proj3.tag2">#Aut&oacute;nomo</span>
+                                    <span class="px-3 py-1 bg-red-50 text-[#ea4335] text-xs font-semibold rounded-full"
+                                        data-i18n="proj3.tag3">#Sensores</span>
+                                    <span
+                                        class="px-3 py-1 bg-green-50 text-[#34a853] text-xs font-semibold rounded-full"
+                                        data-i18n="proj3.tag4">#World-Champion</span>
+                                </div>
+                                <div class="flex gap-3">
+                                    <a href="https://github.com/utm-robotic/Robot-Grande-P-DGH" target="_blank"
+                                        class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
+                                        <i class="fa-brands fa-github"></i><span data-i18n="proj3.github">GitHub
+                                            Collaboration</span>
+                                    </a>
+                                    <button onclick="openProject('vex')"
+                                        class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-white bg-gray-900 px-5 py-2.5 rounded-full hover:bg-[#fbbc05] transition-all shadow-lg">
+                                        <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">View
+                                            Details</span>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- VEX Robotics TMAT -->
-                    <div class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl">
-                        <div class="aspect-video bg-gray-100 overflow-hidden">
-                            <img src="images/vex_world_official.jpg" 
-                                alt="VEX World Champions Official" loading="lazy"
-                                class="w-full h-full object-cover opacity-90 group-hover:scale-110 transition-transform duration-700">
-                        </div>
-                        <div class="p-8">
-                            <div class="flex items-center gap-2 mb-2">
-                                <span class="font-sans text-xs text-[#fbbc05] uppercase font-bold tracking-widest" data-i18n="proj3.level">C++ / VEX Robotics API</span>
-                                <span class="text-[10px] font-bold bg-yellow-50 text-[#fbbc05] px-2 py-0.5 rounded-full border border-yellow-100"><i class="fa-solid fa-trophy text-[8px] mr-1"></i><span data-i18n="proj3.badge">Camp. Mundial</span></span>
-                            </div>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900" data-i18n="proj3.title">Embedded Systems & Multi-Robot Control</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-3" data-i18n="proj3.desc">Full programming in <strong>C++</strong>: motors, sensors (GPS, vision, ultrasonic) and high-performance autonomous routines for TMAT systems.</p>
-                            <div class="flex items-center gap-2 mb-4 bg-yellow-50 border border-yellow-200 px-4 py-2 rounded-xl">
-                                <i class="fa-solid fa-trophy text-[#fbbc05] text-xs"></i>
-                                <span class="text-xs font-bold text-[#fbbc05]" data-i18n="proj3.info">2&deg; Lugar Mundial en Programming Skills &mdash; VEX World Championship (REC Foundation)</span>
-                            </div>
-                            <div class="flex flex-wrap gap-2 mb-6">
-                                <span class="px-3 py-1 bg-yellow-50 text-[#fbbc05] text-xs font-semibold rounded-full">#C++</span>
-                                <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full" data-i18n="proj3.tag2">#Aut&oacute;nomo</span>
-                                <span class="px-3 py-1 bg-red-50 text-[#ea4335] text-xs font-semibold rounded-full" data-i18n="proj3.tag3">#Sensores</span>
-                                <span class="px-3 py-1 bg-green-50 text-[#34a853] text-xs font-semibold rounded-full" data-i18n="proj3.tag4">#World-Champion</span>
-                            </div>
-                            <div class="flex gap-3">
-                                <a href="https://github.com/utm-robotic/Robot-Grande-P-DGH" target="_blank"
-                                    class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
-                                    <i class="fa-brands fa-github"></i><span data-i18n="proj3.github">GitHub Collaboration</span>
-                                </a>
-                                <button onclick="openProject('vex')"
-                                    class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-white bg-gray-900 px-5 py-2.5 rounded-full hover:bg-[#fbbc05] transition-all shadow-lg">
-                                    <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">View Details</span>
-                                </button>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
-            </div>
         </section>
-                </div>
+        </div>
 
-            </div>
+        </div>
         </section>
 
         <!-- Skills Matrix -->
@@ -670,69 +796,117 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-[#4285f4]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="skills.title">Technical Skills</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full"
+                        data-i18n="skills.title">Technical Skills</h2>
                 </div>
 
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-stretch">
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-stretch">
                     <!-- C++ -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-brands fa-cpp text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">C++</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cpp_desc">PID Control · Advanced Odometry</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-brands fa-cpp text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">C++</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cpp_desc">PID Control
+                            · Advanced Odometry</span>
                     </div>
                     <!-- Python -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-brands fa-python text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">Python</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.python_desc">REST Integration · LLM Quantization</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-brands fa-python text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">Python</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.python_desc">REST
+                            Integration · LLM Quantization</span>
                     </div>
                     <!-- PowerShell -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-brands fa-microsoft text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">PowerShell</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.ps_desc">M365 Bulk Ops · Auth Flow</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-brands fa-microsoft text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">PowerShell</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.ps_desc">M365 Bulk Ops
+                            · Auth Flow</span>
                     </div>
                     <!-- Microsoft 365 Admin -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#ea4335] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-solid fa-cloud text-4xl mb-3 text-gray-500 group-hover:text-[#ea4335] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#ea4335] transition-colors">M365 Admin</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.m365">Exchange · Entra · Purview</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#ea4335] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-solid fa-cloud text-4xl mb-3 text-gray-500 group-hover:text-[#ea4335] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#ea4335] transition-colors">M365
+                            Admin</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.m365">Exchange · Entra
+                            · Purview</span>
                     </div>
                     <!-- Linux -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#34a853] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-brands fa-linux text-4xl mb-3 text-gray-500 group-hover:text-[#34a853] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#34a853] transition-colors">Linux</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.linux_desc">Kernel Tuning · Ubuntu Srv</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#34a853] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-brands fa-linux text-4xl mb-3 text-gray-500 group-hover:text-[#34a853] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#34a853] transition-colors">Linux</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.linux_desc">Kernel
+                            Tuning · Ubuntu Srv</span>
                     </div>
                     <!-- Web Dev -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-brands fa-html5 text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">Web Dev</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.web_desc">SPA · Responsive · PHP Backend</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-brands fa-html5 text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">Web
+                            Dev</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.web_desc">SPA ·
+                            Responsive · PHP Backend</span>
                     </div>
                     <!-- ROS / MATLAB -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-solid fa-robot text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">ROS / MATLAB</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.ros_desc">Gazebo &middot; SLAM &middot; CINVESTAV</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-solid fa-robot text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">ROS
+                            / MATLAB</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.ros_desc">Gazebo
+                            &middot; SLAM &middot; CINVESTAV</span>
                     </div>
                     <!-- OpenCV / AI -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#ea4335] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-solid fa-eye text-4xl mb-3 text-gray-500 group-hover:text-[#ea4335] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#ea4335] transition-colors">OpenCV / AI</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cv_desc">OpenCV · TensorRT · Inference</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#ea4335] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-solid fa-eye text-4xl mb-3 text-gray-500 group-hover:text-[#ea4335] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#ea4335] transition-colors">OpenCV
+                            / AI</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cv_desc">OpenCV ·
+                            TensorRT · Inference</span>
                     </div>
                     <!-- APIs / DB -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#34a853] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-solid fa-database text-4xl mb-3 text-gray-500 group-hover:text-[#34a853] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#34a853] transition-colors">APIs / DB</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.flask">REST · Flask · SQL · PHP</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#34a853] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-solid fa-database text-4xl mb-3 text-gray-500 group-hover:text-[#34a853] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#34a853] transition-colors">APIs
+                            / DB</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.flask">REST · Flask ·
+                            SQL · PHP</span>
                     </div>
                     <!-- AWS / Cloud -->
-                    <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
-                        <i class="fa-brands fa-aws text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">AWS / Cloud</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.aws">EDI Infrastructure · EC2 · S3 Security</span>
+                    <div
+                        class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
+                        <i
+                            class="fa-brands fa-aws text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
+                        <span
+                            class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">AWS
+                            / Cloud</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.aws">EDI
+                            Infrastructure · EC2 · S3 Security</span>
                     </div>
                 </div>
             </div>
@@ -743,19 +917,24 @@
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-[#4285f4]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="exp.title">Professional Experience</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full"
+                        data-i18n="exp.title">Professional Experience</h2>
                 </div>
 
                 <!-- VEX Championship Banner -->
                 <div class="mb-16 reveal">
-                    <div class="bg-gradient-to-r from-[#ea4335]/5 via-[#fbbc05]/5 to-[#34a853]/5 border border-[#fbbc05]/40 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
+                    <div
+                        class="bg-gradient-to-r from-[#ea4335]/5 via-[#fbbc05]/5 to-[#34a853]/5 border border-[#fbbc05]/40 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-6">
                         <div class="w-16 h-16 rounded-full bg-[#fbbc05] flex items-center justify-center flex-shrink-0">
                             <i class="fa-solid fa-trophy text-white text-2xl"></i>
                         </div>
                         <div>
-                            <div class="text-xs text-[#fbbc05] font-bold uppercase tracking-widest mb-1" data-i18n="vex.label">Programming Champion · VEX U Mexico &amp; USA</div>
-                            <h4 class="text-xl font-bold text-gray-900 mb-1" data-i18n="vex.title">Programming Champion &mdash; VEX Robotics 2022, 2023 &amp; 2024</h4>
-                            <p class="text-sm text-gray-600" data-i18n="vex.desc">First place in Autonomous Programming category at VEX U Mexico and USA competitions for three consecutive years.</p>
+                            <div class="text-xs text-[#fbbc05] font-bold uppercase tracking-widest mb-1"
+                                data-i18n="vex.label">Programming Champion · VEX U Mexico &amp; USA</div>
+                            <h4 class="text-xl font-bold text-gray-900 mb-1" data-i18n="vex.title">Programming Champion
+                                &mdash; VEX Robotics 2022, 2023 &amp; 2024</h4>
+                            <p class="text-sm text-gray-600" data-i18n="vex.desc">First place in Autonomous Programming
+                                category at VEX U Mexico and USA competitions for three consecutive years.</p>
                         </div>
                     </div>
                 </div>
@@ -771,18 +950,36 @@
                                 <div class="pulse-dot"></div>
                             </div>
                             <div class="md:w-1/2 md:text-right pt-2">
-                                <span
-                                    class="font-sans text-xs text-[#4285f4] font-bold uppercase tracking-widest">Feb 2024
+                                <span class="font-sans text-xs text-[#4285f4] font-bold uppercase tracking-widest">Feb
+                                    2024
                                     &mdash; <span data-i18n="exp.present">Present</span></span>
-                                <h4 class="text-xl font-bold mt-2 text-gray-900" data-i18n="exp1.title">Systems Engineer</h4>
-                                <p class="text-sm text-gray-500 mt-1 font-medium">Universidad Tecnológica de Matamoros &middot; Matamoros, MX</p>
+                                <h4 class="text-xl font-bold mt-2 text-gray-900" data-i18n="exp1.title">Systems Engineer
+                                </h4>
+                                <p class="text-sm text-gray-500 mt-1 font-medium">Universidad Tecnológica de Matamoros
+                                    &middot; Matamoros, MX</p>
                             </div>
                             <div class="md:w-1/2 bg-[#f8f9fa] border border-gray-200 p-6 rounded-2xl shadow-sm">
                                 <ul class="text-sm text-gray-600 space-y-2">
-                                    <li class="flex gap-2"><span class="text-[#4285f4] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b1">Identity administration in <strong>Microsoft 365</strong> (+4,500 users) and <strong>AWS</strong> infrastructure: automated security patches and optimized the EDI System pipeline.</span></li>
-                                    <li class="flex gap-2"><span class="text-[#ea4335] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b2">Proactive monitoring with real-time alerts; resolved Azure AD sync bottlenecks affecting massive deployments.</span></li>
-                                    <li class="flex gap-2"><span class="text-[#34a853] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b3">Designed and deployed the <strong>AI support bot</strong>: integration with institutional APIs for robust identity validation and smart escalation.</span></li>
-                                    <li class="flex gap-2"><span class="text-[#fbbc05] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b4">Modernization of the institutional site; optimized legacy <strong>SQL</strong> queries for the new IT inventory system, reducing load times.</span></li>
+                                    <li class="flex gap-2"><span
+                                            class="text-[#4285f4] font-bold mt-0.5">&bull;</span><span
+                                            data-i18n="exp1.b1">Identity administration in <strong>Microsoft
+                                                365</strong> (+4,500 users) and <strong>AWS</strong> infrastructure:
+                                            automated security patches and optimized the EDI System pipeline.</span>
+                                    </li>
+                                    <li class="flex gap-2"><span
+                                            class="text-[#ea4335] font-bold mt-0.5">&bull;</span><span
+                                            data-i18n="exp1.b2">Proactive monitoring with real-time alerts; resolved
+                                            Azure AD sync bottlenecks affecting massive deployments.</span></li>
+                                    <li class="flex gap-2"><span
+                                            class="text-[#34a853] font-bold mt-0.5">&bull;</span><span
+                                            data-i18n="exp1.b3">Designed and deployed the <strong>AI support
+                                                bot</strong>: integration with institutional APIs for robust identity
+                                            validation and smart escalation.</span></li>
+                                    <li class="flex gap-2"><span
+                                            class="text-[#fbbc05] font-bold mt-0.5">&bull;</span><span
+                                            data-i18n="exp1.b4">Modernization of the institutional site; optimized
+                                            legacy <strong>SQL</strong> queries for the new IT inventory system,
+                                            reducing load times.</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -794,17 +991,27 @@
                                 <div class="pulse-dot"></div>
                             </div>
                             <div class="md:w-1/2 md:text-left pt-2">
-                                <span
-                                    class="font-sans text-xs text-[#4285f4] font-bold uppercase tracking-widest">2020
+                                <span class="font-sans text-xs text-[#4285f4] font-bold uppercase tracking-widest">2020
                                     &mdash; 2023</span>
-                                <h4 class="text-xl font-bold mt-2 text-gray-900" data-i18n="exp2.title">Embedded Software Lead</h4>
-                                <p class="text-sm text-gray-500 mt-1 font-medium" data-i18n="exp2.company">Autonomous Systems &middot; Global Competition</p>
+                                <h4 class="text-xl font-bold mt-2 text-gray-900" data-i18n="exp2.title">Embedded
+                                    Software Lead</h4>
+                                <p class="text-sm text-gray-500 mt-1 font-medium" data-i18n="exp2.company">Autonomous
+                                    Systems &middot; Global Competition</p>
                             </div>
                             <div class="md:w-1/2 bg-[#f8f9fa] border border-gray-200 p-6 rounded-2xl shadow-sm">
                                 <ul class="text-sm text-gray-600 space-y-2">
-                                    <li class="flex gap-2"><span class="text-[#ea4335] font-bold mt-0.5">&bull;</span><span data-i18n="exp2.b1">Developed reactive navigation algorithms and kinematics in C++ for omnidirectional robots.</span></li>
-                                    <li class="flex gap-2"><span class="text-[#4285f4] font-bold mt-0.5">&bull;</span><span data-i18n="exp2.b2">Low-latency controller programming with sensor fusion (IMU + GPS).</span></li>
-                                    <li class="flex gap-2"><span class="text-[#fbbc05] font-bold mt-0.5">&bull;</span><span data-i18n="exp2.b3">3x VEX U Programming Champion (MX/USA), optimizing routines under 15ms cycle limits.</span></li>
+                                    <li class="flex gap-2"><span
+                                            class="text-[#ea4335] font-bold mt-0.5">&bull;</span><span
+                                            data-i18n="exp2.b1">Developed reactive navigation algorithms and kinematics
+                                            in C++ for omnidirectional robots.</span></li>
+                                    <li class="flex gap-2"><span
+                                            class="text-[#4285f4] font-bold mt-0.5">&bull;</span><span
+                                            data-i18n="exp2.b2">Low-latency controller programming with sensor fusion
+                                            (IMU + GPS).</span></li>
+                                    <li class="flex gap-2"><span
+                                            class="text-[#fbbc05] font-bold mt-0.5">&bull;</span><span
+                                            data-i18n="exp2.b3">3x VEX U Programming Champion (MX/USA), optimizing
+                                            routines under 15ms cycle limits.</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -818,30 +1025,45 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-[#4285f4]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="journal.title">Articles & Notes</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full"
+                        data-i18n="journal.title">Articles & Notes</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="p-8 border border-gray-200 bg-white hover:shadow-lg transition-all rounded-2xl reveal cursor-pointer group">
+                    <div
+                        class="p-8 border border-gray-200 bg-white hover:shadow-lg transition-all rounded-2xl reveal cursor-pointer group">
                         <div class="flex justify-between items-start mb-6">
-                            <span class="font-sans text-[10px] text-gray-500 font-semibold uppercase tracking-widest">Log_001 // Aug
+                            <span
+                                class="font-sans text-[10px] text-gray-500 font-semibold uppercase tracking-widest">Log_001
+                                // Aug
                                 2025</span>
-                            <span class="text-[10px] font-sans font-semibold bg-gray-100 px-3 py-1 rounded-full text-[#4285f4]">~4 min read</span>
+                            <span
+                                class="text-[10px] font-sans font-semibold bg-gray-100 px-3 py-1 rounded-full text-[#4285f4]">~4
+                                min read</span>
                         </div>
-                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors" data-i18n="journal1.title">Architecting IA-SOPORTE-MICROSOFT: Azure & LLMs</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="journal1.desc">Debugging Graph API latency for LLM integration in production environments.</p>
+                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors"
+                            data-i18n="journal1.title">Architecting IA-SOPORTE-MICROSOFT: Azure & LLMs</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="journal1.desc">Debugging Graph
+                            API latency for LLM integration in production environments.</p>
                         <div class="flex gap-2">
                             <span class="text-xs font-sans font-medium text-gray-400">#CloudGov</span>
                             <span class="text-xs font-sans font-medium text-gray-400">#LLMOps</span>
                         </div>
                     </div>
-                    <div class="p-8 border border-gray-200 bg-white hover:shadow-lg transition-all rounded-2xl reveal cursor-pointer group">
+                    <div
+                        class="p-8 border border-gray-200 bg-white hover:shadow-lg transition-all rounded-2xl reveal cursor-pointer group">
                         <div class="flex justify-between items-start mb-6">
-                            <span class="font-sans text-[10px] text-gray-500 font-semibold uppercase tracking-widest">Log_002 // June
+                            <span
+                                class="font-sans text-[10px] text-gray-500 font-semibold uppercase tracking-widest">Log_002
+                                // June
                                 2025</span>
-                            <span class="text-[10px] font-sans font-semibold bg-gray-100 px-3 py-1 rounded-full text-[#4285f4]">~6 min read</span>
+                            <span
+                                class="text-[10px] font-sans font-semibold bg-gray-100 px-3 py-1 rounded-full text-[#4285f4]">~6
+                                min read</span>
                         </div>
-                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors" data-i18n="journal2.title">Robotic Navigation: From Code to Worlds</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="journal2.desc">Stabilizing PID controllers on high-friction surfaces for the VEX World stage.</p>
+                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors"
+                            data-i18n="journal2.title">Robotic Navigation: From Code to Worlds</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="journal2.desc">Stabilizing PID
+                            controllers on high-friction surfaces for the VEX World stage.</p>
                         <div class="flex gap-2">
                             <span class="text-xs font-sans font-medium text-gray-400">#Robotics</span>
                             <span class="text-xs font-sans font-medium text-gray-400">#RealTime</span>
@@ -856,7 +1078,8 @@
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-center space-x-4 mb-12 reveal">
                     <div class="h-px w-12 bg-[#34a853]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#34a853] bg-green-50 px-4 py-2 rounded-full" data-i18n="edu.title">Education</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#34a853] bg-green-50 px-4 py-2 rounded-full"
+                        data-i18n="edu.title">Education</h2>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-2xl p-8 reveal">
                     <div class="flex flex-col md:flex-row gap-6 items-start">
@@ -864,17 +1087,31 @@
                             <i class="fa-solid fa-graduation-cap text-[#34a853] text-2xl"></i>
                         </div>
                         <div class="flex-1">
-                            <span class="text-xs text-[#34a853] font-bold uppercase tracking-widest" data-i18n="edu.date">Oct 2024 &mdash; Graduate</span>
-                            <h3 class="text-xl font-bold text-gray-900 mt-1 mb-1" data-i18n="edu.degree">Bachelor of Mechatronics Engineering</h3>
-                            <p class="text-sm text-gray-500 font-medium mb-4">Universidad Tecnológica de Matamoros &middot; H. Matamoros, Tamaulipas</p>
+                            <span class="text-xs text-[#34a853] font-bold uppercase tracking-widest"
+                                data-i18n="edu.date">Oct 2024 &mdash; Graduate</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1 mb-1" data-i18n="edu.degree">Bachelor of
+                                Mechatronics Engineering</h3>
+                            <p class="text-sm text-gray-500 font-medium mb-4">Universidad Tecnológica de Matamoros
+                                &middot; H. Matamoros, Tamaulipas</p>
                             <div class="bg-[#f8f9fa] border border-gray-100 rounded-xl p-4">
-                                <div class="text-xs text-gray-400 font-bold uppercase tracking-wide mb-2" data-i18n="edu.project">Final Project</div>
-                                <p class="text-sm text-gray-600 leading-relaxed" data-i18n="edu.projectDesc">Coordinated navigation system for mobile robots. Implemented Bug2 evasion algorithms and probabilistic grids, solving "drift" issues via sensor fusion and adaptive computer vision.</p>
+                                <div class="text-xs text-gray-400 font-bold uppercase tracking-wide mb-2"
+                                    data-i18n="edu.project">Final Project</div>
+                                <p class="text-sm text-gray-600 leading-relaxed" data-i18n="edu.projectDesc">Coordinated
+                                    navigation system for mobile robots. Implemented Bug2 evasion algorithms and
+                                    probabilistic grids, solving "drift" issues via sensor fusion and adaptive computer
+                                    vision.</p>
                                 <div class="flex flex-wrap gap-2 mt-3">
-                                    <span class="px-2 py-1 bg-green-50 text-[#34a853] text-[10px] font-bold rounded-full">Python</span>
-                                    <span class="px-2 py-1 bg-blue-50 text-[#4285f4] text-[10px] font-bold rounded-full">ROS / RViz</span>
-                                    <span class="px-2 py-1 bg-red-50 text-[#ea4335] text-[10px] font-bold rounded-full">PyTorch / TensorFlow</span>
-                                    <span class="px-2 py-1 bg-yellow-50 text-[#fbbc05] text-[10px] font-bold rounded-full">OpenCV / MATLAB</span>
+                                    <span
+                                        class="px-2 py-1 bg-green-50 text-[#34a853] text-[10px] font-bold rounded-full">Python</span>
+                                    <span
+                                        class="px-2 py-1 bg-blue-50 text-[#4285f4] text-[10px] font-bold rounded-full">ROS
+                                        / RViz</span>
+                                    <span
+                                        class="px-2 py-1 bg-red-50 text-[#ea4335] text-[10px] font-bold rounded-full">PyTorch
+                                        / TensorFlow</span>
+                                    <span
+                                        class="px-2 py-1 bg-yellow-50 text-[#fbbc05] text-[10px] font-bold rounded-full">OpenCV
+                                        / MATLAB</span>
                                 </div>
                             </div>
                         </div>
@@ -888,66 +1125,82 @@
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-center space-x-4 mb-12 reveal">
                     <div class="h-px w-12 bg-[#ea4335]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#ea4335] bg-red-50 px-4 py-2 rounded-full" data-i18n="certs.title">Certificates &amp; Achievements</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#ea4335] bg-red-50 px-4 py-2 rounded-full"
+                        data-i18n="certs.title">Certificates &amp; Achievements</h2>
                 </div>
-                    <!-- VEX World -->
-                    <div class="flex items-center gap-4 bg-[#fef2f2] border border-[#ea4335]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 rounded-full bg-[#ea4335] flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-globe text-white text-sm"></i>
-                        </div>
-                        <div>
-                            <div class="font-bold text-sm text-gray-900" data-i18n="cert.vexworld">VEX Robotics World Championship 2024</div>
-                            <div class="text-xs text-gray-500">REC Foundation / Northrop Grumman &middot; Dallas, TX &middot; 2024</div>
-                        </div>
+                <!-- VEX World -->
+                <div
+                    class="flex items-center gap-4 bg-[#fef2f2] border border-[#ea4335]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-[#ea4335] flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-globe text-white text-sm"></i>
                     </div>
-                    <!-- C# Microsoft -->
-                    <div class="flex items-center gap-4 bg-[#eff6ff] border border-[#4285f4]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 rounded-full bg-[#4285f4] flex items-center justify-center flex-shrink-0">
-                            <i class="fa-brands fa-microsoft text-white text-sm"></i>
-                        </div>
-                        <div>
-                            <div class="font-bold text-sm text-gray-900" data-i18n="cert.csharp">Foundational C# with Microsoft</div>
-                            <div class="text-xs text-gray-500">freeCodeCamp &middot; Developer Certification &middot; Mayo 2024</div>
-                        </div>
-                    </div>
-                    <!-- CINVESTAV TOP -->
-                    <div class="flex items-center gap-4 bg-[#eff6ff] border border-[#4285f4]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 rounded-full bg-[#4285f4] flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-microchip text-white text-sm"></i>
-                        </div>
-                        <div>
-                            <div class="font-bold text-sm text-gray-900" data-i18n="cert.cinvestavtop">TOP Tamaulipas 2024</div>
-                            <div class="text-xs text-gray-500">CINVESTAV Tamaulipas &middot; Encuentro Estudiantes TI &middot; Nov 2024</div>
-                        </div>
-                    </div>
-                    <!-- CINVESTAV Visita -->
-                    <div class="flex items-center gap-4 bg-[#f0fdf4] border border-[#34a853]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 rounded-full bg-[#34a853] flex items-center justify-center flex-shrink-0">
-                            <i class="fa-solid fa-microchip text-white text-sm"></i>
-                        </div>
-                        <div>
-                            <div class="font-bold text-sm text-gray-900" data-i18n="cert.cinvestav">Technical Visit &amp; Simulations &mdash; CINVESTAV</div>
-                            <div class="text-xs text-gray-500">Gazebo &middot; Drone swarms &middot; Apr&ndash;Sep 2024</div>
-                        </div>
-                    </div>
-                    <!-- Python Udemy -->
-                    <div class="flex items-center gap-4 bg-[#f0fdf4] border border-[#34a853]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
-                        <div class="w-10 h-10 rounded-full bg-[#34a853] flex items-center justify-center flex-shrink-0">
-                            <i class="fa-brands fa-python text-white text-sm"></i>
-                        </div>
-                        <div>
-                            <div class="font-bold text-sm text-gray-900" data-i18n="cert.python">Certificate Python Development</div>
-                            <div class="text-xs text-gray-500">Udemy &middot; Python &middot; Bootcamp</div>
-                        </div>
+                    <div>
+                        <div class="font-bold text-sm text-gray-900" data-i18n="cert.vexworld">VEX Robotics World
+                            Championship 2024</div>
+                        <div class="text-xs text-gray-500">REC Foundation / Northrop Grumman &middot; Dallas, TX
+                            &middot; 2024</div>
                     </div>
                 </div>
+                <!-- C# Microsoft -->
+                <div
+                    class="flex items-center gap-4 bg-[#eff6ff] border border-[#4285f4]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-[#4285f4] flex items-center justify-center flex-shrink-0">
+                        <i class="fa-brands fa-microsoft text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm text-gray-900" data-i18n="cert.csharp">Foundational C# with
+                            Microsoft</div>
+                        <div class="text-xs text-gray-500">freeCodeCamp &middot; Developer Certification &middot; Mayo
+                            2024</div>
+                    </div>
+                </div>
+                <!-- CINVESTAV TOP -->
+                <div
+                    class="flex items-center gap-4 bg-[#eff6ff] border border-[#4285f4]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-[#4285f4] flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-microchip text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm text-gray-900" data-i18n="cert.cinvestavtop">TOP Tamaulipas 2024
+                        </div>
+                        <div class="text-xs text-gray-500">CINVESTAV Tamaulipas &middot; Encuentro Estudiantes TI
+                            &middot; Nov 2024</div>
+                    </div>
+                </div>
+                <!-- CINVESTAV Visita -->
+                <div
+                    class="flex items-center gap-4 bg-[#f0fdf4] border border-[#34a853]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-[#34a853] flex items-center justify-center flex-shrink-0">
+                        <i class="fa-solid fa-microchip text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm text-gray-900" data-i18n="cert.cinvestav">Technical Visit &amp;
+                            Simulations &mdash; CINVESTAV</div>
+                        <div class="text-xs text-gray-500">Gazebo &middot; Drone swarms &middot; Apr&ndash;Sep 2024
+                        </div>
+                    </div>
+                </div>
+                <!-- Python Udemy -->
+                <div
+                    class="flex items-center gap-4 bg-[#f0fdf4] border border-[#34a853]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
+                    <div class="w-10 h-10 rounded-full bg-[#34a853] flex items-center justify-center flex-shrink-0">
+                        <i class="fa-brands fa-python text-white text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm text-gray-900" data-i18n="cert.python">Certificate Python
+                            Development</div>
+                        <div class="text-xs text-gray-500">Udemy &middot; Python &middot; Bootcamp</div>
+                    </div>
+                </div>
+            </div>
             </div>
         </section>
 
     </main>
 
     <!-- Project Modal -->
-    <div id="project-modal" class="fixed inset-0 z-[100] p-6 items-center justify-center bg-gray-900/60 transition-opacity backdrop-blur-sm">
+    <div id="project-modal"
+        class="fixed inset-0 z-[100] p-6 items-center justify-center bg-gray-900/60 transition-opacity backdrop-blur-sm">
         <div
             class="bg-[#111] border border-white/10 w-full max-w-5xl rounded-[2rem] overflow-hidden shadow-2xl relative flex flex-col">
             <button onclick="closeProject()"
@@ -969,26 +1222,32 @@
             class="hidden w-80 md:w-96 bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden mb-4 transition-all transform scale-95 opacity-0 origin-bottom-right">
             <div class="chat-header-assistant flex items-center justify-between">
                 <div class="flex items-center space-x-4">
-                    <div class="w-13 h-13 rounded-2xl bg-gradient-to-br from-blue-50 to-white flex items-center justify-center border-2 border-white shadow-md overflow-hidden p-2">
+                    <div
+                        class="w-13 h-13 rounded-2xl bg-gradient-to-br from-blue-50 to-white flex items-center justify-center border-2 border-white shadow-md overflow-hidden p-2">
                         <!-- Master Assistant SVG (Header) -->
                         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="#4285F4" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M12 6C12 6 14 8 18 8" stroke="#EA4335" stroke-width="2" stroke-linecap="round"/>
-                            <path d="M12 18C12 18 10 16 6 16" stroke="#34A853" stroke-width="2" stroke-linecap="round"/>
-                            <circle cx="12" cy="12" r="3" fill="#FBBC04"/>
+                            <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12"
+                                stroke="#4285F4" stroke-width="2" stroke-linecap="round" />
+                            <path d="M12 6C12 6 14 8 18 8" stroke="#EA4335" stroke-width="2" stroke-linecap="round" />
+                            <path d="M12 18C12 18 10 16 6 16" stroke="#34A853" stroke-width="2"
+                                stroke-linecap="round" />
+                            <circle cx="12" cy="12" r="3" fill="#FBBC04" />
                         </svg>
                     </div>
                     <div>
-                        <span class="font-black text-[17px] text-[#202124] block tracking-tight" data-i18n="bot.greeting">Digital Support</span>
+                        <span class="font-black text-[17px] text-[#202124] block tracking-tight"
+                            data-i18n="bot.greeting">Digital Support</span>
                         <div class="flex items-center gap-1.5">
                             <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                            <span class="text-[11px] text-gray-500 font-bold uppercase tracking-wider">Online Assistant</span>
+                            <span class="text-[11px] text-gray-500 font-bold uppercase tracking-wider">Online
+                                Assistant</span>
                         </div>
                     </div>
                 </div>
-                <button id="close-chat" class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-100 transition-all active:scale-90 border border-transparent hover:border-gray-200">
+                <button id="close-chat"
+                    class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-gray-100 transition-all active:scale-90 border border-transparent hover:border-gray-200">
                     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18 6L6 18M6 6L18 18" stroke="#5F6368" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M18 6L6 18M6 6L18 18" stroke="#5F6368" stroke-width="2.5" stroke-linecap="round" />
                     </svg>
                 </button>
             </div>
@@ -999,34 +1258,51 @@
                     <div class="bot-message-wrapper">
                         <div class="bot-avatar">
                             <!-- Master Assistant SVG (Bubble) -->
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="#4285F4" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M12 6C12 6 14 8 18 8" stroke="#EA4335" stroke-width="2" stroke-linecap="round"/>
-                                <path d="M12 18C12 18 10 16 6 16" stroke="#34A853" stroke-width="2" stroke-linecap="round"/>
-                                <circle cx="12" cy="12" r="3" fill="#FBBC04"/>
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24"
+                                height="24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12"
+                                    stroke="#4285F4" stroke-width="2" stroke-linecap="round" />
+                                <path d="M12 6C12 6 14 8 18 8" stroke="#EA4335" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <path d="M12 18C12 18 10 16 6 16" stroke="#34A853" stroke-width="2"
+                                    stroke-linecap="round" />
+                                <circle cx="12" cy="12" r="3" fill="#FBBC04" />
                             </svg>
                         </div>
                         <div class="flex flex-col gap-2">
                             <div class="chat-bubble-bot">
                                 <div class="flex items-center gap-2 mb-2">
                                     <span class="w-2 h-2 rounded-full bg-blue-500 opacity-50"></span>
-                                    <p class="font-black text-[11px] text-gray-400 uppercase tracking-widest" data-i18n="bot.id">Technical Support Center</p>
+                                    <p class="font-black text-[11px] text-gray-400 uppercase tracking-widest"
+                                        data-i18n="bot.id">Technical Support Center</p>
                                 </div>
-                                <span class="font-medium text-gray-800" data-i18n="bot.greeting">Consulting Domingo González's technical knowledge base. Which module or integration can I assist you with?</span>
+                                <span class="font-medium text-gray-800" data-i18n="bot.greeting">Consulting Domingo
+                                    González's technical knowledge base. Which module or integration can I assist you
+                                    with?</span>
                             </div>
-                            <span class="text-[10px] text-gray-400 ml-1 font-bold uppercase tracking-tighter opacity-60">Verified Assistant</span>
+                            <span
+                                class="text-[10px] text-gray-400 ml-1 font-bold uppercase tracking-tighter opacity-60">Verified
+                                Assistant</span>
                         </div>
                     </div>
                 </div>
             </div>
             <!-- Quick Actions -->
-            <div class="p-4 border-t border-gray-50 bg-white/95 backdrop-blur-sm flex flex-wrap gap-2" id="quick-replies">
-                <button onclick="sendReply('who')" data-i18n="chip.who" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">Who are you</button>
-                <button onclick="sendReply('aether')" data-i18n="chip.aether" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">AetherVoice</button>
-                <button onclick="sendReply('ms')" data-i18n="chip.ms" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">Microsoft IT</button>
-                <button onclick="sendReply('robot')" data-i18n="chip.robot" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">VEX Robotics</button>
-                <button onclick="sendReply('aws')" data-i18n="chip.aws" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">AWS Architecture</button>
-                <button onclick="sendReply('contact')" data-i18n="chip.contact" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">Contact</button>
+            <div class="p-4 border-t border-gray-50 bg-white/95 backdrop-blur-sm flex flex-wrap gap-2"
+                id="quick-replies">
+                <button onclick="sendReply('who')" data-i18n="chip.who"
+                    class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">Who are you</button>
+                <button onclick="sendReply('aether')" data-i18n="chip.aether"
+                    class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">AetherVoice</button>
+                <button onclick="sendReply('ms')" data-i18n="chip.ms"
+                    class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">Microsoft IT</button>
+                <button onclick="sendReply('robot')" data-i18n="chip.robot"
+                    class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">VEX Robotics</button>
+                <button onclick="sendReply('aws')" data-i18n="chip.aws"
+                    class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">AWS
+                    Architecture</button>
+                <button onclick="sendReply('contact')" data-i18n="chip.contact"
+                    class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">Contact</button>
             </div>
         </div>
 
@@ -1035,33 +1311,42 @@
             <div class="flex items-center gap-2 mb-2">
                 <div class="intro-avatar">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="#4285F4" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M12 6C12 6 14 8 18 8" stroke="#EA4335" stroke-width="2" stroke-linecap="round"/>
-                        <path d="M12 18C12 18 10 16 6 16" stroke="#34A853" stroke-width="2" stroke-linecap="round"/>
-                        <circle cx="12" cy="12" r="3" fill="#FBBC04"/>
+                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12"
+                            stroke="#4285F4" stroke-width="2" stroke-linecap="round" />
+                        <path d="M12 6C12 6 14 8 18 8" stroke="#EA4335" stroke-width="2" stroke-linecap="round" />
+                        <path d="M12 18C12 18 10 16 6 16" stroke="#34A853" stroke-width="2" stroke-linecap="round" />
+                        <circle cx="12" cy="12" r="3" fill="#FBBC04" />
                     </svg>
                 </div>
                 <div>
-                    <p class="text-[12px] font-black text-gray-800 leading-tight" data-i18n="bot.name">Digital Support</p>
+                    <p class="text-[12px] font-black text-gray-800 leading-tight" data-i18n="bot.name">Digital Support
+                    </p>
                     <div class="flex items-center gap-1 mt-0.5">
                         <span class="intro-dot"></span>
-                        <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wide" data-i18n="bot.type">AI Assistant</span>
+                        <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wide"
+                            data-i18n="bot.type">AI Assistant</span>
                     </div>
                 </div>
             </div>
-            <p class="text-[13px] text-gray-600 leading-relaxed" data-i18n="bot.intro">Running technical search engine over Domingo's projects. Do you wish to check architectural details or certifications?</p>
-            <button onclick="dismissIntro()" class="absolute top-2.5 right-3 text-gray-300 hover:text-gray-500 text-xs font-bold transition-colors" aria-label="Close">&times;</button>
+            <p class="text-[13px] text-gray-600 leading-relaxed" data-i18n="bot.intro">Running technical search engine
+                over Domingo's projects. Do you wish to check architectural details or certifications?</p>
+            <button onclick="dismissIntro()"
+                class="absolute top-2.5 right-3 text-gray-300 hover:text-gray-500 text-xs font-bold transition-colors"
+                aria-label="Close">&times;</button>
         </div>
 
         <!-- Chat Trigger -->
         <button id="chat-trigger" aria-label="Abrir consultas"
             class="w-16 h-16 flex items-center justify-center group shadow-xl p-3.5">
             <!-- Master Assistant SVG (Trigger - White) -->
-            <svg class="transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                <path d="M12 6C12 6 14 8 18 8" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-                <path d="M12 18C12 18 10 16 6 16" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-                <circle cx="12" cy="12" r="3" fill="white"/>
+            <svg class="transition-transform duration-500 group-hover:scale-110" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12" stroke="white"
+                    stroke-width="2" stroke-linecap="round" />
+                <path d="M12 6C12 6 14 8 18 8" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+                <path d="M12 18C12 18 10 16 6 16" stroke="white" stroke-width="2" stroke-linecap="round"
+                    opacity="0.6" />
+                <circle cx="12" cy="12" r="3" fill="white" />
             </svg>
         </button>
 
@@ -1077,51 +1362,64 @@
         <div class="max-w-4xl mx-auto">
             <div class="flex items-center space-x-4 mb-12">
                 <div class="h-px w-12 bg-[#4285f4]"></div>
-                <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="contact.title">Let's Talk</h2>
+                <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full"
+                    data-i18n="contact.title">Let's Talk</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Left: CTA text -->
                 <div>
                     <h3 class="text-4xl font-bold text-gray-900 mb-4 leading-tight" data-i18n="contact.h3">
-                        If you're looking for an engineer who delivers real systems,<span class="text-[#4285f4]"> let's talk.</span>
+                        If you're looking for an engineer who delivers real systems,<span class="text-[#4285f4]"> let's
+                            talk.</span>
                     </h3>
                     <p class="text-gray-600 text-base leading-relaxed mb-8" data-i18n="contact.cta">
-                        Abierto a discutir arquitecturas de sistemas embebidos, automatización en la nube o cómo escalamos un bot para 4,500 usuarios. Experiencia en entornos remotos e industriales.
+                        Abierto a discutir arquitecturas de sistemas embebidos, automatización en la nube o cómo
+                        escalamos un bot para 4,500 usuarios. Experiencia en entornos remotos e industriales.
                     </p>
                     <div class="flex flex-wrap gap-3">
-                        <span class="px-4 py-2 bg-blue-50 text-[#4285f4] text-xs font-bold rounded-full">✓ Full-time</span>
-                        <span class="px-4 py-2 bg-red-50 text-[#ea4335] text-xs font-bold rounded-full">✓ Freelance / Contrato</span>
-                        <span class="px-4 py-2 bg-green-50 text-[#34a853] text-xs font-bold rounded-full">✓ Remoto / Presencial</span>
-                        <span class="px-4 py-2 bg-yellow-50 text-[#fbbc05] text-xs font-bold rounded-full">✓ Relocalizable</span>
+                        <span class="px-4 py-2 bg-blue-50 text-[#4285f4] text-xs font-bold rounded-full">✓
+                            Full-time</span>
+                        <span class="px-4 py-2 bg-red-50 text-[#ea4335] text-xs font-bold rounded-full">✓ Freelance /
+                            Contrato</span>
+                        <span class="px-4 py-2 bg-green-50 text-[#34a853] text-xs font-bold rounded-full">✓ Remoto /
+                            Presencial</span>
+                        <span class="px-4 py-2 bg-yellow-50 text-[#fbbc05] text-xs font-bold rounded-full">✓
+                            Relocalizable</span>
                     </div>
                 </div>
                 <!-- Right: Contact Card -->
                 <div class="bg-[#f8f9fa] border border-gray-200 rounded-2xl p-8 space-y-5">
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-full bg-[#4285f4] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">DG</div>
+                        <div
+                            class="w-12 h-12 rounded-full bg-[#4285f4] flex items-center justify-center text-white font-bold text-lg flex-shrink-0">
+                            DG</div>
                         <div>
                             <div class="font-bold text-gray-900">Domingo González Hernández</div>
-                            <div class="text-xs text-gray-500">Software &amp; Robotics Engineer | AI &amp; Cloud Developer</div>
+                            <div class="text-xs text-gray-500">Software &amp; Robotics Engineer | AI &amp; Cloud
+                                Developer</div>
                         </div>
                     </div>
                     <div class="space-y-3 pt-2 border-t border-gray-200">
                         <a href="mailto:Domingoghz245@gmail.com"
                             class="flex items-center gap-3 text-sm text-gray-700 hover:text-[#4285f4] transition-colors group">
-                            <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#4285f4] group-hover:bg-[#4285f4] group-hover:text-white transition-all">
+                            <span
+                                class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#4285f4] group-hover:bg-[#4285f4] group-hover:text-white transition-all">
                                 <i class="fa-regular fa-envelope text-xs"></i>
                             </span>
                             <span class="font-medium">Domingoghz245@gmail.com</span>
                         </a>
                         <a href="https://www.linkedin.com/in/domingo-gonz%C3%A1lez-hernandez-73127a213/" target="_blank"
                             class="flex items-center gap-3 text-sm text-gray-700 hover:text-[#0a66c2] transition-colors group">
-                            <span class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#0a66c2] group-hover:bg-[#0a66c2] group-hover:text-white transition-all">
+                            <span
+                                class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-[#0a66c2] group-hover:bg-[#0a66c2] group-hover:text-white transition-all">
                                 <i class="fa-brands fa-linkedin text-xs"></i>
                             </span>
                             <span class="font-medium">linkedin.com/in/domingo-gonz\u00e1lez-hernandez</span>
                         </a>
                         <a href="https://github.com/Doku566" target="_blank"
                             class="flex items-center gap-3 text-sm text-gray-700 hover:text-gray-900 transition-colors group">
-                            <span class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 group-hover:bg-gray-900 group-hover:text-white transition-all">
+                            <span
+                                class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-700 group-hover:bg-gray-900 group-hover:text-white transition-all">
                                 <i class="fa-brands fa-github text-xs"></i>
                             </span>
                             <span class="font-medium">github.com/Doku566</span>
@@ -1139,11 +1437,15 @@
 
     <footer class="py-8 px-6 border-t border-gray-100 bg-white">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-gray-400 text-xs" data-i18n="footer.copy">&copy; 2026 Domingo González &mdash; Professional Portfolio</p>
+            <p class="text-gray-400 text-xs" data-i18n="footer.copy">&copy; 2026 Domingo González &mdash; Professional
+                Portfolio</p>
             <div class="flex gap-6 text-xl text-gray-400">
-                <a href="https://github.com/Doku566" target="_blank" class="hover:text-gray-900 transition-colors"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/domingo-gonz%C3%A1lez-hernandez-73127a213/" target="_blank" class="hover:text-[#0a66c2] transition-colors"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="mailto:Domingoghz245@gmail.com" class="hover:text-[#4285f4] transition-colors"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://github.com/Doku566" target="_blank" class="hover:text-gray-900 transition-colors"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/domingo-gonz%C3%A1lez-hernandez-73127a213/" target="_blank"
+                    class="hover:text-[#0a66c2] transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:Domingoghz245@gmail.com" class="hover:text-[#4285f4] transition-colors"><i
+                        class="fa-regular fa-envelope"></i></a>
             </div>
         </div>
         <div id="toast"
@@ -1221,7 +1523,7 @@
         function sendReply(type) {
             const currentData = botResponses[currentLang];
             const chips = translations[currentLang];
-            
+
             // Determine display text for user bubble
             const userDisplayText = chips[`chip.${type}`] || type;
 
@@ -1230,22 +1532,22 @@
             userDiv.className = "ml-auto chat-bubble-user max-w-[85%] shadow-sm block translate-y-2 opacity-0 transition-all duration-300";
             userDiv.innerText = userDisplayText;
             messagesArea.appendChild(userDiv);
-            
+
             // Animation for user bubble
             setTimeout(() => {
                 userDiv.classList.remove('translate-y-2', 'opacity-0');
             }, 10);
-            
+
             messagesArea.scrollTop = messagesArea.scrollHeight;
 
             // Bot Response
             setTimeout(() => {
                 const wrapper = document.createElement('div');
                 wrapper.className = "bot-message-wrapper";
-                
+
                 let responseHtml = "";
                 let cardHtml = "";
-                
+
                 if (currentData[type]) {
                     responseHtml = currentData[type].text;
                     cardHtml = currentData[type].card;
@@ -1270,7 +1572,7 @@
                         </div>
                     </div>
                 `;
-                
+
                 messagesArea.appendChild(wrapper);
                 messagesArea.scrollTop = messagesArea.scrollHeight;
 
@@ -1468,10 +1770,10 @@
         function openProject(id) {
             const data = projectsData[currentLang][id];
             const container = document.getElementById('modal-content');
-            
+
             // i18n for modal labels
-            const labels = currentLang === 'es' ? 
-                ['Problema', 'El Desafío', 'Solución Técnica'] : 
+            const labels = currentLang === 'es' ?
+                ['Problema', 'El Desafío', 'Solución Técnica'] :
                 ['Problem', 'The Challenge', 'Technical Solution'];
 
             container.innerHTML = `
@@ -1564,7 +1866,7 @@
                 'proj1.desc': 'Asistente de IA local que prioriza la soberan\u00eda de datos. Logr\u00e9 reducir el tiempo de inferencia optimizando el buffer de tokens directamente en C# y JS, permitiendo respuestas fluidas sin depender de APIs de pago.',
                 'proj1.info': 'Inferencia Local \u00b7 Batch Tracking \u00b7 Cero latencia de red',
                 'proj1.github': 'GitHub',
-                'proj2.level': 'Python / Microsoft Graph API', 
+                'proj2.level': 'Python / Microsoft Graph API',
                 'proj2.desc': 'Sistema de automatizaci\u00f3n cr\u00edtica para la UTM. Orquest\u00e9 la integraci\u00f3n de Microsoft Graph API con autenticaci\u00f3n segura para manejar picos de 100+ solicitudes diarias.',
                 'proj2.info': 'Arquitectura Serverless \u00b7 Manejo de carga masiva \u00b7 SLA < 3m',
                 'proj2.github': 'Ver en GitHub',

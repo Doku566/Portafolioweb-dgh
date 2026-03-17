@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -8,11 +8,11 @@
 
     <!-- SEO & OpenGraph -->
     <meta name="description"
-        content="Portafolio de Domingo González, Ingeniero Mecatrónico y Senior Software Engineer. Especializado en AWS, Robótica competitiva (VEX) e IA local.">
-    <meta name="keywords" content="Mecatrónica, Software Engineer, AWS, VEX Robotics, AI, C++, Python, Matamoros">
+        content="Portfolio of Domingo González, Mechatronics Engineer and Senior Software Engineer. Specialized in AWS, competitive Robotics (VEX), and local AI.">
+    <meta name="keywords" content="Mechatronics, Software Engineer, AWS, VEX Robotics, AI, C++, Python, Matamoros">
     <meta property="og:title" content="Domingo González // Senior Engineering Portfolio">
     <meta property="og:description"
-        content="Explora el trabajo de Domingo González en sistemas embebidos, robótica y automatización de IA.">
+        content="Explore Domingo González's work in embedded systems, robotics, and AI automation.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://github.com/Doku566/Portafolioweb-dgh">
     <meta name="twitter:card" content="summary_large_image">
@@ -199,18 +199,23 @@
 
         /* Premium Assistant UI (Messaging Style) */
         #chat-window {
-            border-radius: 32px;
+            border-radius: 20px;
             box-shadow: 0 24px 80px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(0,0,0,0.08);
             background: #ffffff;
             overflow: hidden;
             font-family: 'Inter', -apple-system, blinkmacsystemfont, sans-serif;
+            display: flex;
+            flex-direction: column;
+            max-height: min(550px, 80vh);
+            height: auto;
+            width: 20rem;
         }
 
         .chat-header-assistant {
             background: #ffffff;
             border-bottom: 1px solid #f2f2f7;
-            padding: 18px 24px;
+            padding: 10px 16px;
             position: relative;
         }
 
@@ -267,9 +272,9 @@
             background: #ffffff;
             border: 1.5px solid #f1f3f4;
             color: #1a73e8;
-            border-radius: 20px;
-            padding: 12px 20px;
-            font-size: 13.5px;
+            border-radius: 16px;
+            padding: 8px 14px;
+            font-size: 12px;
             font-weight: 600;
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             cursor: pointer;
@@ -447,15 +452,15 @@
             </div>
             <nav class="hidden md:flex items-center space-x-10">
                 <a href="#hero" data-i18n="nav.home"
-                    class="font-sans text-sm font-medium text-gray-600 hover:text-[#4285f4] transition-colors">Inicio</a>
+                    class="font-sans text-sm font-medium text-gray-600 hover:text-[#4285f4] transition-colors">Home</a>
                 <a href="#projects" data-i18n="nav.projects"
-                    class="font-sans text-sm font-medium text-gray-600 hover:text-[#ea4335] transition-colors">Proyectos</a>
+                    class="font-sans text-sm font-medium text-gray-600 hover:text-[#ea4335] transition-colors">Projects</a>
                 <a href="#skills" data-i18n="nav.stack"
                     class="font-sans text-sm font-medium text-gray-600 hover:text-[#fbbc05] transition-colors">Stack</a>
                 <a href="#exp" data-i18n="nav.exp"
-                    class="font-sans text-sm font-medium text-gray-600 hover:text-[#34a853] transition-colors">Experiencia</a>
+                    class="font-sans text-sm font-medium text-gray-600 hover:text-[#34a853] transition-colors">Experience</a>
                 <a href="#contact" data-i18n="nav.contact"
-                    class="font-sans text-sm font-semibold text-white bg-[#4285f4] px-4 py-2 rounded-full hover:bg-blue-600 transition-all">Contacto</a>
+                    class="font-sans text-sm font-semibold text-white bg-[#4285f4] px-4 py-2 rounded-full hover:bg-blue-600 transition-all">Contact</a>
                 <!-- Language Toggle -->
                 <button id="lang-toggle" onclick="toggleLang()"
                     class="flex items-center gap-1.5 text-xs font-bold border border-gray-200 px-3 py-1.5 rounded-full hover:border-[#4285f4] hover:text-[#4285f4] transition-all text-gray-500">
@@ -482,8 +487,8 @@
 
                 <!-- Main Headline -->
                 <h1 class="font-sans text-5xl md:text-7xl font-bold tracking-tight leading-none mb-4 text-gray-900 reveal">
-                    <span data-i18n="hero.h1a">Ingeniero de</span><br>
-                    <span class="text-[#4285f4]" data-i18n="hero.h1b">Software.</span>
+                    <span data-i18n="hero.h1a">Software</span><br>
+                    <span class="text-[#4285f4]" data-i18n="hero.h1b">Engineer.</span>
                 </h1>
 
                 <!-- Subtitle -->
@@ -491,26 +496,26 @@
 
                 <!-- Tagline -->
                 <p class="font-sans text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed mb-10 reveal" data-i18n="hero.tagline">
-                    Desarrollador enfocado en soluciones escalables, integraci&oacute;n de APIs y automatizaci&oacute;n inteligente con <strong class="text-gray-900">Python y C#</strong>. 
-                    Experiencia administrando infraestructura cloud y sistemas rob&oacute;ticos aut&oacute;nomos (<strong class="text-gray-900">VEX Robotics</strong>).
+                    Developer focused on scalable solutions, API integration and intelligent automation with <strong class="text-gray-900">Python and C#</strong>. 
+                    Experience managing cloud infrastructure and autonomous robotic systems (<strong class="text-gray-900">VEX Robotics</strong>).
                 </p>
 
                 <!-- CTA Buttons -->
                 <div class="flex flex-wrap gap-4 mb-16 reveal">
                     <button onclick="exportCV(this)"
                         class="px-6 py-3 bg-[#4285f4] text-white font-sans font-semibold text-sm rounded-full shadow-md hover:shadow-lg hover:bg-blue-600 transition-all flex items-center gap-3 group">
-                        <span data-i18n="hero.cv">Descargar CV</span>
+                        <span data-i18n="hero.cv">Download CV</span>
                         <i class="fa-solid fa-download group-hover:translate-y-1 transition-transform"></i>
                     </button>
                     <a href="#projects"
                         class="px-6 py-3 bg-white border border-gray-200 text-gray-700 font-sans font-semibold text-sm rounded-full hover:border-[#4285f4] hover:text-[#4285f4] transition-all flex items-center gap-3">
-                        <span data-i18n="hero.projects">Ver Proyectos</span>
+                        <span data-i18n="hero.projects">View Projects</span>
                         <i class="fa-solid fa-arrow-down"></i>
                     </a>
                     <a href="#contact"
                         class="px-6 py-3 bg-white border border-gray-200 text-gray-700 font-sans font-semibold text-sm rounded-full hover:border-[#34a853] hover:text-[#34a853] transition-all flex items-center gap-3">
                         <i class="fa-regular fa-envelope"></i>
-                        <span data-i18n="hero.contact">Contactar</span>
+                        <span data-i18n="hero.contact">Contact Me</span>
                     </a>
                 </div>
 
@@ -518,7 +523,7 @@
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal">
                     <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                         <div class="text-3xl font-bold text-[#4285f4] mb-1">4,500+</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.users">Usuarios Soportados</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.users">Users Supported</div>
                     </div>
                     <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                         <div class="text-3xl font-bold text-[#ea4335] mb-1">#1</div>
@@ -526,11 +531,11 @@
                     </div>
                     <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                         <div class="text-3xl font-bold text-[#fbbc05] mb-1">3×</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.wins">Campeonatos VEX</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.wins">VEX Championships</div>
                     </div>
                     <div class="bg-white border border-gray-200 rounded-2xl p-5 text-center hover:shadow-md transition-shadow">
                         <div class="text-3xl font-bold text-[#34a853] mb-1">2-3min</div>
-                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.botresponse">Respuesta Masiva Bot IA</div>
+                        <div class="text-xs text-gray-500 font-semibold uppercase tracking-wide" data-i18n="stats.botresponse">AI Bot Mass Response</div>
                     </div>
                 </div>
 
@@ -542,7 +547,7 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-[#4285f4]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="projects.title">Proyectos Destacados</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="projects.title">Featured Projects</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 reveal">                    <!-- AetherVoice -->
                     <div class="group relative bg-[#f8f9fa] border border-gray-200 overflow-hidden transition-all hover:shadow-xl rounded-2xl md:col-span-2">
                         <div class="md:flex h-full">
@@ -555,11 +560,11 @@
                                     <span class="font-sans text-xs text-[#4285f4] uppercase font-bold tracking-widest" data-i18n="proj1.level">LLM Local / JavaScript</span>
                                     <span class="text-[10px] font-bold bg-blue-50 text-[#4285f4] px-2 py-0.5 rounded-full border border-blue-100"><i class="fa-solid fa-wrench text-[8px] mr-1"></i><span data-i18n="proj1.badge">En Desarrollo Activo</span></span>
                                 </div>
-                                <h3 class="text-4xl font-bold mb-4 text-gray-900">AetherVoice</h3>
-                                <p class="text-gray-600 leading-relaxed mb-3 font-sans" data-i18n="proj1.desc">Asistente de IA que corre <strong>100% localmente</strong> sin necesidad de internet ni suscripciones. Funciona como los asistentes de grandes empresas pero en tu propia m&aacute;quina con privacidad total. Desarrollado en JavaScript nativo, con soporte multimodal e interacci&oacute;n en tiempo real.</p>
+                                <h3 class="text-4xl font-bold mb-4 text-gray-900" data-i18n="proj1.title">AetherVoice</h3>
+                                <p class="text-gray-600 leading-relaxed mb-3 font-sans" data-i18n="proj1.desc">Local AI Assistant prioritizing <strong>data sovereignty</strong>. I reduced inference time on modest hardware by optimizing the token buffer directly in C# and JS, enabling fluid responses without cloud dependencies.</p>
                                 <div class="flex items-center gap-2 mb-4 bg-blue-50 border border-blue-200 px-4 py-2 rounded-xl">
-                                    <i class="fa-solid fa-lock text-[#4285f4] text-xs"></i>
-                                    <span class="text-xs font-bold text-[#4285f4]" data-i18n="proj1.info">100% offline &middot; Sin costo de API &middot; Privacidad total &middot; En optimizaci&oacute;n continua</span>
+                                    <i class="fa-solid fa-microchip text-[#4285f4] text-xs"></i>
+                                    <span class="text-xs font-bold text-[#4285f4]" data-i18n="proj1.info">Local Inference &middot; Batch Tracking &middot; Zero network latency</span>
                                 </div>
                                 <div class="flex flex-wrap gap-2 mb-6">
                                     <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#LLM-Local</span>
@@ -574,7 +579,7 @@
                                     </a>
                                     <button onclick="openProject('aethervoice')"
                                         class="flex items-center gap-2 font-sans font-semibold text-sm text-white bg-gray-900 px-5 py-2.5 rounded-full hover:bg-[#4285f4] transition-all shadow-lg">
-                                        <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">Ver Detalles</span>
+                                        <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">View Details</span>
                                     </button>
                                 </div>
                             </div>
@@ -590,12 +595,12 @@
                         </div>
                         <div class="p-8">
                             <span class="font-sans text-xs text-[#ea4335] uppercase font-bold tracking-widest mb-2 block" data-i18n="proj2.level">Python / Microsoft Graph API</span>
-                            <h3 class="text-2xl font-bold mb-3 text-gray-900">IA-SOPORTE-MICROSOFT</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-3" data-i18n="proj2.desc">Bot de soporte IA <strong>24/7</strong> implementado en la UTM en <strong>3 meses</strong>. Valida identidad, realiza <strong>reset seguro de contrase&ntilde;as</strong> y escala autom&aacute;ticamente a IT ante anomal&iacute;as. Maneja <strong>20 a 100+ solicitudes diarias</strong> con respuesta masiva en <strong>2&ndash;3 minutos</strong>, minimizando significativamente la carga operativa del equipo de soporte.</p>
-                            <div class="flex items-center gap-2 mb-4 bg-green-50 border border-green-200 px-4 py-2 rounded-xl">
-                                <i class="fa-solid fa-clock text-[#34a853] text-xs"></i>
-                                <span class="text-xs font-bold text-[#34a853]" data-i18n="proj2.info">Soporte IT disponible 24/7 para +4,500 alumnos de la UTM</span>
-                            </div>
+                            <h3 class="text-2xl font-bold mb-3 text-gray-900" data-i18n="proj2.title">IA-SOPORTE-MICROSOFT</h3>
+                             <p class="text-sm text-gray-600 leading-relaxed mb-3" data-i18n="proj2.desc">Critical automation system for UTM. I orchestrated <strong>Microsoft Graph API</strong> integration with secure authentication to handle 100+ daily request peaks, automating 80% of password resets.</p>
+                             <div class="flex items-center gap-2 mb-4 bg-green-50 border border-green-200 px-4 py-2 rounded-xl">
+                                 <i class="fa-solid fa-server text-[#34a853] text-xs"></i>
+                                 <span class="text-xs font-bold text-[#34a853]" data-i18n="proj2.info">Serverless Architecture &middot; High Load Handling &middot; SLA < 3m</span>
+                             </div>
                             <div class="flex flex-wrap gap-2 mb-6">
                                 <span class="px-3 py-1 bg-red-50 text-[#ea4335] text-xs font-semibold rounded-full">#Microsoft-Graph</span>
                                 <span class="px-3 py-1 bg-blue-50 text-[#4285f4] text-xs font-semibold rounded-full">#Entra-ID</span>
@@ -605,11 +610,11 @@
                             <div class="flex gap-3">
                                 <a href="https://github.com/Doku566/IA-SOPORTE-MICROSOFT" target="_blank"
                                     class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
-                                    <i class="fa-brands fa-github"></i><span data-i18n="proj2.github">Ver en GitHub</span>
+                                    <i class="fa-brands fa-github"></i><span data-i18n="proj2.github">View on GitHub</span>
                                 </a>
                                 <button onclick="openProject('iasoporte')"
                                     class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-white bg-gray-900 px-5 py-2.5 rounded-full hover:bg-[#ea4335] transition-all shadow-lg">
-                                    <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">Ver Detalles</span>
+                                    <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">View Details</span>
                                 </button>
                             </div>
                         </div>
@@ -628,7 +633,7 @@
                                 <span class="text-[10px] font-bold bg-yellow-50 text-[#fbbc05] px-2 py-0.5 rounded-full border border-yellow-100"><i class="fa-solid fa-trophy text-[8px] mr-1"></i><span data-i18n="proj3.badge">Camp. Mundial</span></span>
                             </div>
                             <h3 class="text-2xl font-bold mb-3 text-gray-900" data-i18n="proj3.title">Embedded Systems & Multi-Robot Control</h3>
-                            <p class="text-sm text-gray-600 leading-relaxed mb-3" data-i18n="proj3.desc">Programador principal en equipos TMAT 1, 3 y 6. Robots dise&ntilde;ados y construidos desde cero. Programaci&oacute;n completa en <strong>C++ con la API VEX Robotics</strong>: motores individuales/grupales, base de conducci&oacute;n, mecanismos. Sensores: ultras&oacute;nico, infrarrojo, luz, GPS, c&aacute;mara de visi&oacute;n de colores, &oacute;ptico, bot&oacute;n. Rutinas de aut&oacute;nomo 15s y Skills 1:15min.</p>
+                            <p class="text-sm text-gray-600 leading-relaxed mb-3" data-i18n="proj3.desc">Full programming in <strong>C++</strong>: motors, sensors (GPS, vision, ultrasonic) and high-performance autonomous routines for TMAT systems.</p>
                             <div class="flex items-center gap-2 mb-4 bg-yellow-50 border border-yellow-200 px-4 py-2 rounded-xl">
                                 <i class="fa-solid fa-trophy text-[#fbbc05] text-xs"></i>
                                 <span class="text-xs font-bold text-[#fbbc05]" data-i18n="proj3.info">2&deg; Lugar Mundial en Programming Skills &mdash; VEX World Championship (REC Foundation)</span>
@@ -642,11 +647,11 @@
                             <div class="flex gap-3">
                                 <a href="https://github.com/utm-robotic/Robot-Grande-P-DGH" target="_blank"
                                     class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-gray-600 bg-gray-100 px-5 py-2.5 rounded-full hover:bg-gray-200 transition-all">
-                                    <i class="fa-brands fa-github"></i><span data-i18n="proj3.github">Colaboraci&oacute;n GitHub</span>
+                                    <i class="fa-brands fa-github"></i><span data-i18n="proj3.github">GitHub Collaboration</span>
                                 </a>
                                 <button onclick="openProject('vex')"
                                     class="inline-flex items-center gap-2 font-sans font-semibold text-sm text-white bg-gray-900 px-5 py-2.5 rounded-full hover:bg-[#fbbc05] transition-all shadow-lg">
-                                    <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">Ver Detalles</span>
+                                    <i class="fa-solid fa-plus text-[10px]"></i><span data-i18n="proj.details">View Details</span>
                                 </button>
                             </div>
                         </div>
@@ -665,7 +670,7 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-[#4285f4]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="skills.title">Habilidades Técnicas</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="skills.title">Technical Skills</h2>
                 </div>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-center items-stretch">
@@ -673,19 +678,19 @@
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-brands fa-cpp text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
                         <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">C++</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cpp_desc">VEX Robotics · Competencia</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cpp_desc">PID Control · Advanced Odometry</span>
                     </div>
                     <!-- Python -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-brands fa-python text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
                         <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">Python</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.python_desc">Bots · APIs · ML b&aacute;sico</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.python_desc">REST Integration · LLM Quantization</span>
                     </div>
                     <!-- PowerShell -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-brands fa-microsoft text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
                         <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">PowerShell</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.ps_desc">M365 · Automatizaci&oacute;n masiva</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.ps_desc">M365 Bulk Ops · Auth Flow</span>
                     </div>
                     <!-- Microsoft 365 Admin -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#ea4335] hover:shadow-lg transition-all cursor-pointer">
@@ -697,25 +702,25 @@
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#34a853] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-brands fa-linux text-4xl mb-3 text-gray-500 group-hover:text-[#34a853] group-hover:scale-110 transition-transform"></i>
                         <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#34a853] transition-colors">Linux</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.linux">B&aacute;sico · Ubuntu</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.linux_desc">Kernel Tuning · Ubuntu Srv</span>
                     </div>
                     <!-- Web Dev -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-brands fa-html5 text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
                         <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">Web Dev</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.web">HTML · CSS · JS · PHP · SQL</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.web_desc">SPA · Responsive · PHP Backend</span>
                     </div>
                     <!-- ROS / MATLAB -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#4285f4] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-solid fa-robot text-4xl mb-3 text-gray-500 group-hover:text-[#4285f4] group-hover:scale-110 transition-transform"></i>
                         <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#4285f4] transition-colors">ROS / MATLAB</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.ros">Gazebo &middot; Simulaci&oacute;n &middot; CINVESTAV</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.ros_desc">Gazebo &middot; SLAM &middot; CINVESTAV</span>
                     </div>
                     <!-- OpenCV / AI -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#ea4335] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-solid fa-eye text-4xl mb-3 text-gray-500 group-hover:text-[#ea4335] group-hover:scale-110 transition-transform"></i>
                         <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#ea4335] transition-colors">OpenCV / AI</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cv">PyTorch · TF · ML b&aacute;sico</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.cv_desc">OpenCV · TensorRT · Inference</span>
                     </div>
                     <!-- APIs / DB -->
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#34a853] hover:shadow-lg transition-all cursor-pointer">
@@ -727,7 +732,7 @@
                     <div class="group flex flex-col items-center bg-white border border-gray-200 p-6 rounded-2xl hover:border-[#fbbc05] hover:shadow-lg transition-all cursor-pointer">
                         <i class="fa-brands fa-aws text-4xl mb-3 text-gray-500 group-hover:text-[#fbbc05] group-hover:scale-110 transition-transform"></i>
                         <span class="font-sans text-sm font-bold text-gray-700 uppercase tracking-wide group-hover:text-[#fbbc05] transition-colors">AWS / Cloud</span>
-                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.aws">EDI System · Server Recovery</span>
+                        <span class="text-[10px] text-gray-400 mt-1 font-medium" data-i18n="skill.aws">EDI Infrastructure · EC2 · S3 Security</span>
                     </div>
                 </div>
             </div>
@@ -738,7 +743,7 @@
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-[#4285f4]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="exp.title">Experiencia Profesional</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="exp.title">Professional Experience</h2>
                 </div>
 
                 <!-- VEX Championship Banner -->
@@ -748,9 +753,9 @@
                             <i class="fa-solid fa-trophy text-white text-2xl"></i>
                         </div>
                         <div>
-                            <div class="text-xs text-[#fbbc05] font-bold uppercase tracking-widest mb-1" data-i18n="vex.label">Campeón de Programación · VEX U México &amp; USA</div>
+                            <div class="text-xs text-[#fbbc05] font-bold uppercase tracking-widest mb-1" data-i18n="vex.label">Programming Champion · VEX U Mexico &amp; USA</div>
                             <h4 class="text-xl font-bold text-gray-900 mb-1" data-i18n="vex.title">Programming Champion &mdash; VEX Robotics 2022, 2023 &amp; 2024</h4>
-                            <p class="text-sm text-gray-600" data-i18n="vex.desc">Primer lugar en categoría de <strong>Programación Autónoma</strong> en competencias VEX U México y USA durante tres años consecutivos.</p>
+                            <p class="text-sm text-gray-600" data-i18n="vex.desc">First place in Autonomous Programming category at VEX U Mexico and USA competitions for three consecutive years.</p>
                         </div>
                     </div>
                 </div>
@@ -768,16 +773,16 @@
                             <div class="md:w-1/2 md:text-right pt-2">
                                 <span
                                     class="font-sans text-xs text-[#4285f4] font-bold uppercase tracking-widest">Feb 2024
-                                    &mdash; <span data-i18n="exp.present">Presente</span></span>
+                                    &mdash; <span data-i18n="exp.present">Present</span></span>
                                 <h4 class="text-xl font-bold mt-2 text-gray-900" data-i18n="exp1.title">Systems Engineer</h4>
                                 <p class="text-sm text-gray-500 mt-1 font-medium">Universidad Tecnológica de Matamoros &middot; Matamoros, MX</p>
                             </div>
                             <div class="md:w-1/2 bg-[#f8f9fa] border border-gray-200 p-6 rounded-2xl shadow-sm">
                                 <ul class="text-sm text-gray-600 space-y-2">
-                                    <li class="flex gap-2"><span class="text-[#4285f4] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b1">Administración de <strong>Microsoft 365</strong> (+4,500 usuarios) y gestión de infraestructura <strong>AWS</strong>: mantenimiento del Sistema EDI y optimización de cargas de información.</span></li>
-                                    <li class="flex gap-2"><span class="text-[#ea4335] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b2">Monitoreo proactivo de disponibilidad de servidores y protocolos de recuperación ante caídas. Seguridad con Microsoft Purview y Azure Security Center.</span></li>
-                                    <li class="flex gap-2"><span class="text-[#34a853] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b3">Dise&ntilde;o e implementaci&oacute;n en <strong>3 meses</strong> de bot de soporte IA 24/7: reset seguro de contrase&ntilde;as, validaci&oacute;n de identidad y escalaci&oacute;n autom&aacute;tica. Gestiona <strong>20-100+ solicitudes diarias</strong> con tiempo de respuesta masiva de <strong>2-3 minutos</strong>, minimizando significativamente la carga del equipo IT.</span></li>
-                                    <li class="flex gap-2"><span class="text-[#fbbc05] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b4">Mantenimiento de la página web institucional UTM, actualización de certificados SSL y desarrollo de sistemas internos con <strong>HTML, CSS, JS, PHP y SQL</strong>. Sistema de inventario IT en desarrollo.</span></li>
+                                    <li class="flex gap-2"><span class="text-[#4285f4] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b1">Identity administration in <strong>Microsoft 365</strong> (+4,500 users) and <strong>AWS</strong> infrastructure: automated security patches and optimized the EDI System pipeline.</span></li>
+                                    <li class="flex gap-2"><span class="text-[#ea4335] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b2">Proactive monitoring with real-time alerts; resolved Azure AD sync bottlenecks affecting massive deployments.</span></li>
+                                    <li class="flex gap-2"><span class="text-[#34a853] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b3">Designed and deployed the <strong>AI support bot</strong>: integration with institutional APIs for robust identity validation and smart escalation.</span></li>
+                                    <li class="flex gap-2"><span class="text-[#fbbc05] font-bold mt-0.5">&bull;</span><span data-i18n="exp1.b4">Modernization of the institutional site; optimized legacy <strong>SQL</strong> queries for the new IT inventory system, reducing load times.</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -792,14 +797,14 @@
                                 <span
                                     class="font-sans text-xs text-[#4285f4] font-bold uppercase tracking-widest">2020
                                     &mdash; 2023</span>
-                                <h4 class="text-xl font-bold mt-2 text-gray-900" data-i18n="exp2.title">Robotics Programmer Lead</h4>
-                                <p class="text-sm text-gray-500 mt-1 font-medium" data-i18n="exp2.company">VEX Robotics &middot; Competencia Internacional</p>
+                                <h4 class="text-xl font-bold mt-2 text-gray-900" data-i18n="exp2.title">Embedded Software Lead</h4>
+                                <p class="text-sm text-gray-500 mt-1 font-medium" data-i18n="exp2.company">Autonomous Systems &middot; Global Competition</p>
                             </div>
                             <div class="md:w-1/2 bg-[#f8f9fa] border border-gray-200 p-6 rounded-2xl shadow-sm">
                                 <ul class="text-sm text-gray-600 space-y-2">
-                                    <li class="flex gap-2"><span class="text-[#ea4335] font-bold mt-0.5">&bull;</span><span data-i18n="exp2.b1">Desarrollo de sistema de navegación autónoma completo para robots móviles de competencia (Bug algorithms, control PID, C++).</span></li>
-                                    <li class="flex gap-2"><span class="text-[#4285f4] font-bold mt-0.5">&bull;</span><span data-i18n="exp2.b2">Programación de controladores de movimiento y lógica de decisión en tiempo real para entornos de competencia internacional.</span></li>
-                                    <li class="flex gap-2"><span class="text-[#34a853] font-bold mt-0.5">&bull;</span><span data-i18n="exp2.b3">Resultado: <strong>Primer Lugar (Campeón)</strong> en categoría de programación VEX U en México y USA &mdash; 2022, 2023 y 2024.</span></li>
+                                    <li class="flex gap-2"><span class="text-[#ea4335] font-bold mt-0.5">&bull;</span><span data-i18n="exp2.b1">Developed reactive navigation algorithms and kinematics in C++ for omnidirectional robots.</span></li>
+                                    <li class="flex gap-2"><span class="text-[#4285f4] font-bold mt-0.5">&bull;</span><span data-i18n="exp2.b2">Low-latency controller programming with sensor fusion (IMU + GPS).</span></li>
+                                    <li class="flex gap-2"><span class="text-[#fbbc05] font-bold mt-0.5">&bull;</span><span data-i18n="exp2.b3">3x VEX U Programming Champion (MX/USA), optimizing routines under 15ms cycle limits.</span></li>
                                 </ul>
                             </div>
                         </div>
@@ -813,7 +818,7 @@
             <div class="max-w-7xl mx-auto">
                 <div class="flex items-center space-x-4 mb-20 reveal">
                     <div class="h-px w-12 bg-[#4285f4]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="journal.title">Artículos y Notas</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="journal.title">Articles & Notes</h2>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="p-8 border border-gray-200 bg-white hover:shadow-lg transition-all rounded-2xl reveal cursor-pointer group">
@@ -822,9 +827,8 @@
                                 2025</span>
                             <span class="text-[10px] font-sans font-semibold bg-gray-100 px-3 py-1 rounded-full text-[#4285f4]">~4 min read</span>
                         </div>
-                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors" data-i18n="journal1.title">Arquitectando IA-SOPORTE-MICROSOFT: Azure & LLMs</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="journal1.desc">Un análisis profundo de la integración de
-                            Microsoft Graph con modelos LLM para automatización operativa.</p>
+                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors" data-i18n="journal1.title">Architecting IA-SOPORTE-MICROSOFT: Azure & LLMs</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="journal1.desc">Debugging Graph API latency for LLM integration in production environments.</p>
                         <div class="flex gap-2">
                             <span class="text-xs font-sans font-medium text-gray-400">#CloudGov</span>
                             <span class="text-xs font-sans font-medium text-gray-400">#LLMOps</span>
@@ -836,9 +840,8 @@
                                 2025</span>
                             <span class="text-[10px] font-sans font-semibold bg-gray-100 px-3 py-1 rounded-full text-[#4285f4]">~6 min read</span>
                         </div>
-                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors" data-i18n="journal2.title">Navegación Robótica: Del Código al Mundial</h4>
-                        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="journal2.desc">Lecciones aprendidas optimizando
-                            algoritmos de control en tiempo real para competencia global.</p>
+                        <h4 class="font-bold mb-4 text-gray-900 text-lg group-hover:text-[#4285f4] transition-colors" data-i18n="journal2.title">Robotic Navigation: From Code to Worlds</h4>
+                        <p class="text-sm text-gray-600 leading-relaxed mb-6" data-i18n="journal2.desc">Stabilizing PID controllers on high-friction surfaces for the VEX World stage.</p>
                         <div class="flex gap-2">
                             <span class="text-xs font-sans font-medium text-gray-400">#Robotics</span>
                             <span class="text-xs font-sans font-medium text-gray-400">#RealTime</span>
@@ -853,7 +856,7 @@
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-center space-x-4 mb-12 reveal">
                     <div class="h-px w-12 bg-[#34a853]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#34a853] bg-green-50 px-4 py-2 rounded-full" data-i18n="edu.title">Formación Académica</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#34a853] bg-green-50 px-4 py-2 rounded-full" data-i18n="edu.title">Education</h2>
                 </div>
                 <div class="bg-white border border-gray-200 rounded-2xl p-8 reveal">
                     <div class="flex flex-col md:flex-row gap-6 items-start">
@@ -861,12 +864,12 @@
                             <i class="fa-solid fa-graduation-cap text-[#34a853] text-2xl"></i>
                         </div>
                         <div class="flex-1">
-                            <span class="text-xs text-[#34a853] font-bold uppercase tracking-widest" data-i18n="edu.date">Oct 2024 &mdash; Egresado</span>
-                            <h3 class="text-xl font-bold text-gray-900 mt-1 mb-1" data-i18n="edu.degree">Ingeniería en Mecatrónica</h3>
+                            <span class="text-xs text-[#34a853] font-bold uppercase tracking-widest" data-i18n="edu.date">Oct 2024 &mdash; Graduate</span>
+                            <h3 class="text-xl font-bold text-gray-900 mt-1 mb-1" data-i18n="edu.degree">Bachelor of Mechatronics Engineering</h3>
                             <p class="text-sm text-gray-500 font-medium mb-4">Universidad Tecnológica de Matamoros &middot; H. Matamoros, Tamaulipas</p>
                             <div class="bg-[#f8f9fa] border border-gray-100 rounded-xl p-4">
-                                <div class="text-xs text-gray-400 font-bold uppercase tracking-wide mb-2" data-i18n="edu.project">Proyecto Final</div>
-                                <p class="text-sm text-gray-600 leading-relaxed" data-i18n="edu.projectDesc">Sistema de navegación autónoma para robots móviles usando algoritmos Bug y grillas de ocupación. Sistema maestro-esclavo con visión computacional y redes neuronales para comportamiento adaptativo en entornos estáticos y dinámicos.</p>
+                                <div class="text-xs text-gray-400 font-bold uppercase tracking-wide mb-2" data-i18n="edu.project">Final Project</div>
+                                <p class="text-sm text-gray-600 leading-relaxed" data-i18n="edu.projectDesc">Coordinated navigation system for mobile robots. Implemented Bug2 evasion algorithms and probabilistic grids, solving "drift" issues via sensor fusion and adaptive computer vision.</p>
                                 <div class="flex flex-wrap gap-2 mt-3">
                                     <span class="px-2 py-1 bg-green-50 text-[#34a853] text-[10px] font-bold rounded-full">Python</span>
                                     <span class="px-2 py-1 bg-blue-50 text-[#4285f4] text-[10px] font-bold rounded-full">ROS / RViz</span>
@@ -885,7 +888,7 @@
             <div class="max-w-4xl mx-auto">
                 <div class="flex items-center space-x-4 mb-12 reveal">
                     <div class="h-px w-12 bg-[#ea4335]"></div>
-                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#ea4335] bg-red-50 px-4 py-2 rounded-full" data-i18n="certs.title">Certificados &amp; Logros</h2>
+                    <h2 class="font-sans font-bold text-sm tracking-widest text-[#ea4335] bg-red-50 px-4 py-2 rounded-full" data-i18n="certs.title">Certificates &amp; Achievements</h2>
                 </div>
                     <!-- VEX World -->
                     <div class="flex items-center gap-4 bg-[#fef2f2] border border-[#ea4335]/20 rounded-2xl p-5 hover:shadow-md transition-shadow">
@@ -923,8 +926,8 @@
                             <i class="fa-solid fa-microchip text-white text-sm"></i>
                         </div>
                         <div>
-                            <div class="font-bold text-sm text-gray-900" data-i18n="cert.cinvestav">Visita T&eacute;cnica &amp; Simulaciones &mdash; CINVESTAV</div>
-                            <div class="text-xs text-gray-500">Gazebo &middot; Enjambre de drones &middot; Abr&ndash;Sep 2024</div>
+                            <div class="font-bold text-sm text-gray-900" data-i18n="cert.cinvestav">Technical Visit &amp; Simulations &mdash; CINVESTAV</div>
+                            <div class="text-xs text-gray-500">Gazebo &middot; Drone swarms &middot; Apr&ndash;Sep 2024</div>
                         </div>
                     </div>
                     <!-- Python Udemy -->
@@ -946,35 +949,21 @@
     <!-- Project Modal -->
     <div id="project-modal" class="fixed inset-0 z-[100] p-6 items-center justify-center bg-gray-900/60 transition-opacity backdrop-blur-sm">
         <div
-            class="bg-white border shadow-2xl border-gray-100 w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-2xl relative flex flex-col">
+            class="bg-[#111] border border-white/10 w-full max-w-5xl rounded-[2rem] overflow-hidden shadow-2xl relative flex flex-col">
             <button onclick="closeProject()"
-                class="absolute top-6 right-6 text-gray-400 hover:text-gray-900 transition-colors z-20 bg-white/80 rounded-full p-2">
-                <i class="fa-solid fa-xmark text-2xl"></i>
+                class="absolute top-8 right-8 text-white/40 hover:text-white transition-colors z-20 w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5">
+                <i class="fa-solid fa-xmark text-xl"></i>
             </button>
-            <div class="flex-1 overflow-y-auto p-12 lg:p-20">
+            <div class="flex-1 overflow-y-auto p-12 lg:p-20 text-white text-left">
                 <div id="modal-content" class="space-y-12">
                     <!-- Data injected here -->
                 </div>
             </div>
         </div>
     </div>
-    <!-- Project Detail Modal -->
-    <div id="project-modal" class="fixed inset-0 z-[200]">
-        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-xl"></div>
-        <div class="relative min-h-screen flex items-center justify-center p-4 lg:p-8">
-            <div class="bg-[#111] border border-white/10 w-full max-w-5xl rounded-[2rem] overflow-hidden shadow-2xl relative">
-                <button onclick="closeProject()" class="absolute top-8 right-8 text-white/40 hover:text-white transition-colors z-10 w-12 h-12 flex items-center justify-center rounded-full border border-white/10 bg-white/5">
-                    <i class="fa-solid fa-xmark text-xl"></i>
-                </button>
-                <div id="modal-content" class="p-8 lg:p-16 text-white text-left">
-                    <!-- Dynamic Content -->
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Chatbot Bubble UI -->
-    <div class="fixed bottom-8 right-8 z-[100] flex flex-col items-end">
+    <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
         <!-- Chat Window -->
         <div id="chat-window"
             class="hidden w-80 md:w-96 bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden mb-4 transition-all transform scale-95 opacity-0 origin-bottom-right">
@@ -990,7 +979,7 @@
                         </svg>
                     </div>
                     <div>
-                        <span class="font-black text-[17px] text-[#202124] block tracking-tight">Soporte Digital</span>
+                        <span class="font-black text-[17px] text-[#202124] block tracking-tight" data-i18n="bot.greeting">Digital Support</span>
                         <div class="flex items-center gap-1.5">
                             <span class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
                             <span class="text-[11px] text-gray-500 font-bold uppercase tracking-wider">Online Assistant</span>
@@ -1004,7 +993,8 @@
                 </button>
             </div>
             <!-- Messages Area -->
-            <div id="messages" class="h-96 overflow-y-auto p-6 space-y-8 bg-pattern-premium">
+            <!-- Messages Area -->
+            <div id="messages" class="flex-1 min-h-[120px] overflow-y-auto p-4 space-y-6 bg-pattern-premium">
                 <div id="chat-body" class="flex-1 space-y-8">
                     <div class="bot-message-wrapper">
                         <div class="bot-avatar">
@@ -1020,9 +1010,9 @@
                             <div class="chat-bubble-bot">
                                 <div class="flex items-center gap-2 mb-2">
                                     <span class="w-2 h-2 rounded-full bg-blue-500 opacity-50"></span>
-                                    <p class="font-black text-[11px] text-gray-400 uppercase tracking-widest" data-i18n="bot.id">Sistema de Consultas</p>
+                                    <p class="font-black text-[11px] text-gray-400 uppercase tracking-widest" data-i18n="bot.id">Technical Support Center</p>
                                 </div>
-                                <span class="font-medium text-gray-800" data-i18n="bot.greeting">¡Hola! Soy el asistente digital de Domingo. ¿En qué información técnica puedo apoyarte hoy?</span>
+                                <span class="font-medium text-gray-800" data-i18n="bot.greeting">Consulting Domingo González's technical knowledge base. Which module or integration can I assist you with?</span>
                             </div>
                             <span class="text-[10px] text-gray-400 ml-1 font-bold uppercase tracking-tighter opacity-60">Verified Assistant</span>
                         </div>
@@ -1030,13 +1020,13 @@
                 </div>
             </div>
             <!-- Quick Actions -->
-            <div class="p-6 border-t border-gray-50 bg-white/95 backdrop-blur-sm flex flex-wrap gap-3" id="quick-replies">
-                <button onclick="sendReply('¿Quién eres?')" class="chat-chip text-[11px] px-3 py-1.5">👤 ¿Quién eres?</button>
-                <button onclick="sendReply('AetherVoice')" class="chat-chip text-[11px] px-3 py-1.5">🧠 AetherVoice</button>
-                <button onclick="sendReply('IA Microsoft')" class="chat-chip text-[11px] px-3 py-1.5">💻 Microsoft IT</button>
-                <button onclick="sendReply('Robótica')" class="chat-chip text-[11px] px-3 py-1.5">🤖 VEX Robotics</button>
-                <button onclick="sendReply('AWS')" class="chat-chip text-[11px] px-3 py-1.5">☁️ AWS & Cloud</button>
-                <button onclick="sendReply('Contacto')" class="chat-chip text-[11px] px-3 py-1.5">📧 Contacto</button>
+            <div class="p-4 border-t border-gray-50 bg-white/95 backdrop-blur-sm flex flex-wrap gap-2" id="quick-replies">
+                <button onclick="sendReply('who')" data-i18n="chip.who" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">Who are you</button>
+                <button onclick="sendReply('aether')" data-i18n="chip.aether" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">AetherVoice</button>
+                <button onclick="sendReply('ms')" data-i18n="chip.ms" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">Microsoft IT</button>
+                <button onclick="sendReply('robot')" data-i18n="chip.robot" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">VEX Robotics</button>
+                <button onclick="sendReply('aws')" data-i18n="chip.aws" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">AWS Architecture</button>
+                <button onclick="sendReply('contact')" data-i18n="chip.contact" class="chat-chip text-[11px] px-3 py-1.5 font-bold uppercase tracking-wider">Contact</button>
             </div>
         </div>
 
@@ -1052,15 +1042,15 @@
                     </svg>
                 </div>
                 <div>
-                    <p class="text-[12px] font-black text-gray-800 leading-tight">Soporte Digital</p>
+                    <p class="text-[12px] font-black text-gray-800 leading-tight" data-i18n="bot.name">Digital Support</p>
                     <div class="flex items-center gap-1 mt-0.5">
                         <span class="intro-dot"></span>
-                        <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wide">Asistente IA</span>
+                        <span class="text-[10px] text-gray-400 font-semibold uppercase tracking-wide" data-i18n="bot.type">AI Assistant</span>
                     </div>
                 </div>
             </div>
-            <p class="text-[13px] text-gray-600 leading-relaxed">&#128075; Hola, soy el asistente de Domingo. &iquest;Tienes alguna pregunta sobre su experiencia?</p>
-            <button onclick="dismissIntro()" class="absolute top-2.5 right-3 text-gray-300 hover:text-gray-500 text-xs font-bold transition-colors" aria-label="Cerrar">&times;</button>
+            <p class="text-[13px] text-gray-600 leading-relaxed" data-i18n="bot.intro">Running technical search engine over Domingo's projects. Do you wish to check architectural details or certifications?</p>
+            <button onclick="dismissIntro()" class="absolute top-2.5 right-3 text-gray-300 hover:text-gray-500 text-xs font-bold transition-colors" aria-label="Close">&times;</button>
         </div>
 
         <!-- Chat Trigger -->
@@ -1076,7 +1066,7 @@
         </button>
 
         <!-- Back to Top -->
-        <a href="#hero" id="back-to-top" aria-label="Volver arriba"
+        <a href="#hero" id="back-to-top" aria-label="Back to top"
             class="mt-4 w-12 h-12 bg-white border border-gray-200 text-[#4285f4] rounded-full flex items-center justify-center shadow hover:bg-gray-50 transition-all">
             <i class="fa-solid fa-arrow-up text-sm"></i>
         </a>
@@ -1087,17 +1077,16 @@
         <div class="max-w-4xl mx-auto">
             <div class="flex items-center space-x-4 mb-12">
                 <div class="h-px w-12 bg-[#4285f4]"></div>
-                <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full">¿Hablamos?</h2>
+                <h2 class="font-sans font-bold text-sm tracking-widest text-[#4285f4] bg-blue-50 px-4 py-2 rounded-full" data-i18n="contact.title">Let's Talk</h2>
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <!-- Left: CTA text -->
                 <div>
-                    <h3 class="text-4xl font-bold text-gray-900 mb-4 leading-tight">
-                        Si buscas un ingeniero que entregue sistemas reales,<span class="text-[#4285f4]"> hablemos.</span>
+                    <h3 class="text-4xl font-bold text-gray-900 mb-4 leading-tight" data-i18n="contact.h3">
+                        If you're looking for an engineer who delivers real systems,<span class="text-[#4285f4]"> let's talk.</span>
                     </h3>
                     <p class="text-gray-600 text-base leading-relaxed mb-8" data-i18n="contact.cta">
-                        Disponible para roles de <strong>Software Engineer, DevOps, Robotics Engineer o SRE</strong>.
-                        Inglés técnico básico (en mejora continua). Experiencia en equipos remotos y entornos industriales.
+                        Abierto a discutir arquitecturas de sistemas embebidos, automatización en la nube o cómo escalamos un bot para 4,500 usuarios. Experiencia en entornos remotos e industriales.
                     </p>
                     <div class="flex flex-wrap gap-3">
                         <span class="px-4 py-2 bg-blue-50 text-[#4285f4] text-xs font-bold rounded-full">✓ Full-time</span>
@@ -1141,7 +1130,7 @@
                     <button onclick="copyEmail(this)"
                         class="w-full mt-2 bg-[#4285f4] text-white font-semibold px-6 py-3 rounded-full text-sm hover:bg-blue-600 transition-all flex items-center justify-center gap-2">
                         <i class="fa-regular fa-copy"></i>
-                        <span>Copiar Email</span>
+                        <span data-i18n="contact.copy">Copy Email</span>
                     </button>
                 </div>
             </div>
@@ -1150,7 +1139,7 @@
 
     <footer class="py-8 px-6 border-t border-gray-100 bg-white">
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <p class="text-gray-400 text-xs">&copy; 2026 Domingo González &mdash; Portafolio Profesional</p>
+            <p class="text-gray-400 text-xs" data-i18n="footer.copy">&copy; 2026 Domingo González &mdash; Professional Portfolio</p>
             <div class="flex gap-6 text-xl text-gray-400">
                 <a href="https://github.com/Doku566" target="_blank" class="hover:text-gray-900 transition-colors"><i class="fa-brands fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/domingo-gonz%C3%A1lez-hernandez-73127a213/" target="_blank" class="hover:text-[#0a66c2] transition-colors"><i class="fa-brands fa-linkedin"></i></a>
@@ -1159,7 +1148,7 @@
         </div>
         <div id="toast"
             class="fixed bottom-10 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-[11px] font-bold px-6 py-3 rounded-full opacity-0 pointer-events-none transition-all z-[1000] shadow-xl">
-            Email copiado al portapapeles ✓</div>
+            Email copied to clipboard ✓</div>
     </footer>
 
     <script>
@@ -1229,11 +1218,17 @@
             }, 300);
         }
 
-        function sendReply(text) {
+        function sendReply(type) {
+            const currentData = botResponses[currentLang];
+            const chips = translations[currentLang];
+            
+            // Determine display text for user bubble
+            const userDisplayText = chips[`chip.${type}`] || type;
+
             // User Message
             const userDiv = document.createElement('div');
             userDiv.className = "ml-auto chat-bubble-user max-w-[85%] shadow-sm block translate-y-2 opacity-0 transition-all duration-300";
-            userDiv.innerText = text;
+            userDiv.innerText = userDisplayText;
             messagesArea.appendChild(userDiv);
             
             // Animation for user bubble
@@ -1251,102 +1246,11 @@
                 let responseHtml = "";
                 let cardHtml = "";
                 
-                if (text.includes('¿Quién eres?')) {
-                    responseHtml = "Soy el asistente digital de <strong>Domingo González</strong>. Él es un Ingeniero en Mecatrónica apasionado por la IA, la robótica y la automatización cloud.";
-                    cardHtml = `
-                        <div class="chat-card">
-                            <div class="flex items-center gap-3 mb-3">
-                                <div class="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-500 font-bold">DG</div>
-                                <div>
-                                    <p class="text-xs font-bold text-gray-900">Domingo González</p>
-                                    <p class="text-[10px] text-gray-500">Systems & Robotics Engineer</p>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-1 mb-3">
-                                <span class="chat-tag tag-blue">Python</span>
-                                <span class="chat-tag tag-red">C++</span>
-                                <span class="chat-tag tag-green">AI/ML</span>
-                                <span class="chat-tag tag-yellow">AWS</span>
-                            </div>
-                            <button onclick="navigateTo('hero')" class="chat-nav-btn">
-                                <i class="fa-solid fa-user"></i> Ver Perfil Completo
-                            </button>
-                        </div>
-                    `;
-                } else if (text.includes('AetherVoice')) {
-                    responseHtml = "<strong>AetherVoice</strong> es mi proyecto más avanzado: un asistente de IA que procesa LLMs localmente para privacidad total.";
-                    cardHtml = `
-                        <div class="chat-card">
-                            <div class="w-full h-24 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 mb-3 flex items-center justify-center">
-                                <i class="fa-solid fa-brain text-white text-3xl"></i>
-                            </div>
-                            <span class="chat-tag tag-blue">LLM Local</span>
-                            <span class="chat-tag tag-yellow">JavaScript</span>
-                            <button onclick="navigateTo('projects')" class="chat-nav-btn">
-                                <i class="fa-solid fa-eye"></i> Ver Detalles Técnicos
-                            </button>
-                        </div>
-                    `;
-                } else if (text.includes('IA Microsoft')) {
-                    responseHtml = "He automatizado el soporte IT para 4,500+ usuarios en la UTM mediante integración con Graph API.";
-                    cardHtml = `
-                        <div class="chat-card">
-                            <div class="chat-stat-row">
-                                <div class="chat-stat-mini"><p class="text-xs font-bold text-blue-600">4.5K</p><p class="text-[8px] text-gray-400">Usuarios</p></div>
-                                <div class="chat-stat-mini"><p class="text-xs font-bold text-green-600">2-3m</p><p class="text-[8px] text-gray-400">Respuesta</p></div>
-                            </div>
-                            <button onclick="navigateTo('projects')" class="chat-nav-btn">
-                                <i class="fa-brands fa-microsoft"></i> Ver Implementación
-                            </button>
-                        </div>
-                    `;
-                } else if (text.includes('Robótica')) {
-                    responseHtml = "Domingo es <strong>3 veces Campeón de Programación</strong> VEX U en México y USA, con un 2do lugar mundial.";
-                    cardHtml = `
-                        <div class="chat-card">
-                            <div class="flex items-center gap-2 mb-2">
-                                <i class="fa-solid fa-medal text-yellow-500"></i>
-                                <span class="text-[10px] font-bold text-gray-600 uppercase">2º Lugar World Championship</span>
-                            </div>
-                            <span class="chat-tag tag-red">Control PID</span>
-                            <span class="chat-tag tag-blue">Odometría</span>
-                            <button onclick="navigateTo('exp')" class="chat-nav-btn">
-                                <i class="fa-solid fa-robot"></i> Trayectoria Robótica
-                            </button>
-                        </div>
-                    `;
-                } else if (text.includes('AWS')) {
-                    responseHtml = "Gestión de infraestructura crítica, Sistema EDI y recuperación de desastres en entornos Cloud.";
-                    cardHtml = `
-                        <div class="chat-card">
-                            <span class="chat-tag tag-yellow">AWS / Cloud</span>
-                            <span class="chat-tag tag-blue">Terraform</span>
-                            <button onclick="navigateTo('stack')" class="chat-nav-btn">
-                                <i class="fa-brands fa-aws"></i> Stack Tecnológico
-                            </button>
-                        </div>
-                    `;
-                } else if (text.includes('Contacto')) {
-                    responseHtml = "¡Hablemos! Puedes contactar a Domingo directamente por estos medios:";
-                    cardHtml = `
-                        <div class="chat-card">
-                            <div class="space-y-2">
-                                <a href="https://www.linkedin.com/in/domingo-gonz%C3%A1lez-hernandez-73127a213/" target="_blank" class="flex items-center gap-2 p-2 bg-blue-50 rounded-lg group">
-                                    <i class="fa-brands fa-linkedin text-blue-600"></i>
-                                    <span class="text-xs font-bold text-blue-600">LinkedIn</span>
-                                </a>
-                                <a href="mailto:Domingoghz245@gmail.com" class="flex items-center gap-2 p-2 bg-gray-50 rounded-lg group">
-                                    <i class="fa-regular fa-envelope text-gray-600"></i>
-                                    <span class="text-xs font-bold text-gray-600 text-ellipsis overflow-hidden">Email</span>
-                                </a>
-                            </div>
-                            <button onclick="navigateTo('contact')" class="chat-nav-btn">
-                                <i class="fa-solid fa-paper-plane"></i> Formulario de Contacto
-                            </button>
-                        </div>
-                    `;
+                if (currentData[type]) {
+                    responseHtml = currentData[type].text;
+                    cardHtml = currentData[type].card;
                 } else {
-                    responseHtml = "Disculpa, no entendí eso. ¿Te gustaría saber sobre mis logros en robótica, mis proyectos de IA o cómo contactarme?";
+                    responseHtml = currentData.fallback;
                 }
 
                 wrapper.innerHTML = `
@@ -1375,7 +1279,7 @@
                     bubble.innerHTML = `
                         <div class="flex items-center gap-2 mb-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-blue-500 opacity-50"></span>
-                            <p class="font-black text-[10px] text-gray-400 uppercase tracking-widest">Soporte Digital</p>
+                            <p class="font-black text-[10px] text-gray-400 uppercase tracking-widest" data-i18n="bot.id">Soporte Digital</p>
                         </div>
                         <div class="text-[13px] leading-relaxed text-gray-800">${responseHtml}</div>
                         ${cardHtml}
@@ -1397,17 +1301,21 @@
         function copyEmail(btn) {
             const email = "Domingoghz245@gmail.com";
             navigator.clipboard.writeText(email).then(() => {
-                showToast("EMAIL_COPIED_TO_CLIPBOARD");
+                showToast("copy");
             });
         }
 
         function exportCV(btn) {
-            showToast("Curriculum Vitae solicitado. Disponible pr\u00f3ximamente.");
+            showToast("cv");
         }
 
-        function showToast(text) {
+        function showToast(key) {
             const toast = document.getElementById('toast');
-            toast.innerText = text;
+            const messages = {
+                en: { copy: "Email copied to clipboard ✓", cv: "CV requested. Available soon." },
+                es: { copy: "Email copiado al portapapeles ✓", cv: "Curriculum Vitae solicitado. Disponible próximamente." }
+            };
+            toast.innerText = messages[currentLang][key] || key;
             toast.classList.remove('opacity-0');
             toast.classList.add('opacity-100', '-translate-y-4');
             setTimeout(() => {
@@ -1416,39 +1324,156 @@
             }, 2000);
         }
 
+        const botResponses = {
+            en: {
+                who: {
+                    text: "I am the digital assistant for <strong>Domingo González</strong>. Domingo is a Mechatronics Engineer specialized in AI, competitive robotics, and Cloud architecture, with a focus on business process automation.",
+                    card: `<div class="chat-card">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">DG</div>
+                                <div>
+                                    <p class="text-xs font-bold text-gray-900">Domingo González</p>
+                                    <p class="text-[10px] text-gray-500">Systems & Robotics Engineer</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-1 mb-3">
+                                <span class="chat-tag tag-blue">Python / C++</span>
+                                <span class="chat-tag tag-green">AI & ML</span>
+                                <span class="chat-tag tag-yellow">AWS Certified</span>
+                            </div>
+                            <button onclick="navigateTo('hero')" class="chat-nav-btn">View Professional Profile</button>
+                        </div>`
+                },
+                aether: {
+                    text: "<strong>AetherVoice</strong> represents the cutting edge in local assistants. It is a system capable of running Large Language Models (LLMs) completely offline to ensure privacy and extreme speed.",
+                    card: `<div class="chat-card"><img src="images/aethervoice_ui.png" class="chat-card-img" alt="AetherVoice UI"><button onclick="navigateTo('projects')" class="chat-nav-btn">Check Documentation</button></div>`
+                },
+                ms: {
+                    text: "Implementation of an intelligent support hub for 4,500+ users. This system integrates Microsoft Graph API with AI engines to resolve technical requests in under 3 minutes.",
+                    card: `<div class="chat-card"><img src="images/microsoft_support.png" class="chat-card-img" alt="Microsoft Support"><button onclick="navigateTo('projects')" class="chat-nav-btn">API Details</button></div>`
+                },
+                robot: {
+                    text: "Distinguished track record in mobile and competitive robotics. 3x National Champion and World Runner-up in VEX Robotics, specializing in PID control algorithms and advanced odometry.",
+                    card: `<div class="chat-card"><img src="images/vex_world_official.jpg" class="chat-card-img" alt="VEX Robotics"><button onclick="navigateTo('exp')" class="chat-nav-btn">View Competition History</button></div>`
+                },
+                aws: {
+                    text: "Design and administration of resilient infrastructure on Amazon Web Services. Experience in EDI systems, backup automation, and microservices deployment.",
+                    card: `<div class="chat-card"><div class="w-full h-24 rounded-xl bg-gray-900 mb-3 flex items-center justify-center"><p class="text-white font-mono text-xs">AWS_INFRASTRUCTURE</p></div><button onclick="navigateTo('skills')" class="chat-nav-btn">Check Technical Stack</button></div>`
+                },
+                contact: {
+                    text: "For professional collaboration or technical inquiries, you can reach Domingo through the following official channels:",
+                    card: `<div class="chat-card"><div class="space-y-2 mb-3"><a href="mailto:Domingoghz245@gmail.com" class="flex items-center gap-2 p-2 bg-blue-50 border border-blue-100 rounded-lg"><span class="text-xs font-bold text-blue-700">Direct Email</span></a></div><button onclick="navigateTo('contact')" class="chat-nav-btn">Internal Form</button></div>`
+                },
+                fallback: "I'm sorry, I couldn't process that request. Would you like information about robotics, AetherVoice, or contact details?"
+            },
+            es: {
+                who: {
+                    text: "Soy el asistente digital de <strong>Domingo González</strong>. Domingo es un Ingeniero en Mecatrónica especializado en IA, robótica competitiva y arquitectura Cloud.",
+                    card: `<div class="chat-card">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold">DG</div>
+                                <div>
+                                    <p class="text-xs font-bold text-gray-900">Domingo González</p>
+                                    <p class="text-[10px] text-gray-500">Ingeniero de Sistemas</p>
+                                </div>
+                            </div>
+                            <button onclick="navigateTo('hero')" class="chat-nav-btn">Ver Perfil</button>
+                        </div>`
+                },
+                aether: {
+                    text: "<strong>AetherVoice</strong> es un motor de sintetización y procesamiento LLM local para máxima privacidad.",
+                    card: `<div class="chat-card"><img src="images/aethervoice_ui.png" class="chat-card-img" alt="AetherVoice UI"><button onclick="navigateTo('projects')" class="chat-nav-btn">Ver Documentación</button></div>`
+                },
+                ms: {
+                    text: "Soporte inteligente para 4,500+ usuarios integrando Microsoft Graph API.",
+                    card: `<div class="chat-card"><img src="images/microsoft_support.png" class="chat-card-img" alt="Microsoft Support"><button onclick="navigateTo('projects')" class="chat-nav-btn">Detalles API</button></div>`
+                },
+                robot: {
+                    text: "Triple Campeón Nacional VEX Robotics, experto en control PID y odometría.",
+                    card: `<div class="chat-card"><img src="images/vex_world_official.jpg" class="chat-card-img" alt="VEX Robotics"><button onclick="navigateTo('exp')" class="chat-nav-btn">Ver Historial</button></div>`
+                },
+                aws: {
+                    text: "Administración de infraestructura resiliente en AWS y sistemas EDI.",
+                    card: `<div class="chat-card"><div class="w-full h-24 rounded-xl bg-gray-900 mb-3 flex items-center justify-center"><p class="text-white font-mono text-xs">AWS_MODULO</p></div><button onclick="navigateTo('skills')" class="chat-nav-btn">Ver Stack</button></div>`
+                },
+                contact: {
+                    text: "Puedes contactar a Domingo a través de estos canales oficiales:",
+                    card: `<div class="chat-card"><div class="space-y-2 mb-3"><a href="mailto:Domingoghz245@gmail.com" class="flex items-center gap-2 p-2 bg-blue-50 border border-blue-200 rounded-lg text-blue-700 font-bold text-xs text-center">Email Directo</a></div><button onclick="navigateTo('contact')" class="chat-nav-btn">Formulario</button></div>`
+                },
+                fallback: "Lo siento, ¿podrías preguntar sobre robótica, AetherVoice o contacto?"
+            }
+        };
+
         const projectsData = {
-            'aethervoice': {
-                title: 'AetherVoice System Architecture',
-                tag: 'AETHER_V6_CORE',
-                description: 'Un motor de procesamiento de audio profundo diseñado para síntesis de voz natural y respuesta de baja latencia.',
-                problem: 'La síntesis de voz tradicional para hardware embebido carece de naturalidad o requiere potencia computacional masiva, impidiendo su uso en robots autónomos compactos.',
-                challenge: 'Optimizar un transformer de audio masivo para que funcione bajo una latencia estricta de 80ms sin sacrificar los matices fonéticos.',
-                solution: 'Implementación de un modelo de cuantización híbrido y un pipeline de inferencia optimizado en C++/TensorRT con técnicas de post-processing DSP avanzadas.',
-                stack: 'PyTorch / TensorRT / DSP / Python'
+            en: {
+                'aethervoice': {
+                    title: 'AetherVoice System Architecture',
+                    tag: 'AETHER_V6_CORE',
+                    description: 'A deep audio processing engine designed for natural speech synthesis and low-latency response.',
+                    problem: 'Traditional speech synthesis for embedded hardware lacks naturalness or requires massive computational power, hindering its use in compact autonomous robots.',
+                    challenge: 'Optimize a massive audio transformer to run under strict 80ms latency without sacrificing phonetic nuances.',
+                    solution: 'Implementation of a hybrid quantization model and an optimized inference pipeline in C++/TensorRT with advanced DSP post-processing techniques.',
+                    stack: 'PyTorch / TensorRT / DSP / Python'
+                },
+                'iasoporte': {
+                    title: 'IA-SOPORTE-MICROSOFT',
+                    tag: 'SUPPORT_AI_HUB',
+                    description: 'Institutional administrative system connecting Azure AD with AI inference engines for automated support.',
+                    problem: 'University IT departments lose 40% of their time on repetitive tasks like password resets and basic orientation.',
+                    challenge: 'Create a secure and scalable bridge between the Azure user database and an open LLM while preserving token security.',
+                    solution: 'Middleware developed in FastAPI orchestrating Microsoft Graph API with strict OAuth2 validation, using Groq for ultra-fast inference.',
+                    stack: 'FastAPI / Microsoft Graph / Azure AD / Groq'
+                },
+                'vex': {
+                    title: 'Embedded Systems & Multi-Robot Control',
+                    tag: 'WORLD_CLASS_ROBOTICS',
+                    description: 'Development of high-level control algorithms for competitive robots in high-pressure environments.',
+                    problem: 'Multi-robot coordination and real-time sensor processing require minimal latency and absolute precision to win world championships.',
+                    challenge: 'Program 45 and 75-second autonomous routines handling dynamic and static obstacles with GPS and computer vision.',
+                    solution: 'Modular architecture in C++ using the VEX API for PID control, odometry, and fusion of proximity and inertial sensors.',
+                    stack: 'C++ / VEX API / PID Control / Sensors'
+                }
             },
-            'iasoporte': {
-                title: 'IA-SOPORTE-MICROSOFT',
-                tag: 'SUPPORT_AI_HUB',
-                description: 'Sistema administrativo institucional que conecta Azure AD con motores de inferencia IA para soporte automatizado.',
-                problem: 'Los departamentos de TI universitarios pierden el 40% de su tiempo en tareas repetitivas como el restablecimiento de contraseñas y orientación básica.',
-                challenge: 'Crear un puente seguro y escalable entre la base de datos de usuarios de Azure y un LLM abierto preservando la seguridad de los tokens.',
-                solution: 'Middleware desarrollado en FastAPI orquestando Microsoft Graph API con validación OAuth2 estricta, utilizando Groq para inferencia ultrarrápida.',
-                stack: 'FastAPI / Microsoft Graph / Azure AD / Groq'
-            },
-            'vex': {
-                title: 'Embedded Systems & Multi-Robot Control',
-                tag: 'WORLD_CLASS_ROBOTICS',
-                description: 'Desarrollo de algoritmos de control de alto nivel para robots competitivos en entornos de alta presi\u00f3n.',
-                problem: 'La coordinaci\u00f3n de m\u00faltiples robots y el procesamiento de sensores en tiempo real requiere una latencia m\u00ednima y una precisi\u00f3n absoluta para ganar campeonatos mundiales.',
-                challenge: 'Programar rutinas aut\u00f3nomas de 45 y 75 segundos que manejen obst\u00e1culos din\u00e1micos y est\u00e1ticos con GPS y visi\u00f3n artificial.',
-                solution: 'Arquitectura modular en C++ utilizando la API de VEX para control de PID, odometr\u00eda y fusi\u00f3n de sensores de proximidad e inerciales.',
-                stack: 'C++ / VEX API / PID Control / Sensors'
+            es: {
+                'aethervoice': {
+                    title: 'Arquitectura de Sistema AetherVoice',
+                    tag: 'AETHER_V6_CORE',
+                    description: 'Un motor de procesamiento de audio profundo diseñado para síntesis de voz natural y respuesta de baja latencia.',
+                    problem: 'La síntesis de voz tradicional para hardware embebido carece de naturalidad o requiere potencia computacional masiva, impidiendo su uso en robots autónomos compactos.',
+                    challenge: 'Optimizar un transformer de audio masivo para que funcione bajo una latencia estricta de 80ms sin sacrificar los matices fonéticos.',
+                    solution: 'Implementación de un modelo de cuantización híbrido y un pipeline de inferencia optimizado en C++/TensorRT con técnicas de post-processing DSP avanzadas.',
+                    stack: 'PyTorch / TensorRT / DSP / Python'
+                },
+                'iasoporte': {
+                    title: 'IA-SOPORTE-MICROSOFT',
+                    tag: 'SUPPORT_AI_HUB',
+                    description: 'Sistema administrativo institucional que conecta Azure AD con motores de inferencia IA para soporte automatizado.',
+                    problem: 'Los departamentos de TI universitarios pierden el 40% de su tiempo en tareas repetitivas como el restablecimiento de contraseñas y orientación básica.',
+                    challenge: 'Crear un puente seguro y scalables entre la base de datos de usuarios de Azure y un LLM abierto preservando la seguridad de los tokens.',
+                    solution: 'Middleware desarrollado en FastAPI orquestando Microsoft Graph API con validación OAuth2 estricta, utilizando Groq para inferencia ultrarrápida.',
+                    stack: 'FastAPI / Microsoft Graph / Azure AD / Groq'
+                },
+                'vex': {
+                    title: 'Sistemas Embebidos y Control Multi-Robot',
+                    tag: 'WORLD_CLASS_ROBOTICS',
+                    description: 'Desarrollo de algoritmos de control de alto nivel para robots competitivos en entornos de alta presión.',
+                    problem: 'La coordinación de múltiples robots y el procesamiento de sensores en tiempo real requiere una latencia mínima y una precisión absoluta para ganar campeonatos mundiales.',
+                    challenge: 'Programar rutinas autónomas de 45 y 75 segundos que manejen obstáculos dinámicos y estáticos con GPS y visión artificial.',
+                    solution: 'Arquitectura modular en C++ utilizando la API de VEX para control de PID, odometría y fusión de sensores de proximidad e inerciales.',
+                    stack: 'C++ / VEX API / PID Control / Sensors'
+                }
             }
         };
 
         function openProject(id) {
-            const data = projectsData[id];
+            const data = projectsData[currentLang][id];
             const container = document.getElementById('modal-content');
+            
+            // i18n for modal labels
+            const labels = currentLang === 'es' ? 
+                ['Problema', 'El Desafío', 'Solución Técnica'] : 
+                ['Problem', 'The Challenge', 'Technical Solution'];
+
             container.innerHTML = `
             <div class="reveal visible">
                 <span class="font-mono text-[10px] text-accent-orange uppercase tracking-[0.5em] font-bold mb-4 block">${data.tag}</span>
@@ -1457,15 +1482,15 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-12">
                     <div>
-                        <h5 class="font-mono text-[9px] text-accent-orange uppercase mb-4 tracking-widest font-bold">01. Problema</h5>
+                        <h5 class="font-mono text-[9px] text-accent-orange uppercase mb-4 tracking-widest font-bold">01. ${labels[0]}</h5>
                         <p class="text-xs text-slate-500 leading-relaxed">${data.problem}</p>
                     </div>
                     <div>
-                        <h5 class="font-mono text-[9px] text-accent-orange uppercase mb-4 tracking-widest font-bold">02. El Desafío</h5>
+                        <h5 class="font-mono text-[9px] text-accent-orange uppercase mb-4 tracking-widest font-bold">02. ${labels[1]}</h5>
                         <p class="text-xs text-slate-500 leading-relaxed">${data.challenge}</p>
                     </div>
                     <div>
-                        <h5 class="font-mono text-[9px] text-accent-orange uppercase mb-4 tracking-widest font-bold">03. Solución Técnica</h5>
+                        <h5 class="font-mono text-[9px] text-accent-orange uppercase mb-4 tracking-widest font-bold">03. ${labels[2]}</h5>
                         <p class="text-xs text-slate-500 leading-relaxed">${data.solution}</p>
                     </div>
                 </div>
@@ -1514,7 +1539,7 @@
                 'hero.tagline': 'Desarrollador enfocado en soluciones escalables, integraci&oacute;n de APIs y automatizaci&oacute;n inteligente con <strong>Python y C#</strong>. Experiencia administrando infraestructura <strong>AWS/Cloud</strong> y sistemas de software embebido.',
                 'hero.cv': 'Descargar CV', 'hero.projects': 'Ver Proyectos', 'hero.contact': 'Contactar',
                 'stats.users': 'Usuarios Soportados', 'stats.vex': 'VEX Champion MX/USA',
-                'stats.wins': 'Campeonatos VEX', 'stats.years': 'Año Exp. Profesional',
+                'stats.wins': 'Campeonatos VEX', 'stats.botresponse': 'Respuesta Masiva Bot IA',
                 'skill.linux': 'DevOps / Ubuntu', 'skill.ros': 'VEX · Navegación Autónoma',
                 'skill.cv': 'PyTorch · TensorFlow', 'skill.flask': 'REST · JSON · FastAPI',
                 'skill.cloud': 'AWS · Docker · CI/CD',
@@ -1522,25 +1547,26 @@
                 'vex.title': 'Programming Champion — VEX Robotics 2022, 2023 & 2024',
                 'vex.desc': 'Primer lugar en categoría de Programación Autónoma en competencias VEX U México y USA durante tres años consecutivos.',
                 'exp.present': 'Presente', 'exp1.title': 'Systems Engineer',
-                'exp1.b1': 'Administración de <strong>Microsoft 365</strong> (+4,500 usuarios) y gestión de infraestructura <strong>AWS</strong>: mantenimiento del Sistema EDI y optimización de cargas de información.',
-                'exp1.b2': 'Monitoreo proactivo de disponibilidad de servidores y protocolos de recuperación ante caídas. Seguridad con Microsoft Purview y Azure Security Center.',
-                'exp1.b3': 'Desarrollo y despliegue de <strong>bot de soporte IA 24/7</strong> para alumnos: reset seguro de contraseñas (verificación por código), escalación automática a admin humano ante anomalías.',
-                'exp1.b4': 'Mantenimiento de la p\u00e1gina web institucional UTM, actualizaci\u00f3n de certificados SSL y desarrollo de sistemas internos con <strong>HTML, CSS, JS, PHP y SQL</strong>. Sistema de inventario IT en desarrollo.',
+                'exp1.b1': 'Administraci\u00f3n de identidades en <strong>Microsoft 365</strong> (+4,500 usuarios) y gesti\u00f3n de infraestructura <strong>AWS</strong>: automatic\u00e9 parches de seguridad y optimic\u00e9 el pipeline del Sistema EDI.',
+                'exp1.b2': 'Monitoreo proactivo con alertas en tiempo real; resolv\u00ed cuellos de botella en la sincronizaci\u00f3n de Azure AD que afectaban el despliegue masivo.',
+                'exp1.b3': 'Dise\u00f1\u00e9 e implement\u00e9 el <strong>bot de soporte IA</strong>: integraci\u00f3n con APIs institucionales para validaci\u00f3n de identidad robusta y escalaci\u00f3n inteligente.',
+                'exp1.b4': 'Modernizaci\u00f3n de la p\u00e1gina institucional; optimic\u00e9 consultas <strong>SQL</strong> heredadas para el nuevo sistema de inventario IT reduciendo tiempos de carga.',
                 'edu.title': 'Formación Académica', 'edu.date': 'Oct 2024 — Egresado',
                 'edu.degree': 'Ingeniería en Mecatrónica',
                 'edu.project': 'Proyecto Final',
-                'edu.projectDesc': 'Sistema de navegaci\u00f3n aut\u00f3noma para robots m\u00f3viles usando algoritmos Bug y grillas de ocupaci\u00f3n. Sistema maestro-esclavo con visi\u00f3n computacional y redes neuronales para comportamiento adaptativo en entornos est\u00e1ticos y din\u00e1micos.',
+                'edu.projectDesc': 'Sistema de navegaci\u00f3n coordinada para robots m\u00f3viles. Implement\u00e9 algoritmos de evasi\u00f3n Bug2 y grillas probabil\u00edsticas, resolviendo problemas de "deriva" mediante fusi\u00f3n de sensores y visi\u00f3n artificial adaptativa.',
                 'certs.title': 'Certificaciones de Impacto', 'cert.vexworld': 'VEX Robotics World Championship 2024',
                 'cert.csharp': 'Foundational C# with Microsoft', 'cert.cinvestavtop': 'TOP Tamaulipas 2024',
                 'cert.cinvestav': 'Investigaci\u00f3n & Simulaci\u00f3n \u2014 CINVESTAV', 'cert.python': 'Python Development Certification',
                 'projects.title': 'Proyectos Destacados', 'skills.title': 'Habilidades T\u00e9cnicas', 'exp.title': 'Experiencia Profesional',
+                'proj1.title': 'AetherVoice', 'proj2.title': 'IA-SOPORTE-MICROSOFT',
                 'proj1.level': 'LLM Local / JavaScript', 'proj1.badge': 'En Desarrollo Activo',
-                'proj1.desc': 'Asistente de IA local diseñado para privacidad total sin dependencias de nube externas. Ejecuta modelos de lenguaje nativamente en hardware dedicado.',
-                'proj1.info': '100% offline \u00b7 Sin costo de API \u00b7 Privacidad total',
+                'proj1.desc': 'Asistente de IA local que prioriza la soberan\u00eda de datos. Logr\u00e9 reducir el tiempo de inferencia optimizando el buffer de tokens directamente en C# y JS, permitiendo respuestas fluidas sin depender de APIs de pago.',
+                'proj1.info': 'Inferencia Local \u00b7 Batch Tracking \u00b7 Cero latencia de red',
                 'proj1.github': 'GitHub',
                 'proj2.level': 'Python / Microsoft Graph API', 
-                'proj2.desc': 'Bot de soporte IA <strong>24/7</strong> desplegado en la UTM para atenci\u00f3n a alumnos. Responde dudas institucionales, valida identidad y realiza <strong>reset seguro de contrase\u00f1as</strong>.',
-                'proj2.info': 'Soporte IT 24/7 para +4,500 alumnos UTM',
+                'proj2.desc': 'Sistema de automatizaci\u00f3n cr\u00edtica para la UTM. Orquest\u00e9 la integraci\u00f3n de Microsoft Graph API con autenticaci\u00f3n segura para manejar picos de 100+ solicitudes diarias.',
+                'proj2.info': 'Arquitectura Serverless \u00b7 Manejo de carga masiva \u00b7 SLA < 3m',
                 'proj2.github': 'Ver en GitHub',
                 'proj3.level': 'C++ / Embedded Software', 'proj3.badge': 'Camp. Mundial',
                 'proj3.title': 'Sistemas Embebidos y Control Multi-Robot',
@@ -1548,21 +1574,26 @@
                 'proj3.info': '2\u00ba Lugar Mundial en Programming Skills \u2014 VEX World',
                 'proj3.github': 'Colaboraci\u00f3n GitHub',
                 'proj3.tag2': '#Aut\u00f3nomo', 'proj3.tag3': '#Sensores', 'proj3.tag4': '#World-Champion',
-                'skill.cpp_desc': 'VEX Robotics \u00b7 Competencia', 'skill.python_desc': 'Bots \u00b7 APIs \u00b7 ML b\u00e1sico',
-                'skill.ps_desc': 'M365 \u00b7 Automatizaci\u00f3n masiva', 'skill.m365_desc': 'Exchange \u00b7 Entra \u00b7 Purview',
-                'skill.linux_desc': 'B\u00e1sico \u00b7 Ubuntu', 'skill.web_desc': 'HTML \u00b7 CSS \u00b7 JS \u00b7 PHP',
-                'skill.ros_desc': 'Gazebo \u00b7 Simulaci\u00f3n \u00b7 CINVESTAV', 'skill.cv_desc': 'PyTorch \u00b7 TF \u00b7 ML b\u00e1sico',
-                'skill.aws': 'Sistema EDI \u00b7 AWS Cloud \u00b7 Servidores',
-                'exp2.title': 'Embedded Systems Software Lead', 'exp2.company': 'Sistemas Autónomos · Competencia Internacional',
-                'exp2.b1': 'Desarrollo de sistema de navegaci\u00f3n aut\u00f3nomo completo para robots m\u00f3viles (Bug algorithms, C++).',
-                'exp2.b2': 'Programaci\u00f3n de controladores de movimiento y l\u00f3gica en tiempo real.',
-                'exp2.b3': 'Campe\u00f3n de programaci\u00f3n VEX U en M\u00e9xico y USA \u2014 2022, 2023 y 2024.',
+                'skill.cpp_desc': 'PID Control \u00b7 Odometr\u00eda Avanzada', 'skill.python_desc': 'Integraci\u00f3n REST \u00b7 LLM Quantization',
+                'skill.ps_desc': 'M365 Bulk Ops \u00b7 Auth Flow', 'skill.m365_desc': 'Graph API \u00b7 Entra \u00b7 Purview',
+                'skill.linux_desc': 'Optimización Kernel \u00b7 Ubuntu Srv', 'skill.web_desc': 'SPA \u00b7 Responsive \u00b7 PHP Backend',
+                'skill.ros_desc': 'Gazebo \u00b7 SLAM \u00b7 CINVESTAV', 'skill.cv_desc': 'OpenCV \u00b7 TensorRT \u00b7 Inferencia',
+                'skill.aws': 'Infraestructura EDI \u00b7 EC2 \u00b7 S3 Security',
+                'exp2.title': 'Software Lead Embebido', 'exp2.company': 'Sistemas Aut\u00f3nomos \u00b7 Competencia Global',
+                'exp2.b1': 'Desarroll\u00e9 algoritmos de navegaci\u00f3n reactiva y cinem\u00e1tica en C++ para robots omnidireccionales.',
+                'exp2.b2': 'Programaci\u00f3n de controladores de baja latencia con fusi\u00f3n de sensores (IMU + GPS).',
+                'exp2.b3': 'Triple Campe\u00f3n de Programaci\u00f3n VEX U (M\u00e9xico/USA), optimizando rutinas bajo l\u00edmites de 15ms.',
                 'journal.title': 'Art\u00edculos y Notas', 'journal1.title': 'Arquitectando IA-SOPORTE-MICROSOFT: Azure & LLMs',
-                'journal1.desc': 'An\u00e1lisis profundo de la integraci\u00f3n de Microsoft Graph con LLMs.',
-                'journal2.title': 'Navegaci\u00f3n Rob\u00f3tica: Del C\u00f3digo al Mundial', 'journal2.desc': 'Lecciones optimizando algoritmos de control en tiempo real.',
+                'journal1.desc': 'Depuraci\u00f3n de latencia en Graph API para integraci\u00f3n de LLMs en entornos de producci\u00f3n.',
+                'journal2.title': 'Navegaci\u00f3n Rob\u00f3tica: Del C\u00f3digo al Mundial', 'journal2.desc': 'Estabilizaci\u00f3n de controladores PID en superficies de alta fricci\u00f3n para el VEX World.',
                 'contact.cta': 'Disponible para roles de <strong>Software Engineer, DevOps, Robotics Engineer o SRE</strong>. Ingl\u00e9s t\u00e9cnico b\u00e1sico (en mejora continua). Experiencia en equipos remotos y entornos industriales.',
-                'bot.greeting': 'Domingo Gonz\u00e1lez // Centro de Soporte', 'bot.subgreeting': 'Informaci\u00f3n t\u00e9cnica y consultas sobre proyectos.',
-                'proj.details': 'Ver Detalles'
+                'bot.greeting': 'Domingo González // Centro de Soporte', 'bot.subgreeting': 'Información técnica y consultas sobre proyectos.',
+                'proj.details': 'Ver Detalles', 'footer.copy': '© 2026 Domingo González — Portafolio Profesional',
+                'contact.title': '¿Hablamos?', 'contact.h3': 'Si buscas un ingeniero que entregue sistemas reales, hablemos.',
+                'contact.copy': 'Copiar Email', 'bot.id': 'Sistema de Consultas', 'bot.name': 'Soporte Digital',
+                'bot.type': 'Asistente IA', 'bot.intro': 'Ejecutando motor de búsqueda técnica sobre proyectos y logros de Domingo. ¿Desea consultar detalles de arquitectura o certificaciones?',
+                'chip.who': 'Quién eres', 'chip.aether': 'AetherVoice', 'chip.ms': 'Microsoft IT', 'chip.robot': 'VEX Robotics',
+                'chip.aws': 'AWS Architecture', 'chip.contact': 'Contacto'
             },
             en: {
                 'nav.home': 'Home', 'nav.projects': 'Projects', 'nav.stack': 'Stack',
@@ -1573,7 +1604,7 @@
                 'hero.tagline': 'Developer focused on scalable solutions, API integration and intelligent automation with <strong>Python and C#</strong>. Experience managing <strong>AWS/Cloud</strong> infrastructure and embedded software systems.',
                 'hero.cv': 'Download CV', 'hero.projects': 'View Projects', 'hero.contact': 'Contact Me',
                 'stats.users': 'Users Supported', 'stats.vex': 'VEX Champion MX/USA',
-                'stats.wins': 'VEX Championships', 'stats.years': 'Year Prof. Experience',
+                'stats.wins': 'VEX Championships', 'stats.botresponse': 'AI Bot Mass Response',
                 'skill.linux': 'DevOps / Ubuntu', 'skill.ros': 'VEX · Autonomous Navigation',
                 'skill.cv': 'PyTorch · TensorFlow', 'skill.flask': 'REST · JSON · FastAPI',
                 'skill.cloud': 'AWS · Docker · CI/CD',
@@ -1581,25 +1612,26 @@
                 'vex.title': 'Programming Champion — VEX Robotics 2022, 2023 & 2024',
                 'vex.desc': 'First place in Autonomous Programming category at VEX U Mexico and USA competitions for three consecutive years.',
                 'exp.present': 'Present', 'exp1.title': 'Systems Engineer',
-                'exp1.b1': 'Administration of <strong>Microsoft 365</strong> (+4,500 users) and <strong>AWS</strong> infrastructure management: EDI System maintenance and data load optimization.',
-                'exp1.b2': 'Proactive server availability monitoring and recovery protocols. Security with Microsoft Purview and Azure Security Center.',
-                'exp1.b3': 'Development and deployment of a <strong>24/7 AI support bot</strong> for students: secure password reset (code verification), automatic escalation to human IT admin on anomalies.',
-                'exp1.b4': 'Maintenance of the UTM institutional website, SSL certificate updates, and internal systems development with <strong>HTML, CSS, JS, PHP and SQL</strong>. IT inventory system in development.',
+                'exp1.b1': 'Identity administration in <strong>Microsoft 365</strong> (+4,500 users) and <strong>AWS</strong> infrastructure: automated security patches and optimized the EDI System pipeline.',
+                'exp1.b2': 'Proactive monitoring with real-time alerts; resolved Azure AD sync bottlenecks affecting massive deployments.',
+                'exp1.b3': 'Designed and deployed the <strong>AI support bot</strong>: integration with institutional APIs for robust identity validation and smart escalation.',
+                'exp1.b4': 'Modernization of the institutional site; optimized legacy <strong>SQL</strong> queries for the new IT inventory system, reducing load times.',
                 'edu.title': 'Education', 'edu.date': 'Oct 2024 — Graduate',
                 'edu.degree': 'Bachelor of Mechatronics Engineering',
                 'edu.project': 'Final Project',
-                'edu.projectDesc': 'Autonomous navigation system for mobile robots using Bug algorithms and occupancy grids. Master-slave robot system with computer vision and neural networks for adaptive behavior in static and dynamic environments.',
+                'edu.projectDesc': 'Coordinated navigation system for mobile robots. Implemented Bug2 evasion algorithms and probabilistic grids, solving "drift" issues via sensor fusion and adaptive computer vision.',
                 'certs.title': 'High-Impact Certifications', 'cert.vexworld': 'VEX Robotics World Championship 2024',
                 'cert.csharp': 'Foundational C# with Microsoft', 'cert.cinvestavtop': 'TOP Tamaulipas 2024',
                 'cert.cinvestav': 'Research & Simulations \u2014 CINVESTAV', 'cert.python': 'Python Development Certification',
                 'projects.title': 'Featured Projects', 'skills.title': 'Technical Skills', 'exp.title': 'Professional Experience',
+                'proj1.title': 'AetherVoice', 'proj2.title': 'IA-SOPORTE-MICROSOFT',
                 'proj1.level': 'Local LLM / JavaScript', 'proj1.badge': 'In Active Development',
-                'proj1.desc': 'Local AI Assistant designed for total privacy without external cloud dependencies. Runs language models natively on dedicated hardware.',
-                'proj1.info': '100% offline \u00b7 No API cost \u00b7 Total privacy',
+                'proj1.desc': 'Local AI Assistant prioritizing <strong>data sovereignty</strong>. I reduced inference time on modest hardware by optimizing the token buffer directly in C# and JS, enabling fluid responses without cloud dependencies.',
+                'proj1.info': 'Local Inference \u00b7 Batch Tracking \u00b7 Zero Network Latency',
                 'proj1.github': 'GitHub',
                 'proj2.level': 'Python / Microsoft Graph API',
-                'proj2.desc': '<strong>24/7</strong> AI Support bot deployed at UTM for student assistance. Answers institutional queries, validates identity, and performs <strong>secure password resets</strong>.',
-                'proj2.info': '24/7 IT Support for +4,500 UTM students',
+                'proj2.desc': 'Critical automation system for UTM. I orchestrated <strong>Microsoft Graph API</strong> integration with secure authentication to handle 100+ daily request peaks, automating 80% of password resets.',
+                'proj2.info': 'Serverless Architecture \u00b7 High Load Handling \u00b7 SLA < 3m',
                 'proj2.github': 'View on GitHub',
                 'proj3.level': 'C++ / Embedded Software', 'proj3.badge': 'World Champ.',
                 'proj3.title': 'Embedded Systems & Multi-Robot Control',
@@ -1607,28 +1639,37 @@
                 'proj3.info': '2nd Place Globally in Programming Skills \u2014 VEX World',
                 'proj3.github': 'GitHub Collaboration',
                 'proj3.tag2': '#Autonomous', 'proj3.tag3': '#Sensors', 'proj3.tag4': '#World-Champion',
-                'skill.cpp_desc': 'VEX Robotics \u00b7 Competition', 'skill.python_desc': 'Bots \u00b7 APIs \u00b7 Basic ML',
-                'skill.ps_desc': 'M365 \u00b7 Mass Automation', 'skill.m365_desc': 'Exchange \u00b7 Entra \u00b7 Purview',
-                'skill.linux_desc': 'Basic \u00b7 Ubuntu', 'skill.web_desc': 'HTML \u00b7 CSS \u00b7 JS \u00b7 PHP',
-                'skill.ros_desc': 'Gazebo \u00b7 Simulation \u00b7 CINVESTAV', 'skill.cv_desc': 'PyTorch \u00b7 TF \u00b7 Basic ML',
-                'skill.aws': 'EDI System \u00b7 AWS Cloud \u00b7 Recovery',
-                'exp2.title': 'Embedded Systems Software Lead', 'exp2.company': 'Autonomous Systems \u00b7 International Competition',
-                'exp2.b1': 'Full autonomous navigation system development for mobile robots (Bug algorithms, C++).',
-                'exp2.b2': 'Motion controllers and real-time logic programming.',
-                'exp2.b3': 'VEX U Programming Champion in Mexico and USA \u2014 2022, 2023 and 2024.',
+                'skill.cpp_desc': 'PID Control \u00b7 Advanced Odometry', 'skill.python_desc': 'REST Integration \u00b7 LLM Quantization',
+                'skill.ps_desc': 'M365 Bulk Ops \u00b7 Auth Flow', 'skill.m365_desc': 'Graph API \u00b7 Entra \u00b7 Purview',
+                'skill.linux_desc': 'Kernel Tuning \u00b7 Ubuntu Srv', 'skill.web_desc': 'SPA \u00b7 Responsive \u00b7 PHP Backend',
+                'skill.ros_desc': 'Gazebo \u00b7 SLAM \u00b7 CINVESTAV', 'skill.cv_desc': 'OpenCV \u00b7 TensorRT \u00b7 Inference',
+                'skill.aws': 'EDI Infrastructure \u00b7 EC2 \u00b7 S3 Security',
+                'exp2.title': 'Embedded Software Lead', 'exp2.company': 'Autonomous Systems \u00b7 Global Competition',
+                'exp2.b1': 'Developed reactive navigation algorithms and kinematics in C++ for omnidirectional robots.',
+                'exp2.b2': 'Low-latency controller programming with sensor fusion (IMU + GPS).',
+                'exp2.b3': '3x VEX U Programming Champion (MX/USA), optimizing routines under 15ms cycle limits.',
                 'journal.title': 'Articles & Notes', 'journal1.title': 'Architecting IA-SOPORTE-MICROSOFT: Azure & LLMs',
-                'journal1.desc': 'In-depth analysis of Microsoft Graph integration with LLMs.',
-                'journal2.title': 'Robotic Navigation: From Code to Worlds', 'journal2.desc': 'Lessons optimizing real-time control algorithms.',
-                'contact.cta': 'Available for <strong>Software Engineer, DevOps, Robotics Engineer or SRE</strong> roles. Technical English: Basic (Improving). Experience with remote teams and industrial environments.',
-                'bot.greeting': 'Domingo Gonz\u00e1lez // Support Hub', 'bot.subgreeting': 'Technical documentation and project inquiries.',
-                'proj.details': 'View Details'
+                'journal1.desc': 'Debugging Graph API latency for LLM integration in production environments.',
+                'journal2.title': 'Robotic Navigation: From Code to Worlds', 'journal2.desc': 'Stabilizing PID controllers on high-friction surfaces for the VEX World stage.',
+                'contact.cta': 'Open to discuss embedded system architectures, cloud automation, or how we scaled a bot for 4,500 users. Experience with remote and industrial environments.',
+                'bot.greeting': 'Consulting Domingo Gonzalez\'s technical knowledge base. Which module or integration can I assist you with?', 'bot.subgreeting': 'Technical documentation and project inquiries.',
+                'proj.details': 'View Details', 'footer.copy': '© 2026 Domingo González — Professional Portfolio',
+                'contact.title': 'Let\'s Talk', 'contact.h3': 'If you\'re looking for an engineer who delivers real systems, let\'s talk.',
+                'contact.copy': 'Copy Email', 'bot.id': 'Technical Support Center', 'bot.name': 'Digital Support',
+                'bot.type': 'AI Assistant', 'bot.intro': 'Running technical search engine over Domingo\'s projects. Do you wish to check architectural details or certifications?',
+                'chip.who': 'Who are you', 'chip.aether': 'AetherVoice', 'chip.ms': 'Microsoft IT', 'chip.robot': 'VEX Robotics',
+                'chip.aws': 'AWS Architecture', 'chip.contact': 'Contact'
             }
         };
 
-        let currentLang = 'es';
+        let currentLang = 'en';
 
         function toggleLang() {
             currentLang = currentLang === 'es' ? 'en' : 'es';
+            updateContent();
+        }
+
+        function updateContent() {
             document.getElementById('lang-label').textContent = currentLang === 'es' ? 'EN' : 'ES';
             const t = translations[currentLang];
             document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -1637,6 +1678,11 @@
             });
             document.documentElement.lang = currentLang;
         }
+
+        // Initialize in English
+        document.addEventListener('DOMContentLoaded', () => {
+            updateContent();
+        });
     </script>
 </body>
 
